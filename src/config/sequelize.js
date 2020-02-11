@@ -1,6 +1,6 @@
 import Sequelize from "sequelize";
 
-const reports = new Sequelize("ViralLoad", "sa", "disalab", {
+const reports = new Sequelize("ViralLoad", "sa", "", {
   host: "localhost",
   dialect: "mssql",
   dialectOptions: {
@@ -8,7 +8,7 @@ const reports = new Sequelize("ViralLoad", "sa", "disalab", {
   }
 });
 
-const vldata = new Sequelize("ViralLoadData", "sa", "disalab", {
+const vldata = new Sequelize("ViralLoadData", "sa", "", {
   host: "localhost",
   dialect: "mssql",
   dialectOptions: {
@@ -16,7 +16,7 @@ const vldata = new Sequelize("ViralLoadData", "sa", "disalab", {
   }
 });
 
-const facilities = new Sequelize("OpenLDRDict", "sa", "disalab", {
+const facilities = new Sequelize("OpenLDRDict", "sa", "", {
   host: "localhost",
   dialect: "mssql",
   dialectOptions: {
