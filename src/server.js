@@ -23,6 +23,6 @@ app.use("/admin/queues", BullBoard.UI);
 app.use(Routes);
 app.use(ViralLoadRoutes);
 app.use(DictRoutes);
-app.listen(4444, () => {
+app.listen(process.env.PORT || 4444, () => {
   console.log("Server running on localhost:4444");
 });
