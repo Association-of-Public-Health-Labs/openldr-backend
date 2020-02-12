@@ -1,6 +1,6 @@
-import express from "express";
+const express = require("express");
 
-import VlDataController from "./controllers/VlDataController";
+const VlDataController = require("./controllers/VlDataController");
 
 const routes = express.Router();
 

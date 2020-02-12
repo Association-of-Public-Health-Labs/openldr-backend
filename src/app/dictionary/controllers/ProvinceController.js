@@ -1,5 +1,9 @@
-import { Op, fn, col } from "sequelize";
-import Facilities from "../models/Facilities";
+const sequelize = require("sequelize");
+const Facilities = require("../models/Facilities");
+
+const Op = sequelize.Op;
+const fn = sequelize.fn;
+const col = sequelize.col;
 
 const ProvinceController = {
   async show(req, res) {

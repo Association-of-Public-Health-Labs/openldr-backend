@@ -1,5 +1,7 @@
-import { Op } from "sequelize";
-import Facilities from "../models/Facilities";
+const sequelize = require("sequelize");
+const Facilities = require("../models/Facilities");
+
+const Op = sequelize.Op;
 
 const clinics = {
   async show(req, res) {

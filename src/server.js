@@ -1,5 +1,5 @@
-import "dotenv/config";
-import express from "express";
+require("dotenv/config");
+const express = require("express");
 // import BullBoard from "bull-board";
 // import Queue from "./app/lib/Queue";
 // import "./app/schedules/VlResultReportSchecule";
@@ -8,8 +8,8 @@ import express from "express";
 // import './app/schedules/VLMonthlyLabReport';
 // import './app/schedules/VlDashboardSync'
 // import Routes from "./routes";
-import ViralLoadRoutes from "./app/viralload/routes";
-import DictRoutes from "./app/dictionary/routes";
+const ViralLoadRoutes = require("./app/viralload/routes");
+const DictRoutes = require("./app/dictionary/routes");
 
 const app = express();
 // BullBoard.setQueues(Queue.queues.map(queue => queue.bull));

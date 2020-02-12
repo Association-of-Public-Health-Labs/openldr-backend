@@ -1,8 +1,8 @@
-import express from "express";
+const express = require("express");
 
-import ClinicController from "./controllers/ClinicController";
-import DistrictController from "./controllers/DistrictController";
-import ProvinceController from "./controllers/ProvinceController";
+const ClinicController = require("./controllers/ClinicController");
+const DistrictController = require("./controllers/DistrictController");
+const ProvinceController = require("./controllers/ProvinceController");
 
 const routes = express.Router();
 

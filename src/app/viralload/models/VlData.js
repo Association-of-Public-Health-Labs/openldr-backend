@@ -1,5 +1,5 @@
-import Sequelize from "sequelize";
-import { vldata } from "../../../config/sequelize";
+const Sequelize = require("sequelize");
+const { vldata } = require("../../../config/sequelize");
 
 const VlData = vldata.define(
   "VlData",

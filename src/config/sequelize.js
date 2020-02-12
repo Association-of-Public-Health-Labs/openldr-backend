@@ -1,4 +1,4 @@
-import Sequelize from "sequelize";
+const Sequelize = require("sequelize");
 
 const reports = new Sequelize(
   process.env.REPORT_DB,

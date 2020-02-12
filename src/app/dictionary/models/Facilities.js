@@ -1,5 +1,5 @@
-import Sequelize from "sequelize";
-import { facilities } from "../../../config/sequelize";
+const Sequelize = require("sequelize");
+const { facilities } = require("../../../config/sequelize");
 
 const Facilities = facilities.define(
   "viewFacilities",
