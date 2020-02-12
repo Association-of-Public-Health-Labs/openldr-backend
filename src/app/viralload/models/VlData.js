@@ -122,5 +122,5 @@ const VlData = vldata.define(
   { freezeTableName: true, timestamps: false }
 );
 
-vldata.sync();
+// vldata.sync();
 module.exports = VlData;

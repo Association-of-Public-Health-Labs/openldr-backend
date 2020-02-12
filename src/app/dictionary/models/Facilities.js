@@ -31,5 +31,5 @@ const Facilities = facilities.define(
   { freezeTableName: true, timestamps: false }
 );
 Facilities.removeAttribute("id");
-facilities.sync();
+// facilities.sync();
 module.exports = Facilities;

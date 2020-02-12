@@ -3,7 +3,7 @@ const Facilities = require("../models/Facilities");
 
 const Op = sequelize.Op;
 
-const clinics = {
+const ClinicController = {
   async show(req, res) {
     const clinic = await Facilities.findAll({
       where: {
@@ -53,4 +53,4 @@ const clinics = {
   }
 };
 
-module.exports = clinics;
+module.exports = ClinicController;
