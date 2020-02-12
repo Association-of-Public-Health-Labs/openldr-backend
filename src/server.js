@@ -1,6 +1,6 @@
 import "dotenv/config";
 import express from "express";
-import BullBoard from "bull-board";
+// import BullBoard from "bull-board";
 // import Queue from "./app/lib/Queue";
 // import "./app/schedules/VlResultReportSchecule";
 // import "./app/schedules/VlResultsSendEmail";
