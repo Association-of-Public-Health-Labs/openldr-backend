@@ -39,4 +39,4 @@ const facilities = new Sequelize(
   }
 );
 
-module.exports = { reports: reports, vldata: vldata, facilities: facilities };
+module.exports = { vldata: vldata, facilities: facilities };
