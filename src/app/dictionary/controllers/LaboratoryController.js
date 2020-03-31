@@ -12,6 +12,7 @@ const LaboratoryController = {
     });
     res.json(labs);
   },
+
   async showAll(req, res) {
     const labs = await Laboratories.findAll();
     res.json(labs);
