@@ -8,10 +8,10 @@ module.exports = {
       [
         {
           TestingFacilityCode: {
-            [Op.in]: req.body.codes
+            [Op.in]: req.query.codes
           },
           RegisteredDatetime: {
-            [Op.between]: req.body.dates
+            [Op.between]: req.query.dates
           }
         }
       ],
