@@ -24,4 +24,38 @@ routes.get(
   LaboratoryController.getSamplesTestedByMonth
 );
 
+routes.get(
+  "/lab_samples_tested_by_lab",
+  LaboratoryController.getSamplesTestedByLab
+);
+
+routes.get("/lab_tat_by_month", LaboratoryController.getTurnaroundTimeByMonth);
+
+routes.get("/lab_tat", LaboratoryController.getTurnaroundTimeByLab);
+
+routes.get(
+  "/lab_samples_tested_by_gender",
+  LaboratoryController.getSamplesTestedByGender
+);
+
+routes.get(
+  "/lab_samples_tested_by_gender_and_labs",
+  LaboratoryController.getSamplesTestedByGenderAndLab
+);
+
+routes.get(
+  "/lab_samples_tested_by_age",
+  LaboratoryController.getSamplesTestedByAge
+);
+
+routes.get(
+  "/lab_samples_tested_pregnant",
+  LaboratoryController.getSamplesTestedByPregnancy
+);
+
+routes.get(
+  "/lab_samples_tested_breastfeeding",
+  LaboratoryController.getSamplesTestedForBreastfeeding
+);
+
 module.exports = routes;

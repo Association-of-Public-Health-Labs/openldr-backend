@@ -3,57 +3,45 @@ const { fn, literal, col } = sequelize;
 
 module.exports = {
   total: fn("count", literal("1")),
-  collection_reception: [
+  collection_reception: fn(
+    "avg",
     fn(
-      "avg",
-      fn(
-        "datediff",
-        literal("day"),
-        col("SpecimenDatetime"),
-        col("ReceivedDatetime")
-      )
-    ),
-    "collection_reception"
-  ],
+      "datediff",
+      literal("day"),
+      col("SpecimenDatetime"),
+      col("ReceivedDatetime")
+    )
+  ),
 
-  reception_registration: [
+  reception_registration: fn(
+    "avg",
     fn(
-      "avg",
-      fn(
-        "datediff",
-        literal("day"),
-        col("ReceivedDatetime"),
-        col("RegisteredDatetime")
-      )
-    ),
-    "reception_registration"
-  ],
+      "datediff",
+      literal("day"),
+      col("ReceivedDatetime"),
+      col("RegisteredDatetime")
+    )
+  ),
 
-  registration_analysis: [
+  registration_analysis: fn(
+    "avg",
     fn(
-      "avg",
-      fn(
-        "datediff",
-        literal("day"),
-        col("RegisteredDatetime"),
-        col("AnalysisDatetime")
-      )
-    ),
-    "registration_analysis"
-  ],
+      "datediff",
+      literal("day"),
+      col("RegisteredDatetime"),
+      col("AnalysisDatetime")
+    )
+  ),
 
-  analysis_validation: [
+  analysis_validation: fn(
+    "avg",
     fn(
-      "avg",
-      fn(
-        "datediff",
-        literal("day"),
-        col("AnalysisDatetime"),
-        col("AuthorisedDatetime")
-      )
-    ),
-    "analysis_validation"
-  ],
+      "datediff",
+      literal("day"),
+      col("AnalysisDatetime"),
+      col("AuthorisedDatetime")
+    )
+  ),
 
   year: fn("year", col("RegisteredDatetime")),
 
@@ -91,6 +79,33 @@ module.exports = {
     "count",
     literal(
       `CASE WHEN ViralLoadResultCategory = 'Not Suppressed' THEN 1 ELSE NULL END`
+    )
+  ),
+  male_suppressed: fn(
+    "count",
+    literal(
+      `CASE WHEN Hl7SexCode = 'M' AND ViralLoadResultCategory = 'Suppressed' THEN 1 ELSE NULL END`
+    )
+  ),
+
+  female_suppressed: fn(
+    "count",
+    literal(
+      `CASE WHEN Hl7SexCode = 'F' AND ViralLoadResultCategory = 'Suppressed' THEN 1 ELSE NULL END`
+    )
+  ),
+
+  male_not_suppressed: fn(
+    "count",
+    literal(
+      `CASE WHEN Hl7SexCode = 'M' AND ViralLoadResultCategory = 'Not Suppressed' THEN 1 ELSE NULL END`
+    )
+  ),
+
+  female_not_suppressed: fn(
+    "count",
+    literal(
+      `CASE WHEN Hl7SexCode = 'F' AND ViralLoadResultCategory = 'Not Suppressed' THEN 1 ELSE NULL END`
     )
   )
 };
