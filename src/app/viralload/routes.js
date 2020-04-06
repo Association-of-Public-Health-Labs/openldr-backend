@@ -2,6 +2,7 @@ const express = require("express");
 
 const VlDataController = require("./controllers/VlDataController");
 const LaboratoryController = require("./controllers/LaboratoryController");
+const DashboardController = require("./controllers/DashboardController");
 
 const routes = express.Router();
 
@@ -57,5 +58,11 @@ routes.get(
   "/lab_samples_tested_breastfeeding",
   LaboratoryController.getSamplesTestedForBreastfeeding
 );
+
+// Dashboard routes ...
+
+routes.get("/dash_number_of_samples", DashboardController.getNumberOfSamples);
+routes.get("/dash_viral_suppression", DashboardController.getViralSuppression);
+routes.get("/dash_tat", DashboardController.getTurnAroundTime);
 
 module.exports = routes;
