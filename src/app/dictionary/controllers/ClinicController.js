@@ -50,6 +50,18 @@ const ClinicController = {
       }
     });
     return res.json(clinics);
+  },
+
+  async showByProvinceOrDistrict(req, res) {
+    const clinics = await Facilities.findAll({
+      where: {
+        [Op.or]: [
+          { DistrictName: { [Op.in]: req.query.districts } },
+          { ProvinceName: { [Op.in]: req.query.provinces } }
+        ]
+      }
+    });
+    return res.json(clinics);
   }
 };
 

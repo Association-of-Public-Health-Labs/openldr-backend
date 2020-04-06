@@ -52,8 +52,8 @@ const DistrictController = {
       ],
       where: {
         [Op.or]: [
-          { ProvinceName: req.params.province },
-          { ProvinceCode: req.params.province }
+          { ProvinceName: { [Op.in]: [req.query.provinces] } },
+          { ProvinceCode: { [Op.in]: [req.query.provinces] } }
         ]
       }
     });

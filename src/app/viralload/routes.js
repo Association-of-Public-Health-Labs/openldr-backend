@@ -19,4 +19,9 @@ routes.get(
   LaboratoryController.getSamplesByTestReason
 );
 
+routes.get(
+  "/lab_samples_tested_by_month",
+  LaboratoryController.getSamplesTestedByMonth
+);
+
 module.exports = routes;
