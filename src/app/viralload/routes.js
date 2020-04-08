@@ -64,5 +64,8 @@ routes.get(
 routes.get("/dash_number_of_samples", DashboardController.getNumberOfSamples);
 routes.get("/dash_viral_suppression", DashboardController.getViralSuppression);
 routes.get("/dash_tat", DashboardController.getTurnAroundTime);
+routes.get("/dash_map", DashboardController.getViralSuppressionMap);
+routes.get("/dash_indicators", DashboardController.getSamplesIndicators);
+routes.get("/dash_tat_vs_disalinks", DashboardController.getTatVsDisalinks);
 
 module.exports = routes;

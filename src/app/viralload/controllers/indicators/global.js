@@ -3,6 +3,28 @@ const { fn, literal, col } = sequelize;
 
 module.exports = {
   total: fn("count", literal("1")),
+
+  tested: fn(
+    "count",
+    literal(
+      `CASE WHEN AnalysisDatetime IS NOT NULL AND AnalysisDatetime <> '' THEN 1 ELSE NULL END`
+    )
+  ),
+
+  rejected: fn(
+    "count",
+    literal(
+      `CASE WHEN (LIMSRejectionCode IS NOT NULL AND LIMSRejectionCode <> '') OR (HIVVL_LIMSRejectionCode IS NOT NULL AND HIVVL_LIMSRejectionCode <> '') THEN 1 ELSE NULL END`
+    )
+  ),
+
+  non_validated: fn(
+    "count",
+    literal(
+      `CASE WHEN ViralLoadResultCategory IS NOT NULL AND ViralLoadResultCategory <> '' AND (AuthorisedDatetime IS NULL OR AuthorisedDatetime = '') THEN 1 ELSE NULL END`
+    )
+  ),
+
   collection_reception: fn(
     "avg",
     fn(
@@ -107,5 +129,5 @@ module.exports = {
     literal(
       `CASE WHEN Hl7SexCode = 'F' AND ViralLoadResultCategory = 'Not Suppressed' THEN 1 ELSE NULL END`
     )
-  )
+  ),
 };
