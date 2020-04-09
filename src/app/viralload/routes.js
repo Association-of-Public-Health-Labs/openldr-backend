@@ -3,6 +3,7 @@ const express = require("express");
 const VlDataController = require("./controllers/VlDataController");
 const LaboratoryController = require("./controllers/LaboratoryController");
 const DashboardController = require("./controllers/DashboardController");
+const ClinicController = require("./controllers/ClinicController");
 
 const routes = express.Router();
 
@@ -67,5 +68,45 @@ routes.get("/dash_tat", DashboardController.getTurnAroundTime);
 routes.get("/dash_map", DashboardController.getViralSuppressionMap);
 routes.get("/dash_indicators", DashboardController.getSamplesIndicators);
 routes.get("/dash_tat_vs_disalinks", DashboardController.getTatVsDisalinks);
+
+// Clinic routes ...
+routes.get(
+  "/clinic_samples_by_test_reason",
+  ClinicController.getSamplesByTestReason
+);
+
+routes.get(
+  "/clinic_samples_tested_by_month",
+  ClinicController.getSamplesTestedByMonth
+);
+
+routes.get(
+  "/clinic_samples_tested_by_facility",
+  ClinicController.getSamplesTestedByFacility
+);
+
+routes.get(
+  "/clinic_samples_tested_by_gender",
+  ClinicController.getSamplesTestedByGender
+);
+
+routes.get("/clinic_tat", ClinicController.getTurnaroundTimeByMonth);
+
+routes.get(
+  "/clinic_tat_by_facility",
+  ClinicController.getTurnaroundTimeByFacility
+);
+
+routes.get("/clinic_tat_by_age", ClinicController.getSamplesTestedByAge);
+
+routes.get(
+  "/clinic_tests_by_pregnancy",
+  ClinicController.getSamplesTestedByPregnancy
+);
+
+routes.get(
+  "/clinic_tests_by_breastfeeding",
+  ClinicController.getSamplesTestedForBreastfeeding
+);
 
 module.exports = routes;

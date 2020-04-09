@@ -1,10 +1,23 @@
 const VlData = require("../models/VlData");
 const global = require("./indicators/global");
+const utils = require("./indicators/utils");
 const { col, literal, fn, Op } = require("sequelize");
 const path = require("path");
+const loadJsonFile = require("load-json-file");
+const moment = require("moment");
 
 module.exports = {
   async getNumberOfSamples(req, res) {
+    const id = "dash_number_of_samples";
+    const defaultDates = [
+      moment().subtract(1, "year").format("YYYY-MM-DD"),
+      moment().format("YYYY-MM-DD"),
+    ];
+    if (await utils.checkCache(req.query, defaultDates)) {
+      return res.json(
+        await loadJsonFile(path.join(__dirname, `../cache/${id}.json`))
+      );
+    }
     const data = await VlData.findAll({
       attributes: [
         [global.year, "year"],
@@ -29,6 +42,16 @@ module.exports = {
   },
 
   async getViralSuppression(req, res) {
+    const id = "dash_viral_suppression";
+    const defaultDates = [
+      moment().subtract(1, "year").format("YYYY-MM-DD"),
+      moment().format("YYYY-MM-DD"),
+    ];
+    if (await utils.checkCache(req.query, defaultDates)) {
+      return res.json(
+        await loadJsonFile(path.join(__dirname, `../cache/${id}.json`))
+      );
+    }
     const data = await VlData.findAll({
       attributes: [
         [global.year, "year"],
@@ -50,11 +73,20 @@ module.exports = {
         [global.month, "ASC"],
       ],
     });
-    console.log(data);
     return res.json(data);
   },
 
   async getTurnAroundTime(req, res) {
+    const id = "dash_tat";
+    const defaultDates = [
+      moment().subtract(1, "year").format("YYYY-MM-DD"),
+      moment().format("YYYY-MM-DD"),
+    ];
+    if (await utils.checkCache(req.query, defaultDates)) {
+      return res.json(
+        await loadJsonFile(path.join(__dirname, `../cache/${id}.json`))
+      );
+    }
     const data = await VlData.findAll({
       attributes: [
         [global.year, "year"],
@@ -83,6 +115,16 @@ module.exports = {
   },
 
   async getViralSuppressionMap(req, res) {
+    const id = "dash_viral_suppression_map";
+    const defaultDates = [
+      moment().subtract(1, "year").format("YYYY-MM-DD"),
+      moment().format("YYYY-MM-DD"),
+    ];
+    if (await utils.checkCache(req.query, defaultDates)) {
+      return res.json(
+        await loadJsonFile(path.join(__dirname, `../cache/${id}.json`))
+      );
+    }
     const data = await VlData.findAll({
       attributes: [
         [col("RequestingProvinceName"), "province"],
@@ -105,11 +147,20 @@ module.exports = {
       group: [col("RequestingProvinceName")],
       order: [[col("RequestingProvinceName"), "ASC"]],
     });
-    console.log(data);
     return res.json(data);
   },
 
   async getSamplesIndicators(req, res) {
+    const id = "dash_sampes_indicators";
+    const defaultDates = [
+      moment().subtract(1, "year").format("YYYY-MM-DD"),
+      moment().subtract(1, "month").format("YYYY-MM-DD"),
+    ];
+    if (await utils.checkCache(req.query, defaultDates)) {
+      return res.json(
+        await loadJsonFile(path.join(__dirname, `../cache/${id}.json`))
+      );
+    }
     const data = await VlData.findAll({
       attributes: [
         [global.year, "year"],
@@ -138,9 +189,10 @@ module.exports = {
   },
 
   async getTatVsDisalinks(req, res) {
-    const loadJsonFile = require("load-json-file");
     return res.json(
-      await loadJsonFile(path.join(__dirname, "tat_vs_disalinks.json"))
+      await loadJsonFile(
+        path.join(__dirname, "../cache/dash_tat_vs_disalinks.json")
+      )
     );
   },
 };

@@ -19,6 +19,7 @@
     "exceljs": "^3.6.0",
     "express": "^4.17.1",
     "load-json-file": "^6.2.0",
+    "moment": "^2.24.0",
     "mssql": "^6.0.1",
     "mssql-to-csv": "^1.1.0",
     "mysql": "^2.18.0",
