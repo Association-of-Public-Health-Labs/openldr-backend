@@ -90,6 +90,11 @@ routes.get(
   ClinicController.getSamplesTestedByGender
 );
 
+routes.get(
+  "/clinic_samples_tested_by_gender_and_facility",
+  ClinicController.getSamplesTestedByGenderAndFacility
+);
+
 routes.get("/clinic_tat", ClinicController.getTurnaroundTimeByMonth);
 
 routes.get(

@@ -1,0 +1,106 @@
+[
+  {
+    "lab": "CS Ponta Gea",
+    "total": 45224,
+    "male_suppressed": 9607,
+    "female_suppressed": 23504,
+    "male_not_suppressed": 3318,
+    "female_not_suppressed": 6902
+  },
+  {
+    "lab": "Lab. de Dream Maputo",
+    "total": 22057,
+    "male_suppressed": 5275,
+    "female_suppressed": 12709,
+    "male_not_suppressed": 1286,
+    "female_not_suppressed": 2445
+  },
+  {
+    "lab": "Lab.BM-HCM",
+    "total": 36494,
+    "male_suppressed": 7301,
+    "female_suppressed": 19092,
+    "male_not_suppressed": 3031,
+    "female_not_suppressed": 6022
+  },
+  {
+    "lab": "Lab.BM-HG Jose Macamo",
+    "total": 56152,
+    "male_suppressed": 13709,
+    "female_suppressed": 32041,
+    "male_not_suppressed": 3515,
+    "female_not_suppressed": 6294
+  },
+  {
+    "lab": "Lab.BM-HG Machava",
+    "total": 112741,
+    "male_suppressed": 26571,
+    "female_suppressed": 65856,
+    "male_not_suppressed": 6827,
+    "female_not_suppressed": 12498
+  },
+  {
+    "lab": "Lab.BM-Hosp.Militar Maputo",
+    "total": 28469,
+    "male_suppressed": 7477,
+    "female_suppressed": 15593,
+    "male_not_suppressed": 1933,
+    "female_not_suppressed": 3046
+  },
+  {
+    "lab": "Lab.BM-HP Xai-Xai",
+    "total": 89184,
+    "male_suppressed": 14984,
+    "female_suppressed": 52729,
+    "male_not_suppressed": 5280,
+    "female_not_suppressed": 13811
+  },
+  {
+    "lab": "Lab.BM-Quelimane",
+    "total": 126075,
+    "male_suppressed": 23675,
+    "female_suppressed": 68304,
+    "male_not_suppressed": 9610,
+    "female_not_suppressed": 21723
+  },
+  {
+    "lab": "Lab.Clinic-HC NAMpula",
+    "total": 84000,
+    "male_suppressed": 15976,
+    "female_suppressed": 38825,
+    "male_not_suppressed": 8798,
+    "female_not_suppressed": 18279
+  },
+  {
+    "lab": "Lab.Clinic-HG Mavalane",
+    "total": 48,
+    "male_suppressed": 20,
+    "female_suppressed": 19,
+    "male_not_suppressed": 3,
+    "female_not_suppressed": 1
+  },
+  {
+    "lab": "Lab.Clinic-Hosp.Militar Maputo",
+    "total": 9,
+    "male_suppressed": 3,
+    "female_suppressed": 3,
+    "male_not_suppressed": 1,
+    "female_not_suppressed": 1
+  },
+  {
+    "lab": "Lab.de Carmelo",
+    "total": 61766,
+    "male_suppressed": 12269,
+    "female_suppressed": 33997,
+    "male_not_suppressed": 4516,
+    "female_not_suppressed": 8968
+  },
+  {
+    "lab": "Lab.Nacional de Referencia-INS",
+    "total": 24228,
+    "male_suppressed": 5538,
+    "female_suppressed": 12792,
+    "male_not_suppressed": 1704,
+    "female_not_suppressed": 3037
+  }
+]

@@ -9,14 +9,9 @@ const moment = require("moment");
 module.exports = {
   async getNumberOfSamples(req, res) {
     const id = "dash_number_of_samples";
-    const defaultDates = [
-      moment().subtract(1, "year").format("YYYY-MM-DD"),
-      moment().format("YYYY-MM-DD"),
-    ];
-    if (await utils.checkCache(req.query, defaultDates)) {
-      return res.json(
-        await loadJsonFile(path.join(__dirname, `../cache/${id}.json`))
-      );
+    const cache = await utils.checkCache(req.query, id);
+    if (cache) {
+      return res.json(cache);
     }
     const data = await VlData.findAll({
       attributes: [
@@ -43,14 +38,9 @@ module.exports = {
 
   async getViralSuppression(req, res) {
     const id = "dash_viral_suppression";
-    const defaultDates = [
-      moment().subtract(1, "year").format("YYYY-MM-DD"),
-      moment().format("YYYY-MM-DD"),
-    ];
-    if (await utils.checkCache(req.query, defaultDates)) {
-      return res.json(
-        await loadJsonFile(path.join(__dirname, `../cache/${id}.json`))
-      );
+    const cache = await utils.checkCache(req.query, id);
+    if (cache) {
+      return res.json(cache);
     }
     const data = await VlData.findAll({
       attributes: [
@@ -78,14 +68,9 @@ module.exports = {
 
   async getTurnAroundTime(req, res) {
     const id = "dash_tat";
-    const defaultDates = [
-      moment().subtract(1, "year").format("YYYY-MM-DD"),
-      moment().format("YYYY-MM-DD"),
-    ];
-    if (await utils.checkCache(req.query, defaultDates)) {
-      return res.json(
-        await loadJsonFile(path.join(__dirname, `../cache/${id}.json`))
-      );
+    const cache = await utils.checkCache(req.query, id);
+    if (cache) {
+      return res.json(cache);
     }
     const data = await VlData.findAll({
       attributes: [
@@ -116,14 +101,9 @@ module.exports = {
 
   async getViralSuppressionMap(req, res) {
     const id = "dash_viral_suppression_map";
-    const defaultDates = [
-      moment().subtract(1, "year").format("YYYY-MM-DD"),
-      moment().format("YYYY-MM-DD"),
-    ];
-    if (await utils.checkCache(req.query, defaultDates)) {
-      return res.json(
-        await loadJsonFile(path.join(__dirname, `../cache/${id}.json`))
-      );
+    const cache = await utils.checkCache(req.query, id);
+    if (cache) {
+      return res.json(cache);
     }
     const data = await VlData.findAll({
       attributes: [
@@ -152,14 +132,9 @@ module.exports = {
 
   async getSamplesIndicators(req, res) {
     const id = "dash_sampes_indicators";
-    const defaultDates = [
-      moment().subtract(1, "year").format("YYYY-MM-DD"),
-      moment().subtract(1, "month").format("YYYY-MM-DD"),
-    ];
-    if (await utils.checkCache(req.query, defaultDates)) {
-      return res.json(
-        await loadJsonFile(path.join(__dirname, `../cache/${id}.json`))
-      );
+    const cache = await utils.checkCache(req.query, id);
+    if (cache) {
+      return res.json(cache);
     }
     const data = await VlData.findAll({
       attributes: [

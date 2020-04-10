@@ -7,9 +7,14 @@ const { Op, fn, literal, col } = sequelize;
 
 module.exports = ClinicController = {
   async getSamplesByTestReason(req, res) {
+    const id = "clinic_samples_by_test_reason";
+    const cache = await utils.checkCache(req.query, id);
+    if (cache) {
+      return res.json(cache);
+    }
     var where = [{}];
     where[0]["RegisteredDatetime"] = {
-      [Op.between]: req.query.dates,
+      [Op.between]: ["2019-04-10", "2020-04-10"],
     };
     if (typeof req.query.codes !== "undefined") {
       if (req.query.type === "province") {
@@ -38,7 +43,11 @@ module.exports = ClinicController = {
   },
 
   async getSamplesTestedByMonth(req, res) {
-    console.log(req.query);
+    const id = "clinic_samples_tested_by_month";
+    const cache = await utils.checkCache(req.query, id);
+    if (cache) {
+      return res.json(cache);
+    }
     var where = [{}];
     where[0]["RegisteredDatetime"] = {
       [Op.between]: req.query.dates,
@@ -79,6 +88,11 @@ module.exports = ClinicController = {
   },
 
   async getSamplesTestedByFacility(req, res) {
+    const id = "clinic_samples_tested_by_facility";
+    const cache = await utils.checkCache(req.query, id);
+    if (cache) {
+      return res.json(cache);
+    }
     var where = [{}];
     where[0]["RegisteredDatetime"] = {
       [Op.between]: req.query.dates,
@@ -114,6 +128,11 @@ module.exports = ClinicController = {
   },
 
   async getTurnaroundTimeByMonth(req, res) {
+    const id = "clinic_tat_by_month";
+    const cache = await utils.checkCache(req.query, id);
+    if (cache) {
+      return res.json(cache);
+    }
     var where = [{}];
     where[0]["RegisteredDatetime"] = {
       [Op.between]: req.query.dates,
@@ -155,6 +174,11 @@ module.exports = ClinicController = {
   },
 
   async getTurnaroundTimeByFacility(req, res) {
+    const id = "clinic_tat_by_facility";
+    const cache = await utils.checkCache(req.query, id);
+    if (cache) {
+      return res.json(cache);
+    }
     var where = [{}];
     where[0]["RegisteredDatetime"] = {
       [Op.between]: req.query.dates,
@@ -191,6 +215,11 @@ module.exports = ClinicController = {
   },
 
   async getSamplesTestedByGender(req, res) {
+    const id = "clinic_samples_tested_by_gender_monthly";
+    const cache = await utils.checkCache(req.query, id);
+    if (cache) {
+      return res.json(cache);
+    }
     var where = [{}];
     where[0]["RegisteredDatetime"] = {
       [Op.between]: req.query.dates,
@@ -232,37 +261,35 @@ module.exports = ClinicController = {
     return res.json(data);
   },
 
-  async getSamplesTestedByGenderAndLab(req, res) {
-    var where = [];
-    if (typeof req.query.codes === "undefined") {
-      where = [
-        {
-          RegisteredDatetime: {
-            [Op.between]: req.query.dates,
-          },
-          TestingFacilityName: {
-            [Op.not]: null,
-          },
-        },
-      ];
-    } else {
-      where = [
-        {
-          TestingFacilityCode: {
-            [Op.in]: req.query.codes,
-          },
-          RegisteredDatetime: {
-            [Op.between]: req.query.dates,
-          },
-          TestingFacilityName: {
-            [Op.not]: null,
-          },
-        },
-      ];
+  async getSamplesTestedByGenderAndFacility(req, res) {
+    const id = "clinic_samples_tested_by_gender_and_facility";
+    const cache = await utils.checkCache(req.query, id);
+    if (cache) {
+      return res.json(cache);
     }
+    var where = [{}];
+    where[0]["RegisteredDatetime"] = {
+      [Op.between]: req.query.dates,
+    };
+    if (typeof req.query.codes !== "undefined") {
+      if (req.query.type === "province") {
+        where[0]["RequestingProvinceName"] = {
+          [Op.in]: req.query.codes,
+        };
+      } else if (req.query.type === "district") {
+        where[0]["RequestingDistrictName"] = {
+          [Op.in]: req.query.codes,
+        };
+      } else if (req.query.type === "clinic") {
+        where[0]["RequestingFacilityName"] = {
+          [Op.in]: req.query.codes,
+        };
+      }
+    }
+    const column = await utils.getAttributes(req.query.type);
     const data = await VlData.findAll({
       attributes: [
-        [col("TestingFacilityName"), "lab"],
+        [column, "facility"],
         [global.total, "total"],
         [global.male_suppressed, "male_suppressed"],
         [global.female_suppressed, "female_suppressed"],
@@ -270,13 +297,18 @@ module.exports = ClinicController = {
         [global.female_not_suppressed, "female_not_suppressed"],
       ],
       where: where,
-      group: [col("TestingFacilityName")],
-      order: [[col("TestingFacilityName"), "ASC"]],
+      group: [column],
+      order: [[column, "ASC"]],
     });
     return res.json(data);
   },
 
   async getSamplesTestedByAge(req, res) {
+    const id = "clinic_samples_tested_by_age";
+    const cache = await utils.checkCache(req.query, id);
+    if (cache) {
+      return res.json(cache);
+    }
     var where = [{}];
     where[0]["RegisteredDatetime"] = {
       [Op.between]: req.query.dates,
@@ -320,6 +352,11 @@ module.exports = ClinicController = {
   },
 
   async getSamplesTestedByPregnancy(req, res) {
+    const id = "clinic_samples_tested_by_pregnancy";
+    const cache = await utils.checkCache(req.query, id);
+    if (cache) {
+      return res.json(cache);
+    }
     var where = [{}];
     where[0]["RegisteredDatetime"] = {
       [Op.between]: req.query.dates,
@@ -363,6 +400,11 @@ module.exports = ClinicController = {
   },
 
   async getSamplesTestedForBreastfeeding(req, res) {
+    const id = "clinic_samples_tested_breastfeeding";
+    const cache = await utils.checkCache(req.query, id);
+    if (cache) {
+      return res.json(cache);
+    }
     var where = [{}];
     where[0]["RegisteredDatetime"] = {
       [Op.between]: req.query.dates,

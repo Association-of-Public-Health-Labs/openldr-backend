@@ -1,0 +1,93 @@
+[
+  {
+    "lab": "CS Ponta Gea",
+    "collection_reception": 9,
+    "reception_registration": 1,
+    "registration_analysis": 6,
+    "analysis_validation": 0
+  },
+  {
+    "lab": "Lab. de Dream Maputo",
+    "collection_reception": 0,
+    "reception_registration": 0,
+    "registration_analysis": 17,
+    "analysis_validation": 3
+  },
+  {
+    "lab": "Lab.BM-HCM",
+    "collection_reception": 11,
+    "reception_registration": 4,
+    "registration_analysis": 21,
+    "analysis_validation": 1
+  },
+  {
+    "lab": "Lab.BM-HG Jose Macamo",
+    "collection_reception": 8,
+    "reception_registration": 1,
+    "registration_analysis": 6,
+    "analysis_validation": 0
+  },
+  {
+    "lab": "Lab.BM-HG Machava",
+    "collection_reception": 25,
+    "reception_registration": 3,
+    "registration_analysis": 6,
+    "analysis_validation": 0
+  },
+  {
+    "lab": "Lab.BM-Hosp.Militar Maputo",
+    "collection_reception": 8,
+    "reception_registration": 0,
+    "registration_analysis": 13,
+    "analysis_validation": 0
+  },
+  {
+    "lab": "Lab.BM-HP Xai-Xai",
+    "collection_reception": 9,
+    "reception_registration": 1,
+    "registration_analysis": 10,
+    "analysis_validation": 0
+  },
+  {
+    "lab": "Lab.BM-Quelimane",
+    "collection_reception": 12,
+    "reception_registration": 2,
+    "registration_analysis": 6,
+    "analysis_validation": 0
+  },
+  {
+    "lab": "Lab.Clinic-HC NAMpula",
+    "collection_reception": 12,
+    "reception_registration": 2,
+    "registration_analysis": 6,
+    "analysis_validation": 0
+  },
+  {
+    "lab": "Lab.Clinic-HG Mavalane",
+    "collection_reception": 0,
+    "reception_registration": 0,
+    "registration_analysis": 1,
+    "analysis_validation": 0
+  },
+  {
+    "lab": "Lab.Clinic-Hosp.Militar Maputo",
+    "collection_reception": 0,
+    "reception_registration": 0,
+    "registration_analysis": 7,
+    "analysis_validation": 0
+  },
+  {
+    "lab": "Lab.de Carmelo",
+    "collection_reception": 7,
+    "reception_registration": 0,
+    "registration_analysis": 10,
+    "analysis_validation": 0
+  },
+  {
+    "lab": "Lab.Nacional de Referencia-INS",
+    "collection_reception": 11,
+    "reception_registration": 16,
+    "registration_analysis": 17,
+    "analysis_validation": 1
+  }
+]

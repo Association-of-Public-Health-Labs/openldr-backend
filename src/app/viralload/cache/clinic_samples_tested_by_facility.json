@@ -1,0 +1,74 @@
+[
+  {
+    "facility": null,
+    "total": 99,
+    "suppressed": 58,
+    "non_suppressed": 36
+  },
+  {
+    "facility": "Cabo Delgado",
+    "total": 41676,
+    "suppressed": 28698,
+    "non_suppressed": 11276
+  },
+  {
+    "facility": "Gaza",
+    "total": 102511,
+    "suppressed": 75733,
+    "non_suppressed": 20534
+  },
+  {
+    "facility": "Inhambane",
+    "total": 51746,
+    "suppressed": 36892,
+    "non_suppressed": 11633
+  },
+  {
+    "facility": "Manica",
+    "total": 57373,
+    "suppressed": 40152,
+    "non_suppressed": 13495
+  },
+  {
+    "facility": "Maputo Cidade",
+    "total": 141202,
+    "suppressed": 111586,
+    "non_suppressed": 23977
+  },
+  {
+    "facility": "Maputo Provincia",
+    "total": 139285,
+    "suppressed": 107923,
+    "non_suppressed": 23080
+  },
+  {
+    "facility": "Nampula",
+    "total": 63781,
+    "suppressed": 37670,
+    "non_suppressed": 19824
+  },
+  {
+    "facility": "Niassa",
+    "total": 16162,
+    "suppressed": 10275,
+    "non_suppressed": 4625
+  },
+  {
+    "facility": "Sofala",
+    "total": 77676,
+    "suppressed": 53206,
+    "non_suppressed": 16414
+  },
+  {
+    "facility": "Tete",
+    "total": 46241,
+    "suppressed": 31619,
+    "non_suppressed": 8168
+  },
+  {
+    "facility": "Zambezia",
+    "total": 130567,
+    "suppressed": 92115,
+    "non_suppressed": 31315
+  }
+]

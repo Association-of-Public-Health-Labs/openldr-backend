@@ -1,0 +1,80 @@
+[
+  {
+    "lab": "CS Ponta Gea",
+    "total": 45224,
+    "suppressed": 33912,
+    "non_suppressed": 10402
+  },
+  {
+    "lab": "Lab. de Dream Maputo",
+    "total": 22057,
+    "suppressed": 18032,
+    "non_suppressed": 3738
+  },
+  {
+    "lab": "Lab.BM-HCM",
+    "total": 36494,
+    "suppressed": 26777,
+    "non_suppressed": 9195
+  },
+  {
+    "lab": "Lab.BM-HG Jose Macamo",
+    "total": 56152,
+    "suppressed": 46070,
+    "non_suppressed": 9857
+  },
+  {
+    "lab": "Lab.BM-HG Machava",
+    "total": 112741,
+    "suppressed": 92885,
+    "non_suppressed": 19425
+  },
+  {
+    "lab": "Lab.BM-Hosp.Militar Maputo",
+    "total": 28469,
+    "suppressed": 23290,
+    "non_suppressed": 5033
+  },
+  {
+    "lab": "Lab.BM-HP Xai-Xai",
+    "total": 89184,
+    "suppressed": 68143,
+    "non_suppressed": 19224
+  },
+  {
+    "lab": "Lab.BM-Quelimane",
+    "total": 126075,
+    "suppressed": 93234,
+    "non_suppressed": 31724
+  },
+  {
+    "lab": "Lab.Clinic-HC NAMpula",
+    "total": 84000,
+    "suppressed": 55139,
+    "non_suppressed": 27238
+  },
+  {
+    "lab": "Lab.Clinic-HG Mavalane",
+    "total": 48,
+    "suppressed": 39,
+    "non_suppressed": 4
+  },
+  {
+    "lab": "Lab.Clinic-Hosp.Militar Maputo",
+    "total": 9,
+    "suppressed": 7,
+    "non_suppressed": 2
+  },
+  {
+    "lab": "Lab.de Carmelo",
+    "total": 61766,
+    "suppressed": 46563,
+    "non_suppressed": 13560
+  },
+  {
+    "lab": "Lab.Nacional de Referencia-INS",
+    "total": 24228,
+    "suppressed": 18714,
+    "non_suppressed": 4826
+  }
+]

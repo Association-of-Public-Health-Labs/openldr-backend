@@ -1,0 +1,86 @@
+[
+  {
+    "facility": null,
+    "collection_reception": 11,
+    "reception_registration": 1,
+    "registration_analysis": 6,
+    "analysis_validation": 0
+  },
+  {
+    "facility": "Cabo Delgado",
+    "collection_reception": 12,
+    "reception_registration": 0,
+    "registration_analysis": 4,
+    "analysis_validation": 0
+  },
+  {
+    "facility": "Gaza",
+    "collection_reception": 11,
+    "reception_registration": 0,
+    "registration_analysis": 10,
+    "analysis_validation": 0
+  },
+  {
+    "facility": "Inhambane",
+    "collection_reception": 8,
+    "reception_registration": 0,
+    "registration_analysis": 11,
+    "analysis_validation": 0
+  },
+  {
+    "facility": "Manica",
+    "collection_reception": 11,
+    "reception_registration": 3,
+    "registration_analysis": 25,
+    "analysis_validation": 1
+  },
+  {
+    "facility": "Maputo Cidade",
+    "collection_reception": 4,
+    "reception_registration": 0,
+    "registration_analysis": 8,
+    "analysis_validation": 1
+  },
+  {
+    "facility": "Maputo Provincia",
+    "collection_reception": 7,
+    "reception_registration": 6,
+    "registration_analysis": 7,
+    "analysis_validation": 0
+  },
+  {
+    "facility": "Nampula",
+    "collection_reception": 10,
+    "reception_registration": 2,
+    "registration_analysis": 5,
+    "analysis_validation": 0
+  },
+  {
+    "facility": "Niassa",
+    "collection_reception": 19,
+    "reception_registration": 7,
+    "registration_analysis": 7,
+    "analysis_validation": 0
+  },
+  {
+    "facility": "Sofala",
+    "collection_reception": 11,
+    "reception_registration": 2,
+    "registration_analysis": 7,
+    "analysis_validation": 1
+  },
+  {
+    "facility": "Tete",
+    "collection_reception": 21,
+    "reception_registration": 20,
+    "registration_analysis": 14,
+    "analysis_validation": 1
+  },
+  {
+    "facility": "Zambezia",
+    "collection_reception": 12,
+    "reception_registration": 2,
+    "registration_analysis": 6,
+    "analysis_validation": 0
+  }
+]
