@@ -10,6 +10,7 @@
     "start": "node src/server.js"
   },
   "dependencies": {
+    "bcrypt": "^4.0.1",
     "body-parser": "^1.19.0",
     "bull": "^3.11.0",
     "bull-board": "^0.5.0",
@@ -18,6 +19,7 @@
     "dotenv": "^8.2.0",
     "exceljs": "^3.6.0",
     "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
     "load-json-file": "^6.2.0",
     "moment": "^2.24.0",
     "mssql": "^6.0.1",
