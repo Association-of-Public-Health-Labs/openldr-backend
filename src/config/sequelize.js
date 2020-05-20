@@ -26,6 +26,19 @@ const vldata = new Sequelize(
   }
 );
 
+const covid19 = new Sequelize(
+  process.env.COVID_DB,
+  process.env.COVID_USER,
+  process.env.COVID_PASSWORD,
+  {
+    host: process.env.COVID_HOST,
+    dialect: "mssql",
+    dialectOptions: {
+      options: { requestTimeout: 30000000 }
+    }
+  }
+);
+
 const facilities = new Sequelize(
   process.env.DICT_DB,
   process.env.DICT_USER,
@@ -39,4 +52,4 @@ const facilities = new Sequelize(
   }
 );
 
-module.exports = { vldata: vldata, facilities: facilities };
+module.exports = { vldata: vldata, facilities: facilities, covid19: covid19 };
