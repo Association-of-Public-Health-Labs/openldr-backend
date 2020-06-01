@@ -15,5 +15,7 @@ routes.get(
   "/positivebyprovince",
   DashboardController.getPositiveSamplesByProvince
 );
+routes.get("/report", DashboardController.getGlobalReport);
+routes.get("/covid19tat", DashboardController.getTAT);
 
 module.exports = routes;
