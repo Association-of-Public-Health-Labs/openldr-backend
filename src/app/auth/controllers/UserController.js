@@ -57,37 +57,38 @@ module.exports = UserController = {
       where: { email: req.body.email },
     });
 
-    if (user.length < 1) {
-      return res.status(401).json({
-        message: "Auth failed",
-      });
-    }
-    bcrypt.compare(req.body.password, user[0].password, (err, result) => {
-      if (err) {
-        return res.json({
-          message: "Auth failed",
-        });
-      }
-      if (result) {
-        const token = jwt.sign(
-          {
-            email: user[0].email,
-            id: user[0].id,
-          },
-          process.env.JWT_KEY
-          //   {
-          //     expiresIn: "1h",
-          //   }
-        );
+    // if (user.length < 1) {
+    //   return res.status(401).json({
+    //     message: "Auth failed",
+    //   });
+    // }
+    // bcrypt.compare(req.body.password, user[0].password, (err, result) => {
+    //   if (err) {
+    //     return res.json({
+    //       message: "Auth failed",
+    //     });
+    //   }
+    //   if (result) {
+    //     const token = jwt.sign(
+    //       {
+    //         email: user[0].email,
+    //         id: user[0].id,
+    //       },
+    //       process.env.JWT_KEY
+    //       //   {
+    //       //     expiresIn: "1h",
+    //       //   }
+    //     );
 
-        return res.status(200).json({
-          message: "Auth successful",
-          token: token,
-        });
-      }
-      res.json({
-        message: "Auth failed",
-      });
-    });
+    //     return res.status(200).json({
+    //       message: "Auth successful",
+    //       token: token,
+    //     });
+    //   }
+    //   res.json({
+    //     message: "Auth failed",
+    //   });
+    // });
+    return res.json(user);
   },
 };
