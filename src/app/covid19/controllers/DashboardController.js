@@ -4,6 +4,7 @@ const moment = require("moment");
 
 module.exports = {
   async getNumberOfSamples(req, res) {
+    console.log(req.query.dates);
     const data = await Covid19.findAll({
       attributes: [
         [fn("year", col("RegisteredDatetime")), "year"],
@@ -42,7 +43,7 @@ module.exports = {
           fn(
             "count",
             literal(
-              `CASE WHEN COVID19Result LIKE 'SARS COVID-19 Positivo' THEN 1 ELSE NULL END`
+              `CASE WHEN COVID19Result IN ('SARS COVID-19 Positivo','SARS-CoV-2 Positivo') THEN 1 ELSE NULL END`
             )
           ),
           "positive",
@@ -83,7 +84,7 @@ module.exports = {
           fn(
             "count",
             literal(
-              `CASE WHEN COVID19Result LIKE 'SARS COVID-19 Positivo' THEN 1 ELSE NULL END`
+              `CASE WHEN COVID19Result IN ('SARS COVID-19 Positivo','SARS-CoV-2 Positivo') THEN 1 ELSE NULL END`
             )
           ),
           "positive",
@@ -181,25 +182,32 @@ module.exports = {
           fn("datename", literal("MONTH"), col("AnalysisDatetime")),
           "month_name",
         ],
-        [fn("datepart", literal("WEEK"), col("AnalysisDatetime")), "week"],
+        [fn("datepart", literal("DAY"), col("AnalysisDatetime")), "day"],
         [
           fn(
             "avg",
-            literal(`DATEDIFF(DAY,SpecimenDatetime, RegisteredDatetime)`)
+            literal(`DATEDIFF(HOUR,SpecimenDatetime, ReceivedDatetime)`)
           ),
-          "collection_registration",
+          "collection_reception",
         ],
         [
           fn(
             "avg",
-            literal(`DATEDIFF(DAY,RegisteredDatetime, AnalysisDatetime)`)
+            literal(`DATEDIFF(HOUR,ReceivedDatetime, RegisteredDatetime)`)
+          ),
+          "reception_registration",
+        ],
+        [
+          fn(
+            "avg",
+            literal(`DATEDIFF(HOUR, RegisteredDatetime, AnalysisDatetime)`)
           ),
           "registration_analysis",
         ],
         [
           fn(
             "avg",
-            literal(`DATEDIFF(DAY, AnalysisDatetime, AuthorisedDatetime)`)
+            literal(`DATEDIFF(HOUR, AnalysisDatetime, AuthorisedDatetime)`)
           ),
           "analysis_authorization",
         ],
@@ -208,12 +216,12 @@ module.exports = {
         fn("year", col("AnalysisDatetime")),
         fn("month", col("AnalysisDatetime")),
         fn("datename", literal("MONTH"), col("AnalysisDatetime")),
-        fn("datepart", literal("WEEK"), col("AnalysisDatetime")),
+        fn("datepart", literal("DAY"), col("AnalysisDatetime")),
       ],
       order: [
         [fn("year", col("AnalysisDatetime")), "ASC"],
         [fn("month", col("AnalysisDatetime")), "ASC"],
-        [fn("datepart", literal("WEEK"), col("AnalysisDatetime")), "ASC"],
+        [fn("datepart", literal("DAY"), col("AnalysisDatetime")), "ASC"],
       ],
       where: {
         AnalysisDateTime: {
