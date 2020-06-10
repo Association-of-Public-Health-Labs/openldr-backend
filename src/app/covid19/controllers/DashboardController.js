@@ -37,6 +37,10 @@ module.exports = {
       attributes: [
         [fn("year", col("AnalysisDatetime")), "year"],
         [fn("month", col("AnalysisDatetime")), "month"],
+        [
+          fn("datename", literal("MONTH"), col("AnalysisDatetime")),
+          "month_name",
+        ],
         [fn("day", col("AnalysisDatetime")), "day"],
         [fn("count", literal("1")), "total"],
         [
@@ -52,6 +56,7 @@ module.exports = {
       group: [
         fn("year", col("AnalysisDatetime")),
         fn("month", col("AnalysisDatetime")),
+        fn("datename", literal("MONTH"), col("AnalysisDatetime")),
         fn("day", col("AnalysisDatetime")),
       ],
       order: [
@@ -96,11 +101,6 @@ module.exports = {
           [Op.between]: req.query.dates,
         },
       },
-      // where: where(
-      //   fn("cast", literal(`AnalysisDatetime as date`)),
-      //   "=",
-      //   "2020-05-14"
-      // ),
     });
     return res.json(data);
   },
@@ -230,6 +230,45 @@ module.exports = {
       },
     });
 
+    return res.json(data);
+  },
+
+  async getPositiveCasesByGender(req, res) {
+    const data = await Covid19.findAll({
+      attributes: [
+        [
+          fn(
+            "count",
+            literal(`CASE WHEN HL7SexCode = 'M' THEN 1 ELSE NULL END`)
+          ),
+          "male",
+        ],
+        [
+          fn(
+            "count",
+            literal(`CASE WHEN HL7SexCode = 'F' THEN 1 ELSE NULL END`)
+          ),
+          "female",
+        ],
+        [
+          fn(
+            "count",
+            literal(
+              `CASE WHEN HL7SexCode NOT IN ('F','M') THEN 1 ELSE NULL END`
+            )
+          ),
+          "not_specified",
+        ],
+      ],
+      where: {
+        AnalysisDateTime: {
+          [Op.between]: req.query.dates,
+        },
+        Covid19Result: {
+          [Op.in]: ["SARS COVID-19 Positivo", "SARS-CoV-2 Positivo"],
+        },
+      },
+    });
     return res.json(data);
   },
 };

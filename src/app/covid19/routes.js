@@ -28,6 +28,11 @@ routes.get(
 );
 routes.get("/report", checkAuth, DashboardController.getGlobalReport);
 routes.get("/covid19tat", checkAuth, DashboardController.getTAT);
+routes.get(
+  "/covid19-by-gender",
+  checkAuth,
+  DashboardController.getPositiveCasesByGender
+);
 
 // Reports
 routes.post("/create_report", ReportsController.store);
