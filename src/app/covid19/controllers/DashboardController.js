@@ -35,13 +35,13 @@ module.exports = {
   async getTestedSamples(req, res) {
     const data = await Covid19.findAll({
       attributes: [
-        [fn("year", col("AnalysisDatetime")), "year"],
-        [fn("month", col("AnalysisDatetime")), "month"],
+        [fn("year", col("AuthorisedDatetime")), "year"],
+        [fn("month", col("AuthorisedDatetime")), "month"],
         [
-          fn("datename", literal("MONTH"), col("AnalysisDatetime")),
+          fn("datename", literal("MONTH"), col("AuthorisedDatetime")),
           "month_name",
         ],
-        [fn("day", col("AnalysisDatetime")), "day"],
+        [fn("day", col("AuthorisedDatetime")), "day"],
         [fn("count", literal("1")), "total"],
         [
           fn(
@@ -54,21 +54,19 @@ module.exports = {
         ],
       ],
       group: [
-        fn("year", col("AnalysisDatetime")),
-        fn("month", col("AnalysisDatetime")),
-        fn("datename", literal("MONTH"), col("AnalysisDatetime")),
-        fn("day", col("AnalysisDatetime")),
+        fn("year", col("AuthorisedDatetime")),
+        fn("month", col("AuthorisedDatetime")),
+        fn("datename", literal("MONTH"), col("AuthorisedDatetime")),
+        fn("day", col("AuthorisedDatetime")),
       ],
       order: [
-        [fn("year", col("AnalysisDatetime")), "ASC"],
-        [fn("month", col("AnalysisDatetime")), "ASC"],
-        [fn("day", col("AnalysisDatetime")), "ASC"],
+        [fn("year", col("AuthorisedDatetime")), "ASC"],
+        [fn("month", col("AuthorisedDatetime")), "ASC"],
+        [fn("day", col("AuthorisedDatetime")), "ASC"],
       ],
-      where: {
-        AnalysisDateTime: {
-          [Op.between]: req.query.dates,
-        },
-      },
+      where: literal(
+        `CAST(AuthorisedDatetime AS date) >= '${req.query.dates[0]}' AND CAST(AuthorisedDatetime AS date) <= '${req.query.dates[1]}'`
+      ),
     });
     return res.json(data);
   },
@@ -96,11 +94,9 @@ module.exports = {
         ],
       ],
       group: [col("RequestingProvinceName")],
-      where: {
-        AnalysisDateTime: {
-          [Op.between]: req.query.dates,
-        },
-      },
+      where: literal(
+        `CAST(AuthorisedDatetime AS date) >= '${req.query.dates[0]}' AND CAST(AuthorisedDatetime AS date) <= '${req.query.dates[1]}'`
+      ),
     });
     return res.json(data);
   },
@@ -134,7 +130,7 @@ module.exports = {
           fn(
             "count",
             literal(
-              `CASE WHEN CAST(AnalysisDateTime AS date) >= '${startDate}' AND CAST(AnalysisDateTime AS date) <= '${endDate}' AND AuthorisedDatetime IS NOT NULL THEN 1 ELSE NULL END`
+              `CASE WHEN CAST(AuthorisedDatetime AS date) >= '${startDate}' AND CAST(AuthorisedDatetime AS date) <= '${endDate}' THEN 1 ELSE NULL END`
             )
           ),
           "samples_authorised",
@@ -161,13 +157,23 @@ module.exports = {
           fn(
             "count",
             literal(
-              `CASE WHEN COVID19Result IN ('SARS COVID-19 Positivo','SARS-CoV-2 Positivo') AND CAST(AnalysisDateTime AS date) >= '${startDate}' AND CAST(AnalysisDateTime AS date) <= '${endDate}' THEN 1 ELSE NULL END`
+              `CASE WHEN COVID19Result IN ('SARS COVID-19 Positivo','SARS-CoV-2 Positivo') AND CAST(AuthorisedDatetime AS date) >= '${startDate}' AND CAST(AuthorisedDatetime AS date) <= '${endDate}' THEN 1 ELSE NULL END`
             )
           ),
           "samples_positive",
         ],
       ],
       group: [col("RequestingProvinceName")],
+      where: {
+        [Op.and]: {
+          RequestingProvinceName: {
+            [Op.not]: null,
+          },
+          RequestingProvinceName: {
+            [Op.notLike]: "",
+          },
+        },
+      },
     });
 
     return res.json(data);
