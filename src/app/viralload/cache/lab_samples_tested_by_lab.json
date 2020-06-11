@@ -1,80 +1,86 @@
 [
   {
     "lab": "CS Ponta Gea",
-    "total": 45224,
-    "suppressed": 33912,
-    "non_suppressed": 10402
+    "total": 28747,
+    "suppressed": 20733,
+    "non_suppressed": 7049
   },
   {
     "lab": "Lab. de Dream Maputo",
-    "total": 22057,
-    "suppressed": 18032,
-    "non_suppressed": 3738
+    "total": 15012,
+    "suppressed": 13017,
+    "non_suppressed": 1887
+  },
+  {
+    "lab": "Lab. Ponta Gea",
+    "total": 23627,
+    "suppressed": 18516,
+    "non_suppressed": 4874
   },
   {
     "lab": "Lab.BM-HCM",
-    "total": 36494,
-    "suppressed": 26777,
-    "non_suppressed": 9195
+    "total": 40631,
+    "suppressed": 30036,
+    "non_suppressed": 10019
   },
   {
     "lab": "Lab.BM-HG Jose Macamo",
-    "total": 56152,
-    "suppressed": 46070,
-    "non_suppressed": 9857
+    "total": 47394,
+    "suppressed": 38149,
+    "non_suppressed": 8694
   },
   {
     "lab": "Lab.BM-HG Machava",
-    "total": 112741,
-    "suppressed": 92885,
-    "non_suppressed": 19425
+    "total": 107259,
+    "suppressed": 89924,
+    "non_suppressed": 16786
   },
   {
     "lab": "Lab.BM-Hosp.Militar Maputo",
-    "total": 28469,
-    "suppressed": 23290,
-    "non_suppressed": 5033
+    "total": 25013,
+    "suppressed": 20661,
+    "non_suppressed": 4178
   },
   {
     "lab": "Lab.BM-HP Xai-Xai",
-    "total": 89184,
-    "suppressed": 68143,
-    "non_suppressed": 19224
+    "total": 85002,
+    "suppressed": 66330,
+    "non_suppressed": 16986
   },
   {
     "lab": "Lab.BM-Quelimane",
-    "total": 126075,
-    "suppressed": 93234,
-    "non_suppressed": 31724
+    "total": 120570,
+    "suppressed": 89523,
+    "non_suppressed": 28854
   },
   {
     "lab": "Lab.Clinic-HC NAMpula",
-    "total": 84000,
-    "suppressed": 55139,
-    "non_suppressed": 27238
+    "total": 82599,
+    "suppressed": 56689,
+    "non_suppressed": 24550
   },
   {
     "lab": "Lab.Clinic-HG Mavalane",
-    "total": 48,
-    "suppressed": 39,
-    "non_suppressed": 4
-  },
-  {
-    "lab": "Lab.Clinic-Hosp.Militar Maputo",
-    "total": 9,
-    "suppressed": 7,
+    "total": 40,
+    "suppressed": 30,
     "non_suppressed": 2
   },
   {
+    "lab": "Lab.Clinic-Hosp.Militar Maputo",
+    "total": 4,
+    "suppressed": 3,
+    "non_suppressed": 1
+  },
+  {
     "lab": "Lab.de Carmelo",
-    "total": 61766,
-    "suppressed": 46563,
-    "non_suppressed": 13560
+    "total": 60212,
+    "suppressed": 46587,
+    "non_suppressed": 12216
   },
   {
     "lab": "Lab.Nacional de Referencia-INS",
-    "total": 24228,
-    "suppressed": 18714,
-    "non_suppressed": 4826
+    "total": 19031,
+    "suppressed": 14896,
+    "non_suppressed": 3762
   }
 ]

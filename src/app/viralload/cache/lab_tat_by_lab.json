@@ -1,51 +1,58 @@
 [
   {
     "lab": "CS Ponta Gea",
-    "collection_reception": 9,
-    "reception_registration": 1,
-    "registration_analysis": 6,
+    "collection_reception": 10,
+    "reception_registration": 2,
+    "registration_analysis": 9,
     "analysis_validation": 0
   },
   {
     "lab": "Lab. de Dream Maputo",
     "collection_reception": 0,
     "reception_registration": 0,
-    "registration_analysis": 17,
-    "analysis_validation": 3
+    "registration_analysis": 7,
+    "analysis_validation": 2
+  },
+  {
+    "lab": "Lab. Ponta Gea",
+    "collection_reception": 9,
+    "reception_registration": 0,
+    "registration_analysis": 3,
+    "analysis_validation": 0
   },
   {
     "lab": "Lab.BM-HCM",
     "collection_reception": 11,
-    "reception_registration": 4,
-    "registration_analysis": 21,
+    "reception_registration": 3,
+    "registration_analysis": 19,
     "analysis_validation": 1
   },
   {
     "lab": "Lab.BM-HG Jose Macamo",
-    "collection_reception": 8,
+    "collection_reception": 9,
     "reception_registration": 1,
     "registration_analysis": 6,
-    "analysis_validation": 0
+    "analysis_validation": 1
   },
   {
     "lab": "Lab.BM-HG Machava",
-    "collection_reception": 25,
+    "collection_reception": 23,
     "reception_registration": 3,
     "registration_analysis": 6,
     "analysis_validation": 0
   },
   {
     "lab": "Lab.BM-Hosp.Militar Maputo",
-    "collection_reception": 8,
+    "collection_reception": 7,
     "reception_registration": 0,
-    "registration_analysis": 13,
+    "registration_analysis": 8,
     "analysis_validation": 0
   },
   {
     "lab": "Lab.BM-HP Xai-Xai",
     "collection_reception": 9,
-    "reception_registration": 1,
-    "registration_analysis": 10,
+    "reception_registration": 0,
+    "registration_analysis": 6,
     "analysis_validation": 0
   },
   {
@@ -58,8 +65,8 @@
   {
     "lab": "Lab.Clinic-HC NAMpula",
     "collection_reception": 12,
-    "reception_registration": 2,
-    "registration_analysis": 6,
+    "reception_registration": 3,
+    "registration_analysis": 7,
     "analysis_validation": 0
   },
   {
@@ -73,21 +80,21 @@
     "lab": "Lab.Clinic-Hosp.Militar Maputo",
     "collection_reception": 0,
     "reception_registration": 0,
-    "registration_analysis": 7,
+    "registration_analysis": 8,
     "analysis_validation": 0
   },
   {
     "lab": "Lab.de Carmelo",
-    "collection_reception": 7,
+    "collection_reception": 9,
     "reception_registration": 0,
-    "registration_analysis": 10,
+    "registration_analysis": 8,
     "analysis_validation": 0
   },
   {
     "lab": "Lab.Nacional de Referencia-INS",
-    "collection_reception": 11,
-    "reception_registration": 16,
-    "registration_analysis": 17,
+    "collection_reception": 6,
+    "reception_registration": 14,
+    "registration_analysis": 8,
     "analysis_validation": 1
   }
 ]
