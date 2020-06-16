@@ -101,7 +101,7 @@ module.exports = {
     if (typeof req.query.codes === "undefined") {
       where = [
         {
-          RegisteredDatetime: {
+          AnalysisDatetime: {
             [Op.between]: req.query.dates,
           },
           TestingFacilityName: {
@@ -196,7 +196,7 @@ module.exports = {
     if (typeof req.query.codes === "undefined") {
       where = [
         {
-          RegisteredDatetime: {
+          AnalysisDatetime: {
             [Op.between]: req.query.dates,
           },
           TestingFacilityName: {
@@ -210,7 +210,7 @@ module.exports = {
           TestingFacilityCode: {
             [Op.in]: req.query.codes,
           },
-          RegisteredDatetime: {
+          AnalysisDatetime: {
             [Op.between]: req.query.dates,
           },
           TestingFacilityName: {
@@ -244,7 +244,7 @@ module.exports = {
     if (typeof req.query.codes === "undefined") {
       where = [
         {
-          RegisteredDatetime: {
+          AnalysisDatetime: {
             [Op.between]: req.query.dates,
           },
         },
@@ -255,7 +255,7 @@ module.exports = {
           TestingFacilityCode: {
             [Op.in]: req.query.codes,
           },
-          RegisteredDatetime: {
+          AnalysisDatetime: {
             [Op.between]: req.query.dates,
           },
         },
@@ -293,7 +293,7 @@ module.exports = {
     if (typeof req.query.codes === "undefined") {
       where = [
         {
-          RegisteredDatetime: {
+          AnalysisDatetime: {
             [Op.between]: req.query.dates,
           },
           TestingFacilityName: {
@@ -307,7 +307,7 @@ module.exports = {
           TestingFacilityCode: {
             [Op.in]: req.query.codes,
           },
-          RegisteredDatetime: {
+          AnalysisDatetime: {
             [Op.between]: req.query.dates,
           },
           TestingFacilityName: {
@@ -342,7 +342,7 @@ module.exports = {
     if (typeof req.query.codes === "undefined") {
       where = [
         {
-          RegisteredDatetime: {
+          AnalysisDatetime: {
             [Op.between]: req.query.dates,
           },
           AgeInYears: {
@@ -356,7 +356,7 @@ module.exports = {
           TestingFacilityCode: {
             [Op.in]: req.query.codes,
           },
-          RegisteredDatetime: {
+          AnalysisDatetime: {
             [Op.between]: req.query.dates,
           },
           AgeInYears: {
@@ -395,7 +395,7 @@ module.exports = {
     if (typeof req.query.codes === "undefined") {
       where = [
         {
-          RegisteredDatetime: {
+          AnalysisDatetime: {
             [Op.between]: req.query.dates,
           },
           Pregnant: {
@@ -409,7 +409,7 @@ module.exports = {
           TestingFacilityCode: {
             [Op.in]: req.query.codes,
           },
-          RegisteredDatetime: {
+          AnalysisDatetime: {
             [Op.between]: req.query.dates,
           },
           Pregnant: {
@@ -448,7 +448,7 @@ module.exports = {
     if (typeof req.query.codes === "undefined") {
       where = [
         {
-          RegisteredDatetime: {
+          AnalysisDatetime: {
             [Op.between]: req.query.dates,
           },
           Breastfeeding: {
@@ -462,7 +462,7 @@ module.exports = {
           TestingFacilityCode: {
             [Op.in]: req.query.codes,
           },
-          RegisteredDatetime: {
+          AnalysisDatetime: {
             [Op.between]: req.query.dates,
           },
           Breastfeeding: {

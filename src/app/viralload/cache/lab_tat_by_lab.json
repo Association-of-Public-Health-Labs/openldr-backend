@@ -1,73 +1,59 @@
 [
   {
-    "lab": "CS Ponta Gea",
-    "collection_reception": 10,
-    "reception_registration": 2,
+    "lab": "Cabo Delgado",
+    "collection_reception": 12,
+    "reception_registration": 0,
     "registration_analysis": 9,
     "analysis_validation": 0
   },
   {
-    "lab": "Lab. de Dream Maputo",
-    "collection_reception": 0,
-    "reception_registration": 0,
-    "registration_analysis": 7,
-    "analysis_validation": 2
-  },
-  {
-    "lab": "Lab. Ponta Gea",
+    "lab": "Carmelo",
     "collection_reception": 9,
     "reception_registration": 0,
-    "registration_analysis": 3,
+    "registration_analysis": 9,
     "analysis_validation": 0
   },
   {
-    "lab": "Lab.BM-HCM",
+    "lab": "Chimoio",
     "collection_reception": 11,
     "reception_registration": 3,
     "registration_analysis": 19,
     "analysis_validation": 1
   },
   {
-    "lab": "Lab.BM-HG Jose Macamo",
-    "collection_reception": 9,
-    "reception_registration": 1,
-    "registration_analysis": 6,
+    "lab": "DREAM Beira",
+    "collection_reception": 20,
+    "reception_registration": 3,
+    "registration_analysis": 13,
+    "analysis_validation": 2
+  },
+  {
+    "lab": "Dream Maputo",
+    "collection_reception": 0,
+    "reception_registration": 0,
+    "registration_analysis": 14,
+    "analysis_validation": 3
+  },
+  {
+    "lab": "Hosp. Militar",
+    "collection_reception": 7,
+    "reception_registration": 0,
+    "registration_analysis": 11,
+    "analysis_validation": 0
+  },
+  {
+    "lab": "INS",
+    "collection_reception": 23,
+    "reception_registration": 13,
+    "registration_analysis": 18,
     "analysis_validation": 1
   },
   {
-    "lab": "Lab.BM-HG Machava",
-    "collection_reception": 23,
-    "reception_registration": 3,
-    "registration_analysis": 6,
-    "analysis_validation": 0
-  },
-  {
-    "lab": "Lab.BM-Hosp.Militar Maputo",
-    "collection_reception": 7,
-    "reception_registration": 0,
-    "registration_analysis": 8,
-    "analysis_validation": 0
-  },
-  {
-    "lab": "Lab.BM-HP Xai-Xai",
+    "lab": "Jose Macamo",
     "collection_reception": 9,
-    "reception_registration": 0,
-    "registration_analysis": 6,
-    "analysis_validation": 0
-  },
-  {
-    "lab": "Lab.BM-Quelimane",
-    "collection_reception": 12,
-    "reception_registration": 2,
-    "registration_analysis": 6,
-    "analysis_validation": 0
-  },
-  {
-    "lab": "Lab.Clinic-HC NAMpula",
-    "collection_reception": 12,
-    "reception_registration": 3,
-    "registration_analysis": 7,
-    "analysis_validation": 0
+    "reception_registration": 1,
+    "registration_analysis": 8,
+    "analysis_validation": 1
   },
   {
     "lab": "Lab.Clinic-HG Mavalane",
@@ -77,24 +63,52 @@
     "analysis_validation": 0
   },
   {
-    "lab": "Lab.Clinic-Hosp.Militar Maputo",
-    "collection_reception": 0,
+    "lab": "Machava",
+    "collection_reception": 22,
+    "reception_registration": 3,
+    "registration_analysis": 6,
+    "analysis_validation": 0
+  },
+  {
+    "lab": "Nampula",
+    "collection_reception": 12,
+    "reception_registration": 3,
+    "registration_analysis": 8,
+    "analysis_validation": 0
+  },
+  {
+    "lab": "Ponta Gea",
+    "collection_reception": 13,
+    "reception_registration": 1,
+    "registration_analysis": 86,
+    "analysis_validation": 0
+  },
+  {
+    "lab": "Quelimane",
+    "collection_reception": 12,
+    "reception_registration": 2,
+    "registration_analysis": 6,
+    "analysis_validation": 0
+  },
+  {
+    "lab": "Tete",
+    "collection_reception": 12,
+    "reception_registration": 10,
+    "registration_analysis": 6,
+    "analysis_validation": 0
+  },
+  {
+    "lab": "UEM",
+    "collection_reception": 4,
     "reception_registration": 0,
     "registration_analysis": 8,
     "analysis_validation": 0
   },
   {
-    "lab": "Lab.de Carmelo",
+    "lab": "Xai-Xai",
     "collection_reception": 9,
     "reception_registration": 0,
-    "registration_analysis": 8,
+    "registration_analysis": 7,
     "analysis_validation": 0
-  },
-  {
-    "lab": "Lab.Nacional de Referencia-INS",
-    "collection_reception": 6,
-    "reception_registration": 14,
-    "registration_analysis": 8,
-    "analysis_validation": 1
   }
 ]
