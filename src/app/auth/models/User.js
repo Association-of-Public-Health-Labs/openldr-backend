@@ -35,6 +35,6 @@ const User = reports.define(
   }
 );
 
-User.sync({ force: true });
+// User.sync({ force: true });
 // User.belongsTo(Role, { foreignKey: "user_id" });
 module.exports = User;
