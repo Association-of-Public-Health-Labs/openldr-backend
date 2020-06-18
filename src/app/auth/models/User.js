@@ -1,7 +1,8 @@
 const Sequelize = require("sequelize");
-const { vldata } = require("../../../config/sequelize");
+const { reports, vldata } = require("../../../config/sequelize");
+// const Role = require("./Role");
 
-const User = vldata.define(
+const User = reports.define(
   "user",
   {
     id: {
@@ -28,8 +29,12 @@ const User = vldata.define(
       type: Sequelize.STRING,
     },
   },
-  { freezeTableName: true, timestamps: false }
+  {
+    freezeTableName: true,
+    timestamps: true,
+  }
 );
 
-// User.sync();
+User.sync({ force: true });
+// User.belongsTo(Role, { foreignKey: "user_id" });
 module.exports = User;
