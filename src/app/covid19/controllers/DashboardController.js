@@ -82,7 +82,7 @@ module.exports = {
           fn(
             "count",
             literal(
-              `CASE WHEN CAST(AnalysisDatetime AS date) >= '${endDate}' AND CAST(AnalysisDatetime AS date) <= '${endDate}' THEN 1 ELSE NULL END`
+              `CASE WHEN CAST(AnalysisDatetime AS date) >= '${startDate}' AND CAST(AnalysisDatetime AS date) <= '${endDate}' THEN 1 ELSE NULL END`
             )
           ),
           "total",
@@ -98,7 +98,7 @@ module.exports = {
           fn(
             "count",
             literal(
-              `CASE WHEN COVID19Result IN ('SARS COVID-19 Positivo','SARS-CoV-2 Positivo') AND CAST(AuthorisedDatetime AS date) >= '${endDate}' AND CAST(AuthorisedDatetime AS date) <= '${endDate}' THEN 1 ELSE NULL END`
+              `CASE WHEN COVID19Result IN ('SARS COVID-19 Positivo','SARS-CoV-2 Positivo') AND CAST(AuthorisedDatetime AS date) >= '${startDate}' AND CAST(AuthorisedDatetime AS date) <= '${endDate}' THEN 1 ELSE NULL END`
             )
           ),
           "positive",
@@ -168,7 +168,7 @@ module.exports = {
           fn(
             "count",
             literal(
-              `CASE WHEN COVID19Result IN ('SARS COVID-19 Positivo','SARS-CoV-2 Positivo') AND CAST(AuthorisedDatetime AS date) >= '${endDate}' AND CAST(AuthorisedDatetime AS date) <= '${endDate}' THEN 1 ELSE NULL END`
+              `CASE WHEN COVID19Result IN ('SARS COVID-19 Positivo','SARS-CoV-2 Positivo') AND CAST(AuthorisedDatetime AS date) >= '${startDate}' AND CAST(AuthorisedDatetime AS date) <= '${endDate}' THEN 1 ELSE NULL END`
             )
           ),
           "samples_positive",
