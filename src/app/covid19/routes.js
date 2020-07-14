@@ -23,7 +23,7 @@ routes.get(
 routes.get("/testedsamples", checkAuth, DashboardController.getTestedSamples);
 routes.get(
   "/positivebyprovince",
-  checkAuth,
+  // checkAuth,
   DashboardController.getPositiveSamplesByProvince
 );
 routes.get("/report", checkAuth, DashboardController.getGlobalReport);

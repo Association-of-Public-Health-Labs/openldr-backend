@@ -72,10 +72,21 @@ module.exports = {
   },
 
   async getPositiveSamplesByProvince(req, res) {
+    const dates = req.query.dates;
+    const startDate = dates[0];
+    const endDate = dates[1];
     const data = await Covid19.findAll({
       attributes: [
         [col("RequestingProvinceName"), "province"],
-        [fn("count", literal("1")), "total"],
+        [
+          fn(
+            "count",
+            literal(
+              `CASE WHEN CAST(AnalysisDatetime AS date) >= '${endDate}' AND CAST(AnalysisDatetime AS date) <= '${endDate}' THEN 1 ELSE NULL END`
+            )
+          ),
+          "total",
+        ],
         [
           fn(
             "count",
@@ -87,7 +98,7 @@ module.exports = {
           fn(
             "count",
             literal(
-              `CASE WHEN COVID19Result IN ('SARS COVID-19 Positivo','SARS-CoV-2 Positivo') AND CAST(AuthorisedDatetime AS date) >= '${req.query.dates[0]}' AND CAST(AuthorisedDatetime AS date) <= '${req.query.dates[1]}' THEN 1 ELSE NULL END`
+              `CASE WHEN COVID19Result IN ('SARS COVID-19 Positivo','SARS-CoV-2 Positivo') AND CAST(AuthorisedDatetime AS date) >= '${endDate}' AND CAST(AuthorisedDatetime AS date) <= '${endDate}' THEN 1 ELSE NULL END`
             )
           ),
           "positive",
