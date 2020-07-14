@@ -87,16 +87,16 @@ module.exports = {
           fn(
             "count",
             literal(
-              `CASE WHEN COVID19Result IN ('SARS COVID-19 Positivo','SARS-CoV-2 Positivo') THEN 1 ELSE NULL END`
+              `CASE WHEN COVID19Result IN ('SARS COVID-19 Positivo','SARS-CoV-2 Positivo') AND CAST(AuthorisedDatetime AS date) >= '${req.query.dates[0]}' AND CAST(AuthorisedDatetime AS date) <= '${req.query.dates[1]}' THEN 1 ELSE NULL END`
             )
           ),
           "positive",
         ],
       ],
       group: [col("RequestingProvinceName")],
-      where: literal(
-        `CAST(AuthorisedDatetime AS date) >= '${req.query.dates[0]}' AND CAST(AuthorisedDatetime AS date) <= '${req.query.dates[1]}'`
-      ),
+      // where: literal(
+      //   `CAST(AuthorisedDatetime AS date) >= '${req.query.dates[0]}' AND CAST(AuthorisedDatetime AS date) <= '${req.query.dates[1]}'`
+      // ),
     });
     return res.json(data);
   },
