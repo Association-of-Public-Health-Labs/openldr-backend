@@ -16,5 +16,5 @@ const Laboratories = facilities.define(
   { timestamps: false }
 );
 Laboratories.removeAttribute("id");
-// facilities.sync();
+// facilities.sync({force: true});
 module.exports = Laboratories;

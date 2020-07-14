@@ -9,7 +9,7 @@ const { Op } = sequelize;
 module.exports = {
   async show(req, res) {
     const data = await VlData.findAll({
-      where: { RequestID: req.params.id }
+      where: { RequestID: req.params.id },
     });
     return res.json(data);
   },
@@ -25,9 +25,9 @@ module.exports = {
             sequelize.literal("MONTH"),
             sequelize.col("RegisteredDatetime")
           ),
-          "month_name"
+          "month_name",
         ],
-        [sequelize.fn("count", sequelize.col("RequestID")), "total"]
+        [sequelize.fn("count", sequelize.col("RequestID")), "total"],
       ],
       group: [
         sequelize.fn("year", sequelize.col("RegisteredDatetime")),
@@ -36,8 +36,8 @@ module.exports = {
           "datename",
           sequelize.literal("MONTH"),
           sequelize.col("RegisteredDatetime")
-        )
-      ]
+        ),
+      ],
     });
     return res.json(data);
   },
@@ -53,9 +53,9 @@ module.exports = {
             sequelize.literal("MONTH"),
             sequelize.col("RegisteredDatetime")
           ),
-          "month_name"
+          "month_name",
         ],
-        [sequelize.fn("count", sequelize.col("RequestID")), "total"]
+        [sequelize.fn("count", sequelize.col("RequestID")), "total"],
       ],
       group: [
         sequelize.fn("year", sequelize.col("RegisteredDatetime")),
@@ -64,8 +64,8 @@ module.exports = {
           "datename",
           sequelize.literal("MONTH"),
           sequelize.col("RegisteredDatetime")
-        )
-      ]
+        ),
+      ],
     });
     return res.json(data);
   },
@@ -95,9 +95,9 @@ module.exports = {
       await samples.accumulative({
         TestingFacilityCode: "PJV",
         RegisteredDatetime: {
-          [Op.between]: ["2020-01-01", "2020-04-01"]
-        }
+          [Op.between]: ["2020-01-01", "2020-04-01"],
+        },
       })
     );
-  }
+  },
 };

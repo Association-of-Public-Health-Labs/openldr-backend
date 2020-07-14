@@ -79,7 +79,7 @@ module.exports = {
         [
           fn(
             "count",
-            literal(`CASE WHEN AnalysisDatetime IS NULL THEN 1 ELSE NULL END`)
+            literal(`CASE WHEN AuthorisedDatetime IS NULL THEN 1 ELSE NULL END`)
           ),
           "pending",
         ],
