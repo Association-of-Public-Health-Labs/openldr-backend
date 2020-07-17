@@ -6,6 +6,11 @@ const path = require("path");
 const loadJsonFile = require("load-json-file");
 const moment = require("moment");
 
+const dates = [
+  moment().subtract(1, "years").format("YYYY-MM-DD"),
+  moment().format("YYYY-MM-DD"),
+];
+
 module.exports = {
   async getNumberOfSamples(req, res) {
     const id = "dash_number_of_samples";
@@ -22,7 +27,7 @@ module.exports = {
       where: [
         {
           RegisteredDatetime: {
-            [Op.between]: req.query.dates,
+            [Op.between]: req.query.dates || dates,
           },
         },
       ],
@@ -53,7 +58,7 @@ module.exports = {
       where: [
         {
           RegisteredDatetime: {
-            [Op.between]: req.query.dates,
+            [Op.between]: req.query.dates || dates,
           },
         },
       ],
@@ -85,7 +90,7 @@ module.exports = {
       where: [
         {
           RegisteredDatetime: {
-            [Op.between]: req.query.dates,
+            [Op.between]: req.query.dates || dates,
           },
         },
       ],
@@ -117,7 +122,7 @@ module.exports = {
       where: [
         {
           RegisteredDatetime: {
-            [Op.between]: req.query.dates,
+            [Op.between]: req.query.dates || dates,
           },
           RequestingProvinceName: {
             [Op.not]: null,
@@ -150,7 +155,7 @@ module.exports = {
       where: [
         {
           RegisteredDatetime: {
-            [Op.between]: req.query.dates,
+            [Op.between]: req.query.dates || dates,
           },
         },
       ],

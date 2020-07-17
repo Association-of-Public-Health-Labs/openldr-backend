@@ -4,6 +4,12 @@ const global = require("./indicators/global");
 const utils = require("./indicators/utils");
 const VlData = require("../models/VlData");
 const { Op, fn, literal, col } = sequelize;
+const moment = require("moment");
+
+const dates = [
+  moment().subtract(1, "years").format("YYYY-MM-DD"),
+  moment().format("YYYY-MM-DD"),
+];
 
 module.exports = {
   async getSamplesByTestReason(req, res) {
@@ -17,7 +23,7 @@ module.exports = {
       where = [
         {
           RegisteredDatetime: {
-            [Op.between]: req.query.dates,
+            [Op.between]: req.query.dates || dates,
           },
         },
       ];
@@ -28,7 +34,7 @@ module.exports = {
             [Op.in]: req.query.codes,
           },
           RegisteredDatetime: {
-            [Op.between]: req.query.dates,
+            [Op.between]: req.query.dates || dates,
           },
         },
       ];
@@ -55,7 +61,7 @@ module.exports = {
       where = [
         {
           RegisteredDatetime: {
-            [Op.between]: req.query.dates,
+            [Op.between]: req.query.dates || dates,
           },
         },
       ];
@@ -66,7 +72,7 @@ module.exports = {
             [Op.in]: req.query.codes,
           },
           RegisteredDatetime: {
-            [Op.between]: req.query.dates,
+            [Op.between]: req.query.dates || dates,
           },
         },
       ];
@@ -102,7 +108,7 @@ module.exports = {
       where = [
         {
           AnalysisDatetime: {
-            [Op.between]: req.query.dates,
+            [Op.between]: req.query.dates || dates,
           },
           TestingFacilityName: {
             [Op.not]: null,
@@ -116,7 +122,7 @@ module.exports = {
             [Op.in]: req.query.codes,
           },
           RegisteredDatetime: {
-            [Op.between]: req.query.dates,
+            [Op.between]: req.query.dates || dates,
           },
           TestingFacilityName: {
             [Op.not]: null,
@@ -149,7 +155,7 @@ module.exports = {
       where = [
         {
           RegisteredDatetime: {
-            [Op.between]: req.query.dates,
+            [Op.between]: req.query.dates || dates,
           },
         },
       ];
@@ -160,7 +166,7 @@ module.exports = {
             [Op.in]: req.query.codes,
           },
           RegisteredDatetime: {
-            [Op.between]: req.query.dates,
+            [Op.between]: req.query.dates || dates,
           },
         },
       ];
@@ -197,7 +203,7 @@ module.exports = {
       where = [
         {
           AnalysisDatetime: {
-            [Op.between]: req.query.dates,
+            [Op.between]: req.query.dates || dates,
           },
           TestingFacilityName: {
             [Op.not]: null,
@@ -211,7 +217,7 @@ module.exports = {
             [Op.in]: req.query.codes,
           },
           AnalysisDatetime: {
-            [Op.between]: req.query.dates,
+            [Op.between]: req.query.dates || dates,
           },
           TestingFacilityName: {
             [Op.not]: null,
@@ -245,7 +251,7 @@ module.exports = {
       where = [
         {
           AnalysisDatetime: {
-            [Op.between]: req.query.dates,
+            [Op.between]: dates,
           },
         },
       ];
@@ -256,7 +262,7 @@ module.exports = {
             [Op.in]: req.query.codes,
           },
           AnalysisDatetime: {
-            [Op.between]: req.query.dates,
+            [Op.between]: req.query.dates || dates,
           },
         },
       ];
@@ -294,7 +300,7 @@ module.exports = {
       where = [
         {
           AnalysisDatetime: {
-            [Op.between]: req.query.dates,
+            [Op.between]: req.query.dates || dates,
           },
           TestingFacilityName: {
             [Op.not]: null,
@@ -308,7 +314,7 @@ module.exports = {
             [Op.in]: req.query.codes,
           },
           AnalysisDatetime: {
-            [Op.between]: req.query.dates,
+            [Op.between]: req.query.dates || dates,
           },
           TestingFacilityName: {
             [Op.not]: null,
@@ -343,7 +349,7 @@ module.exports = {
       where = [
         {
           AnalysisDatetime: {
-            [Op.between]: req.query.dates,
+            [Op.between]: req.query.dates || dates,
           },
           AgeInYears: {
             [Op.between]: req.query.age,
@@ -357,7 +363,7 @@ module.exports = {
             [Op.in]: req.query.codes,
           },
           AnalysisDatetime: {
-            [Op.between]: req.query.dates,
+            [Op.between]: req.query.dates || dates,
           },
           AgeInYears: {
             [Op.between]: req.query.age,
@@ -396,7 +402,7 @@ module.exports = {
       where = [
         {
           AnalysisDatetime: {
-            [Op.between]: req.query.dates,
+            [Op.between]: req.query.dates || dates,
           },
           Pregnant: {
             [Op.in]: ["YES", "Yes", "yes", "Sim", "SIM"],
@@ -410,7 +416,7 @@ module.exports = {
             [Op.in]: req.query.codes,
           },
           AnalysisDatetime: {
-            [Op.between]: req.query.dates,
+            [Op.between]: req.query.dates || dates,
           },
           Pregnant: {
             [Op.in]: ["YES", "Yes", "yes", "Sim", "SIM"],
@@ -449,7 +455,7 @@ module.exports = {
       where = [
         {
           AnalysisDatetime: {
-            [Op.between]: req.query.dates,
+            [Op.between]: req.query.dates || dates,
           },
           Breastfeeding: {
             [Op.in]: ["YES", "Yes", "yes", "Sim", "SIM"],
@@ -463,7 +469,7 @@ module.exports = {
             [Op.in]: req.query.codes,
           },
           AnalysisDatetime: {
-            [Op.between]: req.query.dates,
+            [Op.between]: req.query.dates || dates,
           },
           Breastfeeding: {
             [Op.in]: ["YES", "Yes", "yes", "Sim", "SIM"],

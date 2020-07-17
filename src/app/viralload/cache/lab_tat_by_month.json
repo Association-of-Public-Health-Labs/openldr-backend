@@ -1,21 +1,12 @@
 [
   {
     "year": 2019,
-    "month": 6,
-    "month_name": "June",
-    "collection_reception": 8,
-    "reception_registration": 2,
-    "registration_analysis": 12,
-    "analysis_validation": 1
-  },
-  {
-    "year": 2019,
     "month": 7,
     "month_name": "July",
-    "collection_reception": 11,
+    "collection_reception": 9,
     "reception_registration": 2,
-    "registration_analysis": 10,
-    "analysis_validation": 0
+    "registration_analysis": 11,
+    "analysis_validation": 1
   },
   {
     "year": 2019,
@@ -23,7 +14,7 @@
     "month_name": "August",
     "collection_reception": 10,
     "reception_registration": 6,
-    "registration_analysis": 9,
+    "registration_analysis": 10,
     "analysis_validation": 1
   },
   {
@@ -32,8 +23,8 @@
     "month_name": "September",
     "collection_reception": 6,
     "reception_registration": 4,
-    "registration_analysis": 8,
-    "analysis_validation": 0
+    "registration_analysis": 9,
+    "analysis_validation": 1
   },
   {
     "year": 2019,
@@ -41,8 +32,8 @@
     "month_name": "October",
     "collection_reception": 8,
     "reception_registration": 2,
-    "registration_analysis": 8,
-    "analysis_validation": 0
+    "registration_analysis": 9,
+    "analysis_validation": 1
   },
   {
     "year": 2019,
@@ -60,7 +51,7 @@
     "collection_reception": 13,
     "reception_registration": 1,
     "registration_analysis": 7,
-    "analysis_validation": 0
+    "analysis_validation": 1
   },
   {
     "year": 2020,
@@ -113,7 +104,16 @@
     "month_name": "June",
     "collection_reception": 8,
     "reception_registration": 0,
-    "registration_analysis": 1,
+    "registration_analysis": 4,
+    "analysis_validation": 0
+  },
+  {
+    "year": 2020,
+    "month": 7,
+    "month_name": "July",
+    "collection_reception": 8,
+    "reception_registration": 0,
+    "registration_analysis": 3,
     "analysis_validation": 0
   }
 ]

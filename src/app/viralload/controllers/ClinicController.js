@@ -4,6 +4,15 @@ const global = require("./indicators/global");
 const utils = require("./indicators/utils");
 const VlData = require("../models/VlData");
 const { Op, fn, literal, col } = sequelize;
+const moment = require("moment");
+
+const dates = [
+  moment().subtract(1, "years").format("YYYY-MM-DD"),
+  moment().format("YYYY-MM-DD"),
+];
+const age = [15, 49];
+
+const type = "province";
 
 module.exports = ClinicController = {
   async getSamplesByTestReason(req, res) {
@@ -14,18 +23,18 @@ module.exports = ClinicController = {
     }
     var where = [{}];
     where[0]["RegisteredDatetime"] = {
-      [Op.between]: ["2019-04-10", "2020-04-10"],
+      [Op.between]: req.query.dates || dates,
     };
     if (typeof req.query.codes !== "undefined") {
-      if (req.query.type === "province") {
+      if ((req.query.type || type) === "province") {
         where[0]["RequestingProvinceName"] = {
           [Op.in]: req.query.codes,
         };
-      } else if (req.query.type === "district") {
+      } else if ((req.query.type || type) === "district") {
         where[0]["RequestingDistrictName"] = {
           [Op.in]: req.query.codes,
         };
-      } else if (req.query.type === "clinic") {
+      } else if ((req.query.type || type) === "clinic") {
         where[0]["RequestingFacilityName"] = {
           [Op.in]: req.query.codes,
         };
@@ -50,18 +59,18 @@ module.exports = ClinicController = {
     }
     var where = [{}];
     where[0]["RegisteredDatetime"] = {
-      [Op.between]: req.query.dates,
+      [Op.between]: req.query.dates || dates,
     };
     if (typeof req.query.codes !== "undefined") {
-      if (req.query.type === "province") {
+      if ((req.query.type || type) === "province") {
         where[0]["RequestingProvinceName"] = {
           [Op.in]: req.query.codes,
         };
-      } else if (req.query.type === "district") {
+      } else if ((req.query.type || type) === "district") {
         where[0]["RequestingDistrictName"] = {
           [Op.in]: req.query.codes,
         };
-      } else if (req.query.type === "clinic") {
+      } else if ((req.query.type || type) === "clinic") {
         where[0]["RequestingFacilityName"] = {
           [Op.in]: req.query.codes,
         };
@@ -95,24 +104,24 @@ module.exports = ClinicController = {
     }
     var where = [{}];
     where[0]["RegisteredDatetime"] = {
-      [Op.between]: req.query.dates,
+      [Op.between]: req.query.dates || dates,
     };
     if (typeof req.query.codes !== "undefined") {
-      if (req.query.type === "province") {
+      if ((req.query.type || type) === "province") {
         where[0]["RequestingProvinceName"] = {
           [Op.in]: req.query.codes,
         };
-      } else if (req.query.type === "district") {
+      } else if ((req.query.type || type) === "district") {
         where[0]["RequestingDistrictName"] = {
           [Op.in]: req.query.codes,
         };
-      } else if (req.query.type === "clinic") {
+      } else if ((req.query.type || type) === "clinic") {
         where[0]["RequestingFacilityName"] = {
           [Op.in]: req.query.codes,
         };
       }
     }
-    const column = await utils.getAttributes(req.query.type);
+    const column = await utils.getAttributes(req.query.type || type);
     const data = await VlData.findAll({
       attributes: [
         [column, "facility"],
@@ -135,18 +144,18 @@ module.exports = ClinicController = {
     }
     var where = [{}];
     where[0]["RegisteredDatetime"] = {
-      [Op.between]: req.query.dates,
+      [Op.between]: req.query.dates || dates,
     };
     if (typeof req.query.codes !== "undefined") {
-      if (req.query.type === "province") {
+      if ((req.query.type || type) === "province") {
         where[0]["RequestingProvinceName"] = {
           [Op.in]: req.query.codes,
         };
-      } else if (req.query.type === "district") {
+      } else if ((req.query.type || type) === "district") {
         where[0]["RequestingDistrictName"] = {
           [Op.in]: req.query.codes,
         };
-      } else if (req.query.type === "clinic") {
+      } else if ((req.query.type || type) === "clinic") {
         where[0]["RequestingFacilityName"] = {
           [Op.in]: req.query.codes,
         };
@@ -181,24 +190,24 @@ module.exports = ClinicController = {
     }
     var where = [{}];
     where[0]["RegisteredDatetime"] = {
-      [Op.between]: req.query.dates,
+      [Op.between]: req.query.dates || dates,
     };
     if (typeof req.query.codes !== "undefined") {
-      if (req.query.type === "province") {
+      if ((req.query.type || type) === "province") {
         where[0]["RequestingProvinceName"] = {
           [Op.in]: req.query.codes,
         };
-      } else if (req.query.type === "district") {
+      } else if ((req.query.type || type) === "district") {
         where[0]["RequestingDistrictName"] = {
           [Op.in]: req.query.codes,
         };
-      } else if (req.query.type === "clinic") {
+      } else if ((req.query.type || type) === "clinic") {
         where[0]["RequestingFacilityName"] = {
           [Op.in]: req.query.codes,
         };
       }
     }
-    const column = await utils.getAttributes(req.query.type);
+    const column = await utils.getAttributes(req.query.type || type);
     const data = await VlData.findAll({
       attributes: [
         [column, "facility"],
@@ -222,18 +231,18 @@ module.exports = ClinicController = {
     }
     var where = [{}];
     where[0]["RegisteredDatetime"] = {
-      [Op.between]: req.query.dates,
+      [Op.between]: req.query.dates || dates,
     };
     if (typeof req.query.codes !== "undefined") {
-      if (req.query.type === "province") {
+      if ((req.query.type || type) === "province") {
         where[0]["RequestingProvinceName"] = {
           [Op.in]: req.query.codes,
         };
-      } else if (req.query.type === "district") {
+      } else if ((req.query.type || type) === "district") {
         where[0]["RequestingDistrictName"] = {
           [Op.in]: req.query.codes,
         };
-      } else if (req.query.type === "clinic") {
+      } else if ((req.query.type || type) === "clinic") {
         where[0]["RequestingFacilityName"] = {
           [Op.in]: req.query.codes,
         };
@@ -269,24 +278,24 @@ module.exports = ClinicController = {
     }
     var where = [{}];
     where[0]["RegisteredDatetime"] = {
-      [Op.between]: req.query.dates,
+      [Op.between]: req.query.dates || dates,
     };
     if (typeof req.query.codes !== "undefined") {
-      if (req.query.type === "province") {
+      if ((req.query.type || type) === "province") {
         where[0]["RequestingProvinceName"] = {
           [Op.in]: req.query.codes,
         };
-      } else if (req.query.type === "district") {
+      } else if ((req.query.type || type) === "district") {
         where[0]["RequestingDistrictName"] = {
           [Op.in]: req.query.codes,
         };
-      } else if (req.query.type === "clinic") {
+      } else if ((req.query.type || type) === "clinic") {
         where[0]["RequestingFacilityName"] = {
           [Op.in]: req.query.codes,
         };
       }
     }
-    const column = await utils.getAttributes(req.query.type);
+    const column = await utils.getAttributes(req.query.type || type);
     const data = await VlData.findAll({
       attributes: [
         [column, "facility"],
@@ -311,21 +320,22 @@ module.exports = ClinicController = {
     }
     var where = [{}];
     where[0]["RegisteredDatetime"] = {
-      [Op.between]: req.query.dates,
+      [Op.between]: req.query.dates || dates,
     };
     where[0]["AgeInYears"] = {
-      [Op.between]: req.query.age,
+      [Op.between]: req.query.age || age,
+      // [Op.between]: req.query.age,
     };
     if (typeof req.query.codes !== "undefined") {
-      if (req.query.type === "province") {
+      if ((req.query.type || type) === "province") {
         where[0]["RequestingProvinceName"] = {
           [Op.in]: req.query.codes,
         };
-      } else if (req.query.type === "district") {
+      } else if ((req.query.type || type) === "district") {
         where[0]["RequestingDistrictName"] = {
           [Op.in]: req.query.codes,
         };
-      } else if (req.query.type === "clinic") {
+      } else if ((req.query.type || type) === "clinic") {
         where[0]["RequestingFacilityName"] = {
           [Op.in]: req.query.codes,
         };
@@ -359,21 +369,21 @@ module.exports = ClinicController = {
     }
     var where = [{}];
     where[0]["RegisteredDatetime"] = {
-      [Op.between]: req.query.dates,
+      [Op.between]: req.query.dates || dates,
     };
     where[0]["Pregnant"] = {
       [Op.in]: ["YES", "Yes", "yes", "Sim", "SIM"],
     };
     if (typeof req.query.codes !== "undefined") {
-      if (req.query.type === "province") {
+      if ((req.query.type || type) === "province") {
         where[0]["RequestingProvinceName"] = {
           [Op.in]: req.query.codes,
         };
-      } else if (req.query.type === "district") {
+      } else if ((req.query.type || type) === "district") {
         where[0]["RequestingDistrictName"] = {
           [Op.in]: req.query.codes,
         };
-      } else if (req.query.type === "clinic") {
+      } else if ((req.query.type || type) === "clinic") {
         where[0]["RequestingFacilityName"] = {
           [Op.in]: req.query.codes,
         };
@@ -407,21 +417,21 @@ module.exports = ClinicController = {
     }
     var where = [{}];
     where[0]["RegisteredDatetime"] = {
-      [Op.between]: req.query.dates,
+      [Op.between]: req.query.dates || dates,
     };
     where[0]["Breastfeeding"] = {
       [Op.in]: ["YES", "Yes", "yes", "Sim", "SIM"],
     };
     if (typeof req.query.codes !== "undefined") {
-      if (req.query.type === "province") {
+      if ((req.query.type || type) === "province") {
         where[0]["RequestingProvinceName"] = {
           [Op.in]: req.query.codes,
         };
-      } else if (req.query.type === "district") {
+      } else if ((req.query.type || type) === "district") {
         where[0]["RequestingDistrictName"] = {
           [Op.in]: req.query.codes,
         };
-      } else if (req.query.type === "clinic") {
+      } else if ((req.query.type || type) === "clinic") {
         where[0]["RequestingFacilityName"] = {
           [Op.in]: req.query.codes,
         };

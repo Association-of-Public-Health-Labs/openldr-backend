@@ -1,65 +1,329 @@
 [
   {
+    "year": 2015,
+    "month": 11,
+    "month_name": "November",
+    "total": 18,
+    "suppressed": 0,
+    "non_suppressed": 0
+  },
+  {
+    "year": 2016,
+    "month": 2,
+    "month_name": "February",
+    "total": 3,
+    "suppressed": 0,
+    "non_suppressed": 0
+  },
+  {
+    "year": 2016,
+    "month": 3,
+    "month_name": "March",
+    "total": 66,
+    "suppressed": 0,
+    "non_suppressed": 0
+  },
+  {
+    "year": 2016,
+    "month": 4,
+    "month_name": "April",
+    "total": 5,
+    "suppressed": 0,
+    "non_suppressed": 0
+  },
+  {
+    "year": 2016,
+    "month": 5,
+    "month_name": "May",
+    "total": 6,
+    "suppressed": 0,
+    "non_suppressed": 0
+  },
+  {
+    "year": 2016,
+    "month": 6,
+    "month_name": "June",
+    "total": 16,
+    "suppressed": 0,
+    "non_suppressed": 0
+  },
+  {
+    "year": 2016,
+    "month": 8,
+    "month_name": "August",
+    "total": 1,
+    "suppressed": 0,
+    "non_suppressed": 0
+  },
+  {
+    "year": 2016,
+    "month": 9,
+    "month_name": "September",
+    "total": 5,
+    "suppressed": 0,
+    "non_suppressed": 0
+  },
+  {
+    "year": 2016,
+    "month": 12,
+    "month_name": "December",
+    "total": 3,
+    "suppressed": 0,
+    "non_suppressed": 0
+  },
+  {
+    "year": 2017,
+    "month": 3,
+    "month_name": "March",
+    "total": 1,
+    "suppressed": 0,
+    "non_suppressed": 0
+  },
+  {
+    "year": 2017,
+    "month": 4,
+    "month_name": "April",
+    "total": 4,
+    "suppressed": 0,
+    "non_suppressed": 0
+  },
+  {
+    "year": 2017,
+    "month": 7,
+    "month_name": "July",
+    "total": 1,
+    "suppressed": 0,
+    "non_suppressed": 0
+  },
+  {
+    "year": 2017,
+    "month": 9,
+    "month_name": "September",
+    "total": 7,
+    "suppressed": 0,
+    "non_suppressed": 0
+  },
+  {
+    "year": 2017,
+    "month": 10,
+    "month_name": "October",
+    "total": 17,
+    "suppressed": 0,
+    "non_suppressed": 0
+  },
+  {
+    "year": 2017,
+    "month": 11,
+    "month_name": "November",
+    "total": 24,
+    "suppressed": 0,
+    "non_suppressed": 0
+  },
+  {
+    "year": 2017,
+    "month": 12,
+    "month_name": "December",
+    "total": 7,
+    "suppressed": 0,
+    "non_suppressed": 0
+  },
+  {
+    "year": 2018,
+    "month": 1,
+    "month_name": "January",
+    "total": 9,
+    "suppressed": 0,
+    "non_suppressed": 0
+  },
+  {
+    "year": 2018,
+    "month": 2,
+    "month_name": "February",
+    "total": 25,
+    "suppressed": 0,
+    "non_suppressed": 0
+  },
+  {
+    "year": 2018,
+    "month": 3,
+    "month_name": "March",
+    "total": 29,
+    "suppressed": 0,
+    "non_suppressed": 0
+  },
+  {
+    "year": 2018,
+    "month": 4,
+    "month_name": "April",
+    "total": 24,
+    "suppressed": 0,
+    "non_suppressed": 0
+  },
+  {
+    "year": 2018,
+    "month": 5,
+    "month_name": "May",
+    "total": 16,
+    "suppressed": 0,
+    "non_suppressed": 0
+  },
+  {
+    "year": 2018,
+    "month": 6,
+    "month_name": "June",
+    "total": 5,
+    "suppressed": 0,
+    "non_suppressed": 0
+  },
+  {
+    "year": 2018,
+    "month": 7,
+    "month_name": "July",
+    "total": 20,
+    "suppressed": 0,
+    "non_suppressed": 0
+  },
+  {
+    "year": 2018,
+    "month": 8,
+    "month_name": "August",
+    "total": 16,
+    "suppressed": 0,
+    "non_suppressed": 0
+  },
+  {
+    "year": 2018,
+    "month": 9,
+    "month_name": "September",
+    "total": 39,
+    "suppressed": 0,
+    "non_suppressed": 0
+  },
+  {
+    "year": 2018,
+    "month": 10,
+    "month_name": "October",
+    "total": 28,
+    "suppressed": 0,
+    "non_suppressed": 0
+  },
+  {
+    "year": 2018,
+    "month": 11,
+    "month_name": "November",
+    "total": 31,
+    "suppressed": 0,
+    "non_suppressed": 0
+  },
+  {
+    "year": 2018,
+    "month": 12,
+    "month_name": "December",
+    "total": 58,
+    "suppressed": 0,
+    "non_suppressed": 0
+  },
+  {
+    "year": 2019,
+    "month": 1,
+    "month_name": "January",
+    "total": 36,
+    "suppressed": 0,
+    "non_suppressed": 0
+  },
+  {
+    "year": 2019,
+    "month": 2,
+    "month_name": "February",
+    "total": 33,
+    "suppressed": 0,
+    "non_suppressed": 0
+  },
+  {
+    "year": 2019,
+    "month": 3,
+    "month_name": "March",
+    "total": 31,
+    "suppressed": 2,
+    "non_suppressed": 0
+  },
+  {
+    "year": 2019,
+    "month": 4,
+    "month_name": "April",
+    "total": 48,
+    "suppressed": 1,
+    "non_suppressed": 0
+  },
+  {
+    "year": 2019,
+    "month": 5,
+    "month_name": "May",
+    "total": 175,
+    "suppressed": 121,
+    "non_suppressed": 18
+  },
+  {
     "year": 2019,
     "month": 6,
     "month_name": "June",
-    "total": 1505,
-    "suppressed": 1094,
-    "non_suppressed": 378
+    "total": 233,
+    "suppressed": 175,
+    "non_suppressed": 36
   },
   {
     "year": 2019,
     "month": 7,
     "month_name": "July",
-    "total": 2854,
-    "suppressed": 2061,
-    "non_suppressed": 713
+    "total": 2067,
+    "suppressed": 1513,
+    "non_suppressed": 510
   },
   {
     "year": 2019,
     "month": 8,
     "month_name": "August",
-    "total": 2783,
-    "suppressed": 1993,
-    "non_suppressed": 699
+    "total": 2756,
+    "suppressed": 1994,
+    "non_suppressed": 700
   },
   {
     "year": 2019,
     "month": 9,
     "month_name": "September",
-    "total": 2474,
-    "suppressed": 1433,
-    "non_suppressed": 520
+    "total": 1994,
+    "suppressed": 1432,
+    "non_suppressed": 524
   },
   {
     "year": 2019,
     "month": 10,
     "month_name": "October",
-    "total": 2272,
-    "suppressed": 1667,
-    "non_suppressed": 542
+    "total": 2248,
+    "suppressed": 1668,
+    "non_suppressed": 541
   },
   {
     "year": 2019,
     "month": 11,
     "month_name": "November",
-    "total": 2250,
+    "total": 2215,
     "suppressed": 1644,
-    "non_suppressed": 545
+    "non_suppressed": 544
   },
   {
     "year": 2019,
     "month": 12,
     "month_name": "December",
-    "total": 2223,
-    "suppressed": 1654,
+    "total": 2191,
+    "suppressed": 1658,
     "non_suppressed": 498
   },
   {
     "year": 2020,
     "month": 1,
     "month_name": "January",
-    "total": 2326,
+    "total": 2297,
     "suppressed": 1701,
     "non_suppressed": 547
   },
@@ -67,7 +331,7 @@
     "year": 2020,
     "month": 2,
     "month_name": "February",
-    "total": 2478,
+    "total": 2468,
     "suppressed": 1917,
     "non_suppressed": 469
   },
@@ -75,32 +339,40 @@
     "year": 2020,
     "month": 3,
     "month_name": "March",
-    "total": 3483,
-    "suppressed": 2750,
+    "total": 3475,
+    "suppressed": 2752,
     "non_suppressed": 641
   },
   {
     "year": 2020,
     "month": 4,
     "month_name": "April",
-    "total": 2951,
-    "suppressed": 2405,
-    "non_suppressed": 489
+    "total": 2948,
+    "suppressed": 2409,
+    "non_suppressed": 492
   },
   {
     "year": 2020,
     "month": 5,
     "month_name": "May",
-    "total": 1955,
-    "suppressed": 1346,
-    "non_suppressed": 309
+    "total": 1998,
+    "suppressed": 1598,
+    "non_suppressed": 375
   },
   {
     "year": 2020,
     "month": 6,
     "month_name": "June",
-    "total": 53,
-    "suppressed": 27,
-    "non_suppressed": 6
+    "total": 1317,
+    "suppressed": 1074,
+    "non_suppressed": 232
+  },
+  {
+    "year": 2020,
+    "month": 7,
+    "month_name": "July",
+    "total": 532,
+    "suppressed": 403,
+    "non_suppressed": 124
   }
 ]

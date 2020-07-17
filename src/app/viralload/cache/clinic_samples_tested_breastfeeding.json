@@ -1,58 +1,50 @@
 [
   {
     "year": 2019,
-    "month": 6,
-    "month_name": "June",
-    "total": 2660,
-    "suppressed": 1967,
-    "non_suppressed": 618
-  },
-  {
-    "year": 2019,
     "month": 7,
     "month_name": "July",
-    "total": 5160,
-    "suppressed": 3777,
-    "non_suppressed": 1257
+    "total": 2550,
+    "suppressed": 1859,
+    "non_suppressed": 618
   },
   {
     "year": 2019,
     "month": 8,
     "month_name": "August",
-    "total": 4900,
-    "suppressed": 3507,
+    "total": 4895,
+    "suppressed": 3509,
     "non_suppressed": 1217
   },
   {
     "year": 2019,
     "month": 9,
     "month_name": "September",
-    "total": 4871,
-    "suppressed": 2748,
-    "non_suppressed": 1008
+    "total": 3845,
+    "suppressed": 2746,
+    "non_suppressed": 1010
   },
   {
     "year": 2019,
     "month": 10,
     "month_name": "October",
-    "total": 3885,
-    "suppressed": 2815,
-    "non_suppressed": 950
+    "total": 3861,
+    "suppressed": 2818,
+    "non_suppressed": 948
   },
   {
     "year": 2019,
     "month": 11,
     "month_name": "November",
-    "total": 3621,
-    "suppressed": 2643,
+    "total": 3627,
+    "suppressed": 2647,
     "non_suppressed": 892
   },
   {
     "year": 2019,
     "month": 12,
     "month_name": "December",
-    "total": 3226,
-    "suppressed": 2324,
+    "total": 3228,
+    "suppressed": 2328,
     "non_suppressed": 810
   },
   {
@@ -76,31 +68,39 @@
     "month": 3,
     "month_name": "March",
     "total": 5832,
-    "suppressed": 4700,
+    "suppressed": 4701,
     "non_suppressed": 1027
   },
   {
     "year": 2020,
     "month": 4,
     "month_name": "April",
-    "total": 4592,
-    "suppressed": 3775,
+    "total": 4594,
+    "suppressed": 3777,
     "non_suppressed": 744
   },
   {
     "year": 2020,
     "month": 5,
     "month_name": "May",
-    "total": 3216,
-    "suppressed": 2247,
-    "non_suppressed": 459
+    "total": 3295,
+    "suppressed": 2668,
+    "non_suppressed": 553
   },
   {
     "year": 2020,
     "month": 6,
     "month_name": "June",
-    "total": 106,
-    "suppressed": 54,
-    "non_suppressed": 6
+    "total": 2465,
+    "suppressed": 1958,
+    "non_suppressed": 355
+  },
+  {
+    "year": 2020,
+    "month": 7,
+    "month_name": "July",
+    "total": 1915,
+    "suppressed": 795,
+    "non_suppressed": 194
   }
 ]
