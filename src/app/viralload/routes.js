@@ -4,6 +4,7 @@ const VlDataController = require("./controllers/VlDataController");
 const LaboratoryController = require("./controllers/LaboratoryController");
 const DashboardController = require("./controllers/DashboardController");
 const ClinicController = require("./controllers/ClinicController");
+const ResultsController = require("./controllers/ResultsController");
 
 const routes = express.Router();
 
@@ -112,6 +113,25 @@ routes.get(
 routes.get(
   "/clinic_tests_by_breastfeeding",
   ClinicController.getSamplesTestedForBreastfeeding
+);
+
+// Results routes
+routes.get(
+  "/results/:page/:paginate/:start/:end",
+  // checkAuth,
+  ResultsController.paginate
+);
+
+routes.get(
+  "/result/:requestID",
+  // checkAuth,
+  ResultsController.index
+);
+
+routes.get(
+  "/result_by_name/:fullname/:page/:paginate",
+  // checkAuth,
+  ResultsController.showPacient
 );
 
 module.exports = routes;

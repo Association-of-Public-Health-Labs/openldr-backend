@@ -1,5 +1,6 @@
 const Sequelize = require("sequelize");
 const { vldata } = require("../../../config/sequelize");
+const sequelizePaginate = require("sequelize-paginate");
 
 const VlData = vldata.define(
   "VlData",
@@ -117,10 +118,12 @@ const VlData = vldata.define(
     RegisteredYearAndMonth: Sequelize.STRING,
     DateTimeStamp: Sequelize.DATE,
     HealthCareID: Sequelize.STRING,
-    FullFacilityCode: Sequelize.STRING
+    FullFacilityCode: Sequelize.STRING,
   },
   { freezeTableName: true, timestamps: false }
 );
+
+sequelizePaginate.paginate(VlData);
 
 // vldata.sync();
 module.exports = VlData;

@@ -1,57 +1,57 @@
 [
   {
     "lab": "Lab. de Dream Maputo",
-    "total": 15792,
-    "suppressed": 13600,
-    "non_suppressed": 1943
+    "total": 15583,
+    "suppressed": 13450,
+    "non_suppressed": 1884
   },
   {
     "lab": "Lab. Ponta Gea",
-    "total": 63742,
-    "suppressed": 42810,
+    "total": 63612,
+    "suppressed": 42680,
     "non_suppressed": 12910
   },
   {
     "lab": "Lab.BM-HCM",
-    "total": 44858,
-    "suppressed": 33438,
-    "non_suppressed": 10797
+    "total": 44721,
+    "suppressed": 33402,
+    "non_suppressed": 10697
   },
   {
     "lab": "Lab.BM-HG Jose Macamo",
-    "total": 42867,
-    "suppressed": 34189,
-    "non_suppressed": 7822
+    "total": 42154,
+    "suppressed": 33581,
+    "non_suppressed": 7718
   },
   {
     "lab": "Lab.BM-HG Machava",
-    "total": 106503,
-    "suppressed": 90101,
-    "non_suppressed": 15680
+    "total": 105809,
+    "suppressed": 89533,
+    "non_suppressed": 15554
   },
   {
     "lab": "Lab.BM-Hosp.Militar Maputo",
-    "total": 28366,
-    "suppressed": 23727,
-    "non_suppressed": 4460
+    "total": 28065,
+    "suppressed": 23483,
+    "non_suppressed": 4403
   },
   {
     "lab": "Lab.BM-HP Xai-Xai",
-    "total": 87589,
-    "suppressed": 69103,
-    "non_suppressed": 16878
+    "total": 86657,
+    "suppressed": 68406,
+    "non_suppressed": 16648
   },
   {
     "lab": "Lab.BM-Quelimane",
-    "total": 123094,
-    "suppressed": 82767,
-    "non_suppressed": 26584
+    "total": 121574,
+    "suppressed": 81665,
+    "non_suppressed": 26169
   },
   {
     "lab": "Lab.Clinic-HC NAMpula",
-    "total": 81054,
-    "suppressed": 56891,
-    "non_suppressed": 22617
+    "total": 80651,
+    "suppressed": 56649,
+    "non_suppressed": 22465
   },
   {
     "lab": "Lab.Clinic-HG Mavalane",
@@ -61,20 +61,20 @@
   },
   {
     "lab": "Lab.Clinic-Hosp.Militar Maputo",
-    "total": 3,
-    "suppressed": 3,
+    "total": 2,
+    "suppressed": 2,
     "non_suppressed": 0
   },
   {
     "lab": "Lab.de Carmelo",
-    "total": 63795,
-    "suppressed": 50214,
-    "non_suppressed": 12251
+    "total": 63520,
+    "suppressed": 50016,
+    "non_suppressed": 12174
   },
   {
     "lab": "Lab.Nacional de Referencia-INS",
-    "total": 22436,
-    "suppressed": 17744,
-    "non_suppressed": 4224
+    "total": 22038,
+    "suppressed": 17475,
+    "non_suppressed": 4164
   }
 ]

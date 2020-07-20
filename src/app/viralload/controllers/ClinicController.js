@@ -10,6 +10,7 @@ const dates = [
   moment().subtract(1, "years").format("YYYY-MM-DD"),
   moment().format("YYYY-MM-DD"),
 ];
+
 const age = [15, 49];
 
 const type = "province";
@@ -22,7 +23,7 @@ module.exports = ClinicController = {
       return res.json(cache);
     }
     var where = [{}];
-    where[0]["RegisteredDatetime"] = {
+    where[0]["AnalysisDatetime"] = {
       [Op.between]: req.query.dates || dates,
     };
     if (typeof req.query.codes !== "undefined") {
@@ -58,7 +59,7 @@ module.exports = ClinicController = {
       return res.json(cache);
     }
     var where = [{}];
-    where[0]["RegisteredDatetime"] = {
+    where[0]["AnalysisDatetime"] = {
       [Op.between]: req.query.dates || dates,
     };
     if (typeof req.query.codes !== "undefined") {
@@ -103,7 +104,7 @@ module.exports = ClinicController = {
       return res.json(cache);
     }
     var where = [{}];
-    where[0]["RegisteredDatetime"] = {
+    where[0]["AnalysisDatetime"] = {
       [Op.between]: req.query.dates || dates,
     };
     if (typeof req.query.codes !== "undefined") {
@@ -143,9 +144,26 @@ module.exports = ClinicController = {
       return res.json(cache);
     }
     var where = [{}];
-    where[0]["RegisteredDatetime"] = {
+    where[0]["AnalysisDatetime"] = {
       [Op.between]: req.query.dates || dates,
     };
+
+    where.push([
+      {
+        [Op.between]: sequelize.where(
+          fn(
+            "datediff",
+            literal("day"),
+            col("SpecimenDatetime"),
+            col("AuthorisedDatetime")
+          ),
+          {
+            [Op.lt]: 90,
+          }
+        ),
+      },
+    ]);
+
     if (typeof req.query.codes !== "undefined") {
       if ((req.query.type || type) === "province") {
         where[0]["RequestingProvinceName"] = {
@@ -161,6 +179,7 @@ module.exports = ClinicController = {
         };
       }
     }
+
     const data = await VlData.findAll({
       attributes: [
         [global.year, "year"],
@@ -189,9 +208,26 @@ module.exports = ClinicController = {
       return res.json(cache);
     }
     var where = [{}];
-    where[0]["RegisteredDatetime"] = {
+    where[0]["AnalysisDatetime"] = {
       [Op.between]: req.query.dates || dates,
     };
+
+    where.push([
+      {
+        [Op.between]: sequelize.where(
+          fn(
+            "datediff",
+            literal("day"),
+            col("SpecimenDatetime"),
+            col("AuthorisedDatetime")
+          ),
+          {
+            [Op.lt]: 90,
+          }
+        ),
+      },
+    ]);
+
     if (typeof req.query.codes !== "undefined") {
       if ((req.query.type || type) === "province") {
         where[0]["RequestingProvinceName"] = {
@@ -230,7 +266,7 @@ module.exports = ClinicController = {
       return res.json(cache);
     }
     var where = [{}];
-    where[0]["RegisteredDatetime"] = {
+    where[0]["AnalysisDatetime"] = {
       [Op.between]: req.query.dates || dates,
     };
     if (typeof req.query.codes !== "undefined") {
@@ -277,7 +313,7 @@ module.exports = ClinicController = {
       return res.json(cache);
     }
     var where = [{}];
-    where[0]["RegisteredDatetime"] = {
+    where[0]["AnalysisDatetime"] = {
       [Op.between]: req.query.dates || dates,
     };
     if (typeof req.query.codes !== "undefined") {
@@ -319,12 +355,11 @@ module.exports = ClinicController = {
       return res.json(cache);
     }
     var where = [{}];
-    where[0]["RegisteredDatetime"] = {
+    where[0]["AnalysisDatetime"] = {
       [Op.between]: req.query.dates || dates,
     };
     where[0]["AgeInYears"] = {
       [Op.between]: req.query.age || age,
-      // [Op.between]: req.query.age,
     };
     if (typeof req.query.codes !== "undefined") {
       if ((req.query.type || type) === "province") {
@@ -368,7 +403,7 @@ module.exports = ClinicController = {
       return res.json(cache);
     }
     var where = [{}];
-    where[0]["RegisteredDatetime"] = {
+    where[0]["AnalysisDatetime"] = {
       [Op.between]: req.query.dates || dates,
     };
     where[0]["Pregnant"] = {
@@ -416,7 +451,7 @@ module.exports = ClinicController = {
       return res.json(cache);
     }
     var where = [{}];
-    where[0]["RegisteredDatetime"] = {
+    where[0]["AnalysisDatetime"] = {
       [Op.between]: req.query.dates || dates,
     };
     where[0]["Breastfeeding"] = {

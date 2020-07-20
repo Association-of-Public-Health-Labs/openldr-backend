@@ -3,11 +3,11 @@
     "year": 2019,
     "month": 7,
     "month_name": "July",
-    "registered": 42404,
-    "tested": 41614,
-    "suppressed": 30595,
-    "rejected": 1018,
-    "non_validated": 42
+    "registered": 39662,
+    "tested": 38881,
+    "suppressed": 28636,
+    "rejected": 984,
+    "non_validated": 35
   },
   {
     "year": 2019,

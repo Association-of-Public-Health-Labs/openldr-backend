@@ -65,15 +65,15 @@ module.exports = {
     )
   ),
 
-  year: fn("year", col("RegisteredDatetime")),
+  year: fn("year", col("AnalysisDatetime")),
 
-  quarter: fn("datepart", literal("QUARTER"), col("RegisteredDatetime")),
+  quarter: fn("datepart", literal("QUARTER"), col("AnalysisDatetime")),
 
-  month: fn("month", col("RegisteredDatetime")),
+  month: fn("month", col("AnalysisDatetime")),
 
-  month_name: fn("datename", literal("MONTH"), col("RegisteredDatetime")),
+  month_name: fn("datename", literal("MONTH"), col("AnalysisDatetime")),
 
-  week: fn("datepart", literal("WEEK"), col("RegisteredDatetime")),
+  week: fn("datepart", literal("WEEK"), col("AnalysisDatetime")),
 
   routine: fn(
     "count",

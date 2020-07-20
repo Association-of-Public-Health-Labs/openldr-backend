@@ -11,6 +11,8 @@ const dates = [
   moment().format("YYYY-MM-DD"),
 ];
 
+const age = [15, 49];
+
 module.exports = {
   async getSamplesByTestReason(req, res) {
     const id = "lab_samples_by_test_reason";
@@ -22,7 +24,7 @@ module.exports = {
     if (typeof req.query.codes === "undefined") {
       where = [
         {
-          RegisteredDatetime: {
+          AnalysisDatetime: {
             [Op.between]: req.query.dates || dates,
           },
         },
@@ -33,7 +35,7 @@ module.exports = {
           TestingFacilityCode: {
             [Op.in]: req.query.codes,
           },
-          RegisteredDatetime: {
+          AnalysisDatetime: {
             [Op.between]: req.query.dates || dates,
           },
         },
@@ -60,7 +62,7 @@ module.exports = {
     if (typeof req.query.codes === "undefined") {
       where = [
         {
-          RegisteredDatetime: {
+          AnalysisDatetime: {
             [Op.between]: req.query.dates || dates,
           },
         },
@@ -71,7 +73,7 @@ module.exports = {
           TestingFacilityCode: {
             [Op.in]: req.query.codes,
           },
-          RegisteredDatetime: {
+          AnalysisDatetime: {
             [Op.between]: req.query.dates || dates,
           },
         },
@@ -79,19 +81,25 @@ module.exports = {
     }
     const data = await VlData.findAll({
       attributes: [
-        [global.year, "year"],
-        [global.month, "month"],
-        [global.month_name, "month_name"],
+        [fn("year", col("AnalysisDatetime")), "year"],
+        [fn("month", col("AnalysisDatetime")), "month"],
+        [
+          fn("datename", literal("MONTH"), col("AnalysisDatetime")),
+          "month_name",
+        ],
         [global.total, "total"],
         [global.suppressed, "suppressed"],
         [global.non_suppressed, "non_suppressed"],
       ],
       where: where,
-      group: [global.year, global.month, global.month_name],
+      group: [
+        fn("year", col("AnalysisDatetime")),
+        fn("month", col("AnalysisDatetime")),
+        fn("datename", literal("MONTH"), col("AnalysisDatetime")),
+      ],
       order: [
-        [global.year, "ASC"],
-        [global.month, "ASC"],
-        [global.month_name, "ASC"],
+        [fn("year", col("AnalysisDatetime")), "ASC"],
+        [fn("month", col("AnalysisDatetime")), "ASC"],
       ],
     });
     return res.json(data);
@@ -121,7 +129,7 @@ module.exports = {
           TestingFacilityCode: {
             [Op.in]: req.query.codes,
           },
-          RegisteredDatetime: {
+          AnalysisDatetime: {
             [Op.between]: req.query.dates || dates,
           },
           TestingFacilityName: {
@@ -154,9 +162,20 @@ module.exports = {
     if (typeof req.query.codes === "undefined") {
       where = [
         {
-          RegisteredDatetime: {
+          AnalysisDatetime: {
             [Op.between]: req.query.dates || dates,
           },
+          [Op.and]: sequelize.where(
+            fn(
+              "datediff",
+              literal("day"),
+              col("SpecimenDatetime"),
+              col("AuthorisedDatetime")
+            ),
+            {
+              [Op.lt]: 90,
+            }
+          ),
         },
       ];
     } else {
@@ -165,28 +184,48 @@ module.exports = {
           TestingFacilityCode: {
             [Op.in]: req.query.codes,
           },
-          RegisteredDatetime: {
+          AnalysisDatetime: {
             [Op.between]: req.query.dates || dates,
           },
+          [Op.and]: sequelize.where(
+            fn(
+              "datediff",
+              literal("day"),
+              col("SpecimenDatetime"),
+              col("AuthorisedDatetime")
+            ),
+            {
+              [Op.lt]: 90,
+            }
+          ),
         },
       ];
     }
     const data = await VlData.findAll({
       attributes: [
-        [global.year, "year"],
-        [global.month, "month"],
-        [global.month_name, "month_name"],
+        [fn("year", col("AnalysisDatetime")), "year"],
+        [fn("month", col("AnalysisDatetime")), "month"],
+        [
+          fn("datename", literal("MONTH"), col("AnalysisDatetime")),
+          "month_name",
+        ],
         [global.collection_reception, "collection_reception"],
         [global.reception_registration, "reception_registration"],
         [global.registration_analysis, "registration_analysis"],
         [global.analysis_validation, "analysis_validation"],
       ],
       where: where,
-      group: [global.year, global.month, global.month_name],
+      group: [
+        fn("year", col("AnalysisDatetime")),
+        fn("month", col("AnalysisDatetime")),
+        [
+          fn("datename", literal("MONTH"), col("AnalysisDatetime")),
+          "month_name",
+        ],
+      ],
       order: [
-        [global.year, "ASC"],
-        [global.month, "ASC"],
-        [global.month_name, "ASC"],
+        [fn("year", col("AnalysisDatetime")), "ASC"],
+        [fn("month", col("AnalysisDatetime")), "ASC"],
       ],
     });
     res.json(data);
@@ -208,6 +247,17 @@ module.exports = {
           TestingFacilityName: {
             [Op.not]: null,
           },
+          [Op.and]: sequelize.where(
+            fn(
+              "datediff",
+              literal("day"),
+              col("SpecimenDatetime"),
+              col("AuthorisedDatetime")
+            ),
+            {
+              [Op.lt]: 90,
+            }
+          ),
         },
       ];
     } else {
@@ -222,6 +272,17 @@ module.exports = {
           TestingFacilityName: {
             [Op.not]: null,
           },
+          [Op.and]: sequelize.where(
+            fn(
+              "datediff",
+              literal("day"),
+              col("SpecimenDatetime"),
+              col("AuthorisedDatetime")
+            ),
+            {
+              [Op.lt]: 90,
+            }
+          ),
         },
       ];
     }
@@ -269,9 +330,12 @@ module.exports = {
     }
     const data = await VlData.findAll({
       attributes: [
-        [global.year, "year"],
-        [global.month, "month"],
-        [global.month_name, "month_name"],
+        [fn("year", col("AnalysisDatetime")), "year"],
+        [fn("month", col("AnalysisDatetime")), "month"],
+        [
+          fn("datename", literal("MONTH"), col("AnalysisDatetime")),
+          "month_name",
+        ],
         [global.total, "total"],
         [global.male_suppressed, "male_suppressed"],
         [global.female_suppressed, "female_suppressed"],
@@ -279,11 +343,14 @@ module.exports = {
         [global.female_not_suppressed, "female_not_suppressed"],
       ],
       where: where,
-      group: [global.year, global.month, global.month_name],
+      group: [
+        fn("year", col("AnalysisDatetime")),
+        fn("month", col("AnalysisDatetime")),
+        fn("datename", literal("MONTH"), col("AnalysisDatetime")),
+      ],
       order: [
-        [global.year, "ASC"],
-        [global.month, "ASC"],
-        [global.month_name, "ASC"],
+        [fn("year", col("AnalysisDatetime")), "ASC"],
+        [fn("month", col("AnalysisDatetime")), "ASC"],
       ],
     });
     return res.json(data);
@@ -352,7 +419,7 @@ module.exports = {
             [Op.between]: req.query.dates || dates,
           },
           AgeInYears: {
-            [Op.between]: req.query.age,
+            [Op.between]: req.query.age || age,
           },
         },
       ];
@@ -366,26 +433,32 @@ module.exports = {
             [Op.between]: req.query.dates || dates,
           },
           AgeInYears: {
-            [Op.between]: req.query.age,
+            [Op.between]: req.query.age || age,
           },
         },
       ];
     }
     const data = await VlData.findAll({
       attributes: [
-        [global.year, "year"],
-        [global.month, "month"],
-        [global.month_name, "month_name"],
+        [fn("year", col("AnalysisDatetime")), "year"],
+        [fn("month", col("AnalysisDatetime")), "month"],
+        [
+          fn("datename", literal("month"), col("AnalysisDatetime")),
+          "month_name",
+        ],
         [global.total, "total"],
         [global.suppressed, "suppressed"],
         [global.non_suppressed, "non_suppressed"],
       ],
       where: where,
-      group: [global.year, global.month, global.month_name],
+      group: [
+        fn("year", col("AnalysisDatetime")),
+        fn("month", col("AnalysisDatetime")),
+        fn("datename", literal("month"), col("AnalysisDatetime")),
+      ],
       order: [
-        [global.year, "ASC"],
-        [global.month, "ASC"],
-        [global.month_name, "ASC"],
+        [fn("year", col("AnalysisDatetime")), "ASC"],
+        [fn("month", col("AnalysisDatetime")), "ASC"],
       ],
     });
     return res.json(data);
@@ -426,19 +499,25 @@ module.exports = {
     }
     const data = await VlData.findAll({
       attributes: [
-        [global.year, "year"],
-        [global.month, "month"],
-        [global.month_name, "month_name"],
+        [fn("year", col("AnalysisDatetime")), "year"],
+        [fn("month", col("AnalysisDatetime")), "month"],
+        [
+          fn("datename", literal("month"), col("AnalysisDatetime")),
+          "month_name",
+        ],
         [global.total, "total"],
         [global.suppressed, "suppressed"],
         [global.non_suppressed, "non_suppressed"],
       ],
       where: where,
-      group: [global.year, global.month, global.month_name],
+      group: [
+        fn("year", col("AnalysisDatetime")),
+        fn("month", col("AnalysisDatetime")),
+        fn("datename", literal("month"), col("AnalysisDatetime")),
+      ],
       order: [
-        [global.year, "ASC"],
-        [global.month, "ASC"],
-        [global.month_name, "ASC"],
+        [fn("year", col("AnalysisDatetime")), "ASC"],
+        [fn("month", col("AnalysisDatetime")), "ASC"],
       ],
     });
     return res.json(data);
@@ -479,19 +558,25 @@ module.exports = {
     }
     const data = await VlData.findAll({
       attributes: [
-        [global.year, "year"],
-        [global.month, "month"],
-        [global.month_name, "month_name"],
+        [fn("year", col("AnalysisDatetime")), "year"],
+        [fn("month", col("AnalysisDatetime")), "month"],
+        [
+          fn("datename", literal("month"), col("AnalysisDatetime")),
+          "month_name",
+        ],
         [global.total, "total"],
         [global.suppressed, "suppressed"],
         [global.non_suppressed, "non_suppressed"],
       ],
       where: where,
-      group: [global.year, global.month, global.month_name],
+      group: [
+        fn("year", col("AnalysisDatetime")),
+        fn("month", col("AnalysisDatetime")),
+        fn("datename", literal("month"), col("AnalysisDatetime")),
+      ],
       order: [
-        [global.year, "ASC"],
-        [global.month, "ASC"],
-        [global.month_name, "ASC"],
+        [fn("year", col("AnalysisDatetime")), "ASC"],
+        [fn("month", col("AnalysisDatetime")), "ASC"],
       ],
     });
     return res.json(data);

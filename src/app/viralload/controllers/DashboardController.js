@@ -2,6 +2,7 @@ const VlData = require("../models/VlData");
 const global = require("./indicators/global");
 const utils = require("./indicators/utils");
 const { col, literal, fn, Op } = require("sequelize");
+const sequelize = require("sequelize");
 const path = require("path");
 const loadJsonFile = require("load-json-file");
 const moment = require("moment");
@@ -26,7 +27,7 @@ module.exports = {
       ],
       where: [
         {
-          RegisteredDatetime: {
+          AnalysisDatetime: {
             [Op.between]: req.query.dates || dates,
           },
         },
@@ -57,7 +58,7 @@ module.exports = {
       ],
       where: [
         {
-          RegisteredDatetime: {
+          AnalysisDatetime: {
             [Op.between]: req.query.dates || dates,
           },
         },
@@ -89,9 +90,20 @@ module.exports = {
       ],
       where: [
         {
-          RegisteredDatetime: {
+          AnalysisDatetime: {
             [Op.between]: req.query.dates || dates,
           },
+          [Op.and]: sequelize.where(
+            fn(
+              "datediff",
+              literal("day"),
+              col("SpecimenDatetime"),
+              col("AuthorisedDatetime")
+            ),
+            {
+              [Op.lt]: 90,
+            }
+          ),
         },
       ],
       group: [global.year, global.month, global.month_name],
@@ -121,7 +133,7 @@ module.exports = {
       ],
       where: [
         {
-          RegisteredDatetime: {
+          AnalysisDatetime: {
             [Op.between]: req.query.dates || dates,
           },
           RequestingProvinceName: {
@@ -143,9 +155,12 @@ module.exports = {
     }
     const data = await VlData.findAll({
       attributes: [
-        [global.year, "year"],
-        [global.month, "month"],
-        [global.month_name, "month_name"],
+        [fn("year", col("RegisteredDatetime")), "year"],
+        [fn("month", col("RegisteredDatetime")), "month"],
+        [
+          fn("datename", literal("MONTH"), col("RegisteredDatetime")),
+          "month_name",
+        ],
         [global.total, "registered"],
         [global.tested, "tested"],
         [global.suppressed, "suppressed"],
@@ -159,10 +174,14 @@ module.exports = {
           },
         },
       ],
-      group: [global.year, global.month, global.month_name],
+      group: [
+        fn("year", col("RegisteredDatetime")),
+        fn("month", col("RegisteredDatetime")),
+        fn("datename", literal("MONTH"), col("RegisteredDatetime")),
+      ],
       order: [
-        [global.year, "ASC"],
-        [global.month, "ASC"],
+        [fn("year", col("RegisteredDatetime")), "ASC"],
+        [fn("month", col("RegisteredDatetime")), "ASC"],
       ],
     });
     return res.json(data);

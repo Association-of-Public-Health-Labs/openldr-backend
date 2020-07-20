@@ -1,75 +1,75 @@
 [
   {
     "lab": "Lab. de Dream Maputo",
-    "total": 15792,
-    "male_suppressed": 4106,
-    "female_suppressed": 9452,
-    "male_not_suppressed": 708,
-    "female_not_suppressed": 1233
+    "total": 15583,
+    "male_suppressed": 4069,
+    "female_suppressed": 9340,
+    "male_not_suppressed": 691,
+    "female_not_suppressed": 1191
   },
   {
     "lab": "Lab. Ponta Gea",
-    "total": 63742,
-    "male_suppressed": 12192,
-    "female_suppressed": 29717,
+    "total": 63612,
+    "male_suppressed": 12164,
+    "female_suppressed": 29615,
     "male_not_suppressed": 4100,
     "female_not_suppressed": 8601
   },
   {
     "lab": "Lab.BM-HCM",
-    "total": 44858,
-    "male_suppressed": 9235,
-    "female_suppressed": 23747,
-    "male_not_suppressed": 3610,
-    "female_not_suppressed": 7024
+    "total": 44721,
+    "male_suppressed": 9222,
+    "female_suppressed": 23724,
+    "male_not_suppressed": 3577,
+    "female_not_suppressed": 6957
   },
   {
     "lab": "Lab.BM-HG Jose Macamo",
-    "total": 42867,
-    "male_suppressed": 10419,
-    "female_suppressed": 23536,
-    "male_not_suppressed": 2781,
-    "female_not_suppressed": 5005
+    "total": 42154,
+    "male_suppressed": 10223,
+    "female_suppressed": 23127,
+    "male_not_suppressed": 2752,
+    "female_not_suppressed": 4931
   },
   {
     "lab": "Lab.BM-HG Machava",
-    "total": 106503,
-    "male_suppressed": 25885,
-    "female_suppressed": 63803,
-    "male_not_suppressed": 5416,
-    "female_not_suppressed": 10189
+    "total": 105809,
+    "male_suppressed": 25710,
+    "female_suppressed": 63411,
+    "male_not_suppressed": 5371,
+    "female_not_suppressed": 10110
   },
   {
     "lab": "Lab.BM-Hosp.Militar Maputo",
-    "total": 28366,
-    "male_suppressed": 7655,
-    "female_suppressed": 15884,
-    "male_not_suppressed": 1663,
-    "female_not_suppressed": 2754
+    "total": 28065,
+    "male_suppressed": 7579,
+    "female_suppressed": 15718,
+    "male_not_suppressed": 1648,
+    "female_not_suppressed": 2712
   },
   {
     "lab": "Lab.BM-HP Xai-Xai",
-    "total": 87589,
-    "male_suppressed": 15494,
-    "female_suppressed": 53369,
-    "male_not_suppressed": 4514,
-    "female_not_suppressed": 12283
+    "total": 86657,
+    "male_suppressed": 15330,
+    "female_suppressed": 52838,
+    "male_not_suppressed": 4452,
+    "female_not_suppressed": 12116
   },
   {
     "lab": "Lab.BM-Quelimane",
-    "total": 123094,
-    "male_suppressed": 21076,
-    "female_suppressed": 60738,
-    "male_not_suppressed": 8036,
-    "female_not_suppressed": 18258
+    "total": 121574,
+    "male_suppressed": 20778,
+    "female_suppressed": 59953,
+    "male_not_suppressed": 7928,
+    "female_not_suppressed": 17964
   },
   {
     "lab": "Lab.Clinic-HC NAMpula",
-    "total": 81054,
-    "male_suppressed": 16852,
-    "female_suppressed": 39785,
-    "male_not_suppressed": 7439,
-    "female_not_suppressed": 15074
+    "total": 80651,
+    "male_suppressed": 16799,
+    "female_suppressed": 39598,
+    "male_not_suppressed": 7396,
+    "female_not_suppressed": 14966
   },
   {
     "lab": "Lab.Clinic-HG Mavalane",
@@ -81,26 +81,26 @@
   },
   {
     "lab": "Lab.Clinic-Hosp.Militar Maputo",
-    "total": 3,
+    "total": 2,
     "male_suppressed": 0,
-    "female_suppressed": 2,
+    "female_suppressed": 1,
     "male_not_suppressed": 0,
     "female_not_suppressed": 0
   },
   {
     "lab": "Lab.de Carmelo",
-    "total": 63795,
-    "male_suppressed": 13279,
-    "female_suppressed": 36639,
-    "male_not_suppressed": 4115,
-    "female_not_suppressed": 8061
+    "total": 63520,
+    "male_suppressed": 13219,
+    "female_suppressed": 36501,
+    "male_not_suppressed": 4088,
+    "female_not_suppressed": 8011
   },
   {
     "lab": "Lab.Nacional de Referencia-INS",
-    "total": 22436,
-    "male_suppressed": 5268,
-    "female_suppressed": 12238,
-    "male_not_suppressed": 1457,
-    "female_not_suppressed": 2725
+    "total": 22038,
+    "male_suppressed": 5198,
+    "female_suppressed": 12090,
+    "male_not_suppressed": 1435,
+    "female_not_suppressed": 2690
   }
 ]
