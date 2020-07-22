@@ -83,7 +83,7 @@ module.exports = UserController = {
         return res.status(200).json({
           message: "Auth successful",
           token: token,
-          user: user,
+          user: user[0],
         });
       }
       res.json({
