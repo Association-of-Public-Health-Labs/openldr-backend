@@ -190,6 +190,93 @@ module.exports = {
     return res.json(data);
   },
 
+  async getIndicatorsByProvince(req, res) {
+    const dates = req.query.dates;
+    const provinces = req.query.provinces;
+    const startDate = dates[0];
+    const endDate = dates[1];
+    const data = await Covid19.findAll({
+      attributes: [
+        [col("RequestingProvinceName"), "RequestingProvinceName"],
+        [col("RequestingDistrictName"), "RequestingDistrictName"],
+        [col("RequestingFacilityName"), "RequestingFacilityName"],
+        [
+          fn(
+            "count",
+            literal(
+              `CASE WHEN CAST(ISNULL(RegisteredDatetime,RegisteredDateTime) AS DATE) >= '${startDate}' AND CAST(ISNULL(RegisteredDatetime,RegisteredDateTime) AS DATE) <= '${endDate}' THEN 1 ELSE NULL END`
+            )
+          ),
+          "samples_receipt",
+        ],
+        [
+          fn(
+            "count",
+            literal(
+              `CASE WHEN CAST(AnalysisDateTime AS date) >= '${startDate}' AND CAST(AnalysisDateTime AS date) <= '${endDate}' THEN 1 ELSE NULL END`
+            )
+          ),
+          "samples_tested",
+        ],
+        [
+          fn(
+            "count",
+            literal(
+              `CASE WHEN CAST(AuthorisedDatetime AS date) >= '${startDate}' AND CAST(AuthorisedDatetime AS date) <= '${endDate}' THEN 1 ELSE NULL END`
+            )
+          ),
+          "samples_authorised",
+        ],
+        [
+          fn(
+            "count",
+            literal(
+              `CASE WHEN AnalysisDateTime IS NULL AND (LIMSRejectionCode = '' OR LIMSRejectionCode IS NULL) THEN 1 ELSE NULL END`
+            )
+          ),
+          `samples_pending`,
+        ],
+        [
+          fn(
+            "count",
+            literal(
+              `CASE WHEN CAST(AnalysisDateTime AS date) >= '${startDate}' AND CAST(AnalysisDateTime AS date) <= '${endDate}' AND ((LIMSRejectionCode <> '' AND LIMSRejectionCode IS NOT NULL) OR (LIMSRejectionCode <> '' AND LIMSRejectionCode IS NOT NULL)) THEN 1 ELSE NULL END`
+            )
+          ),
+          "samples_rejected",
+        ],
+        [
+          fn(
+            "count",
+            literal(
+              `CASE WHEN COVID19Result IN ('SARS COVID-19 Positivo','SARS-CoV-2 Positivo') AND CAST(AuthorisedDatetime AS date) >= '${startDate}' AND CAST(AuthorisedDatetime AS date) <= '${endDate}' THEN 1 ELSE NULL END`
+            )
+          ),
+          "samples_positive",
+        ],
+      ],
+      group: [
+        col("RequestingProvinceName"),
+        col("RequestingDistrictName"),
+        col("RequestingFacilityName"),
+      ],
+      order: [
+        col("RequestingProvinceName"),
+        col("RequestingDistrictName"),
+        col("RequestingFacilityName"),
+      ],
+      where: {
+        [Op.and]: {
+          RequestingProvinceName: {
+            [Op.in]: provinces,
+          },
+        },
+      },
+    });
+
+    return res.json(data);
+  },
+
   async getTAT(req, res) {
     const data = await Covid19.findAll({
       attributes: [

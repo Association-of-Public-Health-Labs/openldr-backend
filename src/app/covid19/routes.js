@@ -27,6 +27,11 @@ routes.get(
   DashboardController.getPositiveSamplesByProvince
 );
 routes.get("/report", checkAuth, DashboardController.getGlobalReport);
+routes.get(
+  "/samplesindicators",
+  checkAuth,
+  DashboardController.getIndicatorsByProvince
+);
 routes.get("/covid19tat", checkAuth, DashboardController.getTAT);
 routes.get(
   "/covid19-by-gender",
