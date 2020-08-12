@@ -199,7 +199,6 @@ module.exports = {
       attributes: [
         [col("RequestingProvinceName"), "RequestingProvinceName"],
         [col("RequestingDistrictName"), "RequestingDistrictName"],
-        [col("RequestingFacilityName"), "RequestingFacilityName"],
         [
           fn(
             "count",
@@ -255,20 +254,23 @@ module.exports = {
           "samples_positive",
         ],
       ],
-      group: [
-        col("RequestingProvinceName"),
-        col("RequestingDistrictName"),
-        col("RequestingFacilityName"),
-      ],
-      order: [
-        col("RequestingProvinceName"),
-        col("RequestingDistrictName"),
-        col("RequestingFacilityName"),
-      ],
+      group: [col("RequestingProvinceName"), col("RequestingDistrictName")],
+      order: [col("RequestingProvinceName"), col("RequestingDistrictName")],
       where: {
         [Op.and]: {
           RequestingProvinceName: {
             [Op.in]: provinces,
+          },
+          [Op.or]: {
+            AnalysisDatetime: {
+              [Op.not]: null,
+            },
+            AuthorisedDatetime: {
+              [Op.not]: null,
+            },
+            RegisteredDatetime: {
+              [Op.not]: null,
+            },
           },
         },
       },
