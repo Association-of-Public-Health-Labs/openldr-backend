@@ -1,19 +1,11 @@
 [
   {
     "year": 2019,
-    "month": 7,
-    "month_name": "July",
-    "total": 45179,
-    "suppressed": 33895,
-    "non_suppressed": 10266
-  },
-  {
-    "year": 2019,
     "month": 8,
     "month_name": "August",
-    "total": 92358,
-    "suppressed": 69167,
-    "non_suppressed": 21863
+    "total": 55756,
+    "suppressed": 41909,
+    "non_suppressed": 13076
   },
   {
     "year": 2019,
@@ -51,56 +43,64 @@
     "year": 2020,
     "month": 1,
     "month_name": "January",
-    "total": 63008,
-    "suppressed": 48469,
-    "non_suppressed": 13648
+    "total": 62966,
+    "suppressed": 48443,
+    "non_suppressed": 13634
   },
   {
     "year": 2020,
     "month": 2,
     "month_name": "February",
-    "total": 61962,
-    "suppressed": 48637,
-    "non_suppressed": 11984
+    "total": 61834,
+    "suppressed": 48525,
+    "non_suppressed": 11967
   },
   {
     "year": 2020,
     "month": 3,
     "month_name": "March",
-    "total": 83135,
-    "suppressed": 65561,
-    "non_suppressed": 14993
+    "total": 83075,
+    "suppressed": 65518,
+    "non_suppressed": 14986
   },
   {
     "year": 2020,
     "month": 4,
     "month_name": "April",
-    "total": 59934,
-    "suppressed": 48996,
-    "non_suppressed": 9723
+    "total": 59906,
+    "suppressed": 48976,
+    "non_suppressed": 9718
   },
   {
     "year": 2020,
     "month": 5,
     "month_name": "May",
-    "total": 75485,
-    "suppressed": 46398,
-    "non_suppressed": 9144
+    "total": 75459,
+    "suppressed": 46382,
+    "non_suppressed": 9136
   },
   {
     "year": 2020,
     "month": 6,
     "month_name": "June",
-    "total": 44631,
-    "suppressed": 37378,
-    "non_suppressed": 6477
+    "total": 50825,
+    "suppressed": 42412,
+    "non_suppressed": 7495
   },
   {
     "year": 2020,
     "month": 7,
     "month_name": "July",
-    "total": 22675,
-    "suppressed": 19212,
-    "non_suppressed": 3083
+    "total": 67395,
+    "suppressed": 57003,
+    "non_suppressed": 9228
+  },
+  {
+    "year": 2020,
+    "month": 8,
+    "month_name": "August",
+    "total": 29988,
+    "suppressed": 25726,
+    "non_suppressed": 3934
   }
 ]

@@ -1,15 +1,67 @@
 [
-  { "year": 2019, "month": 7, "total": 45179 },
-  { "year": 2019, "month": 8, "total": 92358 },
-  { "year": 2019, "month": 9, "total": 76906 },
-  { "year": 2019, "month": 10, "total": 65545 },
-  { "year": 2019, "month": 11, "total": 69798 },
-  { "year": 2019, "month": 12, "total": 66504 },
-  { "year": 2020, "month": 1, "total": 63008 },
-  { "year": 2020, "month": 2, "total": 61962 },
-  { "year": 2020, "month": 3, "total": 83135 },
-  { "year": 2020, "month": 4, "total": 59934 },
-  { "year": 2020, "month": 5, "total": 75485 },
-  { "year": 2020, "month": 6, "total": 44631 },
-  { "year": 2020, "month": 7, "total": 22675 }
+  {
+    "year": 2019,
+    "month": 8,
+    "total": 55756
+  },
+  {
+    "year": 2019,
+    "month": 9,
+    "total": 76906
+  },
+  {
+    "year": 2019,
+    "month": 10,
+    "total": 65545
+  },
+  {
+    "year": 2019,
+    "month": 11,
+    "total": 69798
+  },
+  {
+    "year": 2019,
+    "month": 12,
+    "total": 66504
+  },
+  {
+    "year": 2020,
+    "month": 1,
+    "total": 62966
+  },
+  {
+    "year": 2020,
+    "month": 2,
+    "total": 61834
+  },
+  {
+    "year": 2020,
+    "month": 3,
+    "total": 83075
+  },
+  {
+    "year": 2020,
+    "month": 4,
+    "total": 59906
+  },
+  {
+    "year": 2020,
+    "month": 5,
+    "total": 75459
+  },
+  {
+    "year": 2020,
+    "month": 6,
+    "total": 50825
+  },
+  {
+    "year": 2020,
+    "month": 7,
+    "total": 67395
+  },
+  {
+    "year": 2020,
+    "month": 8,
+    "total": 29988
+  }
 ]
