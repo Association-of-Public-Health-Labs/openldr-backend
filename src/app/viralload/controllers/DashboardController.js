@@ -7,20 +7,18 @@ const path = require("path");
 const loadJsonFile = require("load-json-file");
 const moment = require("moment");
 
-// const dates = [
-//   moment().subtract(1, "years").format("YYYY-MM-DD"),
-//   moment().format("YYYY-MM-DD"),
-// ];
-
-const dates = ["2019-08-14", "2020-08-14"];
+const dates = [
+  moment().subtract(1, "years").format("YYYY-MM-DD"),
+  moment().format("YYYY-MM-DD"),
+];
 
 module.exports = {
   async getNumberOfSamples(req, res) {
     const id = "dash_number_of_samples";
-    // const cache = await utils.checkCache(req.query, id);
-    // if (cache) {
-    //   return res.json(cache);
-    // }
+    const cache = await utils.checkCache(req.query, id);
+    if (cache) {
+      return res.json(cache);
+    }
     const data = await VlData.findAll({
       attributes: [
         [global.year, "year"],
@@ -46,10 +44,10 @@ module.exports = {
 
   async getViralSuppression(req, res) {
     const id = "dash_viral_suppression";
-    // const cache = await utils.checkCache(req.query, id);
-    // if (cache) {
-    //   return res.json(cache);
-    // }
+    const cache = await utils.checkCache(req.query, id);
+    if (cache) {
+      return res.json(cache);
+    }
     const data = await VlData.findAll({
       attributes: [
         [global.year, "year"],
@@ -76,10 +74,10 @@ module.exports = {
 
   async getTurnAroundTime(req, res) {
     const id = "dash_tat";
-    // const cache = await utils.checkCache(req.query, id);
-    // if (cache) {
-    //   return res.json(cache);
-    // }
+    const cache = await utils.checkCache(req.query, id);
+    if (cache) {
+      return res.json(cache);
+    }
     const data = await VlData.findAll({
       attributes: [
         [global.year, "year"],
@@ -120,10 +118,10 @@ module.exports = {
 
   async getViralSuppressionMap(req, res) {
     const id = "dash_viral_suppression_map";
-    // const cache = await utils.checkCache(req.query, id);
-    // if (cache) {
-    //   return res.json(cache);
-    // }
+    const cache = await utils.checkCache(req.query, id);
+    if (cache) {
+      return res.json(cache);
+    }
     const data = await VlData.findAll({
       attributes: [
         [col("RequestingProvinceName"), "province"],
@@ -151,10 +149,10 @@ module.exports = {
 
   async getSamplesIndicators(req, res) {
     const id = "dash_sampes_indicators";
-    // const cache = await utils.checkCache(req.query, id);
-    // if (cache) {
-    //   return res.json(cache);
-    // }
+    const cache = await utils.checkCache(req.query, id);
+    if (cache) {
+      return res.json(cache);
+    }
     const data = await VlData.findAll({
       attributes: [
         [fn("year", col("RegisteredDatetime")), "year"],

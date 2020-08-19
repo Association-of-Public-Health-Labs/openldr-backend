@@ -377,4 +377,59 @@ module.exports = {
     });
     return res.json(data);
   },
+
+  async samplesByLab(req, res) {
+    const dates = req.query.dates;
+    const startDate = dates[0];
+    const endDate = dates[1];
+
+    // const { startDate, endDate } = req.params;
+
+    const data = await Covid19.findAll({
+      attributes: [
+        [col("TestingFacilityName"), "TestingFacilityName"],
+        [
+          fn(
+            "count",
+            literal(
+              `CASE WHEN CAST(AnalysisDateTime AS date) >= '${startDate}' AND CAST(AnalysisDateTime AS date) <= '${endDate}' THEN 1 ELSE NULL END`
+            )
+          ),
+          "tested",
+        ],
+        [
+          fn(
+            "count",
+            literal(
+              `CASE WHEN CAST(AuthorisedDatetime AS date) >= '${startDate}' AND CAST(AuthorisedDatetime AS date) <= '${endDate}' THEN 1 ELSE NULL END`
+            )
+          ),
+          "authorised",
+        ],
+        [
+          fn(
+            "count",
+            literal(
+              `CASE WHEN COVID19Result IN ('SARS COVID-19 Positivo','SARS-CoV-2 Positivo') AND CAST(AuthorisedDatetime AS date) >= '${startDate}' AND CAST(AuthorisedDatetime AS date) <= '${endDate}' THEN 1 ELSE NULL END`
+            )
+          ),
+          "positives",
+        ],
+      ],
+      where: {
+        [Op.or]: [
+          literal(
+            `CAST(AnalysisDateTime AS date) >= '${startDate}' AND CAST(AnalysisDateTime AS date) <= '${endDate}'`
+          ),
+          literal(
+            `CAST(AuthorisedDatetime AS date) >= '${startDate}' AND CAST(AuthorisedDatetime AS date) <= '${endDate}'`
+          ),
+        ],
+      },
+      group: [col("TestingFacilityName")],
+      order: [col("TestingFacilityName")],
+    });
+
+    return res.json(data);
+  },
 };

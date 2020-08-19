@@ -39,6 +39,11 @@ routes.get(
   DashboardController.getPositiveCasesByGender
 );
 
+routes.get(
+  "/covid19/:startDate/:endDate/samples_by_lab",
+  DashboardController.samplesByLab
+);
+
 // Reports
 routes.post("/create_report", ReportsController.store);
 routes.put("/update_report", ReportsController.update);
