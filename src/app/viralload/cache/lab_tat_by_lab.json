@@ -1,12 +1,5 @@
 [
   {
-    "lab": "",
-    "collection_reception": 0,
-    "reception_registration": 0,
-    "registration_analysis": 2,
-    "analysis_validation": 0
-  },
-  {
     "lab": "Cabo Delgado",
     "collection_reception": 6,
     "reception_registration": 0,
