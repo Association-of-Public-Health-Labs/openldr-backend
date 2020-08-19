@@ -1,13 +1,13 @@
 [
   {
-    "lab": "Lab. de Dream Maputo",
+    "lab": "Dream Maputo",
     "collection_reception": 0,
     "reception_registration": 0,
     "registration_analysis": 6,
     "analysis_validation": 1
   },
   {
-    "lab": "Lab. Ponta Gea",
+    "lab": "Ponta Gea",
     "collection_reception": 6,
     "reception_registration": 0,
     "registration_analysis": 4,
@@ -21,70 +21,63 @@
     "analysis_validation": 1
   },
   {
-    "lab": "Lab.BM-HG Jose Macamo",
+    "lab": "Jose Macamo",
     "collection_reception": 3,
     "reception_registration": 0,
     "registration_analysis": 4,
     "analysis_validation": 1
   },
   {
-    "lab": "Lab.BM-HG Machava",
+    "lab": "HG Machava",
     "collection_reception": 3,
     "reception_registration": 2,
     "registration_analysis": 6,
     "analysis_validation": 0
   },
   {
-    "lab": "Lab.BM-Hosp.Militar Maputo",
+    "lab": "Hosp.Militar Maputo",
     "collection_reception": 2,
     "reception_registration": 0,
     "registration_analysis": 6,
     "analysis_validation": 0
   },
   {
-    "lab": "Lab.BM-HP Xai-Xai",
+    "lab": "Xai-Xai",
     "collection_reception": 5,
     "reception_registration": 0,
     "registration_analysis": 6,
     "analysis_validation": 0
   },
   {
-    "lab": "Lab.BM-Quelimane",
+    "lab": "Quelimane",
     "collection_reception": 4,
     "reception_registration": 1,
     "registration_analysis": 5,
     "analysis_validation": 0
   },
   {
-    "lab": "Lab.Clinic-HC NAMpula",
+    "lab": "Nampula",
     "collection_reception": 6,
     "reception_registration": 2,
     "registration_analysis": 8,
     "analysis_validation": 0
   },
   {
-    "lab": "Lab.Clinic-HG Mavalane",
+    "lab": "HG Mavalane",
     "collection_reception": 0,
     "reception_registration": 0,
     "registration_analysis": 2,
     "analysis_validation": 0
   },
   {
-    "lab": "Lab.Clinic-Hosp.Militar Maputo",
-    "collection_reception": 0,
-    "reception_registration": 0,
-    "registration_analysis": 4,
-    "analysis_validation": 0
-  },
-  {
-    "lab": "Lab.de Carmelo",
+    "lab": "Carmelo",
     "collection_reception": 5,
     "reception_registration": 0,
     "registration_analysis": 7,
     "analysis_validation": 0
   },
   {
-    "lab": "Lab.Nacional de Referencia-INS",
+    "lab": "INS",
     "collection_reception": 3,
     "reception_registration": 10,
     "registration_analysis": 7,
