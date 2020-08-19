@@ -6,12 +6,14 @@ const VlData = require("../models/VlData");
 const { Op, fn, literal, col } = sequelize;
 const moment = require("moment");
 
-const dates = [
-  moment().subtract(1, "years").format("YYYY-MM-DD"),
-  moment().format("YYYY-MM-DD"),
-];
+// const dates = [
+//   moment().subtract(1, "years").format("YYYY-MM-DD"),
+//   moment().format("YYYY-MM-DD"),
+// ];
 
 const age = [15, 49];
+
+const dates = ["2019-08-19", "2020-08-19"];
 
 module.exports = {
   async getSamplesByTestReason(req, res) {
@@ -233,10 +235,10 @@ module.exports = {
 
   async getTurnaroundTimeByLab(req, res) {
     const id = "lab_tat_by_lab";
-    const cache = await utils.checkCache(req.query, id);
-    if (cache) {
-      return res.json(cache);
-    }
+    // const cache = await utils.checkCache(req.query, id);
+    // if (cache) {
+    //   return res.json(cache);
+    // }
     var where = [];
     if (typeof req.query.codes === "undefined") {
       where = [
@@ -247,6 +249,9 @@ module.exports = {
           TestingFacilityName: {
             [Op.not]: null,
           },
+          // TestingFacilityCode: [
+          //   literal(`distinct TestingFacilityCode, TestingFacilityName`),
+          // ],
           [Op.and]: sequelize.where(
             fn(
               "datediff",
