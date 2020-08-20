@@ -391,7 +391,7 @@ module.exports = {
           fn(
             "count",
             literal(
-              `CASE WHEN CAST(AnalysisDateTime AS date) >= '${endDate}' AND CAST(AnalysisDateTime AS date) <= '${endDate}' THEN 1 ELSE NULL END`
+              `CASE WHEN CAST(AnalysisDateTime AS date) >= '${startDate}' AND CAST(AnalysisDateTime AS date) <= '${endDate}' THEN 1 ELSE NULL END`
             )
           ),
           "tested",
@@ -400,7 +400,7 @@ module.exports = {
           fn(
             "count",
             literal(
-              `CASE WHEN CAST(AuthorisedDatetime AS date) >= '${endDate}' AND CAST(AuthorisedDatetime AS date) <= '${endDate}' THEN 1 ELSE NULL END`
+              `CASE WHEN CAST(AuthorisedDatetime AS date) >= '${startDate}' AND CAST(AuthorisedDatetime AS date) <= '${endDate}' THEN 1 ELSE NULL END`
             )
           ),
           "authorised",
@@ -418,10 +418,10 @@ module.exports = {
       where: {
         [Op.or]: [
           literal(
-            `CAST(AnalysisDateTime AS date) >= '${endDate}' AND CAST(AnalysisDateTime AS date) <= '${endDate}'`
+            `CAST(AnalysisDateTime AS date) >= '${startDate}' AND CAST(AnalysisDateTime AS date) <= '${endDate}'`
           ),
           literal(
-            `CAST(AuthorisedDatetime AS date) >= '${endDate}' AND CAST(AuthorisedDatetime AS date) <= '${endDate}'`
+            `CAST(AuthorisedDatetime AS date) >= '${startDate}' AND CAST(AuthorisedDatetime AS date) <= '${endDate}'`
           ),
         ],
       },
