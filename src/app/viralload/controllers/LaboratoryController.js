@@ -13,6 +13,8 @@ const dates = [
 
 const age = [15, 49];
 
+// const dates = ["2019-08-27", "2020-08-27"];
+
 module.exports = {
   async getSamplesByTestReason(req, res) {
     const id = "lab_samples_by_test_reason";

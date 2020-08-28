@@ -12,6 +12,8 @@ const dates = [
   moment().format("YYYY-MM-DD"),
 ];
 
+// const dates = ["2019-08-27", "2020-08-27"];
+
 module.exports = {
   async getNumberOfSamples(req, res) {
     const id = "dash_number_of_samples";

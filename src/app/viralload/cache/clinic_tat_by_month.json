@@ -3,10 +3,10 @@
     "year": 2019,
     "month": 8,
     "month_name": "August",
-    "collection_reception": 6,
-    "reception_registration": 5,
-    "registration_analysis": 10,
-    "analysis_validation": 1
+    "collection_reception": 7,
+    "reception_registration": 10,
+    "registration_analysis": 8,
+    "analysis_validation": 2
   },
   {
     "year": 2019,
@@ -111,8 +111,8 @@
     "year": 2020,
     "month": 8,
     "month_name": "August",
-    "collection_reception": 4,
-    "reception_registration": 0,
+    "collection_reception": 3,
+    "reception_registration": 1,
     "registration_analysis": 9,
     "analysis_validation": 0
   }

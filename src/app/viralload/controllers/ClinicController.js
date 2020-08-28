@@ -13,6 +13,10 @@ const dates = [
 
 const type = "province";
 
+// const dates = ["2019-08-27", "2020-08-27"];
+
+// const age = [15, 49];
+
 module.exports = ClinicController = {
   async getSamplesByTestReason(req, res) {
     const id = "clinic_samples_by_test_reason";
