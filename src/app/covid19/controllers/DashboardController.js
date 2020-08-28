@@ -475,6 +475,7 @@ module.exports = {
         [Op.and]: [
           literal(`CAST(AuthorisedDatetime AS date) >= '${startDate}'`),
           literal(`CAST(AuthorisedDatetime AS date) <= '${endDate}'`),
+          literal("TestingFacilityName IS NOT NULL"),
         ],
       },
       group: [[col("TestingFacilityName")]],
