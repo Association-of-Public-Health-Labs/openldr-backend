@@ -379,8 +379,12 @@ module.exports = {
 
   async samplesByLab(req, res) {
     const dates = req.query.dates;
+    var codes = req.query.codes;
     const startDate = dates[0];
     const endDate = dates[1];
+
+    if (!codes)
+      codes = ["PMB", "PBU", "PIM", "PDC", "PNV", "PQM", "PTC", "PDD"];
 
     // const { startDate, endDate } = req.params;
 
@@ -434,8 +438,12 @@ module.exports = {
 
   async turnaroundTimeByLab(req, res) {
     const dates = req.query.dates;
+    var codes = req.query.codes;
     const startDate = dates[0];
     const endDate = dates[1];
+
+    if (!codes)
+      codes = ["PMB", "PBU", "PIM", "PDC", "PNV", "PQM", "PTC", "PDD"];
 
     // const { startDate, endDate } = req.params;
 
@@ -476,6 +484,11 @@ module.exports = {
           literal(`CAST(AuthorisedDatetime AS date) >= '${startDate}'`),
           literal(`CAST(AuthorisedDatetime AS date) <= '${endDate}'`),
           literal("TestingFacilityName IS NOT NULL"),
+          {
+            TestingFacilityCode: {
+              [Op.in]: codes,
+            },
+          },
         ],
       },
       group: [[col("TestingFacilityName")]],
