@@ -4,28 +4,30 @@ const moment = require("moment");
 
 module.exports = {
   async getNumberOfSamples(req, res) {
+    const dates = req.query.dates;
+    const startDate = dates[0];
+    const endDate = dates[1];
     const data = await Covid19.findAll({
       attributes: [
-        [fn("year", col("RegisteredDatetime")), "year"],
-        [fn("month", col("RegisteredDatetime")), "month"],
-        [fn("day", col("RegisteredDatetime")), "day"],
-        [fn("count", literal("1")), "total"],
+        [
+          fn(
+            "count",
+            literal(
+              "CASE WHEN Covid19Result IS NOT NULL AND Covid19Result <> '' THEN 1 ELSE NULL END"
+            )
+          ),
+          "tested",
+        ],
+        [
+          fn(
+            "count",
+            literal(
+              `CASE WHEN COVID19Result IN ('SARS COVID-19 Positivo','SARS-CoV-2 Positivo') THEN 1 ELSE NULL END`
+            )
+          ),
+          "positive",
+        ],
       ],
-      group: [
-        fn("year", col("RegisteredDatetime")),
-        fn("month", col("RegisteredDatetime")),
-        fn("day", col("RegisteredDatetime")),
-      ],
-      order: [
-        [fn("year", col("RegisteredDatetime")), "ASC"],
-        [fn("month", col("RegisteredDatetime")), "ASC"],
-        [fn("day", col("RegisteredDatetime")), "ASC"],
-      ],
-      where: {
-        RegisteredDateTime: {
-          [Op.between]: req.query.dates,
-        },
-      },
     });
 
     return res.json(data);
@@ -202,7 +204,7 @@ module.exports = {
           fn(
             "count",
             literal(
-              `CASE WHEN CAST(ISNULL(RegisteredDatetime,RegisteredDateTime) AS DATE) >= '${startDate}' AND CAST(ISNULL(RegisteredDatetime,RegisteredDateTime) AS DATE) <= '${endDate}' THEN 1 ELSE NULL END`
+              `CASE WHEN CAST(RegisteredDateTime AS DATE) >= '${startDate}' AND CAST(RegisteredDatetime AS DATE) <= '${endDate}' THEN 1 ELSE NULL END`
             )
           ),
           "samples_receipt",
@@ -259,17 +261,6 @@ module.exports = {
         [Op.and]: {
           RequestingProvinceName: {
             [Op.in]: provinces,
-          },
-          [Op.or]: {
-            AnalysisDatetime: {
-              [Op.not]: null,
-            },
-            AuthorisedDatetime: {
-              [Op.not]: null,
-            },
-            RegisteredDatetime: {
-              [Op.not]: null,
-            },
           },
         },
       },

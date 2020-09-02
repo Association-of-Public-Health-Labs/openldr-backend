@@ -12,7 +12,7 @@ const dates = [
   moment().format("YYYY-MM-DD"),
 ];
 
-// const dates = ["2019-08-27", "2020-08-27"];
+// const dates = ["2019-08-01", "2020-08-27"];
 
 module.exports = {
   async getNumberOfSamples(req, res) {
@@ -62,6 +62,14 @@ module.exports = {
         {
           AnalysisDatetime: {
             [Op.between]: req.query.dates || dates,
+          },
+          [Op.and]: {
+            ViralLoadResultCategory: {
+              [Op.not]: null,
+            },
+            ViralLoadResultCategory: {
+              [Op.notLike]: "",
+            },
           },
         },
       ],
@@ -137,6 +145,12 @@ module.exports = {
         {
           AnalysisDatetime: {
             [Op.between]: req.query.dates || dates,
+          },
+          ViralLoadCategoryResult: {
+            [Op.not]: null,
+          },
+          ViralLoadCategoryResult: {
+            [Op.notLike]: "",
           },
           RequestingProvinceName: {
             [Op.not]: null,
