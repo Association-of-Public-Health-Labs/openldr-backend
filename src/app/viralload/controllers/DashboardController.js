@@ -128,10 +128,10 @@ module.exports = {
 
   async getViralSuppressionMap(req, res) {
     const id = "dash_viral_suppression_map";
-    const cache = await utils.checkCache(req.query, id);
-    if (cache) {
-      return res.json(cache);
-    }
+    // const cache = await utils.checkCache(req.query, id);
+    // if (cache) {
+    //   return res.json(cache);
+    // }
     const data = await VlData.findAll({
       attributes: [
         [col("RequestingProvinceName"), "province"],
@@ -146,14 +146,13 @@ module.exports = {
           AnalysisDatetime: {
             [Op.between]: req.query.dates || dates,
           },
-          ViralLoadCategoryResult: {
-            [Op.not]: null,
-          },
-          ViralLoadCategoryResult: {
-            [Op.notLike]: "",
-          },
-          RequestingProvinceName: {
-            [Op.not]: null,
+          [Op.and]: {
+            ViralLoadResultCategory: {
+              [Op.not]: null,
+            },
+            ViralLoadResultCategory: {
+              [Op.notLike]: "",
+            },
           },
         },
       ],
