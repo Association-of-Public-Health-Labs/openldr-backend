@@ -5,13 +5,21 @@ const fs = require("fs");
 const path = require("path");
 
 module.exports = {
-  async getAttributes(facilityType) {
+  async getAttributes(facilityType, disaggregation) {
     if (facilityType === "province") {
-      return col("RequestingProvinceName");
+      if (disaggregation) {
+        return { column: col("RequestingDistrictName"), type: "district" };
+      }
+      return { column: col("RequestingProvinceName"), type: "province" };
     } else if (facilityType === "district") {
-      return col("RequestingDistrictName");
+      if (disaggregation) {
+        return { column: col("RequestingFacilityName"), type: "clinic" };
+      }
+      return { column: col("RequestingDistrictName"), type: "district" };
     } else if (facilityType === "clinic") {
-      return col("RequestingFacilityName");
+      return { column: col("RequestingFacilityName"), type: "clinic" };
+    } else {
+      return { column: col("RequestingProvinceName"), type: "province" };
     }
   },
 

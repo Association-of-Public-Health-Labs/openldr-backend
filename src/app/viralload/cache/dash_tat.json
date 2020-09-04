@@ -1,15 +1,6 @@
 [
   {
     "year": 2019,
-    "month": 8,
-    "month_name": "August",
-    "collection_reception": 7,
-    "reception_registration": 10,
-    "registration_analysis": 8,
-    "analysis_validation": 2
-  },
-  {
-    "year": 2019,
     "month": 9,
     "month_name": "September",
     "collection_reception": 4,

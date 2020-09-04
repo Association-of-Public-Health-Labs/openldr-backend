@@ -43,10 +43,10 @@
   },
   {
     "lab": "INS",
-    "collection_reception": 3,
-    "reception_registration": 8,
+    "collection_reception": 2,
+    "reception_registration": 6,
     "registration_analysis": 6,
-    "analysis_validation": 1
+    "analysis_validation": 0
   },
   {
     "lab": "Jose Macamo",
@@ -87,7 +87,7 @@
     "lab": "Quelimane",
     "collection_reception": 3,
     "reception_registration": 2,
-    "registration_analysis": 5,
+    "registration_analysis": 6,
     "analysis_validation": 0
   },
   {

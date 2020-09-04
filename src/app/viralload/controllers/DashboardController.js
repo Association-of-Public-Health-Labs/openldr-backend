@@ -12,7 +12,7 @@ const dates = [
   moment().format("YYYY-MM-DD"),
 ];
 
-// const dates = ["2019-08-01", "2020-08-27"];
+// const dates = ["2019-09-01", "2020-09-04"];
 
 module.exports = {
   async getNumberOfSamples(req, res) {
@@ -128,10 +128,10 @@ module.exports = {
 
   async getViralSuppressionMap(req, res) {
     const id = "dash_viral_suppression_map";
-    // const cache = await utils.checkCache(req.query, id);
-    // if (cache) {
-    //   return res.json(cache);
-    // }
+    const cache = await utils.checkCache(req.query, id);
+    if (cache) {
+      return res.json(cache);
+    }
     const data = await VlData.findAll({
       attributes: [
         [col("RequestingProvinceName"), "province"],

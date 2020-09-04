@@ -13,9 +13,9 @@ const dates = [
 
 const type = "province";
 
-// const dates = ["2019-08-27", "2020-08-27"];
+// const dates = ["2019-09-01", "2020-09-04"];
 
-// const age = [15, 49];
+const age = [15, 49];
 
 module.exports = ClinicController = {
   async getSamplesByTestReason(req, res) {
@@ -101,6 +101,7 @@ module.exports = ClinicController = {
 
   async getSamplesTestedByFacility(req, res) {
     const id = "clinic_samples_tested_by_facility";
+    const disaggregation = req.query.disaggregation === "true";
     const cache = await utils.checkCache(req.query, id);
     if (cache) {
       return res.json(cache);
@@ -124,17 +125,21 @@ module.exports = ClinicController = {
         };
       }
     }
-    const column = await utils.getAttributes(req.query.type || type);
+    const columnsDetails = await utils.getAttributes(
+      req.query.type || type,
+      disaggregation
+    );
     const data = await VlData.findAll({
       attributes: [
-        [column, "facility"],
+        [columnsDetails.column, "facility"],
+        [literal(`'${columnsDetails.type}'`), "type"],
         [global.total, "total"],
         [global.suppressed, "suppressed"],
         [global.non_suppressed, "non_suppressed"],
       ],
       where: where,
-      group: [column],
-      order: [[column, "ASC"]],
+      group: [columnsDetails.column],
+      order: [[columnsDetails.column, "ASC"]],
     });
     return res.json(data);
   },
@@ -205,6 +210,8 @@ module.exports = ClinicController = {
 
   async getTurnaroundTimeByFacility(req, res) {
     const id = "clinic_tat_by_facility";
+    const disaggregation = req.query.disaggregation === "true";
+
     const cache = await utils.checkCache(req.query, id);
     if (cache) {
       return res.json(cache);
@@ -245,18 +252,24 @@ module.exports = ClinicController = {
         };
       }
     }
-    const column = await utils.getAttributes(req.query.type || type);
+
+    const columnsDetails = await utils.getAttributes(
+      req.query.type || type,
+      disaggregation
+    );
+
     const data = await VlData.findAll({
       attributes: [
-        [column, "facility"],
+        [columnsDetails.column, "facility"],
+        [literal(`'${columnsDetails.type}'`), "type"],
         [global.collection_reception, "collection_reception"],
         [global.reception_registration, "reception_registration"],
         [global.registration_analysis, "registration_analysis"],
         [global.analysis_validation, "analysis_validation"],
       ],
       where: where,
-      group: [column],
-      order: [[column, "ASC"]],
+      group: [columnsDetails.column],
+      order: [[columnsDetails.column, "ASC"]],
     });
     res.json(data);
   },
@@ -286,6 +299,7 @@ module.exports = ClinicController = {
         };
       }
     }
+
     const data = await VlData.findAll({
       attributes: [
         [global.year, "year"],
@@ -310,6 +324,7 @@ module.exports = ClinicController = {
 
   async getSamplesTestedByGenderAndFacility(req, res) {
     const id = "clinic_samples_tested_by_gender_and_facility";
+    const disaggregation = req.query.disaggregation === "true";
     const cache = await utils.checkCache(req.query, id);
     if (cache) {
       return res.json(cache);
@@ -333,10 +348,15 @@ module.exports = ClinicController = {
         };
       }
     }
-    const column = await utils.getAttributes(req.query.type || type);
+    const columnsDetails = await utils.getAttributes(
+      req.query.type || type,
+      disaggregation
+    );
+
     const data = await VlData.findAll({
       attributes: [
-        [column, "facility"],
+        [columnsDetails.column, "facility"],
+        [literal(`'${columnsDetails.type}'`), "type"],
         [global.total, "total"],
         [global.male_suppressed, "male_suppressed"],
         [global.female_suppressed, "female_suppressed"],
@@ -344,8 +364,8 @@ module.exports = ClinicController = {
         [global.female_not_suppressed, "female_not_suppressed"],
       ],
       where: where,
-      group: [column],
-      order: [[column, "ASC"]],
+      group: [columnsDetails.column],
+      order: [[columnsDetails.column, "ASC"]],
     });
     return res.json(data);
   },
@@ -398,6 +418,57 @@ module.exports = ClinicController = {
     return res.json(data);
   },
 
+  async getSamplesTestedByAgeAndFacility(req, res) {
+    const id = "clinic_samples_tested_by_age_and_facility";
+    const disaggregation = req.query.disaggregation === "true";
+    const cache = await utils.checkCache(req.query, id);
+    if (cache) {
+      return res.json(cache);
+    }
+    var where = [{}];
+    where[0]["AnalysisDatetime"] = {
+      [Op.between]: req.query.dates || dates,
+    };
+    where[0]["AgeInYears"] = {
+      [Op.between]: req.query.age || age,
+    };
+
+    if (typeof req.query.codes !== "undefined") {
+      if ((req.query.type || type) === "province") {
+        where[0]["RequestingProvinceName"] = {
+          [Op.in]: req.query.codes,
+        };
+      } else if ((req.query.type || type) === "district") {
+        where[0]["RequestingDistrictName"] = {
+          [Op.in]: req.query.codes,
+        };
+      } else if ((req.query.type || type) === "clinic") {
+        where[0]["RequestingFacilityName"] = {
+          [Op.in]: req.query.codes,
+        };
+      }
+    }
+
+    const columnsDetails = await utils.getAttributes(
+      req.query.type || type,
+      disaggregation
+    );
+
+    const data = await VlData.findAll({
+      attributes: [
+        [columnsDetails.column, "facility"],
+        [literal(`'${columnsDetails.type}'`), "type"],
+        [global.total, "total"],
+        [global.suppressed, "suppressed"],
+        [global.non_suppressed, "non_suppressed"],
+      ],
+      where: where,
+      group: [columnsDetails.column],
+      order: [[columnsDetails.column, "ASC"]],
+    });
+    return res.json(data);
+  },
+
   async getSamplesTestedByPregnancy(req, res) {
     const id = "clinic_samples_tested_by_pregnancy";
     const cache = await utils.checkCache(req.query, id);
@@ -446,6 +517,57 @@ module.exports = ClinicController = {
     return res.json(data);
   },
 
+  async getSamplesTestedByPregnancyAndFacility(req, res) {
+    const id = "clinic_samples_tested_by_pregnancy_and_facility";
+    const disaggregation = req.query.disaggregation === "true";
+    const cache = await utils.checkCache(req.query, id);
+    if (cache) {
+      return res.json(cache);
+    }
+    var where = [{}];
+    where[0]["AnalysisDatetime"] = {
+      [Op.between]: req.query.dates || dates,
+    };
+    where[0]["Pregnant"] = {
+      [Op.in]: ["YES", "Yes", "yes", "Sim", "SIM"],
+    };
+
+    if (typeof req.query.codes !== "undefined") {
+      if ((req.query.type || type) === "province") {
+        where[0]["RequestingProvinceName"] = {
+          [Op.in]: req.query.codes,
+        };
+      } else if ((req.query.type || type) === "district") {
+        where[0]["RequestingDistrictName"] = {
+          [Op.in]: req.query.codes,
+        };
+      } else if ((req.query.type || type) === "clinic") {
+        where[0]["RequestingFacilityName"] = {
+          [Op.in]: req.query.codes,
+        };
+      }
+    }
+
+    const columnsDetails = await utils.getAttributes(
+      req.query.type || type,
+      disaggregation
+    );
+
+    const data = await VlData.findAll({
+      attributes: [
+        [columnsDetails.column, "facility"],
+        [literal(`'${columnsDetails.type}'`), "type"],
+        [global.total, "total"],
+        [global.suppressed, "suppressed"],
+        [global.non_suppressed, "non_suppressed"],
+      ],
+      where: where,
+      group: [columnsDetails.column],
+      order: [[columnsDetails.column, "ASC"]],
+    });
+    return res.json(data);
+  },
+
   async getSamplesTestedForBreastfeeding(req, res) {
     const id = "clinic_samples_tested_breastfeeding";
     const cache = await utils.checkCache(req.query, id);
@@ -490,6 +612,100 @@ module.exports = ClinicController = {
         [global.month, "ASC"],
         [global.month_name, "ASC"],
       ],
+    });
+    return res.json(data);
+  },
+
+  async getSamplesTestedByBreastfeedingAndFacility(req, res) {
+    const id = "clinic_samples_tested_breastfeeding_and_facility";
+    const disaggregation = req.query.disaggregation === "true";
+    const cache = await utils.checkCache(req.query, id);
+    if (cache) {
+      return res.json(cache);
+    }
+    var where = [{}];
+    where[0]["AnalysisDatetime"] = {
+      [Op.between]: req.query.dates || dates,
+    };
+    where[0]["Breastfeeding"] = {
+      [Op.in]: ["YES", "Yes", "yes", "Sim", "SIM"],
+    };
+
+    if (typeof req.query.codes !== "undefined") {
+      if ((req.query.type || type) === "province") {
+        where[0]["RequestingProvinceName"] = {
+          [Op.in]: req.query.codes,
+        };
+      } else if ((req.query.type || type) === "district") {
+        where[0]["RequestingDistrictName"] = {
+          [Op.in]: req.query.codes,
+        };
+      } else if ((req.query.type || type) === "clinic") {
+        where[0]["RequestingFacilityName"] = {
+          [Op.in]: req.query.codes,
+        };
+      }
+    }
+
+    const columnsDetails = await utils.getAttributes(
+      req.query.type || type,
+      disaggregation
+    );
+
+    const data = await VlData.findAll({
+      attributes: [
+        [columnsDetails.column, "facility"],
+        [literal(`'${columnsDetails.type}'`), "type"],
+        [global.total, "total"],
+        [global.suppressed, "suppressed"],
+        [global.non_suppressed, "non_suppressed"],
+      ],
+      where: where,
+      group: [columnsDetails.column],
+      order: [[columnsDetails.column, "ASC"]],
+    });
+    return res.json(data);
+  },
+
+  async getRegisteredSamplesByFacility(req, res) {
+    const id = "clinic_registered_samples_by_facility";
+    const disaggregation = req.query.disaggregation === "true";
+    const cache = await utils.checkCache(req.query, id);
+    if (cache) {
+      return res.json(cache);
+    }
+    var where = [{}];
+    where[0]["RegisteredDatetime"] = {
+      [Op.between]: req.query.dates || dates,
+    };
+    if (typeof req.query.codes !== "undefined") {
+      if ((req.query.type || type) === "province") {
+        where[0]["RequestingProvinceName"] = {
+          [Op.in]: req.query.codes,
+        };
+      } else if ((req.query.type || type) === "district") {
+        where[0]["RequestingDistrictName"] = {
+          [Op.in]: req.query.codes,
+        };
+      } else if ((req.query.type || type) === "clinic") {
+        where[0]["RequestingFacilityName"] = {
+          [Op.in]: req.query.codes,
+        };
+      }
+    }
+    const columnsDetails = await utils.getAttributes(
+      req.query.type || type,
+      disaggregation
+    );
+    const data = await VlData.findAll({
+      attributes: [
+        [columnsDetails.column, "facility"],
+        [literal(`'${columnsDetails.type}'`), "type"],
+        [global.total, "total"],
+      ],
+      where: where,
+      group: [columnsDetails.column],
+      order: [[columnsDetails.column, "ASC"]],
     });
     return res.json(data);
   },

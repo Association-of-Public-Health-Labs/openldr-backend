@@ -1,106 +1,79 @@
 [
   {
-    "year": 2019,
-    "month": 8,
-    "month_name": "August",
-    "total": 705,
-    "suppressed": 532,
-    "non_suppressed": 169
+    "facility": "Cabo Delgado",
+    "type": "province",
+    "total": 3407,
+    "suppressed": 2386,
+    "non_suppressed": 975
   },
   {
-    "year": 2019,
-    "month": 9,
-    "month_name": "September",
-    "total": 4058,
-    "suppressed": 2945,
-    "non_suppressed": 1078
-  },
-  {
-    "year": 2019,
-    "month": 10,
-    "month_name": "October",
-    "total": 3541,
-    "suppressed": 2622,
-    "non_suppressed": 883
-  },
-  {
-    "year": 2019,
-    "month": 11,
-    "month_name": "November",
-    "total": 3718,
-    "suppressed": 2783,
-    "non_suppressed": 908
-  },
-  {
-    "year": 2019,
-    "month": 12,
-    "month_name": "December",
-    "total": 3460,
-    "suppressed": 2552,
-    "non_suppressed": 878
-  },
-  {
-    "year": 2020,
-    "month": 1,
-    "month_name": "January",
-    "total": 2996,
-    "suppressed": 2272,
-    "non_suppressed": 674
-  },
-  {
-    "year": 2020,
-    "month": 2,
-    "month_name": "February",
-    "total": 3776,
-    "suppressed": 2969,
-    "non_suppressed": 755
-  },
-  {
-    "year": 2020,
-    "month": 3,
-    "month_name": "March",
-    "total": 5860,
-    "suppressed": 4698,
-    "non_suppressed": 1034
-  },
-  {
-    "year": 2020,
-    "month": 4,
-    "month_name": "April",
-    "total": 4627,
-    "suppressed": 3755,
-    "non_suppressed": 776
-  },
-  {
-    "year": 2020,
-    "month": 5,
-    "month_name": "May",
-    "total": 5289,
-    "suppressed": 3239,
-    "non_suppressed": 675
-  },
-  {
-    "year": 2020,
-    "month": 6,
-    "month_name": "June",
-    "total": 3121,
-    "suppressed": 2600,
-    "non_suppressed": 484
-  },
-  {
-    "year": 2020,
-    "month": 7,
-    "month_name": "July",
-    "total": 4779,
-    "suppressed": 3935,
-    "non_suppressed": 733
-  },
-  {
-    "year": 2020,
-    "month": 8,
-    "month_name": "August",
-    "total": 6452,
-    "suppressed": 5455,
+    "facility": "Gaza",
+    "type": "province",
+    "total": 6731,
+    "suppressed": 5724,
     "non_suppressed": 907
+  },
+  {
+    "facility": "Inhambane",
+    "type": "province",
+    "total": 2816,
+    "suppressed": 2191,
+    "non_suppressed": 579
+  },
+  {
+    "facility": "Manica",
+    "type": "province",
+    "total": 4015,
+    "suppressed": 3177,
+    "non_suppressed": 744
+  },
+  {
+    "facility": "Maputo Cidade",
+    "type": "province",
+    "total": 3649,
+    "suppressed": 2987,
+    "non_suppressed": 596
+  },
+  {
+    "facility": "Maputo Provincia",
+    "type": "province",
+    "total": 7028,
+    "suppressed": 5991,
+    "non_suppressed": 991
+  },
+  {
+    "facility": "Nampula",
+    "type": "province",
+    "total": 5309,
+    "suppressed": 3797,
+    "non_suppressed": 1440
+  },
+  {
+    "facility": "Niassa",
+    "type": "province",
+    "total": 705,
+    "suppressed": 524,
+    "non_suppressed": 175
+  },
+  {
+    "facility": "Sofala",
+    "type": "province",
+    "total": 1628,
+    "suppressed": 1118,
+    "non_suppressed": 310
+  },
+  {
+    "facility": "Tete",
+    "type": "province",
+    "total": 1979,
+    "suppressed": 1579,
+    "non_suppressed": 336
+  },
+  {
+    "facility": "Zambezia",
+    "type": "province",
+    "total": 14732,
+    "suppressed": 10611,
+    "non_suppressed": 2786
   }
 ]

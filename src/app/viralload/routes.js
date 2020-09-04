@@ -106,13 +106,23 @@ routes.get(
 routes.get("/clinic_tat_by_age", ClinicController.getSamplesTestedByAge);
 
 routes.get(
+  "/clinic_samples_tested_by_age_and_facility",
+  ClinicController.getSamplesTestedByAgeAndFacility
+);
+
+routes.get(
   "/clinic_tests_by_pregnancy",
-  ClinicController.getSamplesTestedByPregnancy
+  ClinicController.getSamplesTestedByPregnancyAndFacility
 );
 
 routes.get(
   "/clinic_tests_by_breastfeeding",
-  ClinicController.getSamplesTestedForBreastfeeding
+  ClinicController.getSamplesTestedByBreastfeedingAndFacility
+);
+
+routes.get(
+  "/clinic_registered_samples_by_facility",
+  ClinicController.getRegisteredSamplesByFacility
 );
 
 // Results routes
