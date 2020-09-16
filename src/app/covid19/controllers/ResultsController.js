@@ -110,6 +110,7 @@ module.exports = {
       attributes: [
         [col("RequestID"), "requestid"],
         [literal(`FIRSTNAME + ' ' + SURNAME`), "fullname"],
+        [col("Hl7SexCode"), "Hl7SexCode"],
         [
           literal(
             "CASE WHEN TELHOME IS NULL OR TELHOME = '' THEN MOBILE ELSE TELHOME END"
