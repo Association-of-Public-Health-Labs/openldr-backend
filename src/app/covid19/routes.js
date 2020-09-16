@@ -48,4 +48,15 @@ routes.post("/create_report", ReportsController.store);
 routes.put("/update_report", ReportsController.update);
 routes.get("/show_report/:email", ReportsController.show);
 
+// Results
+routes.get(
+  "/results/with_contacts/:start_date/:end_date",
+  ResultsController.get_patients_with_contacts
+);
+
+routes.get(
+  "/sms_status_by_province/:start_date/:end_date/:province",
+  ResultsController.get_patients_sms_status_by_province
+);
+
 module.exports = routes;

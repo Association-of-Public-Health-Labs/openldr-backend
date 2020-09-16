@@ -103,4 +103,84 @@ module.exports = {
     });
     return res.json({ docs, pages, total, page: parseInt(req.params.page) });
   },
+
+  async get_patients_with_contacts(req, res) {
+    const { start_date, end_date } = req.params;
+    const results = await Covid19.findAll({
+      attributes: [
+        [col("RequestID"), "requestid"],
+        [literal(`FIRSTNAME + ' ' + SURNAME`), "fullname"],
+        [
+          literal(
+            "CASE WHEN TELHOME IS NULL OR TELHOME = '' THEN MOBILE ELSE TELHOME END"
+          ),
+          "mobile_1",
+        ],
+        [col("MOBILE"), "mobile_2"],
+        [col("SpecimenDatetime"), "SpecimenDatetime"],
+        [col("AuthorisedDatetime"), "AuthorisedDatetime"],
+        [col("RequestingFacilityName"), "RequestingFacilityName"],
+        [col("Covid19Result"), "Covid19Result"],
+      ],
+      where: {
+        [Op.and]: [
+          literal(
+            `CAST(AuthorisedDatetime AS DATE) >= '${start_date}' AND CAST(AuthorisedDatetime AS DATE) <= '${end_date}'`
+          ),
+          literal(
+            `((TELHOME IS NOT NULL AND TELHOME <> '') OR (TELWORK IS NOT NULL AND TELWORK <> '') OR (MOBILE IS NOT NULL AND MOBILE <> ''))`
+          ),
+          {
+            Covid19Result: {
+              [Op.like]: "%Negativo%",
+            },
+            RequestingProvinceName: "Maputo Cidade",
+          },
+        ],
+      },
+    });
+
+    return res.json(results);
+  },
+
+  async get_patients_sms_status_by_province(req, res) {
+    const { start_date, end_date, province } = req.params;
+    const results = await Covid19.findAll({
+      attributes: [
+        [col("RequestID"), "requestid"],
+        [col("SURNAME"), "surname"],
+        [col("FIRSTNAME"), "firstname"],
+        [col("AgeInYears"), "age"],
+        [col("Hl7SexCode"), "gender"],
+        [col("RequestingProvinceName"), "province"],
+        [col("RequestingDistrictName"), "district"],
+        [col("RequestingFacilityName"), "clinic"],
+        [
+          literal(
+            "CASE WHEN TELHOME IS NULL OR TELHOME = '' THEN MOBILE ELSE TELHOME END"
+          ),
+          "mobile_1",
+        ],
+        [col("MOBILE"), "mobile_2"],
+        [col("SpecimenDatetime"), "SpecimenDatetime"],
+        [col("AuthorisedDatetime"), "AuthorisedDatetime"],
+        [col("Covid19Result"), "Covid19Result"],
+      ],
+      where: {
+        [Op.and]: [
+          literal(
+            `CAST(AuthorisedDatetime AS DATE) >= '${start_date}' AND CAST(AuthorisedDatetime AS DATE) <= '${end_date}'`
+          ),
+          {
+            Covid19Result: {
+              [Op.like]: "%Negativo%",
+            },
+            RequestingProvinceName: province,
+          },
+        ],
+      },
+    });
+
+    return res.json(results);
+  },
 };
