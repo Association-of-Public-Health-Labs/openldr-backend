@@ -164,6 +164,7 @@ const Covid19 = covid19.define(
     RNP: Sequelize.STRING,
     RNPCT: Sequelize.STRING,
     ResultsRemarks: Sequelize.STRING,
+    SMS_STATUS: Sequelize.STRING,
   },
   { freezeTableName: true, timestamps: false }
 );

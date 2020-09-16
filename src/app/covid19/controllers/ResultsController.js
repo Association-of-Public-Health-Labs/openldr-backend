@@ -184,4 +184,18 @@ module.exports = {
 
     return res.json(results);
   },
+
+  async update_sms_status(req, res) {
+    const { requestid, status } = req.params;
+    const results = await Covid19.update(
+      { SMS_STATUS: status },
+      {
+        where: {
+          RequestID: requestid,
+        },
+      }
+    );
+
+    return res.json(results);
+  },
 };

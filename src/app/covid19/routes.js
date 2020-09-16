@@ -59,4 +59,9 @@ routes.get(
   ResultsController.get_patients_sms_status_by_province
 );
 
+routes.put(
+  "/update_sms_status/:requestid/:status",
+  ResultsController.update_sms_status
+);
+
 module.exports = routes;
