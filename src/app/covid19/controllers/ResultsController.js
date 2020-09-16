@@ -166,6 +166,7 @@ module.exports = {
         [col("SpecimenDatetime"), "SpecimenDatetime"],
         [col("AuthorisedDatetime"), "AuthorisedDatetime"],
         [col("Covid19Result"), "Covid19Result"],
+        [col("SMS_STATUS"), "status"],
       ],
       where: {
         [Op.and]: [
