@@ -172,7 +172,7 @@ module.exports = {
         "HIVVL_ViralLoadCAPCTM",
         "ReasonForTest",
       ],
-      where: literal(`DISTANCE(FIRSTNAME + SURNAME, '${name}') = 4`),
+      where: literal(`DIFFERENCE(FIRSTNAME + SURNAME, '${name}') = 4`),
       page: req.params.page, // Default 1
       paginate: parseInt(req.params.paginate),
     });
