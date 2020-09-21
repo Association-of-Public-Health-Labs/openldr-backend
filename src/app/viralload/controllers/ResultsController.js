@@ -128,7 +128,7 @@ module.exports = {
     });
     return res.json({ docs, pages, total, page: parseInt(req.params.page) });
   },
-Patients 
+
   async search_patients(req, res) {
     const { name } = req.params;
     const { docs, pages, total } = await ViralLoad.paginate({
@@ -172,7 +172,7 @@ Patients
         "HIVVL_ViralLoadCAPCTM",
         "ReasonForTest",
       ],
-      where: literal(`DIFFERENCE(FIRSTNAME + SURNAME, '${name}') = 4`),
+      where: literal(`DISTANCE(FIRSTNAME + SURNAME, '${name}') = 4`),
       page: req.params.page, // Default 1
       paginate: parseInt(req.params.paginate),
     });
