@@ -8,16 +8,16 @@
   },
   {
     "lab": "Carmelo",
-    "collection_reception": 5,
+    "collection_reception": 6,
     "reception_registration": 0,
-    "registration_analysis": 6,
+    "registration_analysis": 7,
     "analysis_validation": 0
   },
   {
     "lab": "Chimoio",
     "collection_reception": 5,
     "reception_registration": 2,
-    "registration_analysis": 14,
+    "registration_analysis": 13,
     "analysis_validation": 0
   },
   {
@@ -25,13 +25,13 @@
     "collection_reception": 4,
     "reception_registration": 2,
     "registration_analysis": 10,
-    "analysis_validation": 3
+    "analysis_validation": 2
   },
   {
     "lab": "Dream Maputo",
     "collection_reception": 0,
     "reception_registration": 0,
-    "registration_analysis": 6,
+    "registration_analysis": 7,
     "analysis_validation": 0
   },
   {
@@ -80,14 +80,14 @@
     "lab": "Ponta Gea",
     "collection_reception": 6,
     "reception_registration": 1,
-    "registration_analysis": 4,
+    "registration_analysis": 5,
     "analysis_validation": 0
   },
   {
     "lab": "Quelimane",
     "collection_reception": 3,
     "reception_registration": 2,
-    "registration_analysis": 6,
+    "registration_analysis": 5,
     "analysis_validation": 0
   },
   {

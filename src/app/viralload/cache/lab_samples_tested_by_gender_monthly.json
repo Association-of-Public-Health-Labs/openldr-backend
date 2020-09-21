@@ -123,10 +123,10 @@
     "year": 2020,
     "month": 9,
     "month_name": "September",
-    "total": 10094,
-    "male_suppressed": 2388,
-    "female_suppressed": 6257,
-    "male_not_suppressed": 401,
-    "female_not_suppressed": 898
+    "total": 55238,
+    "male_suppressed": 12655,
+    "female_suppressed": 33280,
+    "male_not_suppressed": 2359,
+    "female_not_suppressed": 5979
   }
 ]
