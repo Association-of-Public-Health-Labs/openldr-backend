@@ -4,6 +4,7 @@ const checkAuth = require("../../config/check-auth");
 const ResultsController = require("./controllers/ResultsController");
 const DashboardController = require("./controllers/DashboardController");
 const ReportsController = require("./controllers/ReportsController");
+const DailyController = require("./controllers/DailyReportController");
 
 const routes = express.Router();
 
@@ -63,5 +64,24 @@ routes.put(
   "/update_sms_status/:requestid/:status",
   ResultsController.update_sms_status
 );
+
+// Daily Reports
+routes.get("/daily/resume/:startDate/:endDate", DailyController.get_resume);
+routes.get(
+  "/daily/reason/:start_date/:end_date",
+  DailyController.reason_for_test_report
+);
+
+routes.get(
+  "/daily/tat_province/:start_date/:end_date",
+  DailyController.get_tat_by_province
+);
+
+routes.get(
+  "/daily/tat_lab/:start_date/:end_date",
+  DailyController.get_tat_by_lab
+);
+
+routes.get("/daily/results/:start_date/:end_date", DailyController.get_results);
 
 module.exports = routes;

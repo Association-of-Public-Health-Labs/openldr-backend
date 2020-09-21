@@ -3,7 +3,7 @@
     "lab": "Cabo Delgado",
     "collection_reception": 6,
     "reception_registration": 0,
-    "registration_analysis": 7,
+    "registration_analysis": 8,
     "analysis_validation": 0
   },
   {
@@ -52,7 +52,7 @@
     "lab": "Jose Macamo",
     "collection_reception": 3,
     "reception_registration": 0,
-    "registration_analysis": 4,
+    "registration_analysis": 5,
     "analysis_validation": 1
   },
   {
@@ -108,7 +108,7 @@
     "lab": "Xai-Xai",
     "collection_reception": 5,
     "reception_registration": 0,
-    "registration_analysis": 6,
+    "registration_analysis": 7,
     "analysis_validation": 0
   }
 ]

@@ -106,5 +106,14 @@
     "reception_registration": 1,
     "registration_analysis": 9,
     "analysis_validation": 0
+  },
+  {
+    "year": 2020,
+    "month": 9,
+    "month_name": "September",
+    "collection_reception": 4,
+    "reception_registration": 1,
+    "registration_analysis": 8,
+    "analysis_validation": 0
   }
 ]

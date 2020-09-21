@@ -37,12 +37,12 @@
   {
     "year": 2020,
     "month": 4,
-    "total": 59906
+    "total": 59905
   },
   {
     "year": 2020,
     "month": 5,
-    "total": 75459
+    "total": 75461
   },
   {
     "year": 2020,
@@ -52,11 +52,16 @@
   {
     "year": 2020,
     "month": 7,
-    "total": 67389
+    "total": 67386
   },
   {
     "year": 2020,
     "month": 8,
-    "total": 76725
+    "total": 89990
+  },
+  {
+    "year": 2020,
+    "month": 9,
+    "total": 55238
   }
 ]
