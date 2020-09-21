@@ -128,4 +128,54 @@ module.exports = {
     });
     return res.json({ docs, pages, total, page: parseInt(req.params.page) });
   },
+Patients 
+  async search_patients(req, res) {
+    const { name } = req.params;
+    const { docs, pages, total } = await ViralLoad.paginate({
+      attributes: [
+        "RequestID",
+        "FIRSTNAME",
+        "SURNAME",
+        "AgeInYears",
+        "MOBILE",
+        "Hl7SexCode",
+        "RequestingProvinceName",
+        "RequestingDistrictName",
+        "RequestingFacilityName",
+        "SpecimenDatetime",
+        [fn("CAST", literal(`SpecimenDatetime AS date`)), "SpecimenDatetime"],
+        [fn("CAST", literal(`ReceivedDatetime AS date`)), "ReceivedDatetime"],
+        [
+          fn("CAST", literal(`RegisteredDatetime AS date`)),
+          "RegisteredDatetime",
+        ],
+        [fn("CAST", literal(`AnalysisDatetime AS date`)), "AnalysisDatetime"],
+        [
+          fn("CAST", literal(`AuthorisedDatetime AS date`)),
+          "AuthorisedDatetime",
+        ],
+        "NATIONALID",
+        "UNIQUEID",
+        "TELHOME",
+        "TELWORK",
+        "MOBILE",
+        "EMAIL",
+        "DOB",
+        "LIMSRejectionCode",
+        "LIMSRejectionDesc",
+        "HIVVL_AuthorisedDateTime",
+        "HIVVL_LIMSRejectionCode",
+        "HIVVL_LIMSRejectionDesc",
+        "HIVVL_VRLogValue",
+        "ViralLoadResultCategory",
+        "HIVVL_ViralLoadResult",
+        "HIVVL_ViralLoadCAPCTM",
+        "ReasonForTest",
+      ],
+      where: literal(`DIFFERENCE(FIRSTNAME + SURNAME, '${name}') = 4`),
+      page: req.params.page, // Default 1
+      paginate: parseInt(req.params.paginate),
+    });
+    return res.json({ docs, pages, total, page: parseInt(req.params.page) });
+  },
 };

@@ -144,4 +144,9 @@ routes.get(
   ResultsController.showPacient
 );
 
+routes.get(
+  "/results/search/:name/:age/:gender/:page/:paginate",
+  ResultsController.search_patients
+);
+
 module.exports = routes;
