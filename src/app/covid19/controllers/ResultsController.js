@@ -111,13 +111,13 @@ module.exports = {
         [col("RequestID"), "requestid"],
         [literal(`FIRSTNAME + ' ' + SURNAME`), "fullname"],
         [col("Hl7SexCode"), "Hl7SexCode"],
-        // [
-        //   literal(
-        //     "CASE WHEN TELHOME IS NULL OR TELHOME = '' THEN MOBILE ELSE TELHOME END"
-        //   ),
-        //   "mobile_1",
-        // ],
-        [col("TELHOME"), "mobile_1"],
+        [
+          literal(
+            "IIF(TELWORK = '', IIF(TELHOME = '', MOBILE, TELHOME), TELWORK)"
+          ),
+          "mobile_1",
+        ],
+        // [col("TELHOME"), "mobile_1"],
         [(col("MOBILE"), "mobile_2")],
         [col("SpecimenDatetime"), "SpecimenDatetime"],
         [col("AuthorisedDatetime"), "AuthorisedDatetime"],
