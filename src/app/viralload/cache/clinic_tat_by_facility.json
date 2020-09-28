@@ -1,13 +1,5 @@
 [
   {
-    "facility": null,
-    "type": "province",
-    "collection_reception": 10,
-    "reception_registration": 0,
-    "registration_analysis": 5,
-    "analysis_validation": 0
-  },
-  {
     "facility": "Cabo Delgado",
     "type": "province",
     "collection_reception": 6,
