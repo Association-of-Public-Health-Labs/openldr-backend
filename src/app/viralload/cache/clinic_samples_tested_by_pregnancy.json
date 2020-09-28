@@ -2,16 +2,16 @@
   {
     "facility": "Cabo Delgado",
     "type": "province",
-    "total": 1634,
-    "suppressed": 1139,
-    "non_suppressed": 477
+    "total": 1661,
+    "suppressed": 1160,
+    "non_suppressed": 483
   },
   {
     "facility": "Gaza",
     "type": "province",
-    "total": 3143,
-    "suppressed": 2580,
-    "non_suppressed": 497
+    "total": 3195,
+    "suppressed": 2625,
+    "non_suppressed": 503
   },
   {
     "facility": "Inhambane",
@@ -23,57 +23,57 @@
   {
     "facility": "Manica",
     "type": "province",
-    "total": 2588,
-    "suppressed": 1962,
-    "non_suppressed": 560
+    "total": 2612,
+    "suppressed": 1982,
+    "non_suppressed": 564
   },
   {
     "facility": "Maputo Cidade",
     "type": "province",
-    "total": 3390,
-    "suppressed": 2706,
-    "non_suppressed": 628
+    "total": 3435,
+    "suppressed": 2742,
+    "non_suppressed": 635
   },
   {
     "facility": "Maputo Provincia",
     "type": "province",
-    "total": 5364,
-    "suppressed": 4511,
-    "non_suppressed": 795
+    "total": 5487,
+    "suppressed": 4617,
+    "non_suppressed": 812
   },
   {
     "facility": "Nampula",
     "type": "province",
-    "total": 3766,
-    "suppressed": 2708,
-    "non_suppressed": 1004
+    "total": 3887,
+    "suppressed": 2796,
+    "non_suppressed": 1033
   },
   {
     "facility": "Niassa",
     "type": "province",
-    "total": 332,
-    "suppressed": 245,
-    "non_suppressed": 84
+    "total": 344,
+    "suppressed": 253,
+    "non_suppressed": 88
   },
   {
     "facility": "Sofala",
     "type": "province",
-    "total": 1409,
-    "suppressed": 945,
-    "non_suppressed": 275
+    "total": 1425,
+    "suppressed": 954,
+    "non_suppressed": 282
   },
   {
     "facility": "Tete",
     "type": "province",
-    "total": 1015,
-    "suppressed": 834,
-    "non_suppressed": 158
+    "total": 1045,
+    "suppressed": 862,
+    "non_suppressed": 160
   },
   {
     "facility": "Zambezia",
     "type": "province",
-    "total": 8538,
-    "suppressed": 6224,
-    "non_suppressed": 1620
+    "total": 8759,
+    "suppressed": 6402,
+    "non_suppressed": 1658
   }
 ]

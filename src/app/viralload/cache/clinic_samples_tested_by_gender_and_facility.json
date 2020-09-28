@@ -2,100 +2,100 @@
   {
     "facility": "Cabo Delgado",
     "type": "province",
-    "total": 39006,
-    "male_suppressed": 8246,
-    "female_suppressed": 19869,
-    "male_not_suppressed": 3240,
-    "female_not_suppressed": 7000
+    "total": 39344,
+    "male_suppressed": 8320,
+    "female_suppressed": 20044,
+    "male_not_suppressed": 3267,
+    "female_not_suppressed": 7059
   },
   {
     "facility": "Gaza",
     "type": "province",
-    "total": 101022,
-    "male_suppressed": 20798,
-    "female_suppressed": 61856,
-    "male_not_suppressed": 4965,
-    "female_not_suppressed": 10926
+    "total": 103009,
+    "male_suppressed": 21207,
+    "female_suppressed": 63169,
+    "male_not_suppressed": 5034,
+    "female_not_suppressed": 11084
   },
   {
     "facility": "Inhambane",
     "type": "province",
-    "total": 54363,
-    "male_suppressed": 9054,
-    "female_suppressed": 33433,
+    "total": 54379,
+    "male_suppressed": 9055,
+    "female_suppressed": 33435,
     "male_not_suppressed": 2826,
-    "female_not_suppressed": 8311
+    "female_not_suppressed": 8312
   },
   {
     "facility": "Manica",
     "type": "province",
-    "total": 58628,
-    "male_suppressed": 11929,
-    "female_suppressed": 31558,
-    "male_not_suppressed": 4321,
-    "female_not_suppressed": 8587
+    "total": 59202,
+    "male_suppressed": 12063,
+    "female_suppressed": 31891,
+    "male_not_suppressed": 4364,
+    "female_not_suppressed": 8647
   },
   {
     "facility": "Maputo Cidade",
     "type": "province",
-    "total": 135150,
-    "male_suppressed": 35992,
-    "female_suppressed": 77143,
-    "male_not_suppressed": 7089,
-    "female_not_suppressed": 12455
+    "total": 136767,
+    "male_suppressed": 36450,
+    "female_suppressed": 78173,
+    "male_not_suppressed": 7129,
+    "female_not_suppressed": 12526
   },
   {
     "facility": "Maputo Provincia",
     "type": "province",
-    "total": 141436,
-    "male_suppressed": 35347,
-    "female_suppressed": 86762,
-    "male_not_suppressed": 5998,
-    "female_not_suppressed": 11702
+    "total": 144982,
+    "male_suppressed": 36256,
+    "female_suppressed": 89087,
+    "male_not_suppressed": 6109,
+    "female_not_suppressed": 11887
   },
   {
     "facility": "Nampula",
     "type": "province",
-    "total": 68169,
-    "male_suppressed": 14933,
-    "female_suppressed": 34175,
-    "male_not_suppressed": 5771,
-    "female_not_suppressed": 11862
+    "total": 70813,
+    "male_suppressed": 15644,
+    "female_suppressed": 35595,
+    "male_not_suppressed": 5911,
+    "female_not_suppressed": 12176
   },
   {
     "facility": "Niassa",
     "type": "province",
-    "total": 17218,
-    "male_suppressed": 3658,
-    "female_suppressed": 9162,
-    "male_not_suppressed": 1390,
-    "female_not_suppressed": 2735
+    "total": 18100,
+    "male_suppressed": 3864,
+    "female_suppressed": 9686,
+    "male_not_suppressed": 1437,
+    "female_not_suppressed": 2837
   },
   {
     "facility": "Sofala",
     "type": "province",
-    "total": 78830,
-    "male_suppressed": 16397,
-    "female_suppressed": 39932,
-    "male_not_suppressed": 4937,
-    "female_not_suppressed": 10500
+    "total": 79511,
+    "male_suppressed": 16545,
+    "female_suppressed": 40296,
+    "male_not_suppressed": 4980,
+    "female_not_suppressed": 10596
   },
   {
     "facility": "Tete",
     "type": "province",
-    "total": 47025,
-    "male_suppressed": 10857,
-    "female_suppressed": 23908,
-    "male_not_suppressed": 2966,
-    "female_not_suppressed": 5114
+    "total": 47741,
+    "male_suppressed": 11045,
+    "female_suppressed": 24305,
+    "male_not_suppressed": 3012,
+    "female_not_suppressed": 5175
   },
   {
     "facility": "Zambezia",
     "type": "province",
-    "total": 144538,
-    "male_suppressed": 26286,
-    "female_suppressed": 74946,
-    "male_not_suppressed": 8339,
-    "female_not_suppressed": 19022
+    "total": 148414,
+    "male_suppressed": 27122,
+    "female_suppressed": 77272,
+    "male_not_suppressed": 8522,
+    "female_not_suppressed": 19418
   }
 ]

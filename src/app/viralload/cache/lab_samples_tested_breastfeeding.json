@@ -91,7 +91,7 @@
     "year": 2020,
     "month": 8,
     "month_name": "August",
-    "total": 8044,
+    "total": 8043,
     "suppressed": 6792,
     "non_suppressed": 1149
   },
@@ -99,8 +99,8 @@
     "year": 2020,
     "month": 9,
     "month_name": "September",
-    "total": 4040,
-    "suppressed": 3213,
-    "non_suppressed": 771
+    "total": 5311,
+    "suppressed": 4291,
+    "non_suppressed": 952
   }
 ]

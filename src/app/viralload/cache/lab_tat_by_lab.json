@@ -10,7 +10,7 @@
     "lab": "Carmelo",
     "collection_reception": 6,
     "reception_registration": 0,
-    "registration_analysis": 7,
+    "registration_analysis": 8,
     "analysis_validation": 0
   },
   {
@@ -32,7 +32,7 @@
     "collection_reception": 0,
     "reception_registration": 0,
     "registration_analysis": 7,
-    "analysis_validation": 0
+    "analysis_validation": 1
   },
   {
     "lab": "Hosp. Militar",
@@ -58,7 +58,7 @@
   {
     "lab": "Machava",
     "collection_reception": 3,
-    "reception_registration": 1,
+    "reception_registration": 2,
     "registration_analysis": 6,
     "analysis_validation": 0
   },
@@ -101,7 +101,7 @@
     "lab": "UEM",
     "collection_reception": 2,
     "reception_registration": 0,
-    "registration_analysis": 5,
+    "registration_analysis": 6,
     "analysis_validation": 0
   },
   {
