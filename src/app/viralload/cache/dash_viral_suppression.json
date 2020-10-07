@@ -1,13 +1,6 @@
 [
   {
     "year": 2019,
-    "month": 9,
-    "month_name": "September",
-    "total": 76069,
-    "suppressed": 57843
-  },
-  {
-    "year": 2019,
     "month": 10,
     "month_name": "October",
     "total": 64880,
@@ -87,7 +80,14 @@
     "year": 2020,
     "month": 9,
     "month_name": "September",
-    "total": 71112,
-    "suppressed": 60465
+    "total": 86278,
+    "suppressed": 73752
+  },
+  {
+    "year": 2020,
+    "month": 10,
+    "month_name": "October",
+    "total": 5694,
+    "suppressed": 5125
   }
 ]

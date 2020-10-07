@@ -12,7 +12,7 @@
     "type": "province",
     "collection_reception": 5,
     "reception_registration": 0,
-    "registration_analysis": 7,
+    "registration_analysis": 8,
     "analysis_validation": 0
   },
   {
@@ -21,13 +21,13 @@
     "collection_reception": 6,
     "reception_registration": 0,
     "registration_analysis": 7,
-    "analysis_validation": 0
+    "analysis_validation": 1
   },
   {
     "facility": "Manica",
     "type": "province",
     "collection_reception": 5,
-    "reception_registration": 2,
+    "reception_registration": 1,
     "registration_analysis": 14,
     "analysis_validation": 0
   },
@@ -42,8 +42,8 @@
   {
     "facility": "Maputo Provincia",
     "type": "province",
-    "collection_reception": 2,
-    "reception_registration": 3,
+    "collection_reception": 3,
+    "reception_registration": 1,
     "registration_analysis": 6,
     "analysis_validation": 0
   },
@@ -52,7 +52,7 @@
     "type": "province",
     "collection_reception": 5,
     "reception_registration": 2,
-    "registration_analysis": 10,
+    "registration_analysis": 11,
     "analysis_validation": 0
   },
   {
@@ -66,25 +66,25 @@
   {
     "facility": "Sofala",
     "type": "province",
-    "collection_reception": 5,
-    "reception_registration": 1,
-    "registration_analysis": 5,
-    "analysis_validation": 1
+    "collection_reception": 4,
+    "reception_registration": 0,
+    "registration_analysis": 4,
+    "analysis_validation": 0
   },
   {
     "facility": "Tete",
     "type": "province",
     "collection_reception": 7,
-    "reception_registration": 7,
-    "registration_analysis": 6,
-    "analysis_validation": 1
+    "reception_registration": 6,
+    "registration_analysis": 5,
+    "analysis_validation": 0
   },
   {
     "facility": "Zambezia",
     "type": "province",
     "collection_reception": 3,
     "reception_registration": 2,
-    "registration_analysis": 5,
+    "registration_analysis": 6,
     "analysis_validation": 0
   }
 ]

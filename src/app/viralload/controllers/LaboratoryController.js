@@ -13,7 +13,7 @@ const dates = [
 
 const age = [15, 49];
 
-// const dates = ["2019-09-01", "2020-09-28"];
+// const dates = ["2019-10-01", "2020-10-06"];
 
 module.exports = {
   async getSamplesByTestReason(req, res) {
@@ -22,33 +22,11 @@ module.exports = {
     if (cache) {
       return res.json(cache);
     }
-    var where = [];
-    if (typeof req.query.codes === "undefined") {
-      where = [
-        {
-          AnalysisDatetime: {
-            [Op.between]: req.query.dates || dates,
-          },
-        },
-      ];
-    } else {
-      where = [
-        {
-          TestingFacilityCode: {
-            [Op.in]: req.query.codes,
-          },
-          AnalysisDatetime: {
-            [Op.between]: req.query.dates || dates,
-          },
-        },
-      ];
-    }
 
     const data = await samples.accumulative(
-      // where,
       [
         {
-          ...(typeof req.query.codes !== "undefined" && {
+          ...(req.query.codes && {
             TestingFacilityCode: {
               [Op.in]: req.query.codes,
             },
@@ -75,27 +53,7 @@ module.exports = {
     if (cache) {
       return res.json(cache);
     }
-    var where = [];
-    if (typeof req.query.codes === "undefined") {
-      where = [
-        {
-          AnalysisDatetime: {
-            [Op.between]: req.query.dates || dates,
-          },
-        },
-      ];
-    } else {
-      where = [
-        {
-          TestingFacilityCode: {
-            [Op.in]: req.query.codes,
-          },
-          AnalysisDatetime: {
-            [Op.between]: req.query.dates || dates,
-          },
-        },
-      ];
-    }
+
     const data = await VlData.findAll({
       attributes: [
         [fn("year", col("AnalysisDatetime")), "year"],
@@ -108,7 +66,18 @@ module.exports = {
         [global.suppressed, "suppressed"],
         [global.non_suppressed, "non_suppressed"],
       ],
-      where: where,
+      where: [
+        {
+          ...(req.query.codes && {
+            TestingFacilityCode: {
+              [Op.in]: req.query.codes,
+            },
+          }),
+          AnalysisDatetime: {
+            [Op.between]: req.query.dates || dates,
+          },
+        },
+      ],
       group: [
         fn("year", col("AnalysisDatetime")),
         fn("month", col("AnalysisDatetime")),
@@ -128,33 +97,7 @@ module.exports = {
     if (cache) {
       return res.json(cache);
     }
-    var where = [];
-    if (typeof req.query.codes === "undefined") {
-      where = [
-        {
-          AnalysisDatetime: {
-            [Op.between]: req.query.dates || dates,
-          },
-          TestingFacilityName: {
-            [Op.not]: null,
-          },
-        },
-      ];
-    } else {
-      where = [
-        {
-          TestingFacilityCode: {
-            [Op.in]: req.query.codes,
-          },
-          AnalysisDatetime: {
-            [Op.between]: req.query.dates || dates,
-          },
-          TestingFacilityName: {
-            [Op.not]: null,
-          },
-        },
-      ];
-    }
+
     const data = await VlData.findAll({
       attributes: [
         [col("TestingFacilityName"), "lab"],
@@ -162,7 +105,21 @@ module.exports = {
         [global.suppressed, "suppressed"],
         [global.non_suppressed, "non_suppressed"],
       ],
-      where: where,
+      where: [
+        {
+          ...(req.query.codes && {
+            TestingFacilityCode: {
+              [Op.in]: req.query.codes,
+            },
+          }),
+          AnalysisDatetime: {
+            [Op.between]: req.query.dates || dates,
+          },
+          TestingFacilityName: {
+            [Op.not]: null,
+          },
+        },
+      ],
       group: [col("TestingFacilityName")],
       order: [[col("TestingFacilityName"), "ASC"]],
     });
@@ -175,49 +132,7 @@ module.exports = {
     if (cache) {
       return res.json(cache);
     }
-    var where = [];
-    if (typeof req.query.codes === "undefined") {
-      where = [
-        {
-          AnalysisDatetime: {
-            [Op.between]: req.query.dates || dates,
-          },
-          [Op.and]: sequelize.where(
-            fn(
-              "datediff",
-              literal("day"),
-              col("SpecimenDatetime"),
-              col("AuthorisedDatetime")
-            ),
-            {
-              [Op.lt]: 90,
-            }
-          ),
-        },
-      ];
-    } else {
-      where = [
-        {
-          TestingFacilityCode: {
-            [Op.in]: req.query.codes,
-          },
-          AnalysisDatetime: {
-            [Op.between]: req.query.dates || dates,
-          },
-          [Op.and]: sequelize.where(
-            fn(
-              "datediff",
-              literal("day"),
-              col("SpecimenDatetime"),
-              col("AuthorisedDatetime")
-            ),
-            {
-              [Op.lt]: 90,
-            }
-          ),
-        },
-      ];
-    }
+
     const data = await VlData.findAll({
       attributes: [
         [fn("year", col("AnalysisDatetime")), "year"],
@@ -231,7 +146,40 @@ module.exports = {
         [global.registration_analysis, "registration_analysis"],
         [global.analysis_validation, "analysis_validation"],
       ],
-      where: where,
+      where: [
+        {
+          ...(req.query.codes && {
+            TestingFacilityCode: {
+              [Op.in]: req.query.codes,
+            },
+          }),
+          AnalysisDatetime: {
+            [Op.between]: req.query.dates || dates,
+          },
+          [Op.and]: sequelize.where(
+            fn(
+              "datediff",
+              literal("day"),
+              col("SpecimenDatetime"),
+              col("AuthorisedDatetime")
+            ),
+            {
+              [Op.lt]: 90,
+            }
+          ),
+          [Op.and]: sequelize.where(
+            fn(
+              "datediff",
+              literal("day"),
+              col("SpecimenDatetime"),
+              col("ReceivedDatetime")
+            ),
+            {
+              [Op.gte]: 0,
+            }
+          ),
+        },
+      ],
       group: [
         fn("year", col("AnalysisDatetime")),
         fn("month", col("AnalysisDatetime")),
@@ -254,63 +202,7 @@ module.exports = {
     if (cache) {
       return res.json(cache);
     }
-    var where = [];
-    if (typeof req.query.codes === "undefined") {
-      where = [
-        {
-          AnalysisDatetime: {
-            [Op.between]: req.query.dates || dates,
-          },
-          [Op.and]: {
-            TestingFacilityCode: {
-              [Op.not]: null,
-            },
-          },
-          TestingFacilityName: {
-            [Op.not]: null,
-          },
-          // TestingFacilityCode: [
-          //   literal(`distinct TestingFacilityCode, TestingFacilityName`),
-          // ],
-          [Op.and]: sequelize.where(
-            fn(
-              "datediff",
-              literal("day"),
-              col("SpecimenDatetime"),
-              col("AuthorisedDatetime")
-            ),
-            {
-              [Op.lt]: 90,
-            }
-          ),
-        },
-      ];
-    } else {
-      where = [
-        {
-          TestingFacilityCode: {
-            [Op.in]: req.query.codes,
-          },
-          AnalysisDatetime: {
-            [Op.between]: req.query.dates || dates,
-          },
-          TestingFacilityName: {
-            [Op.not]: null,
-          },
-          [Op.and]: sequelize.where(
-            fn(
-              "datediff",
-              literal("day"),
-              col("SpecimenDatetime"),
-              col("AuthorisedDatetime")
-            ),
-            {
-              [Op.lt]: 90,
-            }
-          ),
-        },
-      ];
-    }
+
     const data = await VlData.findAll({
       attributes: [
         [col("TestingFacilityName"), "lab"],
@@ -319,7 +211,43 @@ module.exports = {
         [global.registration_analysis, "registration_analysis"],
         [global.analysis_validation, "analysis_validation"],
       ],
-      where: where,
+      where: [
+        {
+          ...(req.query.codes && {
+            TestingFacilityCode: {
+              [Op.in]: req.query.codes,
+            },
+          }),
+          AnalysisDatetime: {
+            [Op.between]: req.query.dates || dates,
+          },
+          TestingFacilityName: {
+            [Op.not]: null,
+          },
+          [Op.and]: sequelize.where(
+            fn(
+              "datediff",
+              literal("day"),
+              col("SpecimenDatetime"),
+              col("AuthorisedDatetime")
+            ),
+            {
+              [Op.lt]: 90,
+            }
+          ),
+          [Op.and]: sequelize.where(
+            fn(
+              "datediff",
+              literal("day"),
+              col("SpecimenDatetime"),
+              col("ReceivedDatetime")
+            ),
+            {
+              [Op.gte]: 0,
+            }
+          ),
+        },
+      ],
       group: [col("TestingFacilityName")],
       order: [[col("TestingFacilityName"), "ASC"]],
     });
@@ -332,27 +260,7 @@ module.exports = {
     if (cache) {
       return res.json(cache);
     }
-    var where = [];
-    if (typeof req.query.codes === "undefined") {
-      where = [
-        {
-          AnalysisDatetime: {
-            [Op.between]: dates,
-          },
-        },
-      ];
-    } else {
-      where = [
-        {
-          TestingFacilityCode: {
-            [Op.in]: req.query.codes,
-          },
-          AnalysisDatetime: {
-            [Op.between]: req.query.dates || dates,
-          },
-        },
-      ];
-    }
+
     const data = await VlData.findAll({
       attributes: [
         [fn("year", col("AnalysisDatetime")), "year"],
@@ -367,7 +275,18 @@ module.exports = {
         [global.male_not_suppressed, "male_not_suppressed"],
         [global.female_not_suppressed, "female_not_suppressed"],
       ],
-      where: where,
+      where: [
+        {
+          ...(req.query.codes && {
+            TestingFacilityCode: {
+              [Op.in]: req.query.codes,
+            },
+          }),
+          AnalysisDatetime: {
+            [Op.between]: dates,
+          },
+        },
+      ],
       group: [
         fn("year", col("AnalysisDatetime")),
         fn("month", col("AnalysisDatetime")),
@@ -387,33 +306,7 @@ module.exports = {
     if (cache) {
       return res.json(cache);
     }
-    var where = [];
-    if (typeof req.query.codes === "undefined") {
-      where = [
-        {
-          AnalysisDatetime: {
-            [Op.between]: req.query.dates || dates,
-          },
-          TestingFacilityName: {
-            [Op.not]: null,
-          },
-        },
-      ];
-    } else {
-      where = [
-        {
-          TestingFacilityCode: {
-            [Op.in]: req.query.codes,
-          },
-          AnalysisDatetime: {
-            [Op.between]: req.query.dates || dates,
-          },
-          TestingFacilityName: {
-            [Op.not]: null,
-          },
-        },
-      ];
-    }
+
     const data = await VlData.findAll({
       attributes: [
         [col("TestingFacilityName"), "lab"],
@@ -423,7 +316,21 @@ module.exports = {
         [global.male_not_suppressed, "male_not_suppressed"],
         [global.female_not_suppressed, "female_not_suppressed"],
       ],
-      where: where,
+      where: [
+        {
+          ...(req.query.codes && {
+            TestingFacilityCode: {
+              [Op.in]: req.query.codes,
+            },
+          }),
+          AnalysisDatetime: {
+            [Op.between]: req.query.dates || dates,
+          },
+          TestingFacilityName: {
+            [Op.not]: null,
+          },
+        },
+      ],
       group: [col("TestingFacilityName")],
       order: [[col("TestingFacilityName"), "ASC"]],
     });
@@ -436,33 +343,7 @@ module.exports = {
     if (cache) {
       return res.json(cache);
     }
-    var where = [];
-    if (typeof req.query.codes === "undefined") {
-      where = [
-        {
-          AnalysisDatetime: {
-            [Op.between]: req.query.dates || dates,
-          },
-          AgeInYears: {
-            [Op.between]: req.query.age || age,
-          },
-        },
-      ];
-    } else {
-      where = [
-        {
-          TestingFacilityCode: {
-            [Op.in]: req.query.codes,
-          },
-          AnalysisDatetime: {
-            [Op.between]: req.query.dates || dates,
-          },
-          AgeInYears: {
-            [Op.between]: req.query.age || age,
-          },
-        },
-      ];
-    }
+
     const data = await VlData.findAll({
       attributes: [
         [fn("year", col("AnalysisDatetime")), "year"],
@@ -475,7 +356,21 @@ module.exports = {
         [global.suppressed, "suppressed"],
         [global.non_suppressed, "non_suppressed"],
       ],
-      where: where,
+      where: [
+        {
+          ...(req.query.codes && {
+            TestingFacilityCode: {
+              [Op.in]: req.query.codes,
+            },
+          }),
+          AnalysisDatetime: {
+            [Op.between]: req.query.dates || dates,
+          },
+          AgeInYears: {
+            [Op.between]: req.query.age || age,
+          },
+        },
+      ],
       group: [
         fn("year", col("AnalysisDatetime")),
         fn("month", col("AnalysisDatetime")),
@@ -495,33 +390,7 @@ module.exports = {
     if (cache) {
       return res.json(cache);
     }
-    var where = [];
-    if (typeof req.query.codes === "undefined") {
-      where = [
-        {
-          AnalysisDatetime: {
-            [Op.between]: req.query.dates || dates,
-          },
-          Pregnant: {
-            [Op.in]: ["YES", "Yes", "yes", "Sim", "SIM"],
-          },
-        },
-      ];
-    } else {
-      where = [
-        {
-          TestingFacilityCode: {
-            [Op.in]: req.query.codes,
-          },
-          AnalysisDatetime: {
-            [Op.between]: req.query.dates || dates,
-          },
-          Pregnant: {
-            [Op.in]: ["YES", "Yes", "yes", "Sim", "SIM"],
-          },
-        },
-      ];
-    }
+
     const data = await VlData.findAll({
       attributes: [
         [fn("year", col("AnalysisDatetime")), "year"],
@@ -534,7 +403,21 @@ module.exports = {
         [global.suppressed, "suppressed"],
         [global.non_suppressed, "non_suppressed"],
       ],
-      where: where,
+      where: [
+        {
+          ...(req.query.codes && {
+            TestingFacilityCode: {
+              [Op.in]: req.query.codes,
+            },
+          }),
+          AnalysisDatetime: {
+            [Op.between]: req.query.dates || dates,
+          },
+          Pregnant: {
+            [Op.in]: ["YES", "Yes", "yes", "Sim", "SIM"],
+          },
+        },
+      ],
       group: [
         fn("year", col("AnalysisDatetime")),
         fn("month", col("AnalysisDatetime")),
@@ -554,33 +437,7 @@ module.exports = {
     if (cache) {
       return res.json(cache);
     }
-    var where = [];
-    if (typeof req.query.codes === "undefined") {
-      where = [
-        {
-          AnalysisDatetime: {
-            [Op.between]: req.query.dates || dates,
-          },
-          Breastfeeding: {
-            [Op.in]: ["YES", "Yes", "yes", "Sim", "SIM"],
-          },
-        },
-      ];
-    } else {
-      where = [
-        {
-          TestingFacilityCode: {
-            [Op.in]: req.query.codes,
-          },
-          AnalysisDatetime: {
-            [Op.between]: req.query.dates || dates,
-          },
-          Breastfeeding: {
-            [Op.in]: ["YES", "Yes", "yes", "Sim", "SIM"],
-          },
-        },
-      ];
-    }
+
     const data = await VlData.findAll({
       attributes: [
         [fn("year", col("AnalysisDatetime")), "year"],
@@ -593,7 +450,21 @@ module.exports = {
         [global.suppressed, "suppressed"],
         [global.non_suppressed, "non_suppressed"],
       ],
-      where: where,
+      where: [
+        {
+          ...(req.query.codes && {
+            TestingFacilityCode: {
+              [Op.in]: req.query.codes,
+            },
+          }),
+          AnalysisDatetime: {
+            [Op.between]: req.query.dates || dates,
+          },
+          Breastfeeding: {
+            [Op.in]: ["YES", "Yes", "yes", "Sim", "SIM"],
+          },
+        },
+      ],
       group: [
         fn("year", col("AnalysisDatetime")),
         fn("month", col("AnalysisDatetime")),

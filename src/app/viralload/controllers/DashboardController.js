@@ -12,7 +12,7 @@ const dates = [
   moment().format("YYYY-MM-DD"),
 ];
 
-// const dates = ["2019-09-01", "2020-09-28"];
+// const dates = ["2019-10-01", "2020-10-06"];
 
 module.exports = {
   async getNumberOfSamples(req, res) {
@@ -112,6 +112,17 @@ module.exports = {
             ),
             {
               [Op.lt]: 90,
+            }
+          ),
+          [Op.and]: sequelize.where(
+            fn(
+              "datediff",
+              literal("day"),
+              col("SpecimenDatetime"),
+              col("ReceivedDatetime")
+            ),
+            {
+              [Op.gte]: 0,
             }
           ),
         },

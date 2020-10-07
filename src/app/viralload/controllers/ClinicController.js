@@ -13,7 +13,7 @@ const dates = [
 
 const type = "province";
 
-// const dates = ["2019-09-01", "2020-09-28"];
+// const dates = ["2019-10-01", "2020-10-06"];
 
 const age = [15, 49];
 
@@ -24,32 +24,34 @@ module.exports = ClinicController = {
     if (cache) {
       return res.json(cache);
     }
-    var where = [{}];
-    where[0]["AnalysisDatetime"] = {
-      [Op.between]: req.query.dates || dates,
-    };
-    if (typeof req.query.codes !== "undefined") {
-      if ((req.query.type || type) === "province") {
-        where[0]["RequestingProvinceName"] = {
-          [Op.in]: req.query.codes,
-        };
-      } else if ((req.query.type || type) === "district") {
-        where[0]["RequestingDistrictName"] = {
-          [Op.in]: req.query.codes,
-        };
-      } else if ((req.query.type || type) === "clinic") {
-        where[0]["RequestingFacilityName"] = {
-          [Op.in]: req.query.codes,
-        };
-      }
-    }
 
-    const data = await samples.accumulative(where, [
-      [sequelize.fn("count", sequelize.literal("1")), "total"],
-      [global.routine, "routine"],
-      [global.treatment_failure, "treatment_failure"],
-      [global.reason_not_specified, "reason_not_specified"],
-    ]);
+    const data = await samples.accumulative(
+      [
+        {
+          ...(req.query.codes &&
+            ((req.query.type || type) === "province"
+              ? {
+                  RequestingProvinceName: { [Op.in]: req.query.codes },
+                }
+              : (req.query.type || type) === "district"
+              ? {
+                  RequestingDistrictName: { [Op.in]: req.query.codes },
+                }
+              : {
+                  RequestingFacilityName: { [Op.in]: req.query.codes },
+                })),
+          AnalysisDatetime: {
+            [Op.between]: req.query.dates || dates,
+          },
+        },
+      ],
+      [
+        [sequelize.fn("count", sequelize.literal("1")), "total"],
+        [global.routine, "routine"],
+        [global.treatment_failure, "treatment_failure"],
+        [global.reason_not_specified, "reason_not_specified"],
+      ]
+    );
 
     return res.json(data);
   },
@@ -60,25 +62,7 @@ module.exports = ClinicController = {
     if (cache) {
       return res.json(cache);
     }
-    var where = [{}];
-    where[0]["AnalysisDatetime"] = {
-      [Op.between]: req.query.dates || dates,
-    };
-    if (typeof req.query.codes !== "undefined") {
-      if ((req.query.type || type) === "province") {
-        where[0]["RequestingProvinceName"] = {
-          [Op.in]: req.query.codes,
-        };
-      } else if ((req.query.type || type) === "district") {
-        where[0]["RequestingDistrictName"] = {
-          [Op.in]: req.query.codes,
-        };
-      } else if ((req.query.type || type) === "clinic") {
-        where[0]["RequestingFacilityName"] = {
-          [Op.in]: req.query.codes,
-        };
-      }
-    }
+
     const data = await VlData.findAll({
       attributes: [
         [global.year, "year"],
@@ -88,7 +72,25 @@ module.exports = ClinicController = {
         [global.suppressed, "suppressed"],
         [global.non_suppressed, "non_suppressed"],
       ],
-      where: where,
+      where: [
+        {
+          ...(req.query.codes &&
+            ((req.query.type || type) === "province"
+              ? {
+                  RequestingProvinceName: { [Op.in]: req.query.codes },
+                }
+              : (req.query.type || type) === "district"
+              ? {
+                  RequestingDistrictName: { [Op.in]: req.query.codes },
+                }
+              : {
+                  RequestingFacilityName: { [Op.in]: req.query.codes },
+                })),
+          AnalysisDatetime: {
+            [Op.between]: req.query.dates || dates,
+          },
+        },
+      ],
       group: [global.year, global.month, global.month_name],
       order: [
         [global.year, "ASC"],
@@ -106,25 +108,7 @@ module.exports = ClinicController = {
     if (cache) {
       return res.json(cache);
     }
-    var where = [{}];
-    where[0]["AnalysisDatetime"] = {
-      [Op.between]: req.query.dates || dates,
-    };
-    if (typeof req.query.codes !== "undefined") {
-      if ((req.query.type || type) === "province") {
-        where[0]["RequestingProvinceName"] = {
-          [Op.in]: req.query.codes,
-        };
-      } else if ((req.query.type || type) === "district") {
-        where[0]["RequestingDistrictName"] = {
-          [Op.in]: req.query.codes,
-        };
-      } else if ((req.query.type || type) === "clinic") {
-        where[0]["RequestingFacilityName"] = {
-          [Op.in]: req.query.codes,
-        };
-      }
-    }
+
     const columnsDetails = await utils.getAttributes(
       req.query.type || type,
       disaggregation
@@ -137,7 +121,25 @@ module.exports = ClinicController = {
         [global.suppressed, "suppressed"],
         [global.non_suppressed, "non_suppressed"],
       ],
-      where: where,
+      where: [
+        {
+          ...(req.query.codes &&
+            ((req.query.type || type) === "province"
+              ? {
+                  RequestingProvinceName: { [Op.in]: req.query.codes },
+                }
+              : (req.query.type || type) === "district"
+              ? {
+                  RequestingDistrictName: { [Op.in]: req.query.codes },
+                }
+              : {
+                  RequestingFacilityName: { [Op.in]: req.query.codes },
+                })),
+          AnalysisDatetime: {
+            [Op.between]: req.query.dates || dates,
+          },
+        },
+      ],
       group: [columnsDetails.column],
       order: [[columnsDetails.column, "ASC"]],
     });
@@ -150,42 +152,6 @@ module.exports = ClinicController = {
     if (cache) {
       return res.json(cache);
     }
-    var where = [{}];
-    where[0]["AnalysisDatetime"] = {
-      [Op.between]: req.query.dates || dates,
-    };
-
-    where.push([
-      {
-        [Op.between]: sequelize.where(
-          fn(
-            "datediff",
-            literal("day"),
-            col("SpecimenDatetime"),
-            col("AuthorisedDatetime")
-          ),
-          {
-            [Op.lt]: 90,
-          }
-        ),
-      },
-    ]);
-
-    if (typeof req.query.codes !== "undefined") {
-      if ((req.query.type || type) === "province") {
-        where[0]["RequestingProvinceName"] = {
-          [Op.in]: req.query.codes,
-        };
-      } else if ((req.query.type || type) === "district") {
-        where[0]["RequestingDistrictName"] = {
-          [Op.in]: req.query.codes,
-        };
-      } else if ((req.query.type || type) === "clinic") {
-        where[0]["RequestingFacilityName"] = {
-          [Op.in]: req.query.codes,
-        };
-      }
-    }
 
     const data = await VlData.findAll({
       attributes: [
@@ -197,7 +163,47 @@ module.exports = ClinicController = {
         [global.registration_analysis, "registration_analysis"],
         [global.analysis_validation, "analysis_validation"],
       ],
-      where: where,
+      where: [
+        {
+          ...(req.query.codes &&
+            ((req.query.type || type) === "province"
+              ? {
+                  RequestingProvinceName: { [Op.in]: req.query.codes },
+                }
+              : (req.query.type || type) === "district"
+              ? {
+                  RequestingDistrictName: { [Op.in]: req.query.codes },
+                }
+              : {
+                  RequestingFacilityName: { [Op.in]: req.query.codes },
+                })),
+          AnalysisDatetime: {
+            [Op.between]: req.query.dates || dates,
+          },
+          [Op.and]: sequelize.where(
+            fn(
+              "datediff",
+              literal("day"),
+              col("SpecimenDatetime"),
+              col("AuthorisedDatetime")
+            ),
+            {
+              [Op.lt]: 90,
+            }
+          ),
+          [Op.and]: sequelize.where(
+            fn(
+              "datediff",
+              literal("day"),
+              col("SpecimenDatetime"),
+              col("ReceivedDatetime")
+            ),
+            {
+              [Op.gte]: 0,
+            }
+          ),
+        },
+      ],
       group: [global.year, global.month, global.month_name],
       order: [
         [global.year, "ASC"],
@@ -216,42 +222,6 @@ module.exports = ClinicController = {
     if (cache) {
       return res.json(cache);
     }
-    var where = [{}];
-    where[0]["AnalysisDatetime"] = {
-      [Op.between]: req.query.dates || dates,
-    };
-
-    where.push([
-      {
-        [Op.between]: sequelize.where(
-          fn(
-            "datediff",
-            literal("day"),
-            col("SpecimenDatetime"),
-            col("AuthorisedDatetime")
-          ),
-          {
-            [Op.lt]: 90,
-          }
-        ),
-      },
-    ]);
-
-    if (typeof req.query.codes !== "undefined") {
-      if ((req.query.type || type) === "province") {
-        where[0]["RequestingProvinceName"] = {
-          [Op.in]: req.query.codes,
-        };
-      } else if ((req.query.type || type) === "district") {
-        where[0]["RequestingDistrictName"] = {
-          [Op.in]: req.query.codes,
-        };
-      } else if ((req.query.type || type) === "clinic") {
-        where[0]["RequestingFacilityName"] = {
-          [Op.in]: req.query.codes,
-        };
-      }
-    }
 
     const columnsDetails = await utils.getAttributes(
       req.query.type || type,
@@ -267,7 +237,47 @@ module.exports = ClinicController = {
         [global.registration_analysis, "registration_analysis"],
         [global.analysis_validation, "analysis_validation"],
       ],
-      where: where,
+      where: [
+        {
+          ...(req.query.codes &&
+            ((req.query.type || type) === "province"
+              ? {
+                  RequestingProvinceName: { [Op.in]: req.query.codes },
+                }
+              : (req.query.type || type) === "district"
+              ? {
+                  RequestingDistrictName: { [Op.in]: req.query.codes },
+                }
+              : {
+                  RequestingFacilityName: { [Op.in]: req.query.codes },
+                })),
+          AnalysisDatetime: {
+            [Op.between]: req.query.dates || dates,
+          },
+          [Op.and]: sequelize.where(
+            fn(
+              "datediff",
+              literal("day"),
+              col("SpecimenDatetime"),
+              col("AuthorisedDatetime")
+            ),
+            {
+              [Op.lt]: 90,
+            }
+          ),
+          [Op.and]: sequelize.where(
+            fn(
+              "datediff",
+              literal("day"),
+              col("SpecimenDatetime"),
+              col("ReceivedDatetime")
+            ),
+            {
+              [Op.gte]: 0,
+            }
+          ),
+        },
+      ],
       group: [columnsDetails.column],
       order: [[columnsDetails.column, "ASC"]],
     });
@@ -279,25 +289,6 @@ module.exports = ClinicController = {
     const cache = await utils.checkCache(req.query, id);
     if (cache) {
       return res.json(cache);
-    }
-    var where = [{}];
-    where[0]["AnalysisDatetime"] = {
-      [Op.between]: req.query.dates || dates,
-    };
-    if (typeof req.query.codes !== "undefined") {
-      if ((req.query.type || type) === "province") {
-        where[0]["RequestingProvinceName"] = {
-          [Op.in]: req.query.codes,
-        };
-      } else if ((req.query.type || type) === "district") {
-        where[0]["RequestingDistrictName"] = {
-          [Op.in]: req.query.codes,
-        };
-      } else if ((req.query.type || type) === "clinic") {
-        where[0]["RequestingFacilityName"] = {
-          [Op.in]: req.query.codes,
-        };
-      }
     }
 
     const data = await VlData.findAll({
@@ -311,7 +302,25 @@ module.exports = ClinicController = {
         [global.male_not_suppressed, "male_not_suppressed"],
         [global.female_not_suppressed, "female_not_suppressed"],
       ],
-      where: where,
+      where: [
+        {
+          ...(req.query.codes &&
+            ((req.query.type || type) === "province"
+              ? {
+                  RequestingProvinceName: { [Op.in]: req.query.codes },
+                }
+              : (req.query.type || type) === "district"
+              ? {
+                  RequestingDistrictName: { [Op.in]: req.query.codes },
+                }
+              : {
+                  RequestingFacilityName: { [Op.in]: req.query.codes },
+                })),
+          AnalysisDatetime: {
+            [Op.between]: req.query.dates || dates,
+          },
+        },
+      ],
       group: [global.year, global.month, global.month_name],
       order: [
         [global.year, "ASC"],
@@ -329,25 +338,7 @@ module.exports = ClinicController = {
     if (cache) {
       return res.json(cache);
     }
-    var where = [{}];
-    where[0]["AnalysisDatetime"] = {
-      [Op.between]: req.query.dates || dates,
-    };
-    if (typeof req.query.codes !== "undefined") {
-      if ((req.query.type || type) === "province") {
-        where[0]["RequestingProvinceName"] = {
-          [Op.in]: req.query.codes,
-        };
-      } else if ((req.query.type || type) === "district") {
-        where[0]["RequestingDistrictName"] = {
-          [Op.in]: req.query.codes,
-        };
-      } else if ((req.query.type || type) === "clinic") {
-        where[0]["RequestingFacilityName"] = {
-          [Op.in]: req.query.codes,
-        };
-      }
-    }
+
     const columnsDetails = await utils.getAttributes(
       req.query.type || type,
       disaggregation
@@ -363,7 +354,25 @@ module.exports = ClinicController = {
         [global.male_not_suppressed, "male_not_suppressed"],
         [global.female_not_suppressed, "female_not_suppressed"],
       ],
-      where: where,
+      where: [
+        {
+          ...(req.query.codes &&
+            ((req.query.type || type) === "province"
+              ? {
+                  RequestingProvinceName: { [Op.in]: req.query.codes },
+                }
+              : (req.query.type || type) === "district"
+              ? {
+                  RequestingDistrictName: { [Op.in]: req.query.codes },
+                }
+              : {
+                  RequestingFacilityName: { [Op.in]: req.query.codes },
+                })),
+          AnalysisDatetime: {
+            [Op.between]: req.query.dates || dates,
+          },
+        },
+      ],
       group: [columnsDetails.column],
       order: [[columnsDetails.column, "ASC"]],
     });
@@ -376,28 +385,7 @@ module.exports = ClinicController = {
     if (cache) {
       return res.json(cache);
     }
-    var where = [{}];
-    where[0]["AnalysisDatetime"] = {
-      [Op.between]: req.query.dates || dates,
-    };
-    where[0]["AgeInYears"] = {
-      [Op.between]: req.query.age || age,
-    };
-    if (typeof req.query.codes !== "undefined") {
-      if ((req.query.type || type) === "province") {
-        where[0]["RequestingProvinceName"] = {
-          [Op.in]: req.query.codes,
-        };
-      } else if ((req.query.type || type) === "district") {
-        where[0]["RequestingDistrictName"] = {
-          [Op.in]: req.query.codes,
-        };
-      } else if ((req.query.type || type) === "clinic") {
-        where[0]["RequestingFacilityName"] = {
-          [Op.in]: req.query.codes,
-        };
-      }
-    }
+
     const data = await VlData.findAll({
       attributes: [
         [global.year, "year"],
@@ -407,7 +395,28 @@ module.exports = ClinicController = {
         [global.suppressed, "suppressed"],
         [global.non_suppressed, "non_suppressed"],
       ],
-      where: where,
+      where: [
+        {
+          ...(req.query.codes &&
+            ((req.query.type || type) === "province"
+              ? {
+                  RequestingProvinceName: { [Op.in]: req.query.codes },
+                }
+              : (req.query.type || type) === "district"
+              ? {
+                  RequestingDistrictName: { [Op.in]: req.query.codes },
+                }
+              : {
+                  RequestingFacilityName: { [Op.in]: req.query.codes },
+                })),
+          AnalysisDatetime: {
+            [Op.between]: req.query.dates || dates,
+          },
+          AgeInYears: {
+            [Op.between]: req.query.age || age,
+          },
+        },
+      ],
       group: [global.year, global.month, global.month_name],
       order: [
         [global.year, "ASC"],
@@ -425,29 +434,6 @@ module.exports = ClinicController = {
     if (cache) {
       return res.json(cache);
     }
-    var where = [{}];
-    where[0]["AnalysisDatetime"] = {
-      [Op.between]: req.query.dates || dates,
-    };
-    where[0]["AgeInYears"] = {
-      [Op.between]: req.query.age || age,
-    };
-
-    if (typeof req.query.codes !== "undefined") {
-      if ((req.query.type || type) === "province") {
-        where[0]["RequestingProvinceName"] = {
-          [Op.in]: req.query.codes,
-        };
-      } else if ((req.query.type || type) === "district") {
-        where[0]["RequestingDistrictName"] = {
-          [Op.in]: req.query.codes,
-        };
-      } else if ((req.query.type || type) === "clinic") {
-        where[0]["RequestingFacilityName"] = {
-          [Op.in]: req.query.codes,
-        };
-      }
-    }
 
     const columnsDetails = await utils.getAttributes(
       req.query.type || type,
@@ -462,7 +448,28 @@ module.exports = ClinicController = {
         [global.suppressed, "suppressed"],
         [global.non_suppressed, "non_suppressed"],
       ],
-      where: where,
+      where: [
+        {
+          ...(req.query.codes &&
+            ((req.query.type || type) === "province"
+              ? {
+                  RequestingProvinceName: { [Op.in]: req.query.codes },
+                }
+              : (req.query.type || type) === "district"
+              ? {
+                  RequestingDistrictName: { [Op.in]: req.query.codes },
+                }
+              : {
+                  RequestingFacilityName: { [Op.in]: req.query.codes },
+                })),
+          AnalysisDatetime: {
+            [Op.between]: req.query.dates || dates,
+          },
+          AgeInYears: {
+            [Op.between]: req.query.age || age,
+          },
+        },
+      ],
       group: [columnsDetails.column],
       order: [[columnsDetails.column, "ASC"]],
     });
@@ -475,28 +482,7 @@ module.exports = ClinicController = {
     if (cache) {
       return res.json(cache);
     }
-    var where = [{}];
-    where[0]["AnalysisDatetime"] = {
-      [Op.between]: req.query.dates || dates,
-    };
-    where[0]["Pregnant"] = {
-      [Op.in]: ["YES", "Yes", "yes", "Sim", "SIM"],
-    };
-    if (typeof req.query.codes !== "undefined") {
-      if ((req.query.type || type) === "province") {
-        where[0]["RequestingProvinceName"] = {
-          [Op.in]: req.query.codes,
-        };
-      } else if ((req.query.type || type) === "district") {
-        where[0]["RequestingDistrictName"] = {
-          [Op.in]: req.query.codes,
-        };
-      } else if ((req.query.type || type) === "clinic") {
-        where[0]["RequestingFacilityName"] = {
-          [Op.in]: req.query.codes,
-        };
-      }
-    }
+
     const data = await VlData.findAll({
       attributes: [
         [global.year, "year"],
@@ -506,7 +492,28 @@ module.exports = ClinicController = {
         [global.suppressed, "suppressed"],
         [global.non_suppressed, "non_suppressed"],
       ],
-      where: where,
+      where: [
+        {
+          ...(req.query.codes &&
+            ((req.query.type || type) === "province"
+              ? {
+                  RequestingProvinceName: { [Op.in]: req.query.codes },
+                }
+              : (req.query.type || type) === "district"
+              ? {
+                  RequestingDistrictName: { [Op.in]: req.query.codes },
+                }
+              : {
+                  RequestingFacilityName: { [Op.in]: req.query.codes },
+                })),
+          AnalysisDatetime: {
+            [Op.between]: req.query.dates || dates,
+          },
+          Pregnant: {
+            [Op.in]: ["YES", "Yes", "yes", "Sim", "SIM"],
+          },
+        },
+      ],
       group: [global.year, global.month, global.month_name],
       order: [
         [global.year, "ASC"],
@@ -524,29 +531,6 @@ module.exports = ClinicController = {
     if (cache) {
       return res.json(cache);
     }
-    var where = [{}];
-    where[0]["AnalysisDatetime"] = {
-      [Op.between]: req.query.dates || dates,
-    };
-    where[0]["Pregnant"] = {
-      [Op.in]: ["YES", "Yes", "yes", "Sim", "SIM"],
-    };
-
-    if (typeof req.query.codes !== "undefined") {
-      if ((req.query.type || type) === "province") {
-        where[0]["RequestingProvinceName"] = {
-          [Op.in]: req.query.codes,
-        };
-      } else if ((req.query.type || type) === "district") {
-        where[0]["RequestingDistrictName"] = {
-          [Op.in]: req.query.codes,
-        };
-      } else if ((req.query.type || type) === "clinic") {
-        where[0]["RequestingFacilityName"] = {
-          [Op.in]: req.query.codes,
-        };
-      }
-    }
 
     const columnsDetails = await utils.getAttributes(
       req.query.type || type,
@@ -561,7 +545,28 @@ module.exports = ClinicController = {
         [global.suppressed, "suppressed"],
         [global.non_suppressed, "non_suppressed"],
       ],
-      where: where,
+      where: [
+        {
+          ...(req.query.codes &&
+            ((req.query.type || type) === "province"
+              ? {
+                  RequestingProvinceName: { [Op.in]: req.query.codes },
+                }
+              : (req.query.type || type) === "district"
+              ? {
+                  RequestingDistrictName: { [Op.in]: req.query.codes },
+                }
+              : {
+                  RequestingFacilityName: { [Op.in]: req.query.codes },
+                })),
+          AnalysisDatetime: {
+            [Op.between]: req.query.dates || dates,
+          },
+          Pregnant: {
+            [Op.in]: ["YES", "Yes", "yes", "Sim", "SIM"],
+          },
+        },
+      ],
       group: [columnsDetails.column],
       order: [[columnsDetails.column, "ASC"]],
     });
@@ -574,28 +579,7 @@ module.exports = ClinicController = {
     if (cache) {
       return res.json(cache);
     }
-    var where = [{}];
-    where[0]["AnalysisDatetime"] = {
-      [Op.between]: req.query.dates || dates,
-    };
-    where[0]["Breastfeeding"] = {
-      [Op.in]: ["YES", "Yes", "yes", "Sim", "SIM"],
-    };
-    if (typeof req.query.codes !== "undefined") {
-      if ((req.query.type || type) === "province") {
-        where[0]["RequestingProvinceName"] = {
-          [Op.in]: req.query.codes,
-        };
-      } else if ((req.query.type || type) === "district") {
-        where[0]["RequestingDistrictName"] = {
-          [Op.in]: req.query.codes,
-        };
-      } else if ((req.query.type || type) === "clinic") {
-        where[0]["RequestingFacilityName"] = {
-          [Op.in]: req.query.codes,
-        };
-      }
-    }
+
     const data = await VlData.findAll({
       attributes: [
         [global.year, "year"],
@@ -605,7 +589,28 @@ module.exports = ClinicController = {
         [global.suppressed, "suppressed"],
         [global.non_suppressed, "non_suppressed"],
       ],
-      where: where,
+      where: [
+        {
+          ...(req.query.codes &&
+            ((req.query.type || type) === "province"
+              ? {
+                  RequestingProvinceName: { [Op.in]: req.query.codes },
+                }
+              : (req.query.type || type) === "district"
+              ? {
+                  RequestingDistrictName: { [Op.in]: req.query.codes },
+                }
+              : {
+                  RequestingFacilityName: { [Op.in]: req.query.codes },
+                })),
+          AnalysisDatetime: {
+            [Op.between]: req.query.dates || dates,
+          },
+          Breastfeeding: {
+            [Op.in]: ["YES", "Yes", "yes", "Sim", "SIM"],
+          },
+        },
+      ],
       group: [global.year, global.month, global.month_name],
       order: [
         [global.year, "ASC"],
@@ -623,29 +628,6 @@ module.exports = ClinicController = {
     if (cache) {
       return res.json(cache);
     }
-    var where = [{}];
-    where[0]["AnalysisDatetime"] = {
-      [Op.between]: req.query.dates || dates,
-    };
-    where[0]["Breastfeeding"] = {
-      [Op.in]: ["YES", "Yes", "yes", "Sim", "SIM"],
-    };
-
-    if (typeof req.query.codes !== "undefined") {
-      if ((req.query.type || type) === "province") {
-        where[0]["RequestingProvinceName"] = {
-          [Op.in]: req.query.codes,
-        };
-      } else if ((req.query.type || type) === "district") {
-        where[0]["RequestingDistrictName"] = {
-          [Op.in]: req.query.codes,
-        };
-      } else if ((req.query.type || type) === "clinic") {
-        where[0]["RequestingFacilityName"] = {
-          [Op.in]: req.query.codes,
-        };
-      }
-    }
 
     const columnsDetails = await utils.getAttributes(
       req.query.type || type,
@@ -660,7 +642,28 @@ module.exports = ClinicController = {
         [global.suppressed, "suppressed"],
         [global.non_suppressed, "non_suppressed"],
       ],
-      where: where,
+      where: [
+        {
+          ...(req.query.codes &&
+            ((req.query.type || type) === "province"
+              ? {
+                  RequestingProvinceName: { [Op.in]: req.query.codes },
+                }
+              : (req.query.type || type) === "district"
+              ? {
+                  RequestingDistrictName: { [Op.in]: req.query.codes },
+                }
+              : {
+                  RequestingFacilityName: { [Op.in]: req.query.codes },
+                })),
+          AnalysisDatetime: {
+            [Op.between]: req.query.dates || dates,
+          },
+          Breastfeeding: {
+            [Op.in]: ["YES", "Yes", "yes", "Sim", "SIM"],
+          },
+        },
+      ],
       group: [columnsDetails.column],
       order: [[columnsDetails.column, "ASC"]],
     });
@@ -674,25 +677,7 @@ module.exports = ClinicController = {
     if (cache) {
       return res.json(cache);
     }
-    var where = [{}];
-    where[0]["RegisteredDatetime"] = {
-      [Op.between]: req.query.dates || dates,
-    };
-    if (typeof req.query.codes !== "undefined") {
-      if ((req.query.type || type) === "province") {
-        where[0]["RequestingProvinceName"] = {
-          [Op.in]: req.query.codes,
-        };
-      } else if ((req.query.type || type) === "district") {
-        where[0]["RequestingDistrictName"] = {
-          [Op.in]: req.query.codes,
-        };
-      } else if ((req.query.type || type) === "clinic") {
-        where[0]["RequestingFacilityName"] = {
-          [Op.in]: req.query.codes,
-        };
-      }
-    }
+
     const columnsDetails = await utils.getAttributes(
       req.query.type || type,
       disaggregation
@@ -703,7 +688,25 @@ module.exports = ClinicController = {
         [literal(`'${columnsDetails.type}'`), "type"],
         [global.total, "total"],
       ],
-      where: where,
+      where: [
+        {
+          ...(req.query.codes &&
+            ((req.query.type || type) === "province"
+              ? {
+                  RequestingProvinceName: { [Op.in]: req.query.codes },
+                }
+              : (req.query.type || type) === "district"
+              ? {
+                  RequestingDistrictName: { [Op.in]: req.query.codes },
+                }
+              : {
+                  RequestingFacilityName: { [Op.in]: req.query.codes },
+                })),
+          RegisteredDatetime: {
+            [Op.between]: req.query.dates || dates,
+          },
+        },
+      ],
       group: [columnsDetails.column],
       order: [[columnsDetails.column, "ASC"]],
     });
