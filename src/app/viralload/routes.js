@@ -149,4 +149,6 @@ routes.get(
   ResultsController.search_patients
 );
 
+routes.get("/results/query/:page/:paginate/:query", ResultsController.get_patients_by_query)
+
 module.exports = routes;
