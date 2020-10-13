@@ -200,4 +200,32 @@ module.exports = {
 
     return res.json(results);
   },
+
+  async search_patients(req, res) {
+    const { requestid } = req.params;
+    const result = await Covid19.findOne({
+      attributes: [
+        [col("RequestID"), "requestid"],
+        [col("SURNAME"), "surname"],
+        [col("FIRSTNAME"), "firstname"],
+        [col("AgeInYears"), "age"],
+        [col("Hl7SexCode"), "gender"],
+        [col("RequestingProvinceName"), "province"],
+        [col("RequestingDistrictName"), "district"],
+        [col("RequestingFacilityName"), "clinic"],
+        [
+          literal(
+            "CASE WHEN TELHOME IS NULL OR TELHOME = '' THEN MOBILE ELSE TELHOME END"
+          ),
+          "mobile_1",
+        ],
+        [col("MOBILE"), "mobile_2"],
+        [col("SpecimenDatetime"), "SpecimenDatetime"],
+        [col("AuthorisedDatetime"), "AuthorisedDatetime"],
+        [col("Covid19Result"), "Covid19Result"],
+      ],
+      where: literal(`RequestID LIKE '%${requestid}%'`),
+    });
+    return res.json(result);
+  },
 };

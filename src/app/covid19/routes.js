@@ -84,4 +84,6 @@ routes.get(
 
 routes.get("/daily/results/:start_date/:end_date", DailyController.get_results);
 
+routes.get("/covid/results/:requestid", ResultsController.search_patients)
+
 module.exports = routes;
