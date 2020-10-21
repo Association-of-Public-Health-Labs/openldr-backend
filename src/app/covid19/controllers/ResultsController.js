@@ -136,7 +136,10 @@ module.exports = {
             Covid19Result: {
               [Op.like]: "%Negativo%",
             },
-            RequestingProvinceName: "Maputo Cidade",
+            RequestingProvinceName: {
+              [Op.in]: ["Maputo Cidade", "Maputo Provincia", "Sofala"]
+            },
+            // RequestingProvinceName: "Maputo Cidade",
           },
         ],
       },
