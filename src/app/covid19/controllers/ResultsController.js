@@ -115,10 +115,10 @@ module.exports = {
           literal(
             "IIF(TELWORK = '', IIF(TELHOME = '', MOBILE, TELHOME), TELWORK)"
           ),
-          "mobile_1",
+          "mobile_1"
         ],
         // [col("TELHOME"), "mobile_1"],
-        [(col("MOBILE"), "mobile_2")],
+        [col("MOBILE"), "mobile_2"],
         [col("SpecimenDatetime"), "SpecimenDatetime"],
         [col("AuthorisedDatetime"), "AuthorisedDatetime"],
         [col("RequestingFacilityName"), "RequestingFacilityName"],
@@ -136,10 +136,10 @@ module.exports = {
             Covid19Result: {
               [Op.like]: "%Negativo%",
             },
-            // RequestingProvinceName: {
-            //   [Op.in]: ["Maputo Cidade", "Maputo Provincia", "Sofala"]
-            // },
-            RequestingProvinceName: "Maputo Provincia",
+            RequestingProvinceName: {
+              [Op.in]: ["Maputo Provincia", "Sofala"]
+            },
+            // RequestingProvinceName: "Maputo Provincia",
           },
         ],
       },
