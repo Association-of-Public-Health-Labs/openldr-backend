@@ -137,7 +137,7 @@ module.exports = {
               [Op.like]: "%Negativo%",
             },
             RequestingProvinceName: {
-              [Op.in]: ["Maputo Provincia", "Sofala"]
+              [Op.in]: ["Maputo Provincia", "Sofala", "Maputo Cidade"]
             },
             // RequestingProvinceName: "Maputo Provincia",
           },
@@ -197,7 +197,7 @@ module.exports = {
       {
         where: {
           RequestID: requestid,
-        },
+        }, 
       }
     );
 
