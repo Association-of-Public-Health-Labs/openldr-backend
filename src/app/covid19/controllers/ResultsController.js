@@ -132,6 +132,7 @@ module.exports = {
           literal(
             `((TELHOME IS NOT NULL AND TELHOME <> '') OR (TELWORK IS NOT NULL AND TELWORK <> '') OR (MOBILE IS NOT NULL AND MOBILE <> ''))`
           ),
+          literal(`SMS_STATUS IS NULL`),
           {
             Covid19Result: {
               [Op.like]: "%Negativo%",
