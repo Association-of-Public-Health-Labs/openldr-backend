@@ -26,6 +26,20 @@ const vldata = new Sequelize(
   }
 );
 
+
+const reportData = new Sequelize(
+  process.env.REPORT_DATA_DB,
+  process.env.REPORT_DATA_USER,
+  process.env.REPORT_DATA_PASSWORD,
+  {
+    host: process.env.REPORT_DATA_HOST,
+    dialect: "mssql",
+    dialectOptions: {
+      options: { requestTimeout: 30000000 },
+    },
+  }
+);
+
 const covid19 = new Sequelize(
   process.env.COVID_DB,
   process.env.COVID_USER,
@@ -57,4 +71,5 @@ module.exports = {
   vldata: vldata,
   facilities: facilities,
   covid19: covid19,
+  reportData: reportData
 };

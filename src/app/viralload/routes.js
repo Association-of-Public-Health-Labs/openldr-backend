@@ -5,6 +5,7 @@ const LaboratoryController = require("./controllers/LaboratoryController");
 const DashboardController = require("./controllers/DashboardController");
 const ClinicController = require("./controllers/ClinicController");
 const ResultsController = require("./controllers/ResultsController");
+const WeeklyReportController = require("./controllers/WeeklyReportController")
 
 const routes = express.Router();
 
@@ -150,5 +151,9 @@ routes.get(
 );
 
 routes.get("/results/query/:page/:paginate/:query", ResultsController.get_patients_by_query)
+
+// Weekly Reports
+routes.get("/weeklyreports/instrument", WeeklyReportController.getTotalIntrumentCapacity)
+routes.get("/weeklyreports/instrument_samples", WeeklyReportController.getSamplesByInstrument)
 
 module.exports = routes;
