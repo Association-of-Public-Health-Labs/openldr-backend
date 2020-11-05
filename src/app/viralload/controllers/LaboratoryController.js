@@ -5,6 +5,7 @@ const utils = require("./indicators/utils");
 const VlData = require("../models/VlData");
 const { Op, fn, literal, col } = sequelize;
 const moment = require("moment");
+const {vldata} = require("../../../config/sequelize")
 
 const dates = [
   moment().subtract(1, "years").format("YYYY-MM-DD"),
@@ -153,31 +154,39 @@ module.exports = {
               [Op.in]: req.query.codes,
             },
           }),
-          AnalysisDatetime: {
-            [Op.between]: req.query.dates || dates,
+          [Op.and]: {
+            AnalysisDatetime: {
+              [Op.between]: req.query.dates || dates,
+            },
+            ViralLoadResultCategory: {
+              [Op.not]: null,
+            },
+            ViralLoadResultCategory: {
+              [Op.notLike]: "",
+            },
+            [Op.and]: sequelize.where(
+              fn(
+                "datediff",
+                literal("day"),
+                col("SpecimenDatetime"),
+                col("AuthorisedDatetime")
+              ),
+              {
+                [Op.lt]: 90,
+              }
+            ),
+            [Op.and]: sequelize.where(
+              fn(
+                "datediff",
+                literal("day"),
+                col("SpecimenDatetime"),
+                col("ReceivedDatetime")
+              ),
+              {
+                [Op.gte]: 0,
+              }
+            ),
           },
-          [Op.and]: sequelize.where(
-            fn(
-              "datediff",
-              literal("day"),
-              col("SpecimenDatetime"),
-              col("AuthorisedDatetime")
-            ),
-            {
-              [Op.lt]: 90,
-            }
-          ),
-          [Op.and]: sequelize.where(
-            fn(
-              "datediff",
-              literal("day"),
-              col("SpecimenDatetime"),
-              col("ReceivedDatetime")
-            ),
-            {
-              [Op.gte]: 0,
-            }
-          ),
         },
       ],
       group: [
@@ -218,34 +227,39 @@ module.exports = {
               [Op.in]: req.query.codes,
             },
           }),
-          AnalysisDatetime: {
-            [Op.between]: req.query.dates || dates,
-          },
-          TestingFacilityName: {
-            [Op.not]: null,
-          },
-          [Op.and]: sequelize.where(
-            fn(
-              "datediff",
-              literal("day"),
-              col("SpecimenDatetime"),
-              col("AuthorisedDatetime")
+          [Op.and]: {
+            AnalysisDatetime: {
+              [Op.between]: req.query.dates || dates,
+            },
+            ViralLoadResultCategory: {
+              [Op.not]: null,
+            },
+            ViralLoadResultCategory: {
+              [Op.notLike]: "",
+            },
+            [Op.and]: sequelize.where(
+              fn(
+                "datediff",
+                literal("day"),
+                col("SpecimenDatetime"),
+                col("AuthorisedDatetime")
+              ),
+              {
+                [Op.lt]: 90,
+              }
             ),
-            {
-              [Op.lt]: 90,
-            }
-          ),
-          [Op.and]: sequelize.where(
-            fn(
-              "datediff",
-              literal("day"),
-              col("SpecimenDatetime"),
-              col("ReceivedDatetime")
+            [Op.and]: sequelize.where(
+              fn(
+                "datediff",
+                literal("day"),
+                col("SpecimenDatetime"),
+                col("ReceivedDatetime")
+              ),
+              {
+                [Op.gte]: 0,
+              }
             ),
-            {
-              [Op.gte]: 0,
-            }
-          ),
+          },
         },
       ],
       group: [col("TestingFacilityName")],
@@ -477,4 +491,66 @@ module.exports = {
     });
     return res.json(data);
   },
+
+
+  async getSamplesRejectedByMonth(req, res) {
+    const id = "lab_samples_rejected_by_month";
+    const cache = await utils.checkCache(req.query, id);
+    if (cache) {
+      return res.json(cache);
+    }
+
+    const _dates = req.query.dates || dates
+    const codes = req.query.codes || []
+
+    const data = await VlData.findAll({
+      attributes: [
+        [fn("year", col("RegisteredDatetime")), "year"],
+        [fn("month", col("RegisteredDatetime")), "month"],
+        [
+          fn("datename", literal("month"), col("RegisteredDatetime")),
+          "month_name",
+        ],
+        [literal("COUNT(1)"), "rejected"],
+      ],
+      where: literal(`${codes.length > 0 ? `SUBSTRING(RequestID,7,3) IN ('` + codes.join(`','`) + `') AND ` : ''}((LIMSRejectionCode IS NOT NULL AND LIMSRejectionCode <> '')
+      OR (HIVVL_LIMSRejectionCode IS NOT NULL AND HIVVL_LIMSRejectionCode <> '')) 
+      AND CAST(RegisteredDateTime AS DATE) >= '${_dates[0]}' AND CAST(RegisteredDateTime AS DATE) <= '${_dates[1]}'`),
+      group: [
+        fn("year", col("RegisteredDatetime")),
+        fn("month", col("RegisteredDatetime")),
+        fn("datename", literal("month"), col("RegisteredDatetime")),
+      ],
+      order: [
+        [fn("year", col("RegisteredDatetime")), "ASC"],
+        [fn("month", col("RegisteredDatetime")), "ASC"],
+      ],
+    });
+    return res.json(data);
+  },
+
+
+  async getRejectedSamples(req, res) {
+    const id = "lab_samples_rejected_by_lab";
+    const cache = await utils.checkCache(req.query, id);
+    if (cache) {
+      return res.json(cache);
+    }
+    const _dates = req.query.dates || dates
+
+    const codes =req.query.codes || []
+
+    const rejections = await vldata.query(`SELECT lab.LabName, COUNT(1) rejected FROM ViralLoadData.dbo.VlData AS vl
+    JOIN OpenLDRDict.dbo.Laboratories AS lab ON 
+    lab.LabCode = SUBSTRING(vl.RequestID,7,3)
+    WHERE ((LIMSRejectionCode IS NOT NULL AND LIMSRejectionCode <> '')
+    OR (HIVVL_LIMSRejectionCode IS NOT NULL AND HIVVL_LIMSRejectionCode <> '')) AND
+    CAST(RegisteredDateTime AS DATE) >= '${_dates[0]}' AND CAST(RegisteredDateTime AS DATE) <= '${_dates[1]}'
+    AND lab.LabName <> '' AND lab.LabName IS NOT NULL 
+    ${codes.length > 0 ? ` AND lab.LabCode IN ('` + codes.join(`','`) + `')` : ''}
+    GROUP BY lab.LabName ORDER BY lab.LabName`);
+
+    return res.json(rejections[0])
+  }
+
 };

@@ -12,7 +12,7 @@ const dates = [
   moment().format("YYYY-MM-DD"),
 ];
 
-// const dates = ["2019-10-01", "2020-10-06"];
+// const dates = ["2019-11-01", "2020-11-04"];
 
 module.exports = {
   async getNumberOfSamples(req, res) {
@@ -100,31 +100,39 @@ module.exports = {
       ],
       where: [
         {
-          AnalysisDatetime: {
-            [Op.between]: req.query.dates || dates,
+          [Op.and]: {
+            AnalysisDatetime: {
+              [Op.between]: req.query.dates || dates,
+            },
+            ViralLoadResultCategory: {
+              [Op.not]: null,
+            },
+            ViralLoadResultCategory: {
+              [Op.notLike]: "",
+            },
+            [Op.and]: sequelize.where(
+              fn(
+                "datediff",
+                literal("day"),
+                col("SpecimenDatetime"),
+                col("AuthorisedDatetime")
+              ),
+              {
+                [Op.lt]: 90,
+              }
+            ),
+            [Op.and]: sequelize.where(
+              fn(
+                "datediff",
+                literal("day"),
+                col("SpecimenDatetime"),
+                col("ReceivedDatetime")
+              ),
+              {
+                [Op.gte]: 0,
+              }
+            ),
           },
-          [Op.and]: sequelize.where(
-            fn(
-              "datediff",
-              literal("day"),
-              col("SpecimenDatetime"),
-              col("AuthorisedDatetime")
-            ),
-            {
-              [Op.lt]: 90,
-            }
-          ),
-          [Op.and]: sequelize.where(
-            fn(
-              "datediff",
-              literal("day"),
-              col("SpecimenDatetime"),
-              col("ReceivedDatetime")
-            ),
-            {
-              [Op.gte]: 0,
-            }
-          ),
         },
       ],
       group: [global.year, global.month, global.month_name],

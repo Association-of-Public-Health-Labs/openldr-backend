@@ -1,0 +1,66 @@
+[
+    {
+      "LabName": "Cabo Delgado",
+      "rejected": 329
+    },
+    {
+      "LabName": "Carmelo",
+      "rejected": 791
+    },
+    {
+      "LabName": "Chimoio",
+      "rejected": 839
+    },
+    {
+      "LabName": "Clinica da UEM",
+      "rejected": 525
+    },
+    {
+      "LabName": "DREAM Beira",
+      "rejected": 378
+    },
+    {
+      "LabName": "DREAM Maputo",
+      "rejected": 34
+    },
+    {
+      "LabName": "H Militar de Maputo",
+      "rejected": 177
+    },
+    {
+      "LabName": "HG Machava",
+      "rejected": 801
+    },
+    {
+      "LabName": "HG Mavalane",
+      "rejected": 155
+    },
+    {
+      "LabName": "HP Tete",
+      "rejected": 545
+    },
+    {
+      "LabName": "INS",
+      "rejected": 185
+    },
+    {
+      "LabName": "Jose Macamo",
+      "rejected": 297
+    },
+    {
+      "LabName": "Nampula",
+      "rejected": 1303
+    },
+    {
+      "LabName": "Ponta Gea",
+      "rejected": 995
+    },
+    {
+      "LabName": "Quelimane",
+      "rejected": 3321
+    },
+    {
+      "LabName": "Xai-Xai",
+      "rejected": 1579
+    }
+  ]

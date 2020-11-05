@@ -62,6 +62,9 @@ routes.get(
   LaboratoryController.getSamplesTestedForBreastfeeding
 );
 
+routes.get("/lab_samples_rejected", LaboratoryController.getRejectedSamples)
+routes.get("/lab_samples_rejected_by_month", LaboratoryController.getSamplesRejectedByMonth)
+
 // Dashboard routes ...
 
 routes.get("/dash_number_of_samples", DashboardController.getNumberOfSamples);
@@ -126,6 +129,9 @@ routes.get(
   ClinicController.getRegisteredSamplesByFacility
 );
 
+routes.get("/clinic_samples_rejected_by_month", ClinicController.getSamplesRejectedByMonth)
+routes.get("/clinic_samples_rejected_by_facility", ClinicController.getSamplesRejectedByFacility)
+
 // Results routes
 routes.get(
   "/results/:page/:paginate/:start/:end",
@@ -150,7 +156,7 @@ routes.get(
   ResultsController.search_patients
 );
 
-routes.get("/results/query/:page/:paginate/:query", ResultsController.get_patients_by_query)
+routes.get("/viralload/results/query/:page/:paginate/:query", ResultsController.get_patients_by_query)
 
 // Weekly Reports
 routes.get("/weeklyreports/instrument", WeeklyReportController.getTotalIntrumentCapacity)

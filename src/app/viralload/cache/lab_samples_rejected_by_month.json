@@ -1,0 +1,74 @@
+[
+    {
+      "year": 2019,
+      "month": 11,
+      "month_name": "November",
+      "rejected": 808
+    },
+    {
+      "year": 2019,
+      "month": 12,
+      "month_name": "December",
+      "rejected": 1013
+    },
+    {
+      "year": 2020,
+      "month": 1,
+      "month_name": "January",
+      "rejected": 1256
+    },
+    {
+      "year": 2020,
+      "month": 2,
+      "month_name": "February",
+      "rejected": 1333
+    },
+    {
+      "year": 2020,
+      "month": 3,
+      "month_name": "March",
+      "rejected": 1313
+    },
+    {
+      "year": 2020,
+      "month": 4,
+      "month_name": "April",
+      "rejected": 883
+    },
+    {
+      "year": 2020,
+      "month": 5,
+      "month_name": "May",
+      "rejected": 902
+    },
+    {
+      "year": 2020,
+      "month": 6,
+      "month_name": "June",
+      "rejected": 717
+    },
+    {
+      "year": 2020,
+      "month": 7,
+      "month_name": "July",
+      "rejected": 1432
+    },
+    {
+      "year": 2020,
+      "month": 8,
+      "month_name": "August",
+      "rejected": 1058
+    },
+    {
+      "year": 2020,
+      "month": 9,
+      "month_name": "September",
+      "rejected": 1096
+    },
+    {
+      "year": 2020,
+      "month": 10,
+      "month_name": "October",
+      "rejected": 517
+    }
+  ]

@@ -1,112 +1,112 @@
 [
   {
     "lab": "Cabo Delgado",
-    "collection_reception": 6,
+    "collection_reception": 12,
     "reception_registration": 0,
-    "registration_analysis": 9,
+    "registration_analysis": 8,
     "analysis_validation": 0
   },
   {
     "lab": "Carmelo",
-    "collection_reception": 6,
+    "collection_reception": 11,
     "reception_registration": 0,
-    "registration_analysis": 9,
+    "registration_analysis": 11,
     "analysis_validation": 0
   },
   {
     "lab": "Chimoio",
-    "collection_reception": 5,
-    "reception_registration": 2,
+    "collection_reception": 8,
+    "reception_registration": 1,
     "registration_analysis": 14,
-    "analysis_validation": 0
+    "analysis_validation": 1
   },
   {
     "lab": "DREAM Beira",
-    "collection_reception": 3,
-    "reception_registration": 2,
+    "collection_reception": 13,
+    "reception_registration": 1,
     "registration_analysis": 10,
-    "analysis_validation": 2
+    "analysis_validation": 1
   },
   {
     "lab": "Dream Maputo",
     "collection_reception": 0,
     "reception_registration": 0,
-    "registration_analysis": 7,
+    "registration_analysis": 8,
     "analysis_validation": 0
   },
   {
     "lab": "Hosp. Militar",
-    "collection_reception": 2,
+    "collection_reception": 6,
     "reception_registration": 0,
-    "registration_analysis": 6,
+    "registration_analysis": 4,
     "analysis_validation": 0
   },
   {
     "lab": "INS",
-    "collection_reception": 2,
-    "reception_registration": 2,
-    "registration_analysis": 5,
-    "analysis_validation": 0
-  },
-  {
-    "lab": "Jose Macamo",
-    "collection_reception": 3,
-    "reception_registration": 0,
-    "registration_analysis": 5,
-    "analysis_validation": 1
-  },
-  {
-    "lab": "Machava",
-    "collection_reception": 3,
+    "collection_reception": 6,
     "reception_registration": 1,
     "registration_analysis": 5,
     "analysis_validation": 0
   },
   {
+    "lab": "Jose Macamo",
+    "collection_reception": 10,
+    "reception_registration": 1,
+    "registration_analysis": 6,
+    "analysis_validation": 1
+  },
+  {
+    "lab": "Machava",
+    "collection_reception": 21,
+    "reception_registration": 1,
+    "registration_analysis": 3,
+    "analysis_validation": 0
+  },
+  {
     "lab": "Mavalane",
-    "collection_reception": 0,
+    "collection_reception": 1,
     "reception_registration": 0,
     "registration_analysis": 2,
     "analysis_validation": 0
   },
   {
     "lab": "Nampula",
-    "collection_reception": 5,
+    "collection_reception": 11,
     "reception_registration": 2,
-    "registration_analysis": 9,
+    "registration_analysis": 8,
     "analysis_validation": 0
   },
   {
     "lab": "Ponta Gea",
-    "collection_reception": 6,
-    "reception_registration": 1,
-    "registration_analysis": 6,
+    "collection_reception": 10,
+    "reception_registration": 0,
+    "registration_analysis": 9,
     "analysis_validation": 0
   },
   {
     "lab": "Quelimane",
-    "collection_reception": 3,
+    "collection_reception": 8,
     "reception_registration": 2,
-    "registration_analysis": 6,
+    "registration_analysis": 7,
     "analysis_validation": 0
   },
   {
     "lab": "Tete",
-    "collection_reception": 6,
+    "collection_reception": 10,
     "reception_registration": 5,
     "registration_analysis": 4,
     "analysis_validation": 0
   },
   {
     "lab": "UEM",
-    "collection_reception": 1,
+    "collection_reception": 4,
     "reception_registration": 0,
-    "registration_analysis": 6,
+    "registration_analysis": 5,
     "analysis_validation": 0
   },
   {
     "lab": "Xai-Xai",
-    "collection_reception": 5,
+    "collection_reception": 10,
     "reception_registration": 0,
     "registration_analysis": 7,
     "analysis_validation": 1

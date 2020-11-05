@@ -13,7 +13,7 @@ const dates = [
 
 const type = "province";
 
-// const dates = ["2019-10-01", "2020-10-06"];
+// const dates = ["2019-11-01", "2020-11-04"];
 
 const age = [15, 49];
 
@@ -176,32 +176,41 @@ module.exports = ClinicController = {
                 }
               : {
                   RequestingFacilityName: { [Op.in]: req.query.codes },
-                })),
-          AnalysisDatetime: {
-            [Op.between]: req.query.dates || dates,
+                }))
+          ,
+          [Op.and]: {
+            AnalysisDatetime: {
+              [Op.between]: req.query.dates || dates,
+            },
+            ViralLoadResultCategory: {
+              [Op.not]: null,
+            },
+            ViralLoadResultCategory: {
+              [Op.notLike]: "",
+            },
+            [Op.and]: sequelize.where(
+              fn(
+                "datediff",
+                literal("day"),
+                col("SpecimenDatetime"),
+                col("AuthorisedDatetime")
+              ),
+              {
+                [Op.lt]: 90,
+              }
+            ),
+            [Op.and]: sequelize.where(
+              fn(
+                "datediff",
+                literal("day"),
+                col("SpecimenDatetime"),
+                col("ReceivedDatetime")
+              ),
+              {
+                [Op.gte]: 0,
+              }
+            ),
           },
-          [Op.and]: sequelize.where(
-            fn(
-              "datediff",
-              literal("day"),
-              col("SpecimenDatetime"),
-              col("AuthorisedDatetime")
-            ),
-            {
-              [Op.lt]: 90,
-            }
-          ),
-          [Op.and]: sequelize.where(
-            fn(
-              "datediff",
-              literal("day"),
-              col("SpecimenDatetime"),
-              col("ReceivedDatetime")
-            ),
-            {
-              [Op.gte]: 0,
-            }
-          ),
         },
       ],
       group: [global.year, global.month, global.month_name],
@@ -251,31 +260,39 @@ module.exports = ClinicController = {
               : {
                   RequestingFacilityName: { [Op.in]: req.query.codes },
                 })),
-          AnalysisDatetime: {
-            [Op.between]: req.query.dates || dates,
+          [Op.and]: {
+            AnalysisDatetime: {
+              [Op.between]: req.query.dates || dates,
+            },
+            ViralLoadResultCategory: {
+              [Op.not]: null,
+            },
+            ViralLoadResultCategory: {
+              [Op.notLike]: "",
+            },
+            [Op.and]: sequelize.where(
+              fn(
+                "datediff",
+                literal("day"),
+                col("SpecimenDatetime"),
+                col("AuthorisedDatetime")
+              ),
+              {
+                [Op.lt]: 90,
+              }
+            ),
+            [Op.and]: sequelize.where(
+              fn(
+                "datediff",
+                literal("day"),
+                col("SpecimenDatetime"),
+                col("ReceivedDatetime")
+              ),
+              {
+                [Op.gte]: 0,
+              }
+            ),
           },
-          [Op.and]: sequelize.where(
-            fn(
-              "datediff",
-              literal("day"),
-              col("SpecimenDatetime"),
-              col("AuthorisedDatetime")
-            ),
-            {
-              [Op.lt]: 90,
-            }
-          ),
-          [Op.and]: sequelize.where(
-            fn(
-              "datediff",
-              literal("day"),
-              col("SpecimenDatetime"),
-              col("ReceivedDatetime")
-            ),
-            {
-              [Op.gte]: 0,
-            }
-          ),
         },
       ],
       group: [columnsDetails.column],
@@ -622,6 +639,7 @@ module.exports = ClinicController = {
   },
 
   async getSamplesTestedByBreastfeedingAndFacility(req, res) {
+    console.log("disaggregation", req.query.disaggregation)
     const id = "clinic_samples_tested_breastfeeding_and_facility";
     const disaggregation = req.query.disaggregation === "true";
     const cache = await utils.checkCache(req.query, id);
@@ -633,6 +651,7 @@ module.exports = ClinicController = {
       req.query.type || type,
       disaggregation
     );
+
 
     const data = await VlData.findAll({
       attributes: [
@@ -704,6 +723,108 @@ module.exports = ClinicController = {
                 })),
           RegisteredDatetime: {
             [Op.between]: req.query.dates || dates,
+          },
+        },
+      ],
+      group: [columnsDetails.column],
+      order: [[columnsDetails.column, "ASC"]],
+    });
+    return res.json(data);
+  },
+
+  async getSamplesRejectedByMonth(req, res) {
+    const id = "clinic_samples_rejected_by_month";
+    const cache = await utils.checkCache(req.query, id);
+    if (cache) {
+      return res.json(cache);
+    }
+
+    const data = await VlData.findAll({
+      attributes: [
+        [fn("year", col("RegisteredDatetime")), "year"],
+        [fn("month", col("RegisteredDatetime")), "month"],
+        [
+          fn("datename", literal("month"), col("RegisteredDatetime")),
+          "month_name",
+        ],
+        [literal("COUNT(1)"), "rejected"],
+      ],
+      where: [{
+        ...(req.query.codes &&
+          ((req.query.type || type) === "province"
+            ? {
+                RequestingProvinceName: { [Op.in]: req.query.codes },
+              }
+            : (req.query.type || type) === "district"
+            ? {
+                RequestingDistrictName: { [Op.in]: req.query.codes },
+              }
+            : {
+                RequestingFacilityName: { [Op.in]: req.query.codes },
+        })),
+        HIVVL_LIMSRejectionCode: {
+          [Op.notLike]: ''
+        },
+        LIMSRejectionCode: {
+          [Op.notLike]: ''
+        },
+        RegisteredDatetime: {
+          [Op.between]: req.query.dates || dates,
+        },
+      }],
+      group: [
+        fn("year", col("RegisteredDatetime")),
+        fn("month", col("RegisteredDatetime")),
+        fn("datename", literal("month"), col("RegisteredDatetime")),
+      ],
+      order: [
+        [fn("year", col("RegisteredDatetime")), "ASC"],
+        [fn("month", col("RegisteredDatetime")), "ASC"],
+      ],
+    });
+    return res.json(data);
+  },
+
+  async getSamplesRejectedByFacility(req, res) {
+    const id = "clinic_samples_rejected_by_facility";
+    const disaggregation = req.query.disaggregation === "true";
+    const cache = await utils.checkCache(req.query, id);
+    if (cache) {
+      return res.json(cache);
+    }
+
+    const columnsDetails = await utils.getAttributes(
+      req.query.type || type,
+      disaggregation
+    );
+    const data = await VlData.findAll({
+      attributes: [
+        [columnsDetails.column, "facility"],
+        [literal(`'${columnsDetails.type}'`), "type"],
+        [global.total, "total"],
+      ],
+      where: [
+        {
+          ...(req.query.codes &&
+            ((req.query.type || type) === "province"
+              ? {
+                  RequestingProvinceName: { [Op.in]: req.query.codes },
+                }
+              : (req.query.type || type) === "district"
+              ? {
+                  RequestingDistrictName: { [Op.in]: req.query.codes },
+                }
+              : {
+                  RequestingFacilityName: { [Op.in]: req.query.codes },
+                })),
+          RegisteredDatetime: {
+            [Op.between]: req.query.dates || dates,
+          },
+          HIVVL_LIMSRejectionCode: {
+            [Op.notLike]: ''
+          },
+          LIMSRejectionCode: {
+            [Op.notLike]: ''
           },
         },
       ],

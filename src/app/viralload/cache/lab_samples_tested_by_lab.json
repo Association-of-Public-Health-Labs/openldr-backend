@@ -1,98 +1,98 @@
 [
   {
     "lab": "Cabo Delgado",
-    "total": 45458,
-    "suppressed": 33655,
-    "non_suppressed": 11487
+    "total": 43711,
+    "suppressed": 32798,
+    "non_suppressed": 10571
   },
   {
     "lab": "Carmelo",
-    "total": 64578,
-    "suppressed": 53991,
-    "non_suppressed": 9682
+    "total": 64963,
+    "suppressed": 54969,
+    "non_suppressed": 9133
   },
   {
     "lab": "Chimoio",
-    "total": 43417,
-    "suppressed": 33172,
-    "non_suppressed": 9507
+    "total": 41058,
+    "suppressed": 31443,
+    "non_suppressed": 8866
   },
   {
     "lab": "DREAM Beira",
-    "total": 28954,
-    "suppressed": 22591,
-    "non_suppressed": 5418
+    "total": 23235,
+    "suppressed": 18073,
+    "non_suppressed": 4231
   },
   {
     "lab": "Dream Maputo",
-    "total": 16305,
-    "suppressed": 14689,
-    "non_suppressed": 1507
+    "total": 15309,
+    "suppressed": 13902,
+    "non_suppressed": 1313
   },
   {
     "lab": "Hosp. Militar",
-    "total": 29406,
-    "suppressed": 25413,
-    "non_suppressed": 3759
+    "total": 28335,
+    "suppressed": 24652,
+    "non_suppressed": 3437
   },
   {
     "lab": "INS",
-    "total": 17252,
-    "suppressed": 14384,
-    "non_suppressed": 2674
+    "total": 16364,
+    "suppressed": 13788,
+    "non_suppressed": 2372
   },
   {
     "lab": "Jose Macamo",
-    "total": 32501,
-    "suppressed": 25400,
-    "non_suppressed": 6304
+    "total": 28095,
+    "suppressed": 21920,
+    "non_suppressed": 5392
   },
   {
     "lab": "Machava",
-    "total": 112246,
-    "suppressed": 98733,
-    "non_suppressed": 12686
+    "total": 107514,
+    "suppressed": 95046,
+    "non_suppressed": 11655
   },
   {
     "lab": "Mavalane",
-    "total": 8808,
-    "suppressed": 8052,
-    "non_suppressed": 686
+    "total": 10803,
+    "suppressed": 9890,
+    "non_suppressed": 834
   },
   {
     "lab": "Nampula",
-    "total": 77400,
-    "suppressed": 56739,
-    "non_suppressed": 19407
+    "total": 72203,
+    "suppressed": 53749,
+    "non_suppressed": 17169
   },
   {
     "lab": "Ponta Gea",
-    "total": 64259,
-    "suppressed": 44185,
-    "non_suppressed": 12278
+    "total": 62910,
+    "suppressed": 43438,
+    "non_suppressed": 11740
   },
   {
     "lab": "Quelimane",
-    "total": 139350,
-    "suppressed": 99071,
-    "non_suppressed": 25551
+    "total": 135177,
+    "suppressed": 96492,
+    "non_suppressed": 23895
   },
   {
     "lab": "Tete",
-    "total": 30165,
-    "suppressed": 24499,
-    "non_suppressed": 5211
+    "total": 33167,
+    "suppressed": 27018,
+    "non_suppressed": 5644
   },
   {
     "lab": "UEM",
-    "total": 51134,
-    "suppressed": 43589,
-    "non_suppressed": 6802
+    "total": 51203,
+    "suppressed": 43937,
+    "non_suppressed": 6558
   },
   {
     "lab": "Xai-Xai",
-    "total": 84175,
-    "suppressed": 67711,
-    "non_suppressed": 14828
+    "total": 77840,
+    "suppressed": 63162,
+    "non_suppressed": 13080
   }
 ]
