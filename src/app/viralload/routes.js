@@ -156,7 +156,11 @@ routes.get(
   ResultsController.search_patients
 );
 
-routes.get("/viralload/results/query/:page/:paginate/:query", ResultsController.get_patients_by_query)
+routes.get(
+  "/viralload/results/query/:page/:paginate/:query",
+  checkAuth,
+  ResultsController.get_patients_by_query
+)
 
 // Weekly Reports
 routes.get("/weeklyreports/instrument", WeeklyReportController.getTotalIntrumentCapacity)

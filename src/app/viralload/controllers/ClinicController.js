@@ -545,6 +545,7 @@ module.exports = ClinicController = {
     const id = "clinic_samples_tested_by_pregnancy_and_facility";
     const disaggregation = req.query.disaggregation === "true";
     const cache = await utils.checkCache(req.query, id);
+    
     if (cache) {
       return res.json(cache);
     }
