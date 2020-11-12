@@ -1,5 +1,7 @@
 const express = require("express");
 
+const checkAuth = require("../../config/check-auth");
+
 const VlDataController = require("./controllers/VlDataController");
 const LaboratoryController = require("./controllers/LaboratoryController");
 const DashboardController = require("./controllers/DashboardController");
