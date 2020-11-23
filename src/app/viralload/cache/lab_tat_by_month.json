@@ -3,7 +3,7 @@
     "year": 2019,
     "month": 11,
     "month_name": "November",
-    "collection_reception": 10,
+    "collection_reception": 9,
     "reception_registration": 2,
     "registration_analysis": 9,
     "analysis_validation": 1
@@ -102,9 +102,18 @@
     "year": 2020,
     "month": 10,
     "month_name": "October",
-    "collection_reception": 8,
-    "reception_registration": 0,
-    "registration_analysis": 8,
+    "collection_reception": 6,
+    "reception_registration": 1,
+    "registration_analysis": 7,
+    "analysis_validation": 0
+  },
+  {
+    "year": 2020,
+    "month": 11,
+    "month_name": "November",
+    "collection_reception": 7,
+    "reception_registration": 1,
+    "registration_analysis": 11,
     "analysis_validation": 0
   }
 ]

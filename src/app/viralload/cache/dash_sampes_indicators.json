@@ -113,10 +113,20 @@
     "year": 2020,
     "month": 10,
     "month_name": "October",
-    "registered": 64403,
-    "tested": 23704,
-    "suppressed": 20171,
-    "rejected": 517,
-    "non_validated": 872
+    "registered": 89383,
+    "tested": 84704,
+    "suppressed": 73236,
+    "rejected": 1388,
+    "non_validated": 700
+  },
+  {
+    "year": 2020,
+    "month": 11,
+    "month_name": "November",
+    "registered": 56274,
+    "tested": 33469,
+    "suppressed": 28021,
+    "rejected": 789,
+    "non_validated": 1006
   }
 ]

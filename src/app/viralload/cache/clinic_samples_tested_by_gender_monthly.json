@@ -113,10 +113,20 @@
     "year": 2020,
     "month": 10,
     "month_name": "October",
-    "total": 41833,
-    "male_suppressed": 10172,
-    "female_suppressed": 25723,
-    "male_not_suppressed": 1599,
-    "female_not_suppressed": 3473
+    "total": 70247,
+    "male_suppressed": 16790,
+    "female_suppressed": 43442,
+    "male_not_suppressed": 2656,
+    "female_not_suppressed": 5889
+  },
+  {
+    "year": 2020,
+    "month": 11,
+    "month_name": "November",
+    "total": 66055,
+    "male_suppressed": 15193,
+    "female_suppressed": 41197,
+    "male_not_suppressed": 2559,
+    "female_not_suppressed": 5570
   }
 ]
