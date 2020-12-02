@@ -64,8 +64,15 @@ routes.get(
   LaboratoryController.getSamplesTestedForBreastfeeding
 );
 
+routes.get(
+  "/lab_samples_tested_breastfeeding",
+  LaboratoryController.getSamplesTestedForBreastfeeding
+);
+
 routes.get("/lab_samples_rejected", LaboratoryController.getRejectedSamples)
 routes.get("/lab_samples_rejected_by_month", LaboratoryController.getSamplesRejectedByMonth)
+
+routes.get("/lab_backlogs", LaboratoryController.getBacklogs)
 
 // Dashboard routes ...
 

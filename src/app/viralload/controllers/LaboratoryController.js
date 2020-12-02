@@ -3,18 +3,19 @@ const sequelize = require("sequelize");
 const global = require("./indicators/global");
 const utils = require("./indicators/utils");
 const VlData = require("../models/VlData");
+const VlWeeklyReport = require("../models/VLWeeklyReport");
 const { Op, fn, literal, col } = sequelize;
 const moment = require("moment");
 const {vldata} = require("../../../config/sequelize")
 
-// const dates = [
-//   moment().subtract(1, "years").format("YYYY-MM-DD"),
-//   moment().format("YYYY-MM-DD"),
-// ];
+const dates = [
+  moment().subtract(1, "years").format("YYYY-MM-DD"),
+  moment().format("YYYY-MM-DD"),
+];
 
 const age = [15, 49];
 
-const dates = ["2019-11-01", "2020-11-23"];
+// const dates = ["2019-11-01", "2020-11-23"];
 
 module.exports = {
   async getSamplesByTestReason(req, res) {
@@ -540,7 +541,8 @@ module.exports = {
 
     const codes =req.query.codes || []
 
-    const rejections = await vldata.query(`SELECT lab.LabName, COUNT(1) rejected FROM ViralLoadData.dbo.VlData AS vl
+    const rejections = await vldata.query(`
+    SELECT lab.LabName, COUNT(1) rejected FROM ViralLoadData.dbo.VlData AS vl
     JOIN OpenLDRDict.dbo.Laboratories AS lab ON 
     lab.LabCode = SUBSTRING(vl.RequestID,7,3)
     WHERE ((LIMSRejectionCode IS NOT NULL AND LIMSRejectionCode <> '')
@@ -548,9 +550,61 @@ module.exports = {
     CAST(RegisteredDateTime AS DATE) >= '${_dates[0]}' AND CAST(RegisteredDateTime AS DATE) <= '${_dates[1]}'
     AND lab.LabName <> '' AND lab.LabName IS NOT NULL 
     ${codes.length > 0 ? ` AND lab.LabCode IN ('` + codes.join(`','`) + `')` : ''}
-    GROUP BY lab.LabName ORDER BY lab.LabName`);
+    GROUP BY lab.LabName ORDER BY lab.LabName`
+    );
 
     return res.json(rejections[0])
-  }
+  },
+
+  async getBacklogs(req, res){
+    const id = "lab_samples_rejected_by_lab";
+    // const cache = await utils.checkCache(req.query, id);
+    // if (cache) {
+    //   return res.json(cache);
+    // }
+    const startDate = moment().subtract(16,"week").format("YYYY-MM-DD");
+    const endDate = moment().format("YYYY-MM-DD");
+    const _dates = req.query.dates || [startDate, endDate];
+
+    const codes =req.query.codes || [];
+
+    const data = await VlWeeklyReport.findAll({
+      attributes: [
+        [literal('ROW_NUMBER() OVER(PARTITION BY YEAR(StartDate), MONTH(StartDate) ORDER BY StartDate)'), "week_number"],
+        [literal('DATENAME(MONTH, StartDate)'), "month"],
+        [col('Week'), "week"],
+        [col('StartDate'), "start"],
+        [col('EndDate'), "end"],
+        [fn("sum",col("Backlogs")), "backlogs"],
+        [fn("sum",col("Tests")), "tests"],
+        [fn("sum",col("Registrations")), "registrations"],
+        [fn("sum",col("Rejections")), "rejections"],
+        [fn("sum",col("Capacity")), "capacity"],
+        [fn("avg",col("Tests")), "average"],
+        [fn("max",col("UpdatedAt")), "last_update"]
+      ],
+      where: [
+        literal(`CAST(StartDate as date) >= '${_dates[0]}' AND CAST(StartDate as date) <= '${_dates[1]}'`),
+        {
+        ...(req.query.codes && {
+          LabCode: {
+            [Op.in]: req.query.codes,
+          },
+        }),
+      }],
+      group: [
+        literal('DATENAME(MONTH, StartDate)'),
+        col('Week'),
+        col('StartDate'),
+        col('EndDate')
+      ],
+      order: [
+        [col("StartDate"), "ASC"]
+      ]
+    });
+
+    res.json(data)
+  },
+
 
 };
