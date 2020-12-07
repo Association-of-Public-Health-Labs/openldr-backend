@@ -501,7 +501,7 @@ module.exports = {
     //   return res.json(cache);
     // }
 
-    const _dates = req.query.dates || dates
+    const _dates = req.query.dates || dates;
     const codes = req.query.codes || []
 
     const data = await VlData.findAll({
