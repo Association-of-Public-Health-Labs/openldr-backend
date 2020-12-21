@@ -559,7 +559,7 @@ module.exports = {
   },
 
   async getBacklogs(req, res){
-    const id = "lab_samples_rejected_by_lab";
+    const id = "lab_samples_backlogs_by_lab";
     const cache = await utils.checkCache(req.query, id);
     if (cache) {
       return res.json(cache);
