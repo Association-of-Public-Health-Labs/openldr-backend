@@ -6,26 +6,26 @@ const VlData = require("../models/VlData");
 const { Op, fn, literal, col } = sequelize;
 const moment = require("moment");
 
-// const dates = [
-//   moment().subtract(1, "years").format("YYYY-MM-DD"),
-//   moment().format("YYYY-MM-DD"),
-// ];
+const dates = [
+  moment().subtract(1, "years").format("YYYY-MM-DD"),
+  moment().format("YYYY-MM-DD"),
+];
 
 const type = "province";
 
-const dates = [
-  "2019-12-01", "2020-12-20"
-];
+// const dates = [
+//   "2019-12-01", "2020-12-20"
+// ];
 
 const age = [15, 49];
 
 module.exports = ClinicController = {
   async getSamplesByTestReason(req, res) {
     const id = "clinic_samples_by_test_reason";
-    // const cache = await utils.checkCache(req.query, id);
-    // if (cache) {
-    //   return res.json(cache);
-    // }
+    const cache = await utils.checkCache(req.query, id);
+    if (cache) {
+      return res.json(cache);
+    }
 
     const data = await samples.accumulative(
       [
@@ -60,10 +60,10 @@ module.exports = ClinicController = {
 
   async getSamplesTestedByMonth(req, res) {
     const id = "clinic_samples_tested_by_month";
-    // const cache = await utils.checkCache(req.query, id);
-    // if (cache) {
-    //   return res.json(cache);
-    // }
+    const cache = await utils.checkCache(req.query, id);
+    if (cache) {
+      return res.json(cache);
+    }
 
     const data = await VlData.findAll({
       attributes: [
@@ -106,10 +106,10 @@ module.exports = ClinicController = {
   async getSamplesTestedByFacility(req, res) {
     const id = "clinic_samples_tested_by_facility";
     const disaggregation = req.query.disaggregation === "true";
-    // const cache = await utils.checkCache(req.query, id);
-    // if (cache) {
-    //   return res.json(cache);
-    // }
+    const cache = await utils.checkCache(req.query, id);
+    if (cache) {
+      return res.json(cache);
+    }
 
     const columnsDetails = await utils.getAttributes(
       req.query.type || type,
@@ -150,10 +150,10 @@ module.exports = ClinicController = {
 
   async getTurnaroundTimeByMonth(req, res) {
     const id = "clinic_tat_by_month";
-    // const cache = await utils.checkCache(req.query, id);
-    // if (cache) {
-    //   return res.json(cache);
-    // }
+    const cache = await utils.checkCache(req.query, id);
+    if (cache) {
+      return res.json(cache);
+    }
 
     const data = await VlData.findAll({
       attributes: [
@@ -229,10 +229,10 @@ module.exports = ClinicController = {
     const id = "clinic_tat_by_facility";
     const disaggregation = req.query.disaggregation === "true";
 
-    // const cache = await utils.checkCache(req.query, id);
-    // if (cache) {
-    //   return res.json(cache);
-    // }
+    const cache = await utils.checkCache(req.query, id);
+    if (cache) {
+      return res.json(cache);
+    }
 
     const columnsDetails = await utils.getAttributes(
       req.query.type || type,
@@ -305,10 +305,10 @@ module.exports = ClinicController = {
 
   async getSamplesTestedByGender(req, res) {
     const id = "clinic_samples_tested_by_gender_monthly";
-    // const cache = await utils.checkCache(req.query, id);
-    // if (cache) {
-    //   return res.json(cache);
-    // }
+    const cache = await utils.checkCache(req.query, id);
+    if (cache) {
+      return res.json(cache);
+    }
 
     const data = await VlData.findAll({
       attributes: [
@@ -353,10 +353,10 @@ module.exports = ClinicController = {
   async getSamplesTestedByGenderAndFacility(req, res) {
     const id = "clinic_samples_tested_by_gender_and_facility";
     const disaggregation = req.query.disaggregation === "true";
-    // const cache = await utils.checkCache(req.query, id);
-    // if (cache) {
-    //   return res.json(cache);
-    // }
+    const cache = await utils.checkCache(req.query, id);
+    if (cache) {
+      return res.json(cache);
+    }
 
     const columnsDetails = await utils.getAttributes(
       req.query.type || type,
@@ -400,10 +400,10 @@ module.exports = ClinicController = {
 
   async getSamplesTestedByAge(req, res) {
     const id = "clinic_samples_tested_by_age";
-    // const cache = await utils.checkCache(req.query, id);
-    // if (cache) {
-    //   return res.json(cache);
-    // }
+    const cache = await utils.checkCache(req.query, id);
+    if (cache) {
+      return res.json(cache);
+    }
 
     const data = await VlData.findAll({
       attributes: [
@@ -449,10 +449,10 @@ module.exports = ClinicController = {
   async getSamplesTestedByAgeAndFacility(req, res) {
     const id = "clinic_samples_tested_by_age_and_facility";
     const disaggregation = req.query.disaggregation === "true";
-    // const cache = await utils.checkCache(req.query, id);
-    // if (cache) {
-    //   return res.json(cache);
-    // }
+    const cache = await utils.checkCache(req.query, id);
+    if (cache) {
+      return res.json(cache);
+    }
 
     const columnsDetails = await utils.getAttributes(
       req.query.type || type,
@@ -497,10 +497,10 @@ module.exports = ClinicController = {
 
   async getSamplesTestedByPregnancy(req, res) {
     const id = "clinic_samples_tested_by_pregnancy";
-    // const cache = await utils.checkCache(req.query, id);
-    // if (cache) {
-    //   return res.json(cache);
-    // }
+    const cache = await utils.checkCache(req.query, id);
+    if (cache) {
+      return res.json(cache);
+    }
 
     const data = await VlData.findAll({
       attributes: [
@@ -595,10 +595,10 @@ module.exports = ClinicController = {
 
   async getSamplesTestedForBreastfeeding(req, res) {
     const id = "clinic_samples_tested_breastfeeding";
-    // const cache = await utils.checkCache(req.query, id);
-    // if (cache) {
-    //   return res.json(cache);
-    // }
+    const cache = await utils.checkCache(req.query, id);
+    if (cache) {
+      return res.json(cache);
+    }
 
     const data = await VlData.findAll({
       attributes: [
@@ -645,10 +645,10 @@ module.exports = ClinicController = {
     console.log("disaggregation", req.query.disaggregation)
     const id = "clinic_samples_tested_breastfeeding_and_facility";
     const disaggregation = req.query.disaggregation === "true";
-    // const cache = await utils.checkCache(req.query, id);
-    // if (cache) {
-    //   return res.json(cache);
-    // }
+    const cache = await utils.checkCache(req.query, id);
+    if (cache) {
+      return res.json(cache);
+    }
 
     const columnsDetails = await utils.getAttributes(
       req.query.type || type,
@@ -695,10 +695,10 @@ module.exports = ClinicController = {
   async getRegisteredSamplesByFacility(req, res) {
     const id = "clinic_registered_samples_by_facility";
     const disaggregation = req.query.disaggregation === "true";
-    // const cache = await utils.checkCache(req.query, id);
-    // if (cache) {
-    //   return res.json(cache);
-    // }
+    const cache = await utils.checkCache(req.query, id);
+    if (cache) {
+      return res.json(cache);
+    }
 
     const columnsDetails = await utils.getAttributes(
       req.query.type || type,
@@ -737,10 +737,10 @@ module.exports = ClinicController = {
 
   async getSamplesRejectedByMonth(req, res) {
     const id = "clinic_samples_rejected_by_month";
-    // const cache = await utils.checkCache(req.query, id);
-    // if (cache) {
-    //   return res.json(cache);
-    // }
+    const cache = await utils.checkCache(req.query, id);
+    if (cache) {
+      return res.json(cache);
+    }
 
     const data = await VlData.findAll({
       attributes: [
@@ -791,10 +791,10 @@ module.exports = ClinicController = {
   async getSamplesRejectedByFacility(req, res) {
     const id = "clinic_samples_rejected_by_facility";
     const disaggregation = req.query.disaggregation === "true";
-    // const cache = await utils.checkCache(req.query, id);
-    // if (cache) {
-    //   return res.json(cache);
-    // }
+    const cache = await utils.checkCache(req.query, id);
+    if (cache) {
+      return res.json(cache);
+    }
 
     const columnsDetails = await utils.getAttributes(
       req.query.type || type,
