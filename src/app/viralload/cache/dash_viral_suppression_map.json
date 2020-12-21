@@ -1,13 +1,5 @@
 [
   {
-    "province": null,
-    "total": 260,
-    "suppressed": 213,
-    "routine": 218,
-    "treatment_failure": 7,
-    "reason_not_specified": 34
-  },
-  {
     "province": "Cabo Delgado",
     "total": 36285,
     "suppressed": 27752,
@@ -57,9 +49,9 @@
   },
   {
     "province": "Nampula",
-    "total": 83918,
-    "suppressed": 65511,
-    "routine": 75005,
+    "total": 83919,
+    "suppressed": 65512,
+    "routine": 75006,
     "treatment_failure": 7658,
     "reason_not_specified": 851
   },
@@ -89,10 +81,10 @@
   },
   {
     "province": "Zambezia",
-    "total": 137207,
-    "suppressed": 111597,
-    "routine": 127690,
-    "treatment_failure": 7360,
-    "reason_not_specified": 1987
+    "total": 140580,
+    "suppressed": 114274,
+    "routine": 130850,
+    "treatment_failure": 7551,
+    "reason_not_specified": 2005
   }
 ]

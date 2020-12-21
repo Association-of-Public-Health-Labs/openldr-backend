@@ -6,7 +6,7 @@
     "collection_reception": 9,
     "reception_registration": 1,
     "registration_analysis": 6,
-    "analysis_validation": 0
+    "analysis_validation": 1
   },
   {
     "year": 2020,
@@ -15,7 +15,7 @@
     "collection_reception": 16,
     "reception_registration": 1,
     "registration_analysis": 8,
-    "analysis_validation": 0
+    "analysis_validation": 1
   },
   {
     "year": 2020,

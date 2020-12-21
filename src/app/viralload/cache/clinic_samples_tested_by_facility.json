@@ -2,7 +2,7 @@
   {
     "facility": "Cabo Delgado",
     "type": "province",
-    "total": 36662,
+    "total": 36661,
     "suppressed": 27752,
     "non_suppressed": 8533
   },
@@ -37,15 +37,15 @@
   {
     "facility": "Maputo Provincia",
     "type": "province",
-    "total": 145027,
+    "total": 145030,
     "suppressed": 128763,
     "non_suppressed": 14594
   },
   {
     "facility": "Nampula",
     "type": "province",
-    "total": 85501,
-    "suppressed": 65511,
+    "total": 85502,
+    "suppressed": 65512,
     "non_suppressed": 18407
   },
   {
@@ -72,8 +72,8 @@
   {
     "facility": "Zambezia",
     "type": "province",
-    "total": 152655,
-    "suppressed": 111597,
-    "non_suppressed": 25610
+    "total": 156186,
+    "suppressed": 114274,
+    "non_suppressed": 26306
   }
 ]

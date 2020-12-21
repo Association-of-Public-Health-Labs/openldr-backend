@@ -2,7 +2,7 @@
   {
     "facility": "Cabo Delgado",
     "type": "province",
-    "total": 35889
+    "total": 35888
   },
   {
     "facility": "Gaza",
@@ -27,7 +27,7 @@
   {
     "facility": "Maputo Provincia",
     "type": "province",
-    "total": 150090
+    "total": 150089
   },
   {
     "facility": "Nampula",
@@ -52,6 +52,6 @@
   {
     "facility": "Zambezia",
     "type": "province",
-    "total": 145983
+    "total": 149315
   }
 ]

@@ -9,7 +9,7 @@
   },
   {
     "lab": "Carmelo",
-    "total": 70953,
+    "total": 70700,
     "male_suppressed": 15083,
     "female_suppressed": 45250,
     "male_not_suppressed": 2874,
@@ -97,11 +97,11 @@
   },
   {
     "lab": "Quelimane",
-    "total": 155702,
-    "male_suppressed": 29367,
-    "female_suppressed": 83938,
-    "male_not_suppressed": 7824,
-    "female_not_suppressed": 17961
+    "total": 159026,
+    "male_suppressed": 29959,
+    "female_suppressed": 85851,
+    "male_not_suppressed": 8014,
+    "female_not_suppressed": 18426
   },
   {
     "lab": "Tete",

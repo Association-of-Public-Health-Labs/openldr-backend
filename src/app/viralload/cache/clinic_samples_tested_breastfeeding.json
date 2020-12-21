@@ -37,7 +37,7 @@
   {
     "facility": "Maputo Provincia",
     "type": "province",
-    "total": 8192,
+    "total": 8193,
     "suppressed": 7091,
     "non_suppressed": 1029
   },
@@ -72,8 +72,8 @@
   {
     "facility": "Zambezia",
     "type": "province",
-    "total": 17732,
-    "suppressed": 13224,
-    "non_suppressed": 3058
+    "total": 18185,
+    "suppressed": 13587,
+    "non_suppressed": 3137
   }
 ]
