@@ -13,7 +13,9 @@ const dates = [
 
 const type = "province";
 
-// const dates = ["2019-11-01", "2020-11-23"];
+// const dates = [
+//   "2019-12-01", "2020-12-20"
+// ];
 
 const age = [15, 49];
 

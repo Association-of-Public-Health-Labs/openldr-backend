@@ -1,67 +1,67 @@
 [
   {
     "year": 2019,
-    "month": 11,
-    "total": 69798
-  },
-  {
-    "year": 2019,
     "month": 12,
-    "total": 66504
+    "total": 62129
   },
   {
     "year": 2020,
     "month": 1,
-    "total": 62966
+    "total": 62122
   },
   {
     "year": 2020,
     "month": 2,
-    "total": 61834
+    "total": 61645
   },
   {
     "year": 2020,
     "month": 3,
-    "total": 83075
+    "total": 82465
   },
   {
     "year": 2020,
     "month": 4,
-    "total": 59905
+    "total": 59664
   },
   {
     "year": 2020,
     "month": 5,
-    "total": 75461
+    "total": 75273
   },
   {
     "year": 2020,
     "month": 6,
-    "total": 50827
+    "total": 50654
   },
   {
     "year": 2020,
     "month": 7,
-    "total": 67385
+    "total": 67174
   },
   {
     "year": 2020,
     "month": 8,
-    "total": 89986
+    "total": 89596
   },
   {
     "year": 2020,
     "month": 9,
-    "total": 87401
+    "total": 87260
   },
   {
     "year": 2020,
     "month": 10,
-    "total": 70247
+    "total": 79507
   },
   {
     "year": 2020,
     "month": 11,
-    "total": 66055
+    "total": 101248
+  },
+  {
+    "year": 2020,
+    "month": 12,
+    "total": 49010
   }
 ]

@@ -12,7 +12,9 @@ const dates = [
   moment().format("YYYY-MM-DD"),
 ];
 
-// const dates = ["2019-11-01", "2020-11-23"];
+// const dates = [
+//   "2019-12-01", "2020-12-20"
+// ];
 
 module.exports = {
   async getNumberOfSamples(req, res) {

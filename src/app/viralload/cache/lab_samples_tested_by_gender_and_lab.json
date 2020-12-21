@@ -1,130 +1,130 @@
 [
   {
     "lab": "Cabo Delgado",
-    "total": 48238,
-    "male_suppressed": 10395,
-    "female_suppressed": 25898,
-    "male_not_suppressed": 3506,
-    "female_not_suppressed": 7835
+    "total": 48227,
+    "male_suppressed": 10357,
+    "female_suppressed": 26585,
+    "male_not_suppressed": 3236,
+    "female_not_suppressed": 7445
   },
   {
     "lab": "Carmelo",
-    "total": 75224,
-    "male_suppressed": 16098,
-    "female_suppressed": 47736,
-    "male_not_suppressed": 3449,
-    "female_not_suppressed": 6785
+    "total": 70953,
+    "male_suppressed": 15083,
+    "female_suppressed": 45250,
+    "male_not_suppressed": 2874,
+    "female_not_suppressed": 5783
   },
   {
     "lab": "Chimoio",
-    "total": 43853,
-    "male_suppressed": 9063,
-    "female_suppressed": 24178,
-    "male_not_suppressed": 3158,
-    "female_not_suppressed": 6178
+    "total": 43895,
+    "male_suppressed": 9277,
+    "female_suppressed": 24298,
+    "male_not_suppressed": 3107,
+    "female_not_suppressed": 5864
   },
   {
     "lab": "DREAM Beira",
-    "total": 28026,
-    "male_suppressed": 6564,
-    "female_suppressed": 15479,
-    "male_not_suppressed": 1648,
-    "female_not_suppressed": 3134
+    "total": 24420,
+    "male_suppressed": 5828,
+    "female_suppressed": 13744,
+    "male_not_suppressed": 1384,
+    "female_not_suppressed": 2624
   },
   {
     "lab": "Dream Maputo",
-    "total": 17762,
-    "male_suppressed": 5040,
-    "female_suppressed": 11143,
-    "male_not_suppressed": 526,
-    "female_not_suppressed": 892
+    "total": 18602,
+    "male_suppressed": 5311,
+    "female_suppressed": 11779,
+    "male_not_suppressed": 510,
+    "female_not_suppressed": 831
   },
   {
     "lab": "Hosp. Militar",
-    "total": 31533,
-    "male_suppressed": 8913,
-    "female_suppressed": 18507,
-    "male_not_suppressed": 1344,
-    "female_not_suppressed": 2324
+    "total": 31598,
+    "male_suppressed": 9055,
+    "female_suppressed": 18630,
+    "male_not_suppressed": 1288,
+    "female_not_suppressed": 2242
   },
   {
     "lab": "INS",
-    "total": 20755,
-    "male_suppressed": 5136,
-    "female_suppressed": 12484,
-    "male_not_suppressed": 919,
-    "female_not_suppressed": 1874
+    "total": 21152,
+    "male_suppressed": 5219,
+    "female_suppressed": 12789,
+    "male_not_suppressed": 915,
+    "female_not_suppressed": 1859
   },
   {
     "lab": "Jose Macamo",
-    "total": 29421,
-    "male_suppressed": 7300,
-    "female_suppressed": 15730,
-    "male_not_suppressed": 1946,
-    "female_not_suppressed": 3560
+    "total": 27659,
+    "male_suppressed": 6644,
+    "female_suppressed": 14141,
+    "male_not_suppressed": 1670,
+    "female_not_suppressed": 3100
   },
   {
     "lab": "Machava",
-    "total": 116639,
-    "male_suppressed": 29690,
-    "female_suppressed": 73393,
-    "male_not_suppressed": 4092,
-    "female_not_suppressed": 8136
+    "total": 116265,
+    "male_suppressed": 29720,
+    "female_suppressed": 73574,
+    "male_not_suppressed": 3739,
+    "female_not_suppressed": 7572
   },
   {
     "lab": "Mavalane",
-    "total": 17455,
-    "male_suppressed": 5039,
-    "female_suppressed": 11031,
-    "male_not_suppressed": 375,
-    "female_not_suppressed": 847
+    "total": 25707,
+    "male_suppressed": 7352,
+    "female_suppressed": 16323,
+    "male_not_suppressed": 548,
+    "female_not_suppressed": 1243
   },
   {
     "lab": "Nampula",
-    "total": 86517,
-    "male_suppressed": 19419,
-    "female_suppressed": 45703,
-    "male_not_suppressed": 6454,
-    "female_not_suppressed": 13063
+    "total": 89920,
+    "male_suppressed": 20475,
+    "female_suppressed": 48112,
+    "male_not_suppressed": 6373,
+    "female_not_suppressed": 12908
   },
   {
     "lab": "Ponta Gea",
-    "total": 69272,
-    "male_suppressed": 13768,
-    "female_suppressed": 34037,
-    "male_not_suppressed": 4121,
-    "female_not_suppressed": 8585
+    "total": 67521,
+    "male_suppressed": 13743,
+    "female_suppressed": 33484,
+    "male_not_suppressed": 3861,
+    "female_not_suppressed": 8014
   },
   {
     "lab": "Quelimane",
-    "total": 151979,
-    "male_suppressed": 28311,
-    "female_suppressed": 80865,
-    "male_not_suppressed": 7943,
-    "female_not_suppressed": 18378
+    "total": 155702,
+    "male_suppressed": 29367,
+    "female_suppressed": 83938,
+    "male_not_suppressed": 7824,
+    "female_not_suppressed": 17961
   },
   {
     "lab": "Tete",
-    "total": 37779,
-    "male_suppressed": 9605,
-    "female_suppressed": 21132,
-    "male_not_suppressed": 2236,
-    "female_not_suppressed": 3969
+    "total": 42587,
+    "male_suppressed": 10823,
+    "female_suppressed": 24130,
+    "male_not_suppressed": 2413,
+    "female_not_suppressed": 4296
   },
   {
     "lab": "UEM",
-    "total": 55109,
-    "male_suppressed": 14877,
-    "female_suppressed": 32562,
-    "male_not_suppressed": 2457,
-    "female_not_suppressed": 4447
+    "total": 53667,
+    "male_suppressed": 14665,
+    "female_suppressed": 32163,
+    "male_not_suppressed": 2251,
+    "female_not_suppressed": 4079
   },
   {
     "lab": "Xai-Xai",
-    "total": 80760,
-    "male_suppressed": 14651,
-    "female_suppressed": 50566,
-    "male_not_suppressed": 3416,
-    "female_not_suppressed": 9927
+    "total": 89872,
+    "male_suppressed": 16573,
+    "female_suppressed": 57710,
+    "male_not_suppressed": 3334,
+    "female_not_suppressed": 9682
   }
 ]

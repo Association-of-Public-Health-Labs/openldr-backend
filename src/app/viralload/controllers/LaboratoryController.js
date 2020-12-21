@@ -8,14 +8,16 @@ const { Op, fn, literal, col } = sequelize;
 const moment = require("moment");
 const {vldata} = require("../../../config/sequelize")
 
-const dates = [
-  moment().subtract(1, "years").format("YYYY-MM-DD"),
-  moment().format("YYYY-MM-DD"),
-];
+// const dates = [
+//   moment().subtract(1, "years").format("YYYY-MM-DD"),
+//   moment().format("YYYY-MM-DD"),
+// ];
 
 const age = [15, 49];
 
-// const dates = ["2019-11-01", "2020-11-23"];
+const dates = [
+  "2019-12-01", "2020-12-20"
+];
 
 module.exports = {
   async getSamplesByTestReason(req, res) {

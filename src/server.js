@@ -19,5 +19,7 @@ app.use(DictRoutes);
 app.use(AuthRoutes);
 app.use(Covid19Routes);
 app.listen(process.env.PORT || 4444, () => {
-  console.log("Server running on localhost:4444");
+  console.log(
+    "Server running on localhost:4444"
+  );
 });

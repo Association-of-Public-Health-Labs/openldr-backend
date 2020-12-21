@@ -1,93 +1,93 @@
 [
   {
     "year": 2019,
-    "month": 11,
-    "month_name": "November",
-    "total": 69151,
-    "suppressed": 53043
-  },
-  {
-    "year": 2019,
     "month": 12,
     "month_name": "December",
-    "total": 65555,
-    "suppressed": 49968
+    "total": 61287,
+    "suppressed": 46596
   },
   {
     "year": 2020,
     "month": 1,
     "month_name": "January",
-    "total": 62077,
-    "suppressed": 48443
+    "total": 61326,
+    "suppressed": 47825
   },
   {
     "year": 2020,
     "month": 2,
     "month_name": "February",
-    "total": 60492,
-    "suppressed": 48525
+    "total": 59160,
+    "suppressed": 47534
   },
   {
     "year": 2020,
     "month": 3,
     "month_name": "March",
-    "total": 80504,
-    "suppressed": 65518
+    "total": 80533,
+    "suppressed": 65553
   },
   {
     "year": 2020,
     "month": 4,
     "month_name": "April",
-    "total": 58694,
-    "suppressed": 48976
+    "total": 58544,
+    "suppressed": 48845
   },
   {
     "year": 2020,
     "month": 5,
     "month_name": "May",
-    "total": 55520,
-    "suppressed": 46384
+    "total": 55455,
+    "suppressed": 46322
   },
   {
     "year": 2020,
     "month": 6,
     "month_name": "June",
-    "total": 49909,
-    "suppressed": 42413
+    "total": 49728,
+    "suppressed": 42234
   },
   {
     "year": 2020,
     "month": 7,
     "month_name": "July",
-    "total": 66231,
-    "suppressed": 57003
+    "total": 66108,
+    "suppressed": 56896
   },
   {
     "year": 2020,
     "month": 8,
     "month_name": "August",
-    "total": 88676,
-    "suppressed": 77209
+    "total": 88316,
+    "suppressed": 76861
   },
   {
     "year": 2020,
     "month": 9,
     "month_name": "September",
-    "total": 86206,
-    "suppressed": 73816
+    "total": 86072,
+    "suppressed": 74145
   },
   {
     "year": 2020,
     "month": 10,
     "month_name": "October",
-    "total": 69056,
-    "suppressed": 60460
+    "total": 78146,
+    "suppressed": 68451
   },
   {
     "year": 2020,
     "month": 11,
     "month_name": "November",
-    "total": 64857,
-    "suppressed": 56663
+    "total": 99017,
+    "suppressed": 86648
+  },
+  {
+    "year": 2020,
+    "month": 12,
+    "month_name": "December",
+    "total": 47833,
+    "suppressed": 41943
   }
 ]

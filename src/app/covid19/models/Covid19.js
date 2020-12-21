@@ -5,7 +5,10 @@ const { covid19 } = require("../../../config/sequelize");
 const Covid19 = covid19.define(
   "Covid19",
   {
-    id: { type: Sequelize.INTEGER, primaryKey: true },
+    id: { 
+      type: Sequelize.INTEGER, 
+      primaryKey: true 
+    },
     DatetimeStamp: Sequelize.DATE,
     Versionstamp: Sequelize.STRING,
     LIMSDatetimeStamp: Sequelize.DATE,
