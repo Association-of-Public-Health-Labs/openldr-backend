@@ -26,15 +26,15 @@
   {
     "facility": "Manica",
     "type": "province",
-    "collection_reception": 10,
+    "collection_reception": 11,
     "reception_registration": 1,
-    "registration_analysis": 13,
+    "registration_analysis": 12,
     "analysis_validation": 0
   },
   {
     "facility": "Maputo Cidade",
     "type": "province",
-    "collection_reception": 3,
+    "collection_reception": 2,
     "reception_registration": 0,
     "registration_analysis": 6,
     "analysis_validation": 0
@@ -52,7 +52,7 @@
     "type": "province",
     "collection_reception": 10,
     "reception_registration": 2,
-    "registration_analysis": 10,
+    "registration_analysis": 9,
     "analysis_validation": 0
   },
   {
@@ -60,13 +60,13 @@
     "type": "province",
     "collection_reception": 17,
     "reception_registration": 2,
-    "registration_analysis": 13,
+    "registration_analysis": 12,
     "analysis_validation": 0
   },
   {
     "facility": "Sofala",
     "type": "province",
-    "collection_reception": 8,
+    "collection_reception": 9,
     "reception_registration": 0,
     "registration_analysis": 7,
     "analysis_validation": 0
@@ -84,7 +84,7 @@
     "type": "province",
     "collection_reception": 7,
     "reception_registration": 2,
-    "registration_analysis": 6,
+    "registration_analysis": 7,
     "analysis_validation": 0
   }
 ]

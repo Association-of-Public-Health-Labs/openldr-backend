@@ -1,10 +1,5 @@
 [
   {
-    "year": 2019,
-    "month": 12,
-    "total": 62131
-  },
-  {
     "year": 2020,
     "month": 1,
     "total": 62124
@@ -27,7 +22,7 @@
   {
     "year": 2020,
     "month": 5,
-    "total": 75279
+    "total": 75271
   },
   {
     "year": 2020,
@@ -52,16 +47,21 @@
   {
     "year": 2020,
     "month": 10,
-    "total": 79505
+    "total": 79504
   },
   {
     "year": 2020,
     "month": 11,
-    "total": 101249
+    "total": 101246
   },
   {
     "year": 2020,
     "month": 12,
-    "total": 50919
+    "total": 90840
+  },
+  {
+    "year": 2021,
+    "month": 1,
+    "total": 25420
   }
 ]
