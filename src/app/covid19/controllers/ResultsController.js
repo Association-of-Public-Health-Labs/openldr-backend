@@ -133,15 +133,25 @@ module.exports = {
             `((TELHOME IS NOT NULL AND TELHOME <> '') OR (TELWORK IS NOT NULL AND TELWORK <> '') OR (MOBILE IS NOT NULL AND MOBILE <> ''))`
           ),
           literal(`SMS_STATUS IS NULL`),
-          {
+        {
+          [Op.or]: {
             Covid19Result: {
               [Op.like]: "%Negativo%",
             },
-            RequestingProvinceName: {
-              [Op.in]: ["Maputo Provincia", "Sofala", "Maputo Cidade", "Gaza","Inhambane","Nampula","Cabo Delgado"]
-            },
-            // RequestingProvinceName: "Maputo Provincia",
+            Covid19Result: {
+              [Op.like]: "%Negativo%",
+            }
           },
+        }
+          // {
+          //   Covid19Result: {
+          //     [Op.like]: "%Negativo%",
+          //   },
+            // RequestingProvinceName: {
+            //   [Op.in]: ["Maputo Provincia", "Sofala", "Maputo Cidade", "Gaza","Inhambane","Nampula","Cabo Delgado"]
+            // },
+            // RequestingProvinceName: "Maputo Provincia",
+          // },
         ],
       },
     });
