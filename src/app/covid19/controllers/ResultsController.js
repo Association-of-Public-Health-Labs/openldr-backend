@@ -133,16 +133,17 @@ module.exports = {
             `((TELHOME IS NOT NULL AND TELHOME <> '') OR (TELWORK IS NOT NULL AND TELWORK <> '') OR (MOBILE IS NOT NULL AND MOBILE <> ''))`
           ),
           literal(`SMS_STATUS IS NULL`),
-        {
-          [Op.or]: {
-            Covid19Result: {
-              [Op.like]: "%Negativo%",
-            },
-            Covid19Result: {
-              [Op.like]: "%Negativo%",
-            }
-          },
-        }
+          literal(`(Covid19Result LIKE '%Negativo%' OR Covid19Result LIKE '%Positivo%')`)
+        // {
+        //   [Op.or]: {
+        //     Covid19Result: {
+        //       [Op.like]: "%Negativo%",
+        //     },
+        //     Covid19Result: {
+        //       [Op.like]: "%Positivo%",
+        //     }
+        //   },
+        // }
           // {
           //   Covid19Result: {
           //     [Op.like]: "%Negativo%",
