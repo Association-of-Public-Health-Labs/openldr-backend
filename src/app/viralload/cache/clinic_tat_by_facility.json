@@ -2,7 +2,7 @@
   {
     "facility": "Cabo Delgado",
     "type": "province",
-    "collection_reception": 11,
+    "collection_reception": 10,
     "reception_registration": 0,
     "registration_analysis": 4,
     "analysis_validation": 0
@@ -18,9 +18,9 @@
   {
     "facility": "Inhambane",
     "type": "province",
-    "collection_reception": 8,
+    "collection_reception": 7,
     "reception_registration": 0,
-    "registration_analysis": 12,
+    "registration_analysis": 13,
     "analysis_validation": 1
   },
   {
@@ -28,7 +28,7 @@
     "type": "province",
     "collection_reception": 11,
     "reception_registration": 1,
-    "registration_analysis": 12,
+    "registration_analysis": 11,
     "analysis_validation": 0
   },
   {
@@ -60,23 +60,23 @@
     "type": "province",
     "collection_reception": 17,
     "reception_registration": 2,
-    "registration_analysis": 12,
+    "registration_analysis": 11,
     "analysis_validation": 0
   },
   {
     "facility": "Sofala",
     "type": "province",
-    "collection_reception": 9,
+    "collection_reception": 11,
     "reception_registration": 0,
-    "registration_analysis": 7,
+    "registration_analysis": 8,
     "analysis_validation": 0
   },
   {
     "facility": "Tete",
     "type": "province",
-    "collection_reception": 13,
-    "reception_registration": 4,
-    "registration_analysis": 4,
+    "collection_reception": 9,
+    "reception_registration": 3,
+    "registration_analysis": 3,
     "analysis_validation": 0
   },
   {
@@ -84,7 +84,7 @@
     "type": "province",
     "collection_reception": 7,
     "reception_registration": 2,
-    "registration_analysis": 7,
+    "registration_analysis": 8,
     "analysis_validation": 0
   }
 ]

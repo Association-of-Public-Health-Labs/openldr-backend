@@ -16,7 +16,7 @@ const dates = [
 const age = [15, 49];
 
 // const dates = [
-//   "2020-01-01", "2021-01-14"
+//   "2020-02-01", "2021-02-10"
 // ];
 
 module.exports = {
