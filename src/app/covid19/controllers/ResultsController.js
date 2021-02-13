@@ -115,6 +115,7 @@ module.exports = {
         [col("TELHOME"), "mobile_2"],
         [col("MOBILE"), "mobile_3"],
         [col("SpecimenDatetime"), "SpecimenDatetime"],
+        [col("RegisteredDatetime"), "RegisteredDatetime"],
         [col("AuthorisedDatetime"), "AuthorisedDatetime"],
         [col("RequestingFacilityName"), "RequestingFacilityName"],
         [col("Covid19Result"), "Covid19Result"],
