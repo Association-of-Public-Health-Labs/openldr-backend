@@ -130,26 +130,6 @@ module.exports = {
           ),
           literal(`SMS_STATUS IS NULL`),
           literal(`(Covid19Result LIKE '%Negativo%' OR Covid19Result LIKE '%Positivo%' OR Covid19Result LIKE '%Repita%' OR Covid19Result LIKE '%Inconclusivo%')`),
-          literal(`RequestingProvinceName = 'Sofala'`),
-        // {
-        //   [Op.or]: {
-        //     Covid19Result: {
-        //       [Op.like]: "%Negativo%",
-        //     },
-        //     Covid19Result: {
-        //       [Op.like]: "%Positivo%",
-        //     }
-        //   },
-        // }
-          // {
-          //   Covid19Result: {
-          //     [Op.like]: "%Negativo%",
-          //   },
-            // RequestingProvinceName: {
-            //   [Op.in]: ["Maputo Provincia", "Sofala", "Maputo Cidade", "Gaza","Inhambane","Nampula","Cabo Delgado"]
-            // },
-            // RequestingProvinceName: "Maputo Provincia",
-          // },
         ],
       },
     });
