@@ -130,7 +130,7 @@ module.exports = {
           ),
           literal(`SMS_STATUS IS NULL`),
           literal(`(Covid19Result LIKE '%Negativo%' OR Covid19Result LIKE '%Positivo%' OR Covid19Result LIKE '%Repita%' OR Covid19Result LIKE '%Inconclusivo%')`),
-          literal(`(RequestingProvinceName = 'Nampula' OR RequestingProvinceName = 'Tete')`),
+          // literal(`(RequestingProvinceName = 'Nampula' OR RequestingProvinceName = 'Tete')`),
         ],
       },
     });
