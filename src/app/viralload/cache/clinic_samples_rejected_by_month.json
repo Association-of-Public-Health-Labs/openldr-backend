@@ -1,12 +1,6 @@
 [
   {
     "year": 2020,
-    "month": 2,
-    "month_name": "February",
-    "rejected": 1235
-  },
-  {
-    "year": 2020,
     "month": 3,
     "month_name": "March",
     "rejected": 1279
@@ -15,7 +9,7 @@
     "year": 2020,
     "month": 4,
     "month_name": "April",
-    "rejected": 838
+    "rejected": 839
   },
   {
     "year": 2020,
@@ -39,7 +33,7 @@
     "year": 2020,
     "month": 8,
     "month_name": "August",
-    "rejected": 1069
+    "rejected": 1071
   },
   {
     "year": 2020,
@@ -51,30 +45,36 @@
     "year": 2020,
     "month": 10,
     "month_name": "October",
-    "rejected": 1810
+    "rejected": 1817
   },
   {
     "year": 2020,
     "month": 11,
     "month_name": "November",
-    "rejected": 1611
+    "rejected": 1622
   },
   {
     "year": 2020,
     "month": 12,
     "month_name": "December",
-    "rejected": 1550
+    "rejected": 1593
   },
   {
     "year": 2021,
     "month": 1,
     "month_name": "January",
-    "rejected": 1188
+    "rejected": 2000
   },
   {
     "year": 2021,
     "month": 2,
     "month_name": "February",
-    "rejected": 283
+    "rejected": 1542
+  },
+  {
+    "year": 2021,
+    "month": 3,
+    "month_name": "March",
+    "rejected": 834
   }
 ]

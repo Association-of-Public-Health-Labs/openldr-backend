@@ -1,16 +1,6 @@
 [
   {
     "year": 2020,
-    "month": 2,
-    "month_name": "February",
-    "total": 62993,
-    "male_suppressed": 14030,
-    "female_suppressed": 34211,
-    "male_not_suppressed": 3989,
-    "female_not_suppressed": 7912
-  },
-  {
-    "year": 2020,
     "month": 3,
     "month_name": "March",
     "total": 82434,
@@ -93,9 +83,9 @@
     "year": 2020,
     "month": 11,
     "month_name": "November",
-    "total": 101246,
+    "total": 101245,
     "male_suppressed": 23260,
-    "female_suppressed": 63006,
+    "female_suppressed": 63005,
     "male_not_suppressed": 3850,
     "female_not_suppressed": 8431
   },
@@ -103,7 +93,7 @@
     "year": 2020,
     "month": 12,
     "month_name": "December",
-    "total": 91722,
+    "total": 91717,
     "male_suppressed": 21521,
     "female_suppressed": 57165,
     "male_not_suppressed": 3463,
@@ -113,20 +103,30 @@
     "year": 2021,
     "month": 1,
     "month_name": "January",
-    "total": 68912,
-    "male_suppressed": 17017,
-    "female_suppressed": 40976,
-    "male_not_suppressed": 2847,
-    "female_not_suppressed": 5789
+    "total": 71309,
+    "male_suppressed": 17562,
+    "female_suppressed": 42500,
+    "male_not_suppressed": 2940,
+    "female_not_suppressed": 5956
   },
   {
     "year": 2021,
     "month": 2,
     "month_name": "February",
-    "total": 16198,
-    "male_suppressed": 3751,
-    "female_suppressed": 9421,
-    "male_not_suppressed": 772,
-    "female_not_suppressed": 1579
+    "total": 72689,
+    "male_suppressed": 17466,
+    "female_suppressed": 43263,
+    "male_not_suppressed": 3058,
+    "female_not_suppressed": 6101
+  },
+  {
+    "year": 2021,
+    "month": 3,
+    "month_name": "March",
+    "total": 63614,
+    "male_suppressed": 15305,
+    "female_suppressed": 38765,
+    "male_not_suppressed": 2550,
+    "female_not_suppressed": 5319
   }
 ]
