@@ -3,6 +3,10 @@ const sequelize = require("sequelize");
 const global = require("./indicators/global");
 const utils = require("./indicators/utils");
 const VlData = require("../models/VlData");
+const SamplesBacklog = require("../models/SamplesBacklog");
+const SamplesRegistered = require("../models/SamplesRegistered");
+const SamplesTested = require("../models/SamplesTested");
+const SamplesNonValidated = require("../models/SamplesNonValidated");
 const VlWeeklyReport = require("../models/VLWeeklyReport");
 const { Op, fn, literal, col } = sequelize;
 const moment = require("moment");
@@ -572,21 +576,20 @@ module.exports = {
 
     const data = await VlWeeklyReport.findAll({
       attributes: [
-        [literal('ROW_NUMBER() OVER(PARTITION BY YEAR(StartDate), MONTH(StartDate) ORDER BY StartDate)'), "week_number"],
-        [literal('DATENAME(MONTH, StartDate)'), "month"],
+        [literal('ROW_NUMBER() OVER(PARTITION BY YEAR(start_date), MONTH(start_date) ORDER BY start_date)'), "week_number"],
+        [literal('DATENAME(MONTH, start_date)'), "month"],
         [col('Week'), "week"],
-        [col('StartDate'), "start"],
-        [col('EndDate'), "end"],
-        [fn("sum",col("Backlogs")), "backlogs"],
-        [fn("sum",col("Tests")), "tests"],
-        [fn("sum",col("Registrations")), "registrations"],
-        [fn("sum",col("Rejections")), "rejections"],
-        [fn("sum",col("Capacity")), "capacity"],
-        [fn("avg",col("Tests")), "average"],
-        [fn("max",col("UpdatedAt")), "last_update"]
+        [col('start_date'), "start"],
+        [col('end_date'), "end"],
+        [fn("sum",col("backlogs")), "backlogs"],
+        [fn("sum",col("tests")), "tests"],
+        [fn("sum",col("registered")), "registrations"],
+        [fn("sum",col("rejected")), "rejections"],
+        [fn("sum",col("capacity")), "capacity"],
+        [fn("avg",col("tat")), "tat"],
       ],
       where: [
-        literal(`CAST(StartDate as date) >= '${_dates[0]}' AND CAST(StartDate as date) <= '${_dates[1]}'`),
+        literal(`CAST(start_date as date) >= '${_dates[0]}' AND CAST(start_date as date) <= '${_dates[1]}'`),
         {
         ...(req.query.codes && {
           LabCode: {
@@ -595,18 +598,69 @@ module.exports = {
         }),
       }],
       group: [
-        literal('DATENAME(MONTH, StartDate)'),
+        literal('DATENAME(MONTH, start_date)'),
         col('Week'),
-        col('StartDate'),
-        col('EndDate')
+        col('start_date'),
+        col('end_date')
       ],
       order: [
-        [col("StartDate"), "ASC"]
+        [col("start_date"), "ASC"]
       ]
     });
 
     res.json(data)
   },
+
+  async samples_weekly_resume(req, res){
+    const id = "lab_samples_weekly_resume";
+    const cache = await utils.checkCache(req.query, id);
+    if (cache) {
+      return res.json(cache);
+    }
+    var curr = new Date;
+    // var firstday = new Date(curr.setDate(curr.getDate() - curr.getDay()));
+    // var lastday = new Date(curr.setDate(curr.getDate() - curr.getDay()+6));
+    var firstday = '2021-03-21';
+    var lastday = '2021-03-27';
+    var dates = req.query.dates || [firstday, lastday];
+
+    const data = await VlWeeklyReport.findAll({
+      attributes: [
+        [col("labcode"), "labcode"],
+        [col("labname"), "labname"],
+        [col('week'), "week"],
+        [col('start_date'), "start"],
+        [col('end_date'), "end"],
+        [fn("sum",col("backlogs")), "backlogs"],
+        [fn("sum",col("tests")), "tests"],
+        [fn("sum",col("registered")), "registrations"],
+        [fn("sum",col("rejected")), "rejections"],
+        [fn("sum",col("capacity")), "capacity"],
+        [fn("avg",col("tat")), "tat"],
+      ],
+      where: [
+        literal(`CAST(start_date as date) >= '${moment(dates[0]).format("YYYY-MM-DD")}' AND CAST(start_date as date) <= '${moment(dates[1]).format("YYYY-MM-DD")}'`),
+        {
+        ...(req.query.codes && {
+          labcode: {
+            [Op.in]: req.query.codes,
+          },
+        }),
+      }],
+      group: [
+        col("labcode"),
+        col("labname"),
+        col('week'),
+        col('start_date'),
+        col('end_date'),
+      ],
+      order: [
+        [col("start_date"), "ASC"]
+      ]
+    });
+    
+    return res.json(data)
+  }
 
 
 };

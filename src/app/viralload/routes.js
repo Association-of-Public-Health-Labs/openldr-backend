@@ -69,6 +69,8 @@ routes.get("/lab_samples_rejected_by_month", LaboratoryController.getSamplesReje
 
 routes.get("/lab_backlogs", LaboratoryController.getBacklogs)
 
+routes.get("/lab_weekly_report", LaboratoryController.samples_weekly_resume)
+
 // Dashboard routes ...
 
 routes.get("/dash_number_of_samples", DashboardController.getNumberOfSamples);

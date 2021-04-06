@@ -2,7 +2,7 @@ const Sequelize = require("sequelize");
 const { reportData } = require("../../../config/sequelize");
 
 const VLWeeklyReport = reportData.define(
-  "VLWeeklyReport",
+  "Resume",
   {
     LabCode: Sequelize.STRING,
 	LabName: Sequelize.STRING,
