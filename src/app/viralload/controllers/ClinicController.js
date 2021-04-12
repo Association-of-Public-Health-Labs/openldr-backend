@@ -585,6 +585,9 @@ module.exports = ClinicController = {
           Pregnant: {
             [Op.in]: ["YES", "Yes", "yes", "Sim", "SIM"],
           },
+          RequestingProvinceName: {
+            [Op.not]: null
+          }
         },
       ],
       group: [columnsDetails.column],
@@ -684,6 +687,9 @@ module.exports = ClinicController = {
           Breastfeeding: {
             [Op.in]: ["YES", "Yes", "yes", "Sim", "SIM"],
           },
+          RequestingProvinceName: {
+            [Op.not]: null
+          }
         },
       ],
       group: [columnsDetails.column],
