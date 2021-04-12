@@ -611,17 +611,15 @@ module.exports = {
     res.json(data)
   },
 
-  async samples_weekly_resume(req, res){
+  async samples_weekly_resume_by_lab(req, res){
     const id = "lab_samples_weekly_resume";
     const cache = await utils.checkCache(req.query, id);
     if (cache) {
       return res.json(cache);
     }
     var curr = new Date;
-    // var firstday = new Date(curr.setDate(curr.getDate() - curr.getDay()));
-    // var lastday = new Date(curr.setDate(curr.getDate() - curr.getDay()+6));
-    var firstday = '2021-03-21';
-    var lastday = '2021-03-27';
+    var firstday = new Date(curr.setDate(curr.getDate() - curr.getDay()));
+    var lastday = new Date(curr.setDate(curr.getDate() - curr.getDay()+6));
     var dates = req.query.dates || [firstday, lastday];
 
     const data = await VlWeeklyReport.findAll({
@@ -650,6 +648,53 @@ module.exports = {
       group: [
         col("labcode"),
         col("labname"),
+        col('week'),
+        col('start_date'),
+        col('end_date'),
+      ],
+      order: [
+        [col("start_date"), "ASC"]
+      ]
+    });
+    
+    return res.json(data)
+  },
+
+  async samples_weekly_resume(req, res){
+    const id = "lab_samples_weekly_resume_national";
+    const cache = await utils.checkCache(req.query, id);
+    if (cache) {
+      return res.json(cache);
+    }
+
+    var firstday = moment().subtract(12, "weeks").format("YYYY-MM-DD");
+    var lastday = moment().format("YYYY-MM-DD");
+    var dates = req.query.dates || [firstday, lastday];
+
+    console.log(firstday, lastday)
+
+    const data = await VlWeeklyReport.findAll({
+      attributes: [
+        [col('week'), "week"],
+        [col('start_date'), "start"],
+        [col('end_date'), "end"],
+        [fn("sum",col("backlogs")), "backlogs"],
+        [fn("sum",col("tests")), "tests"],
+        [fn("sum",col("registered")), "registrations"],
+        [fn("sum",col("rejected")), "rejections"],
+        [fn("sum",col("capacity")), "capacity"],
+        [fn("avg",col("tat")), "tat"],
+      ],
+      where: [
+        literal(`CAST(start_date as date) >= '${moment(dates[0]).format("YYYY-MM-DD")}' AND CAST(start_date as date) <= '${moment(dates[1]).format("YYYY-MM-DD")}'`),
+        {
+        ...(req.query.codes && {
+          labcode: {
+            [Op.in]: req.query.codes,
+          },
+        }),
+      }],
+      group: [
         col('week'),
         col('start_date'),
         col('end_date'),
