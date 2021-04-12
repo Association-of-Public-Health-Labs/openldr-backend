@@ -567,7 +567,7 @@ module.exports = ClinicController = {
       ],
       where: [
         {
-          ...(req.query.codes &&
+          ...(req.query.codes ?
             ((req.query.type || type) === "province"
               ? {
                   RequestingProvinceName: { [Op.in]: req.query.codes },
@@ -578,16 +578,17 @@ module.exports = ClinicController = {
                 }
               : {
                   RequestingFacilityName: { [Op.in]: req.query.codes },
-                })),
+                })
+            : {
+              RequestingProvinceName: { [Op.not]: null },
+            }   
+          ),
           AnalysisDatetime: {
             [Op.between]: req.query.dates || dates,
           },
           Pregnant: {
             [Op.in]: ["YES", "Yes", "yes", "Sim", "SIM"],
           },
-          RequestingProvinceName: {
-            [Op.not]: null
-          }
         },
       ],
       group: [columnsDetails.column],
@@ -669,7 +670,7 @@ module.exports = ClinicController = {
       ],
       where: [
         {
-          ...(req.query.codes &&
+          ...(req.query.codes ?
             ((req.query.type || type) === "province"
               ? {
                   RequestingProvinceName: { [Op.in]: req.query.codes },
@@ -680,16 +681,17 @@ module.exports = ClinicController = {
                 }
               : {
                   RequestingFacilityName: { [Op.in]: req.query.codes },
-                })),
+                })
+            : {
+              RequestingProvinceName: { [Op.not]: null },
+            }   
+          ),
           AnalysisDatetime: {
             [Op.between]: req.query.dates || dates,
           },
           Breastfeeding: {
             [Op.in]: ["YES", "Yes", "yes", "Sim", "SIM"],
           },
-          RequestingProvinceName: {
-            [Op.not]: null
-          }
         },
       ],
       group: [columnsDetails.column],
