@@ -25,8 +25,8 @@
   },
   {
     "lab": "Dream Maputo",
-    "total": 18667,
-    "suppressed": 17469,
+    "total": 18668,
+    "suppressed": 17470,
     "non_suppressed": 1074
   },
   {
@@ -46,18 +46,6 @@
     "total": 11859,
     "suppressed": 10122,
     "non_suppressed": 1578
-  },
-  {
-    "lab": "Lab. de Dream Maputo",
-    "total": 1,
-    "suppressed": 1,
-    "non_suppressed": 0
-  },
-  {
-    "lab": "Lab.BM-Quelimane",
-    "total": 18,
-    "suppressed": 12,
-    "non_suppressed": 6
   },
   {
     "lab": "Machava",
@@ -85,9 +73,9 @@
   },
   {
     "lab": "Quelimane",
-    "total": 168308,
-    "suppressed": 126781,
-    "non_suppressed": 24559
+    "total": 168326,
+    "suppressed": 126793,
+    "non_suppressed": 24565
   },
   {
     "lab": "Tete",
@@ -97,8 +85,8 @@
   },
   {
     "lab": "UEM",
-    "total": 52232,
-    "suppressed": 46663,
+    "total": 52233,
+    "suppressed": 46664,
     "non_suppressed": 5319
   },
   {

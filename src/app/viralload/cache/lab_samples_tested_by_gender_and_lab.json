@@ -33,9 +33,9 @@
   },
   {
     "lab": "Dream Maputo",
-    "total": 18667,
+    "total": 18668,
     "male_suppressed": 5425,
-    "female_suppressed": 12006,
+    "female_suppressed": 12007,
     "male_not_suppressed": 411,
     "female_not_suppressed": 659
   },
@@ -62,22 +62,6 @@
     "female_suppressed": 6780,
     "male_not_suppressed": 596,
     "female_not_suppressed": 979
-  },
-  {
-    "lab": "Lab. de Dream Maputo",
-    "total": 1,
-    "male_suppressed": 0,
-    "female_suppressed": 1,
-    "male_not_suppressed": 0,
-    "female_not_suppressed": 0
-  },
-  {
-    "lab": "Lab.BM-Quelimane",
-    "total": 18,
-    "male_suppressed": 4,
-    "female_suppressed": 8,
-    "male_not_suppressed": 2,
-    "female_not_suppressed": 4
   },
   {
     "lab": "Machava",
@@ -113,11 +97,11 @@
   },
   {
     "lab": "Quelimane",
-    "total": 168308,
-    "male_suppressed": 32768,
-    "female_suppressed": 92745,
-    "male_not_suppressed": 7468,
-    "female_not_suppressed": 16837
+    "total": 168326,
+    "male_suppressed": 32772,
+    "female_suppressed": 92753,
+    "male_not_suppressed": 7470,
+    "female_not_suppressed": 16841
   },
   {
     "lab": "Tete",
@@ -129,9 +113,9 @@
   },
   {
     "lab": "UEM",
-    "total": 52232,
+    "total": 52233,
     "male_suppressed": 13913,
-    "female_suppressed": 32681,
+    "female_suppressed": 32682,
     "male_not_suppressed": 1783,
     "female_not_suppressed": 3529
   },
