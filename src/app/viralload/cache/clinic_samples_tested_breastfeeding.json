@@ -2,78 +2,78 @@
   {
     "facility": "Cabo Delgado",
     "type": "province",
-    "total": 4472,
-    "suppressed": 3456,
-    "non_suppressed": 921
+    "total": 4927,
+    "suppressed": 3872,
+    "non_suppressed": 943
   },
   {
     "facility": "Gaza",
     "type": "province",
-    "total": 8221,
-    "suppressed": 7234,
-    "non_suppressed": 805
+    "total": 8795,
+    "suppressed": 7779,
+    "non_suppressed": 825
   },
   {
     "facility": "Inhambane",
     "type": "province",
-    "total": 3826,
-    "suppressed": 3153,
-    "non_suppressed": 595
+    "total": 3323,
+    "suppressed": 2743,
+    "non_suppressed": 509
   },
   {
     "facility": "Manica",
     "type": "province",
-    "total": 4818,
-    "suppressed": 4045,
-    "non_suppressed": 702
+    "total": 4909,
+    "suppressed": 4110,
+    "non_suppressed": 714
   },
   {
     "facility": "Maputo Cidade",
     "type": "province",
-    "total": 4992,
-    "suppressed": 4305,
-    "non_suppressed": 655
+    "total": 5266,
+    "suppressed": 4585,
+    "non_suppressed": 658
   },
   {
     "facility": "Maputo Provincia",
     "type": "province",
-    "total": 8065,
-    "suppressed": 7032,
-    "non_suppressed": 903
+    "total": 8454,
+    "suppressed": 7367,
+    "non_suppressed": 916
   },
   {
     "facility": "Nampula",
     "type": "province",
-    "total": 8783,
-    "suppressed": 7145,
-    "non_suppressed": 1520
+    "total": 9659,
+    "suppressed": 7903,
+    "non_suppressed": 1605
   },
   {
     "facility": "Niassa",
     "type": "province",
-    "total": 1095,
-    "suppressed": 950,
-    "non_suppressed": 138
+    "total": 1254,
+    "suppressed": 1084,
+    "non_suppressed": 162
   },
   {
     "facility": "Sofala",
     "type": "province",
-    "total": 2127,
-    "suppressed": 1533,
-    "non_suppressed": 398
+    "total": 2116,
+    "suppressed": 1654,
+    "non_suppressed": 429
   },
   {
     "facility": "Tete",
     "type": "province",
-    "total": 3215,
-    "suppressed": 2720,
-    "non_suppressed": 415
+    "total": 3564,
+    "suppressed": 3076,
+    "non_suppressed": 446
   },
   {
     "facility": "Zambezia",
     "type": "province",
-    "total": 20210,
-    "suppressed": 15493,
-    "non_suppressed": 3077
+    "total": 20590,
+    "suppressed": 16848,
+    "non_suppressed": 3150
   }
 ]

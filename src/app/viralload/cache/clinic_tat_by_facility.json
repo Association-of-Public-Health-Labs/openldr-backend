@@ -18,17 +18,17 @@
   {
     "facility": "Inhambane",
     "type": "province",
-    "collection_reception": 7,
+    "collection_reception": 8,
     "reception_registration": 0,
-    "registration_analysis": 15,
+    "registration_analysis": 16,
     "analysis_validation": 1
   },
   {
     "facility": "Manica",
     "type": "province",
-    "collection_reception": 11,
-    "reception_registration": 1,
-    "registration_analysis": 8,
+    "collection_reception": 10,
+    "reception_registration": 2,
+    "registration_analysis": 9,
     "analysis_validation": 0
   },
   {
@@ -42,7 +42,7 @@
   {
     "facility": "Maputo Provincia",
     "type": "province",
-    "collection_reception": 10,
+    "collection_reception": 11,
     "reception_registration": 1,
     "registration_analysis": 5,
     "analysis_validation": 0
@@ -50,23 +50,23 @@
   {
     "facility": "Nampula",
     "type": "province",
-    "collection_reception": 10,
+    "collection_reception": 9,
     "reception_registration": 2,
-    "registration_analysis": 8,
+    "registration_analysis": 7,
     "analysis_validation": 0
   },
   {
     "facility": "Niassa",
     "type": "province",
-    "collection_reception": 16,
+    "collection_reception": 15,
     "reception_registration": 2,
-    "registration_analysis": 11,
+    "registration_analysis": 9,
     "analysis_validation": 0
   },
   {
     "facility": "Sofala",
     "type": "province",
-    "collection_reception": 12,
+    "collection_reception": 11,
     "reception_registration": 1,
     "registration_analysis": 7,
     "analysis_validation": 0
@@ -82,7 +82,7 @@
   {
     "facility": "Zambezia",
     "type": "province",
-    "collection_reception": 8,
+    "collection_reception": 9,
     "reception_registration": 2,
     "registration_analysis": 8,
     "analysis_validation": 0
