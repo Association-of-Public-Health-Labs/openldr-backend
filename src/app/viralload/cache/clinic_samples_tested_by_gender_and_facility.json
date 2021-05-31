@@ -1,14 +1,5 @@
 [
   {
-    "facility": null,
-    "type": "province",
-    "total": 1334,
-    "male_suppressed": 314,
-    "female_suppressed": 734,
-    "male_not_suppressed": 83,
-    "female_not_suppressed": 169
-  },
-  {
     "facility": "Cabo Delgado",
     "type": "province",
     "total": 43446,
