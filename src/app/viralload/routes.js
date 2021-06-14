@@ -8,6 +8,7 @@ const DashboardController = require("./controllers/DashboardController");
 const ClinicController = require("./controllers/ClinicController");
 const ResultsController = require("./controllers/ResultsController");
 const WeeklyReportController = require("./controllers/WeeklyReportController")
+const ReportsController = require("./controllers/ReportsController")
 
 const routes = express.Router();
 
@@ -172,5 +173,12 @@ routes.get(
 // Weekly Reports
 routes.get("/weeklyreports/instrument", WeeklyReportController.getTotalIntrumentCapacity)
 routes.get("/weeklyreports/instrument_samples", WeeklyReportController.getSamplesByInstrument)
+
+routes.get("/weeklyreports/samples_by_instrument", ReportsController.getTotalIntrumentCapacity)
+routes.get("/weeklyreports/backlogged_samples", ReportsController.getBackloggedSamples)
+routes.get("/weeklyreports/registered_samples", ReportsController.getRegisteredSamples)
+routes.get("/weeklyreports/tested_samples", ReportsController.getTestedSamples)
+routes.get("/weeklyreports/non_validated_samples", ReportsController.getNonValidatedSamples)
+
 
 module.exports = routes;
