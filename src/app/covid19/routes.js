@@ -5,6 +5,7 @@ const ResultsController = require("./controllers/ResultsController");
 const DashboardController = require("./controllers/DashboardController");
 const ReportsController = require("./controllers/ReportsController");
 const DailyController = require("./controllers/DailyReportController");
+const DailyReportsController = require("./controllers/DailyReportsController");
 
 const routes = express.Router();
 
@@ -85,5 +86,14 @@ routes.get(
 routes.get("/daily/results/:start_date/:end_date", DailyController.get_results);
 
 routes.get("/covid/results/:requestid", ResultsController.search_patients)
+
+
+// Daily Reports
+routes.get("/covid/daily_report/resume/:start_date/:end_date", DailyReportsController.getDailyResume)
+routes.get("/covid/daily_report/reason_for_test_report/:start_date/:end_date", DailyReportsController.getReasonForTestReport)
+routes.get("/covid/daily_report/tat_by_province/:start_date/:end_date", DailyReportsController.get_tat_by_province)
+routes.get("/covid/daily_report/tat_by_lab/:start_date/:end_date", DailyReportsController.get_tat_by_lab)
+routes.get("/covid/daily_report/results/:start_date/:end_date", DailyReportsController.getDailyResults)
+routes.get("/covid/daily_report/pending_results/:start_date/:end_date", DailyReportsController.getDailyPendingResults)
 
 module.exports = routes;

@@ -1,10 +1,11 @@
-const {col, fn, literal} = require("sequelize")
+const {col, fn} = require("sequelize")
 const {reportData} = require("../../../config/sequelize")
 const SamplesBacklog = require("../models/SamplesBacklog")
 const SamplesRegistered = require("../models/SamplesRegistered")
 const SamplesTested = require("../models/SamplesTested")
 const SamplesNonValidated = require("../models/SamplesNonValidated")
-const VlData = require("../models/VlData")
+const EID = require("../models/EIDData")
+const {eid} = require("../../../config/sequelize")
 
 module.exports = {
     async getTotalIntrumentCapacity(req, res){
@@ -76,7 +77,7 @@ module.exports = {
             order: [
                 col("LabName")
             ]
-        });
+        })
 
         return res.json(samples)
     },
@@ -104,29 +105,43 @@ module.exports = {
 
     async getResultsByHealthFacility(req, res) {
         const {location} = req.params;
-        const report = await VlData.findAll({
-            attributes: [
-                [literal(`ViralLoad.dbo.generatePatientID(ISNULL(REFNO, UNIQUEID))`), 'nid'],
-                [literal(`RIGHT(RequestID,10)`), 'RequestID'],
-                [col('FIRSTNAME'), 'FIRSTNAME'],
-                [col('SURNAME'), 'SURNAME'],
-                [literal(`ISNULL(CAST(AgeInYears AS varchar(20)),'Não preenchido')`), "AgeInYears"],	
-                [literal(`ISNULL(Hl7SexCode,'Não preenchido')`), "Hl7SexCode"],	
-                [literal(`ISNULL(HIVVL_ViralLoadResult, HIVVL_ViralLoadCAPCTM)`), "HIVVL_ViralLoadCAPCTM"],		
-                [literal(`IIF(ARTRegimen = 'Unreported','Não preenchido',ARTRegimen)`), "HIVVL_ViralLoadCAPCTM"],
-                [literal(`CASE WHEN Pregnant = 'Yes' THEN 'Sim' WHEN Pregnant = 'No' THEN 'Não' ELSE Pregnant END`), "Pregnant"],
-                [literal(`CASE WHEN BreastFeeding = 'Yes' THEN 'Sim' WHEN BreastFeeding = 'No' THEN 'Não' ELSE BreastFeeding END`), "Breastfeeding"],
-                [literal(`CASE WHEN ReasonForTest IN ('Routine') THEN 'Rotina' WHEN ReasonForTest IN ('Suspected treatment failure') THEN 'Suspeita de falha terapêutica' WHEN ReasonForTest IN ('Reason Not Specified') THEN 'Não preenchido' WHEN ReasonForTest IN ('Repetição após AMA') THEN 'Repetir após amamentação' ELSE ReasonForTest END`), "ReasonForTest"],	
-                [literal(`CASE WHEN (LIMSRejectionCode IS NOT NULL AND LIMSRejectionCode <> '') OR (HIVVL_LIMSRejectionCode IS NOT NULL AND HIVVL_LIMSRejectionCode <> '') THEN 'Amostra Rejeitada' ELSE '' END`), "Rejection"], 
-                [literal(`ISNULL(CONVERT(VARCHAR(30), SpecimenDatetime, 105),'Não preenchido')`), "SpecimenDatetime"],	
-                [literal(`ISNULL(CONVERT(VARCHAR(30), RegisteredDatetime, 105),'Não preenchido')`), "RegisteredDatetime"],
-                [literal(`ISNULL(CONVERT(VARCHAR(30), AnalysisDatetime, 105),'Não preenchido')`), "AnalysisDatetime"],	
-                [literal(`ISNULL(CONVERT(VARCHAR(30), AuthorisedDatetime, 105),'Não preenchido')`), "AuthorisedDatetime"],
-            ],
-            where: literal(`LOCATION = '${location}' AND AnalysisDateTime IS NOT NULL AND 
-            ((ViralLoadResultCategory IS NOT NULL AND ViralLoadResultCategory <> '') OR (LIMSRejectionCode IS NOT NULL AND LIMSRejectionCode <> '') OR (HIVVL_LIMSRejectionCode IS NOT NULL AND HIVVL_LIMSRejectionCode <> '')) AND 
-            YEAR(RegisteredDateTime) = YEAR(GETDATE())`)
-        });
+        const report = await eid.query(`
+            SELECT 
+                [RequestID]
+                ,[FIRSTNAME]
+                ,[SURNAME]
+                ,[DOB]
+                ,[EID_IDNo]
+                ,[AgeInDays]
+                ,[AgeInYears]
+                ,[Hl7SexCode]
+                ,ISNULL(CONVERT(VARCHAR(30), SpecimenDatetime, 105),'Não preenchido') SpecimenDatetime	
+                ,ISNULL(CONVERT(VARCHAR(30), RegisteredDatetime, 105),'Não preenchido') RegisteredDatetime
+                ,ISNULL(CONVERT(VARCHAR(30), AnalysisDatetime, 105),'Não preenchido') AnalysisDatetime	
+                ,ISNULL(CONVERT(VARCHAR(30), AuthorisedDatetime, 105),'Não preenchido')	AuthorisedDatetime
+                ,[RequestingProvinceName]
+                ,[RequestingDistrictName]
+                ,[RequestingFacilityName]
+                ,[TestingFacilityName]
+                ,CASE WHEN [Cuidador] = 'Unreported' THEN 'Não preenchido' ELSE [Cuidador] END [Cuidador]
+                ,CASE WHEN [Cuidador_Cell] = 'Unreported' THEN 'Não preenchido' ELSE [Cuidador_Cell] END [Cuidador_Cell]
+                ,[PatientConsent]
+                ,[PTV_MAE]
+                ,CASE WHEN [PTV_CRIANCA] = 'Unreported' THEN 'Não preenchido' ELSE [PTV_CRIANCA] END [PTV_CRIANCA]
+                ,[EID_Date]
+                ,[RapidHIV]
+                ,[PCR_ANTERIOR]
+                ,[POR_SEMANAS]
+                ,CASE WHEN [TIPO_DE_COLHEITA] = 'Unreported' THEN 'Não preenchido' ELSE [TIPO_DE_COLHEITA] END [TIPO_DE_COLHEITA]
+                ,[PCR_Result]
+                ,[LIMSRejectionDesc]
+            FROM EIDData.dbo.EID AS eid
+            JOIN OpenLDRDict.dbo.viewFacilities AS fac ON fac.FacilityNationalCode = eid.RequestingFacilityCode OR fac.FacilityCode = eid.RequestingFacilityCode 
+            OR fac.[Description] = eid.RequestingFacilityName
+            WHERE fac.FacilityCode = '${location}' AND AnalysisDateTime IS NOT NULL AND 
+            ((PCR_Result IS NOT NULL AND PCR_Result <> '') OR (LIMSRejectionCode IS NOT NULL AND LIMSRejectionCode <> '')) AND 
+            YEAR(RegisteredDateTime) = YEAR(GETDATE())
+        `);
         return res.json(report)
     }
 }

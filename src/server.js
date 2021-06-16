@@ -3,6 +3,7 @@ const express = require("express");
 const cors = require("cors");
 const bodyParser = require("body-parser");
 const ViralLoadRoutes = require("./app/viralload/routes");
+const EIDRoutes = require("./app/eid/routes");
 const DictRoutes = require("./app/dictionary/routes");
 const AuthRoutes = require("./app/auth/routes");
 const Covid19Routes = require("./app/covid19/routes");
@@ -15,6 +16,7 @@ app.use(bodyParser.json());
 app.use(express.urlencoded({ extented: true }));
 
 app.use(ViralLoadRoutes);
+app.use(EIDRoutes);
 app.use(DictRoutes);
 app.use(AuthRoutes);
 app.use(Covid19Routes);

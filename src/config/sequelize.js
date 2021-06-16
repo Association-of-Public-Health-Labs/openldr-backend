@@ -26,6 +26,19 @@ const vldata = new Sequelize(
   }
 );
 
+const eid = new Sequelize(
+  process.env.EID_DB,
+  process.env.EID_USER,
+  process.env.EID_PASSWORD,
+  {
+    host: process.env.EID_HOST,
+    dialect: "mssql",
+    dialectOptions: {
+      options: { requestTimeout: 30000000 },
+    },
+  }
+);
+
 
 const reportData = new Sequelize(
   process.env.REPORT_DATA_DB,
@@ -71,5 +84,6 @@ module.exports = {
   vldata: vldata,
   facilities: facilities,
   covid19: covid19,
-  reportData: reportData
+  reportData: reportData,
+  eid: eid
 };

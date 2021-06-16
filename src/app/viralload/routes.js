@@ -9,6 +9,7 @@ const ClinicController = require("./controllers/ClinicController");
 const ResultsController = require("./controllers/ResultsController");
 const WeeklyReportController = require("./controllers/WeeklyReportController")
 const ReportsController = require("./controllers/ReportsController")
+const MonthlyReportsController = require("./controllers/MonthlyReportsController")
 
 const routes = express.Router();
 
@@ -174,11 +175,22 @@ routes.get(
 routes.get("/weeklyreports/instrument", WeeklyReportController.getTotalIntrumentCapacity)
 routes.get("/weeklyreports/instrument_samples", WeeklyReportController.getSamplesByInstrument)
 
-routes.get("/weeklyreports/samples_by_instrument", ReportsController.getTotalIntrumentCapacity)
-routes.get("/weeklyreports/backlogged_samples", ReportsController.getBackloggedSamples)
-routes.get("/weeklyreports/registered_samples", ReportsController.getRegisteredSamples)
-routes.get("/weeklyreports/tested_samples", ReportsController.getTestedSamples)
-routes.get("/weeklyreports/non_validated_samples", ReportsController.getNonValidatedSamples)
+routes.get("/vl/weeklyreports/samples_by_instrument", ReportsController.getTotalIntrumentCapacity)
+routes.get("/vl/weeklyreports/backlogged_samples", ReportsController.getBackloggedSamples)
+routes.get("/vl/weeklyreports/registered_samples", ReportsController.getRegisteredSamples)
+routes.get("/vl/weeklyreports/tested_samples", ReportsController.getTestedSamples)
+routes.get("/vl/weeklyreports/non_validated_samples", ReportsController.getNonValidatedSamples)
+
+routes.get("/vl/weeklyreports/results/:location", ReportsController.getResultsByHealthFacility)
+
+// MonthlyReportsController
+routes.get("/vl/monthlyreports/age/:start_date/:end_date", MonthlyReportsController.getVlReportByAge)
+routes.get("/vl/monthlyreports/gender/:start_date/:end_date", MonthlyReportsController.getVlReportByGender)
+routes.get("/vl/monthlyreports/pregnant/:start_date/:end_date", MonthlyReportsController.getVlReportForPregnant)
+routes.get("/vl/monthlyreports/breastfeeding/:start_date/:end_date", MonthlyReportsController.getVlReportForBreastfeeding)
+routes.get("/vl/monthlyreports/tat_by_facility/:start_date/:end_date", MonthlyReportsController.getTurnaroundTimeByFacility)
+routes.get("/vl/monthlyreports/tat_by_lab/:start_date/:end_date", MonthlyReportsController.getTurnaroundTimeByLab)
+
 
 
 module.exports = routes;
