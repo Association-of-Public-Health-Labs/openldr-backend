@@ -90,6 +90,8 @@ module.exports = {
                 [col("SamplesTestedBtw2and5Days"), "SamplesTestedBtw2and5Days"],
                 [col("SamplesGreaterThan5Days"), "SamplesGreaterThan5Days"],
                 [col("SamplesTestedWithoutCollectionDate"), "SamplesTestedWithoutCollectionDate"],
+                [literal("0"), "SamplesValidatedWithoutCollectionDate"],
+                [literal("0"), "SamplesValidatedWithMoreThan28Days"],
             ],
             where: {
                 week: "LAST"
