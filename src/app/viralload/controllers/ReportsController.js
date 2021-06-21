@@ -10,7 +10,7 @@ module.exports = {
     async getTotalIntrumentCapacity(req, res){
         const report = await reportData.query("SELECT * FROM [ReportData].[dbo].[weekly_intrument_report] ()", {raw: true});
 
-        return res.json(report)
+        return res.json(report[0])
     },
 
     async getBackloggedSamples(req, res){
@@ -100,6 +100,34 @@ module.exports = {
         })
 
         return res.json(samples)
+    },
+
+    async getFSRIncompletenessReport(req, res){
+        const {start_date, end_date} = req.params;
+
+        const report = await VlData.findAll({
+            attributes: [
+                [col("RequestingProvinceName"), "RequestingProvinceName"],
+                [col("RequestingDistrictName"), "RequestingDistrictName"],
+                [col("RequestingFacilityName"), "RequestingFacilityName"],
+                [literal("ISNULL(TestingFacilityName, TestingFacilityCode)"), "TestingFacilityName"],
+                [literal(`COUNT(1)`), "Total"],
+                [literal(`COUNT(CASE WHEN AgeInYears IS NULL OR AgeInYears = '' THEN 1 ELSE NULL END)`), "Age"],
+                [literal(`COUNT(CASE WHEN HL7SexCode IS NULL OR HL7SexCode = '' THEN 1 ELSE NULL END)`), "Gender"],
+                [literal(`COUNT(CASE WHEN (REFNO IS NULL OR REFNO = '') AND (UNIQUEID IS NULL OR UNIQUEID = '') THEN 1 ELSE NULL END)`), "NID"],
+                [literal(`COUNT(CASE WHEN SpecimenDatetime IS NULL THEN 1 ELSE NULL END)`), "CollectionDate"],
+                [literal(`COUNT(CASE WHEN ReceivedDatetime IS NULL THEN 1 ELSE NULL END)`), "ReceiveDate"],
+            ],
+            where: literal(`HL7ResultStatusCode = 'F' AND CAST(AnalysisDateTime as date) >= '${start_date}' AND CAST(AnalysisDateTime as date) <= '${end_date}' AND RequestingProvinceName IS NOT NULL`),
+            group: [
+               literal(`RequestingProvinceName, RequestingDistrictName, RequestingFacilityName, ISNULL(TestingFacilityName, TestingFacilityCode)`) 
+            ],
+            order: [
+                literal(`RequestingProvinceName, RequestingDistrictName, RequestingFacilityName, ISNULL(TestingFacilityName, TestingFacilityCode)`) 
+             ]
+        });
+
+        return res.json(report)
     },
 
     async getResultsByHealthFacility(req, res) {

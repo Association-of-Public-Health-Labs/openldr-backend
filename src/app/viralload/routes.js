@@ -180,6 +180,7 @@ routes.get("/vl/weeklyreports/backlogged_samples", ReportsController.getBacklogg
 routes.get("/vl/weeklyreports/registered_samples", ReportsController.getRegisteredSamples)
 routes.get("/vl/weeklyreports/tested_samples", ReportsController.getTestedSamples)
 routes.get("/vl/weeklyreports/non_validated_samples", ReportsController.getNonValidatedSamples)
+routes.get("/vl/weeklyreports/fsr_incompleteness_report/:start_date/:end_date", ReportsController.getFSRIncompletenessReport)
 
 routes.get("/vl/weeklyreports/results/:location", ReportsController.getResultsByHealthFacility)
 

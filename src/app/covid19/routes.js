@@ -22,19 +22,25 @@ routes.get(
   checkAuth,
   DashboardController.getNumberOfSamples
 );
+
 routes.get("/testedsamples", checkAuth, DashboardController.getTestedSamples);
+
 routes.get(
   "/positivebyprovince",
   // checkAuth,
   DashboardController.getPositiveSamplesByProvince
 );
+
 routes.get("/report", checkAuth, DashboardController.getGlobalReport);
+
 routes.get(
   "/samplesindicators",
   checkAuth,
   DashboardController.getIndicatorsByProvince
 );
+
 routes.get("/covid19tat", checkAuth, DashboardController.getTAT);
+
 routes.get(
   "/covid19-by-gender",
   checkAuth,
@@ -42,7 +48,6 @@ routes.get(
 );
 
 routes.get("/covid19/samples_by_lab", DashboardController.samplesByLab);
-
 routes.get("/covid19/lab_tat", DashboardController.turnaroundTimeByLab);
 
 // Reports
@@ -84,8 +89,7 @@ routes.get(
 );
 
 routes.get("/daily/results/:start_date/:end_date", DailyController.get_results);
-
-routes.get("/covid/results/:requestid", ResultsController.search_patients)
+routes.get("/covid/results/:requestid", ResultsController.search_patients);
 
 
 // Daily Reports
