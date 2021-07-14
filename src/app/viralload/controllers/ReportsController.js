@@ -143,7 +143,7 @@ module.exports = {
                 [literal(`ISNULL(CAST(AgeInYears AS varchar(20)),'Não preenchido')`), "AgeInYears"],	
                 [literal(`ISNULL(Hl7SexCode,'Não preenchido')`), "Hl7SexCode"],	
                 [literal(`ISNULL(HIVVL_ViralLoadResult, HIVVL_ViralLoadCAPCTM)`), "HIVVL_ViralLoadCAPCTM"],		
-                [literal(`IIF(ARTRegimen = 'Unreported','Não preenchido',ARTRegimen)`), "HIVVL_ViralLoadCAPCTM"],
+                [literal(`IIF(ARTRegimen = 'Unreported','Não preenchido',ARTRegimen)`), "ARTRegimen"],
                 [literal(`CASE WHEN Pregnant = 'Yes' THEN 'Sim' WHEN Pregnant = 'No' THEN 'Não' ELSE Pregnant END`), "Pregnant"],
                 [literal(`CASE WHEN BreastFeeding = 'Yes' THEN 'Sim' WHEN BreastFeeding = 'No' THEN 'Não' ELSE BreastFeeding END`), "Breastfeeding"],
                 [literal(`CASE WHEN ReasonForTest IN ('Routine') THEN 'Rotina' WHEN ReasonForTest IN ('Suspected treatment failure') THEN 'Suspeita de falha terapêutica' WHEN ReasonForTest IN ('Reason Not Specified') THEN 'Não preenchido' WHEN ReasonForTest IN ('Repetição após AMA') THEN 'Repetir após amamentação' ELSE ReasonForTest END`), "ReasonForTest"],	
