@@ -1,23 +1,13 @@
 [
   {
     "year": 2020,
-    "month": 7,
-    "month_name": "July",
-    "total": 45943,
-    "male_suppressed": 10794,
-    "female_suppressed": 27874,
-    "male_not_suppressed": 2048,
-    "female_not_suppressed": 4255
-  },
-  {
-    "year": 2020,
     "month": 8,
     "month_name": "August",
-    "total": 89668,
-    "male_suppressed": 20546,
-    "female_suppressed": 56050,
-    "male_not_suppressed": 3522,
-    "female_not_suppressed": 7898
+    "total": 88996,
+    "male_suppressed": 20416,
+    "female_suppressed": 55615,
+    "male_not_suppressed": 3499,
+    "female_not_suppressed": 7823
   },
   {
     "year": 2020,
@@ -93,9 +83,9 @@
     "year": 2021,
     "month": 4,
     "month_name": "April",
-    "total": 94061,
+    "total": 94058,
     "male_suppressed": 22804,
-    "female_suppressed": 56823,
+    "female_suppressed": 56820,
     "male_not_suppressed": 3743,
     "female_not_suppressed": 7754
   },
@@ -103,8 +93,8 @@
     "year": 2021,
     "month": 5,
     "month_name": "May",
-    "total": 97804,
-    "male_suppressed": 23520,
+    "total": 97803,
+    "male_suppressed": 23519,
     "female_suppressed": 59189,
     "male_not_suppressed": 3792,
     "female_not_suppressed": 7907
@@ -113,20 +103,30 @@
     "year": 2021,
     "month": 6,
     "month_name": "June",
-    "total": 115077,
-    "male_suppressed": 27287,
-    "female_suppressed": 69714,
-    "male_not_suppressed": 4494,
-    "female_not_suppressed": 9837
+    "total": 115516,
+    "male_suppressed": 27420,
+    "female_suppressed": 70003,
+    "male_not_suppressed": 4501,
+    "female_not_suppressed": 9858
   },
   {
     "year": 2021,
     "month": 7,
     "month_name": "July",
-    "total": 26342,
-    "male_suppressed": 5978,
-    "female_suppressed": 15391,
-    "male_not_suppressed": 1123,
-    "female_not_suppressed": 2600
+    "total": 100408,
+    "male_suppressed": 24894,
+    "female_suppressed": 60660,
+    "male_not_suppressed": 3823,
+    "female_not_suppressed": 8130
+  },
+  {
+    "year": 2021,
+    "month": 8,
+    "month_name": "August",
+    "total": 4293,
+    "male_suppressed": 1003,
+    "female_suppressed": 2694,
+    "male_not_suppressed": 167,
+    "female_not_suppressed": 341
   }
 ]

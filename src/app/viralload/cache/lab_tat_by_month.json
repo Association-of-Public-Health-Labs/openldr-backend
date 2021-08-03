@@ -1,15 +1,6 @@
 [
   {
     "year": 2020,
-    "month": 7,
-    "month_name": "July",
-    "collection_reception": 6,
-    "reception_registration": 0,
-    "registration_analysis": 5,
-    "analysis_validation": 0
-  },
-  {
-    "year": 2020,
     "month": 8,
     "month_name": "August",
     "collection_reception": 6,
@@ -111,9 +102,18 @@
     "year": 2021,
     "month": 7,
     "month_name": "July",
-    "collection_reception": 9,
+    "collection_reception": 8,
     "reception_registration": 1,
-    "registration_analysis": 6,
+    "registration_analysis": 5,
+    "analysis_validation": 0
+  },
+  {
+    "year": 2021,
+    "month": 8,
+    "month_name": "August",
+    "collection_reception": 8,
+    "reception_registration": 1,
+    "registration_analysis": 9,
     "analysis_validation": 0
   }
 ]

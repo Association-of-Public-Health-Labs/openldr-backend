@@ -120,8 +120,56 @@ module.exports = {
     return res.json(report)
   },
 
+  async getDailyPendingResults(req, res) {
+    const {type, facility} = req.query;
+    var query = "";
+
+    if(type == "province" && facility){
+      query = ` AND RequestingProvinceName = '${facility}'`;
+    }
+    else if(type == "clinic" && facility){
+      query = ` AND RequestingFacilityName = '${facility}'`;
+    }
+
+    const report = await covid19.query(`
+      SELECT 
+        RequestID
+        ,SURNAME
+        ,FIRSTNAME
+        ,ISNULL(AgeInYears, AgeInYears) AgeInYears
+        ,HL7SexCode
+        ,ISNULL(RequestingProvinceName, RequestingProvinceName) RequestingProvinceName
+        ,ISNULL(RequestingDistrictName, RequestingDistrictName) RequestingDistrictName
+        ,ISNULL(ISNULL(RequestingFacilityName, RequestingFacilityName), LOCATION) RequestingFacilityName
+        ,ISNULL(Telephone, TELHOME)
+        ,ISNULL(SpecimenDatetime, SpecimenDatetime) SpecimenDatetime
+        ,RegisteredDatetime
+        ,ReasonForTest
+        ,lab.LabName
+      FROM Covid19.dbo.Covid19
+      LEFT JOIN OpenLDRDict.dbo.Laboratories AS lab ON lab.LabCode = SUBSTRING(RequestID,7,3) 
+      WHERE AnalysisDateTime IS NULL AND (LIMSRejectionCode = '' OR LIMSRejectionCode IS NULL) AND RequestID NOT LIKE '%PBU%'
+      AND DATEDIFF(DAY,RegisteredDateTime, GETDATE()) < 30 ${query}
+      ORDER BY ISNULL(RequestingProvinceName, RequestingProvinceName) 
+        ,ISNULL(RequestingDistrictName, RequestingDistrictName) 
+        ,ISNULL(ISNULL(RequestingFacilityName, RequestingFacilityName), LOCATION) 
+    `);
+
+    return res.json(report)
+  },
+
   async getDailyResults(req, res) {
     const {start_date, end_date} = req.params;
+    const {type, facility} = req.query;
+
+    var query = "";
+
+    if(type == "province" && facility){
+      query = ` AND RequestingProvinceName = '${facility}'`;
+    }
+    else if(type == "clinic" && facility){
+      query = ` AND RequestingFacilityName = '${facility}'`;
+    }
 
     const report = await Covid19.findAll({
       attributes: [
@@ -148,8 +196,9 @@ module.exports = {
         [col("ReasonForTest"), "ReasonForTest"],
         [col("ResultLIMSPanelCode"), "ResultLIMSPanelCode"],
         [col("TestingFacilityName"), "TestingFacilityName"],
+        [col("SMS_STATUS"), "SMS_STATUS"]
       ],
-      where: literal(`CAST(AuthorisedDateTime AS date) >= '${start_date}' AND CAST(AuthorisedDateTime AS date) <= '${end_date}' AND SUBSTRING(RequestID,7,3) = TestingFacilityCode`),
+      where: literal(`CAST(AuthorisedDateTime AS date) >= '${start_date}' AND CAST(AuthorisedDateTime AS date) <= '${end_date}' AND SUBSTRING(RequestID,7,3) = TestingFacilityCode ${query}`),
       order: [
         literal("ISNULL(RequestingProvinceName, RequestingProvinceName)"),
         literal("ISNULL(RequestingDistrictName, RequestingDistrictName)"),
@@ -162,31 +211,4 @@ module.exports = {
     return res.json(report)
   },
 
-  async getDailyPendingResults(req, res) {
-    const report = await covid19.query(`
-      SELECT 
-        RequestID
-        ,SURNAME
-        ,FIRSTNAME
-        ,ISNULL(AgeInYears, AgeInYears) AgeInYears
-        ,HL7SexCode
-        ,ISNULL(RequestingProvinceName, RequestingProvinceName) RequestingProvinceName
-        ,ISNULL(RequestingDistrictName, RequestingDistrictName) RequestingDistrictName
-        ,ISNULL(ISNULL(RequestingFacilityName, RequestingFacilityName), LOCATION) RequestingFacilityName
-        ,ISNULL(Telephone, TELHOME)
-        ,ISNULL(SpecimenDatetime, SpecimenDatetime) SpecimenDatetime
-        ,RegisteredDatetime
-        ,ReasonForTest
-        ,lab.LabName
-      FROM Covid19.dbo.Covid19
-      LEFT JOIN OpenLDRDict.dbo.Laboratories AS lab ON lab.LabCode = SUBSTRING(RequestID,7,3) 
-      WHERE AnalysisDateTime IS NULL AND (LIMSRejectionCode = '' OR LIMSRejectionCode IS NULL) AND RequestID NOT LIKE '%PBU%'
-      AND DATEDIFF(DAY,RegisteredDateTime, GETDATE()) < 30
-      ORDER BY ISNULL(RequestingProvinceName, RequestingProvinceName) 
-        ,ISNULL(RequestingDistrictName, RequestingDistrictName) 
-        ,ISNULL(ISNULL(RequestingFacilityName, RequestingFacilityName), LOCATION) 
-    `);
-
-    return res.json(report)
-  }
 }
