@@ -1,0 +1,1819 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Covid-19",
+    "description": "API do Open Laboratory Data Repository para dados de Covid-19",
+    "version": "1.0.0",
+    "contact": {
+      "name": "Vagner Pene",
+      "email": "vagner.ermelindo@moz.aphl.org"
+    }
+  },
+  "servers": [
+    {
+      "url": "http://localhost:4444/",
+      "description": "Local Server"
+    },
+    {
+      "url": "https://openldr.herokuapp.com/",
+      "description": "Development Server"
+    },
+    {
+      "url": "https://laboratorio.ins.gov.mz:4444/",
+      "description": "Production Server"
+    }
+  ],
+  "paths": {
+    "/lab_samples_by_test_reason": {
+      "get": {
+        "summary": "Número total de amostras testadas",
+        "description": "Número total de amostras agrupadas por Motivo de Solicição de Teste de Carga Viral",
+        "parameters": [
+          {
+            "name": "codes",
+            "in": "query",
+            "description": "Array de codigos dos Laboratorios. Exemplo ['PCA','PCD']",
+            "required": false,
+            "schema": {
+              "$ref": "#/components/schemas/LabCodes"
+            }
+          },
+          {
+            "name": "dates",
+            "in": "query",
+            "description": "Array com o intervalo de datas. Formato da data: YYYY-MM-DD. Exemplo: ['2019-05-19','2021-05-20']",
+            "required": false,
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/IntervalDate",
+                "example": "2019-05-19"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array"
+                }
+              }
+            }
+          }
+        },
+        "tags": ["Laboratorio"]
+      }
+    },
+    "/lab_samples_tested_by_month": {
+      "get": {
+        "summary": "Número de Amostras testadas de Carga Viral por mês",
+        "description": "Número de Amostras testadas de Carga Viral por Laboratorio por mês",
+        "parameters": [
+          {
+            "name": "codes",
+            "in": "query",
+            "description": "Array de codigos dos Laboratorios. Exemplo ['PCA','PCD']",
+            "required": false,
+            "schema": {
+              "$ref": "#/components/schemas/LabCodes"
+            }
+          },
+          {
+            "name": "dates",
+            "in": "query",
+            "description": "Array com o intervalo de datas. Formato da data: YYYY-MM-DD. Exemplo: ['2019-05-19','2021-05-20']",
+            "required": false,
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/IntervalDate",
+                "example": "2019-05-19"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array"
+                }
+              }
+            }
+          }
+        },
+        "tags": ["Laboratorio"]
+      }
+    },
+    "/lab_samples_tested_by_lab": {
+      "get": {
+        "summary": "Número de Amostras testadas de Carga Viral por Laboratorio",
+        "description": "Número de Amostras testadas de Carga Viral por Laboratorio",
+        "parameters": [
+          {
+            "name": "codes",
+            "in": "query",
+            "description": "Array de codigos dos Laboratorios. Exemplo ['PCA','PCD']",
+            "required": false,
+            "schema": {
+              "$ref": "#/components/schemas/LabCodes"
+            }
+          },
+          {
+            "name": "dates",
+            "in": "query",
+            "description": "Array com o intervalo de datas. Formato da data: YYYY-MM-DD. Exemplo: ['2019-05-19','2021-05-20']",
+            "required": false,
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/IntervalDate",
+                "example": "2019-05-19"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array"
+                }
+              }
+            }
+          }
+        },
+        "tags": ["Laboratorio"]
+      }
+    },
+    "/lab_tat_by_month": {
+      "get": {
+        "summary": "Tempo de Resposta por mês",
+        "description": "Tempo de Resposta por mês",
+        "parameters": [
+          {
+            "name": "codes",
+            "in": "query",
+            "description": "Array de codigos dos Laboratorios. Exemplo ['PCA','PCD']",
+            "required": false,
+            "schema": {
+              "$ref": "#/components/schemas/LabCodes"
+            }
+          },
+          {
+            "name": "dates",
+            "in": "query",
+            "description": "Array com o intervalo de datas. Formato da data: YYYY-MM-DD. Exemplo: ['2019-05-19','2021-05-20']",
+            "required": false,
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/IntervalDate",
+                "example": "2019-05-19"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array"
+                }
+              }
+            }
+          }
+        },
+        "tags": ["Laboratorio"]
+      }
+    },
+    "/lab_tat": {
+      "get": {
+        "summary": "Média de Tempo de Resposta (em dias) por Laboratório",
+        "description": "Média de Tempo de Resposta (em dias) por Laboratório",
+        "parameters": [
+          {
+            "name": "codes",
+            "in": "query",
+            "description": "Array de codigos dos Laboratorios. Exemplo ['PCA','PCD']",
+            "required": false,
+            "schema": {
+              "$ref": "#/components/schemas/LabCodes"
+            }
+          },
+          {
+            "name": "dates",
+            "in": "query",
+            "description": "Array com o intervalo de datas. Formato da data: YYYY-MM-DD. Exemplo: ['2019-05-19','2021-05-20']",
+            "required": false,
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/IntervalDate",
+                "example": "2019-05-19"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array"
+                }
+              }
+            }
+          }
+        },
+        "tags": ["Laboratorio"]
+      }
+    },
+    "/lab_samples_tested_by_gender": {
+      "get": {
+        "summary": "Número de Amostras testadas por genero (desagregadas por mes)",
+        "description": "Número de Amostras testadas por genero (desagregadas por mes)",
+        "parameters": [
+          {
+            "name": "codes",
+            "in": "query",
+            "description": "Array de codigos dos Laboratorios. Exemplo ['PCA','PCD']",
+            "required": false,
+            "schema": {
+              "$ref": "#/components/schemas/LabCodes"
+            }
+          },
+          {
+            "name": "dates",
+            "in": "query",
+            "description": "Array com o intervalo de datas. Formato da data: YYYY-MM-DD. Exemplo: ['2019-05-19','2021-05-20']",
+            "required": false,
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/IntervalDate",
+                "example": "2019-05-19"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array"
+                }
+              }
+            }
+          }
+        },
+        "tags": ["Laboratorio"]
+      }
+    },
+    "/lab_samples_tested_by_gender_and_labs": {
+      "get": {
+        "summary": "Número de Amostras testadas por genero (desagregadas por Laboratorio)",
+        "description": "Número de Amostras testadas por genero (desagregadas por Laboratorio)",
+        "parameters": [
+          {
+            "name": "codes",
+            "in": "query",
+            "description": "Array de codigos dos Laboratorios. Exemplo ['PCA','PCD']",
+            "required": false,
+            "schema": {
+              "$ref": "#/components/schemas/LabCodes"
+            }
+          },
+          {
+            "name": "dates",
+            "in": "query",
+            "description": "Array com o intervalo de datas. Formato da data: YYYY-MM-DD. Exemplo: ['2019-05-19','2021-05-20']",
+            "required": false,
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/IntervalDate",
+                "example": "2019-05-19"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array"
+                }
+              }
+            }
+          }
+        },
+        "tags": ["Laboratorio"]
+      }
+    },
+    "/lab_samples_tested_by_age": {
+      "get": {
+        "summary": "Número de Amostras por Idade (desagregadas por mes)",
+        "description": "Número de Amostras por Idade (desagregadas por mes)",
+        "parameters": [
+          {
+            "name": "codes",
+            "in": "query",
+            "description": "Array de codigos dos Laboratorios. Exemplo ['PCA','PCD']",
+            "required": false,
+            "schema": {
+              "$ref": "#/components/schemas/LabCodes"
+            }
+          },
+          {
+            "name": "dates",
+            "in": "query",
+            "description": "Array com o intervalo de datas. Formato da data: YYYY-MM-DD. Exemplo: ['2019-05-19','2021-05-20']",
+            "required": false,
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/IntervalDate",
+                "example": "2019-05-19"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array"
+                }
+              }
+            }
+          }
+        },
+        "tags": ["Laboratorio"]
+      }
+    },
+    "/lab_samples_tested_pregnant": {
+      "get": {
+        "summary": "Número de Amostras testadas de pacientes gravidas (por mes)",
+        "description": "Número de Amostras testadas de pacientes gravidas (por mes)",
+        "parameters": [
+          {
+            "name": "codes",
+            "in": "query",
+            "description": "Array de codigos dos Laboratorios. Exemplo ['PCA','PCD']",
+            "required": false,
+            "schema": {
+              "$ref": "#/components/schemas/LabCodes"
+            }
+          },
+          {
+            "name": "dates",
+            "in": "query",
+            "description": "Array com o intervalo de datas. Formato da data: YYYY-MM-DD. Exemplo: ['2019-05-19','2021-05-20']",
+            "required": false,
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/IntervalDate",
+                "example": "2019-05-19"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array"
+                }
+              }
+            }
+          }
+        },
+        "tags": ["Laboratorio"]
+      }
+    },
+    "/lab_samples_tested_breastfeeding": {
+      "get": {
+        "summary": "Número de Amostras Testadas de pacientes lactantes (por mes)",
+        "description": "Número de Amostras Testadas de pacientes lactantes (por mes)",
+        "parameters": [
+          {
+            "name": "codes",
+            "in": "query",
+            "description": "Array de codigos dos Laboratorios. Exemplo ['PCA','PCD']",
+            "required": false,
+            "schema": {
+              "$ref": "#/components/schemas/LabCodes"
+            }
+          },
+          {
+            "name": "dates",
+            "in": "query",
+            "description": "Array com o intervalo de datas. Formato da data: YYYY-MM-DD. Exemplo: ['2019-05-19','2021-05-20']",
+            "required": false,
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/IntervalDate",
+                "example": "2019-05-19"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array"
+                }
+              }
+            }
+          }
+        },
+        "tags": ["Laboratorio"]
+      }
+    },
+    "/lab_samples_rejected": {
+      "get": {
+        "summary": "Número de amostras rejeitadas por Laboratorio",
+        "description": "Número de amostras rejeitadas por Laboratorio",
+        "parameters": [
+          {
+            "name": "codes",
+            "in": "query",
+            "description": "Array de codigos dos Laboratorios. Exemplo ['PCA','PCD']",
+            "required": false,
+            "schema": {
+              "$ref": "#/components/schemas/LabCodes"
+            }
+          },
+          {
+            "name": "dates",
+            "in": "query",
+            "description": "Array com o intervalo de datas. Formato da data: YYYY-MM-DD. Exemplo: ['2019-05-19','2021-05-20']",
+            "required": false,
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/IntervalDate",
+                "example": "2019-05-19"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array"
+                }
+              }
+            }
+          }
+        },
+        "tags": ["Laboratorio"]
+      }
+    },
+    "/lab_samples_rejected_by_month": {
+      "get": {
+        "summary": "Número de amostras rejeitadas por mes",
+        "description": "Número de amostras rejeitadas por mes",
+        "parameters": [
+          {
+            "name": "codes",
+            "in": "query",
+            "description": "Array de codigos dos Laboratorios. Exemplo ['PCA','PCD']",
+            "required": false,
+            "schema": {
+              "$ref": "#/components/schemas/LabCodes"
+            }
+          },
+          {
+            "name": "dates",
+            "in": "query",
+            "description": "Array com o intervalo de datas. Formato da data: YYYY-MM-DD. Exemplo: ['2019-05-19','2021-05-20']",
+            "required": false,
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/IntervalDate",
+                "example": "2019-05-19"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array"
+                }
+              }
+            }
+          }
+        },
+        "tags": ["Laboratorio"]
+      }
+    },
+
+
+    "/clinic_samples_by_test_reason": {
+      "get": {
+        "summary": "Número de amostras testadas por motivo de solicitacao de teste(por Provincia, Distrito ou US)",
+        "description": "Número de amostras testadas por motivo de solicitacao de teste(por Provincia, Distrito ou US)",
+        "parameters": [
+          {
+            "name": "codes",
+            "in": "query",
+            "description": "Array de nomes dos sites (Provincia, Distrito ou US). Exemplo ['PCA','PCD']",
+            "required": false,
+            "schema": {
+              "$ref": "#/components/schemas/FacilityNames"
+            }
+          },
+          {
+            "name": "type",
+            "in": "query",
+            "description": "Tipo de site. Opções: 'province','district','us'",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": ["province", "district", "us"]
+            }
+          },
+          {
+            "name": "dates",
+            "in": "query",
+            "description": "Array com o intervalo de datas. Formato da data: YYYY-MM-DD. Exemplo: ['2019-05-19','2021-05-20']",
+            "required": false,
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/IntervalDate",
+                "example": "2019-05-19"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array"
+                }
+              }
+            }
+          }
+        },
+        "tags": ["Facility"]
+      }
+    },
+    "/clinic_samples_tested_by_month": {
+      "get": {
+        "summary": "Número de amostras testadas por mes",
+        "description": "Número de amostras testadas por mes",
+        "parameters": [
+          {
+            "name": "codes",
+            "in": "query",
+            "description": "Array de nomes dos sites (Provincia, Distrito ou US). Exemplo ['PCA','PCD']",
+            "required": false,
+            "schema": {
+              "$ref": "#/components/schemas/FacilityNames"
+            }
+          },
+          {
+            "name": "type",
+            "in": "query",
+            "description": "Tipo de site. Opções: 'province','district','us'",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": ["province", "district", "us"]
+            }
+          },
+          {
+            "name": "dates",
+            "in": "query",
+            "description": "Array com o intervalo de datas. Formato da data: YYYY-MM-DD. Exemplo: ['2019-05-19','2021-05-20']",
+            "required": false,
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/IntervalDate",
+                "example": "2019-05-19"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array"
+                }
+              }
+            }
+          }
+        },
+        "tags": ["Facility"]
+      }
+    },
+    "/clinic_samples_tested_by_facility": {
+      "get": {
+        "summary": "Número de amostras testadas por provincia/distrito/us",
+        "description": "Número de amostras testadas por provincia/distrito/us",
+        "parameters": [
+          {
+            "name": "codes",
+            "in": "query",
+            "description": "Array de nomes dos sites (Provincia, Distrito ou US). Exemplo ['PCA','PCD']",
+            "required": false,
+            "schema": {
+              "$ref": "#/components/schemas/FacilityNames"
+            }
+          },
+          {
+            "name": "type",
+            "in": "query",
+            "description": "Tipo de site. Opções: 'province','district','us'",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": ["province", "district", "us"]
+            }
+          },
+          {
+            "name": "dates",
+            "in": "query",
+            "description": "Array com o intervalo de datas. Formato da data: YYYY-MM-DD. Exemplo: ['2019-05-19','2021-05-20']",
+            "required": false,
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/IntervalDate",
+                "example": "2019-05-19"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array"
+                }
+              }
+            }
+          }
+        },
+        "tags": ["Facility"]
+      }
+    },
+    "/clinic_samples_tested_by_gender": {
+      "get": {
+        "summary": "Número de amostras testadas por genero",
+        "description": "Número de amostras testadas por genero",
+        "parameters": [
+          {
+            "name": "codes",
+            "in": "query",
+            "description": "Array de nomes dos sites (Provincia, Distrito ou US). Exemplo ['PCA','PCD']",
+            "required": false,
+            "schema": {
+              "$ref": "#/components/schemas/FacilityNames"
+            }
+          },
+          {
+            "name": "type",
+            "in": "query",
+            "description": "Tipo de site. Opções: 'province','district','us'",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": ["province", "district", "us"]
+            }
+          },
+          {
+            "name": "dates",
+            "in": "query",
+            "description": "Array com o intervalo de datas. Formato da data: YYYY-MM-DD. Exemplo: ['2019-05-19','2021-05-20']",
+            "required": false,
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/IntervalDate",
+                "example": "2019-05-19"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array"
+                }
+              }
+            }
+          }
+        },
+        "tags": ["Facility"]
+      }
+    },
+    "/clinic_samples_tested_by_gender_and_facility": {
+      "get": {
+        "summary": "Número de amostras testadas por genero (desagregado por provincia/distrito/us)",
+        "description": "Número de amostras testadas por genero (desagregado por provincia/distrito/us)",
+        "parameters": [
+          {
+            "name": "codes",
+            "in": "query",
+            "description": "Array de nomes dos sites (Provincia, Distrito ou US). Exemplo ['PCA','PCD']",
+            "required": false,
+            "schema": {
+              "$ref": "#/components/schemas/FacilityNames"
+            }
+          },
+          {
+            "name": "type",
+            "in": "query",
+            "description": "Tipo de site. Opções: 'province','district','us'",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": ["province", "district", "us"]
+            }
+          },
+          {
+            "name": "dates",
+            "in": "query",
+            "description": "Array com o intervalo de datas. Formato da data: YYYY-MM-DD. Exemplo: ['2019-05-19','2021-05-20']",
+            "required": false,
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/IntervalDate",
+                "example": "2019-05-19"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array"
+                }
+              }
+            }
+          }
+        },
+        "tags": ["Facility"]
+      }
+    },
+    "/clinic_tat": {
+      "get": {
+        "summary": "Media do Tempo de Resposta (em dias) por mes",
+        "description": "Media do Tempo de Resposta (em dias) por mes",
+        "parameters": [
+          {
+            "name": "codes",
+            "in": "query",
+            "description": "Array de nomes dos sites (Provincia, Distrito ou US). Exemplo ['PCA','PCD']",
+            "required": false,
+            "schema": {
+              "$ref": "#/components/schemas/FacilityNames"
+            }
+          },
+          {
+            "name": "type",
+            "in": "query",
+            "description": "Tipo de site. Opções: 'province','district','us'",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": ["province", "district", "us"]
+            }
+          },
+          {
+            "name": "dates",
+            "in": "query",
+            "description": "Array com o intervalo de datas. Formato da data: YYYY-MM-DD. Exemplo: ['2019-05-19','2021-05-20']",
+            "required": false,
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/IntervalDate",
+                "example": "2019-05-19"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array"
+                }
+              }
+            }
+          }
+        },
+        "tags": ["Facility"]
+      }
+    },
+    "/clinic_tat_by_facility": {
+      "get": {
+        "summary": "Media do Tempo de Resposta (em dias) por provincia/distrito/us",
+        "description": "Media do Tempo de Resposta (em dias) por provincia/distrito/us",
+        "parameters": [
+          {
+            "name": "codes",
+            "in": "query",
+            "description": "Array de nomes dos sites (Provincia, Distrito ou US). Exemplo ['PCA','PCD']",
+            "required": false,
+            "schema": {
+              "$ref": "#/components/schemas/FacilityNames"
+            }
+          },
+          {
+            "name": "type",
+            "in": "query",
+            "description": "Tipo de site. Opções: 'province','district','us'",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": ["province", "district", "us"]
+            }
+          },
+          {
+            "name": "dates",
+            "in": "query",
+            "description": "Array com o intervalo de datas. Formato da data: YYYY-MM-DD. Exemplo: ['2019-05-19','2021-05-20']",
+            "required": false,
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/IntervalDate",
+                "example": "2019-05-19"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array"
+                }
+              }
+            }
+          }
+        },
+        "tags": ["Facility"]
+      }
+    },
+    "/clinic_tat_by_age": {
+      "get": {
+        "summary": "Número de Amostras testadas por idade (por mes)",
+        "description": "Número de Amostras testadas por idade (por mes)",
+        "parameters": [
+          {
+            "name": "codes",
+            "in": "query",
+            "description": "Array de nomes dos sites (Provincia, Distrito ou US). Exemplo ['PCA','PCD']",
+            "required": false,
+            "schema": {
+              "$ref": "#/components/schemas/FacilityNames"
+            }
+          },
+          {
+            "name": "type",
+            "in": "query",
+            "description": "Tipo de site. Opções: 'province','district','us'",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": ["province", "district", "us"]
+            }
+          },
+          {
+            "name": "dates",
+            "in": "query",
+            "description": "Array com o intervalo de datas. Formato da data: YYYY-MM-DD. Exemplo: ['2019-05-19','2021-05-20']",
+            "required": false,
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/IntervalDate",
+                "example": "2019-05-19"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array"
+                }
+              }
+            }
+          }
+        },
+        "tags": ["Facility"]
+      }
+    },
+    "/clinic_samples_tested_by_age_and_facility": {
+      "get": {
+        "summary": "Número de Amostras testadas por idade (por provincia/distrito/us)",
+        "description": "Número de Amostras testadas por idade (por provincia/distrito/us)",
+        "parameters": [
+          {
+            "name": "codes",
+            "in": "query",
+            "description": "Array de nomes dos sites (Provincia, Distrito ou US). Exemplo ['PCA','PCD']",
+            "required": false,
+            "schema": {
+              "$ref": "#/components/schemas/FacilityNames"
+            }
+          },
+          {
+            "name": "type",
+            "in": "query",
+            "description": "Tipo de site. Opções: 'province','district','us'",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": ["province", "district", "us"]
+            }
+          },
+          {
+            "name": "dates",
+            "in": "query",
+            "description": "Array com o intervalo de datas. Formato da data: YYYY-MM-DD. Exemplo: ['2019-05-19','2021-05-20']",
+            "required": false,
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/IntervalDate",
+                "example": "2019-05-19"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array"
+                }
+              }
+            }
+          }
+        },
+        "tags": ["Facility"]
+      }
+    },
+    "/clinic_tests_by_pregnancy": {
+      "get": {
+        "summary": "Número de Amostras testadas de pacientes gravidas",
+        "description": "Número de Amostras testadas de pacientes gravidas",
+        "parameters": [
+          {
+            "name": "codes",
+            "in": "query",
+            "description": "Array de nomes dos sites (Provincia, Distrito ou US). Exemplo ['PCA','PCD']",
+            "required": false,
+            "schema": {
+              "$ref": "#/components/schemas/FacilityNames"
+            }
+          },
+          {
+            "name": "type",
+            "in": "query",
+            "description": "Tipo de site. Opções: 'province','district','us'",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": ["province", "district", "us"]
+            }
+          },
+          {
+            "name": "dates",
+            "in": "query",
+            "description": "Array com o intervalo de datas. Formato da data: YYYY-MM-DD. Exemplo: ['2019-05-19','2021-05-20']",
+            "required": false,
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/IntervalDate",
+                "example": "2019-05-19"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array"
+                }
+              }
+            }
+          }
+        },
+        "tags": ["Facility"]
+      }
+    },
+    "/clinic_tests_by_breastfeeding": {
+      "get": {
+        "summary": "Número de Amostras testadas de pacientes lactantes",
+        "description": "Número de Amostras testadas de pacientes lactantes",
+        "parameters": [
+          {
+            "name": "codes",
+            "in": "query",
+            "description": "Array de nomes dos sites (Provincia, Distrito ou US). Exemplo ['PCA','PCD']",
+            "required": false,
+            "schema": {
+              "$ref": "#/components/schemas/FacilityNames"
+            }
+          },
+          {
+            "name": "type",
+            "in": "query",
+            "description": "Tipo de site. Opções: 'province','district','us'",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": ["province", "district", "us"]
+            }
+          },
+          {
+            "name": "dates",
+            "in": "query",
+            "description": "Array com o intervalo de datas. Formato da data: YYYY-MM-DD. Exemplo: ['2019-05-19','2021-05-20']",
+            "required": false,
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/IntervalDate",
+                "example": "2019-05-19"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array"
+                }
+              }
+            }
+          }
+        },
+        "tags": ["Facility"]
+      }
+    },
+    "/clinic_registered_samples_by_facility": {
+      "get": {
+        "summary": "Número de amostras registadas por provincia/distrito/us",
+        "description": "Número de amostras registadas por provincia/distrito/us",
+        "parameters": [
+          {
+            "name": "codes",
+            "in": "query",
+            "description": "Array de nomes dos sites (Provincia, Distrito ou US). Exemplo ['PCA','PCD']",
+            "required": false,
+            "schema": {
+              "$ref": "#/components/schemas/FacilityNames"
+            }
+          },
+          {
+            "name": "type",
+            "in": "query",
+            "description": "Tipo de site. Opções: 'province','district','us'",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": ["province", "district", "us"]
+            }
+          },
+          {
+            "name": "dates",
+            "in": "query",
+            "description": "Array com o intervalo de datas. Formato da data: YYYY-MM-DD. Exemplo: ['2019-05-19','2021-05-20']",
+            "required": false,
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/IntervalDate",
+                "example": "2019-05-19"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array"
+                }
+              }
+            }
+          }
+        },
+        "tags": ["Facility"]
+      }
+    },
+    "/clinic_samples_rejected_by_month": {
+      "get": {
+        "summary": "Número de amostras rejeitadas por mes ",
+        "description": "Número de amostras rejeitadas por mes ",
+        "parameters": [
+          {
+            "name": "codes",
+            "in": "query",
+            "description": "Array de nomes dos sites (Provincia, Distrito ou US). Exemplo ['PCA','PCD']",
+            "required": false,
+            "schema": {
+              "$ref": "#/components/schemas/FacilityNames"
+            }
+          },
+          {
+            "name": "type",
+            "in": "query",
+            "description": "Tipo de site. Opções: 'province','district','us'",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": ["province", "district", "us"]
+            }
+          },
+          {
+            "name": "dates",
+            "in": "query",
+            "description": "Array com o intervalo de datas. Formato da data: YYYY-MM-DD. Exemplo: ['2019-05-19','2021-05-20']",
+            "required": false,
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/IntervalDate",
+                "example": "2019-05-19"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array"
+                }
+              }
+            }
+          }
+        },
+        "tags": ["Facility"]
+      }
+    },
+    "/clinic_samples_rejected_by_facility": {
+      "get": {
+        "summary": "Número amostras rejeitadas por provincia/distrito/us",
+        "description": "Número amostras rejeitadas por provincia/distrito/us",
+        "parameters": [
+          {
+            "name": "codes",
+            "in": "query",
+            "description": "Array de nomes dos sites (Provincia, Distrito ou US). Exemplo ['PCA','PCD']",
+            "required": false,
+            "schema": {
+              "$ref": "#/components/schemas/FacilityNames"
+            }
+          },
+          {
+            "name": "type",
+            "in": "query",
+            "description": "Tipo de site. Opções: 'province','district','us'",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": ["province", "district", "us"]
+            }
+          },
+          {
+            "name": "dates",
+            "in": "query",
+            "description": "Array com o intervalo de datas. Formato da data: YYYY-MM-DD. Exemplo: ['2019-05-19','2021-05-20']",
+            "required": false,
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/IntervalDate",
+                "example": "2019-05-19"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array"
+                }
+              }
+            }
+          }
+        },
+        "tags": ["Facility"]
+      }
+    },
+
+
+    "/dash_number_of_samples": {
+      "get": {
+        "summary": "Número de amostras registras e testadas por mes",
+        "description": "Número de amostras registras e testadas por mes",
+        "parameters": [
+          {
+            "name": "dates",
+            "in": "query",
+            "description": "Array com o intervalo de datas. Formato da data: YYYY-MM-DD. Exemplo: ['2019-05-19','2021-05-20']",
+            "required": false,
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/IntervalDate",
+                "example": "2019-05-19"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array"
+                }
+              }
+            }
+          }
+        },
+        "tags": ["Resumo"]
+      }
+    },
+    "/dash_viral_suppression": {
+      "get": {
+        "summary": "(%) Taxa de Supressao viral de Carga Viral por mes (a nivel Nacional)",
+        "description": "(%) Taxa de Supressao viral de Carga Viral por mes (a nivel Nacional)",
+        "parameters": [
+          {
+            "name": "dates",
+            "in": "query",
+            "description": "Array com o intervalo de datas. Formato da data: YYYY-MM-DD. Exemplo: ['2019-05-19','2021-05-20']",
+            "required": false,
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/IntervalDate",
+                "example": "2019-05-19"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array"
+                }
+              }
+            }
+          }
+        },
+        "tags": ["Resumo"]
+      }
+    },
+    "/dash_tat": {
+      "get": {
+        "summary": "Media de Tempo de Resposta Laboratorial por mes (a nivel nacional)",
+        "description": "Media de Tempo de Resposta Laboratorial por mes (a nivel nacional)",
+        "parameters": [
+          {
+            "name": "dates",
+            "in": "query",
+            "description": "Array com o intervalo de datas. Formato da data: YYYY-MM-DD. Exemplo: ['2019-05-19','2021-05-20']",
+            "required": false,
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/IntervalDate",
+                "example": "2019-05-19"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array"
+                }
+              }
+            }
+          }
+        },
+        "tags": ["Resumo"]
+      }
+    },
+    "/dash_map": {
+      "get": {
+        "summary": "(%) Taxa de Supressao viral de Carga Viral por provincia",
+        "description": "(%) Taxa de Supressao viral de Carga Viral por provincia",
+        "parameters": [
+          {
+            "name": "dates",
+            "in": "query",
+            "description": "Array com o intervalo de datas. Formato da data: YYYY-MM-DD. Exemplo: ['2019-05-19','2021-05-20']",
+            "required": false,
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/IntervalDate",
+                "example": "2019-05-19"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array"
+                }
+              }
+            }
+          }
+        },
+        "tags": ["Resumo"]
+      }
+    },
+    "/dash_indicators": {
+      "get": {
+        "summary": "Relatorio com o resumo de indicadores chave de Carga Viral",
+        "description": "Relatorio com o resumo de indicadores chave de Carga Viral",
+        "parameters": [
+          {
+            "name": "dates",
+            "in": "query",
+            "description": "Array com o intervalo de datas. Formato da data: YYYY-MM-DD. Exemplo: ['2019-05-19','2021-05-20']",
+            "required": false,
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/IntervalDate",
+                "example": "2019-05-19"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array"
+                }
+              }
+            }
+          }
+        },
+        "tags": ["Resumo"]
+      }
+    },
+    "/dash_tat_vs_disalinks": {
+      "get": {
+        "summary": "Relação entre o número de Disalinks e o Tempo de Resposta Laboratorial",
+        "description": "Relação entre o número de Disalinks e o Tempo de Resposta Laboratorial",
+        "parameters": [
+          {
+            "name": "dates",
+            "in": "query",
+            "description": "Array com o intervalo de datas. Formato da data: YYYY-MM-DD. Exemplo: ['2019-05-19','2021-05-20']",
+            "required": false,
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/IntervalDate",
+                "example": "2019-05-19"
+              }
+            }
+          }
+        ],
+        "deprecated": true,
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array"
+                }
+              }
+            }
+          }
+        },
+        "tags": ["Resumo"]
+      }
+    },
+
+
+    "/vl/monthlyreports/age/{start_date}/{end_date}": {
+      "get": {
+        "summary": "Relação entre o número de Disalinks e o Tempo de Resposta Laboratorial",
+        "description": "Relação entre o número de Disalinks e o Tempo de Resposta Laboratorial",
+        "parameters": [
+          {
+            "name": "start_date",
+            "in": "path",
+            "description": "Data de inicio do intervalo. Formato da data: YYYY-MM-DD. Exemplo: '2019-05-19'",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "date",
+              "example": "2019-05-19"
+            }
+          },
+          {
+            "name": "end_date",
+            "in": "path",
+            "description": "Data de termino do intervalo. Formato da data: YYYY-MM-DD. Exemplo: '2019-05-19'",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "date",
+              "example": "2019-05-19"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array"
+                }
+              }
+            }
+          }
+        },
+        "tags": ["Relatorio Mensal"]
+      }
+    },
+    "/vl/monthlyreports/gender/{start_date}/{end_date}": {
+      "get": {
+        "summary": "Relatorio Mensal de Supressao Viral por genero",
+        "description": "Relatorio Mensal de Supressao Viral por genero",
+        "parameters": [
+          {
+            "name": "start_date",
+            "in": "path",
+            "description": "Data de inicio do intervalo. Formato da data: YYYY-MM-DD. Exemplo: '2019-05-19'",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "date",
+              "example": "2019-05-19"
+            }
+          },
+          {
+            "name": "end_date",
+            "in": "path",
+            "description": "Data de termino do intervalo. Formato da data: YYYY-MM-DD. Exemplo: '2019-05-19'",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "date",
+              "example": "2019-05-19"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array"
+                }
+              }
+            }
+          }
+        },
+        "tags": ["Relatorio Mensal"]
+      }
+    },
+    "/vl/monthlyreports/pregnant/{start_date}/{end_date}": {
+      "get": {
+        "summary": "Relatorio Mensal de Supressao Viral para Mulheres gravidas",
+        "description": "Relatorio Mensal de Supressao Viral para Mulheres gravidas",
+        "parameters": [
+          {
+            "name": "start_date",
+            "in": "path",
+            "description": "Data de inicio do intervalo. Formato da data: YYYY-MM-DD. Exemplo: '2019-05-19'",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "date",
+              "example": "2019-05-19"
+            }
+          },
+          {
+            "name": "end_date",
+            "in": "path",
+            "description": "Data de termino do intervalo. Formato da data: YYYY-MM-DD. Exemplo: '2019-05-19'",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "date",
+              "example": "2019-05-19"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array"
+                }
+              }
+            }
+          }
+        },
+        "tags": ["Relatorio Mensal"]
+      }
+    },
+    "/vl/monthlyreports/breastfeeding/{start_date}/{end_date}": {
+      "get": {
+        "summary": "Relatorio Mensal de Supressao Viral para Mulheres lactantes",
+        "description": "Relatorio Mensal de Supressao Viral para Mulheres lactantes",
+        "parameters": [
+          {
+            "name": "start_date",
+            "in": "path",
+            "description": "Data de inicio do intervalo. Formato da data: YYYY-MM-DD. Exemplo: '2019-05-19'",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "date",
+              "example": "2019-05-19"
+            }
+          },
+          {
+            "name": "end_date",
+            "in": "path",
+            "description": "Data de termino do intervalo. Formato da data: YYYY-MM-DD. Exemplo: '2019-05-19'",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "date",
+              "example": "2019-05-19"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array"
+                }
+              }
+            }
+          }
+        },
+        "tags": ["Relatorio Mensal"]
+      }
+    },
+    "/vl/monthlyreports/tat_by_facility/{start_date}/{end_date}": {
+      "get": {
+        "summary": "Relatorio Mensal de Tempo de Resposta Laboratorial (por provincia/distrito/us)",
+        "description": "Relatorio Mensal de Tempo de Resposta Laboratorial (por provincia/distrito/us)",
+        "parameters": [
+          {
+            "name": "start_date",
+            "in": "path",
+            "description": "Data de inicio do intervalo. Formato da data: YYYY-MM-DD. Exemplo: '2019-05-19'",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "date",
+              "example": "2019-05-19"
+            }
+          },
+          {
+            "name": "end_date",
+            "in": "path",
+            "description": "Data de termino do intervalo. Formato da data: YYYY-MM-DD. Exemplo: '2019-05-19'",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "date",
+              "example": "2019-05-19"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array"
+                }
+              }
+            }
+          }
+        },
+        "tags": ["Relatorio Mensal"]
+      }
+    },
+    "/vl/monthlyreports/tat_by_lab/{start_date}/{end_date}": {
+      "get": {
+        "summary": "Relatorio Mensal de Tempo de Resposta Laboratorial",
+        "description": "Relatorio Mensal de Tempo de Resposta Laboratorial",
+        "parameters": [
+          {
+            "name": "start_date",
+            "in": "path",
+            "description": "Data de inicio do intervalo. Formato da data: YYYY-MM-DD. Exemplo: '2019-05-19'",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "date",
+              "example": "2019-05-19"
+            }
+          },
+          {
+            "name": "end_date",
+            "in": "path",
+            "description": "Data de termino do intervalo. Formato da data: YYYY-MM-DD. Exemplo: '2019-05-19'",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "date",
+              "example": "2019-05-19"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array"
+                }
+              }
+            }
+          }
+        },
+        "tags": ["Relatorio Mensal"]
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "LabCodes": {
+        "type": "array",
+        "items": {
+          "type": "string",
+          "enum": [
+            "PCA",
+            "PCD",
+            "PCV",
+            "PCM",
+            "PDB",
+            "PDM",
+            "PEM",
+            "PIC",
+            "PIC",
+            "PIV",
+            "PJV",
+            "PJC",
+            "PJT",
+            "PMB",
+            "PMV",
+            "PMC",
+            "PMA",
+            "PVM",
+            "PNC",
+            "PNT",
+            "PPG",
+            "PTV",
+            "PTC",
+            "PQE",
+            "PQA",
+            "PQM",
+            "PXM",
+            "PXA",
+            "PXE"
+          ]
+        }
+      },
+      "FacilityNames": {
+        "type": "array",
+        "items": {
+          "type": "string",
+          "enum": [
+            "Maputo Cidade",
+            "Maputo Provincia",
+            "Gaza",
+            "Inhambane",
+            "Manica",
+            "Sofala",
+            "Tete",
+            "Niassa",
+            "Zambezia",
+            "Nampula",
+            "Cabo Delgado"
+          ]
+        }
+      },
+      "IntervalDate": {
+        "type": "string",
+        "format": "date"
+      }
+    }
+  }
+}
