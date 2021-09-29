@@ -158,5 +158,15 @@ module.exports = {
             YEAR(RegisteredDateTime) = YEAR(GETDATE())`)
         });
         return res.json(report)
+    },
+
+    async monitoreLabBacklog(req, res){
+        const report = await reportData.query(
+            `SELECT back.LabName, back.Total, capacity.capacity FROM ReportData.dbo.VLSamplesBacklog AS back
+             JOIN ReportData.dbo.LabCapacity AS capacity ON capacity.labname = back.LabName
+             WHERE CAST(GETDATE() AS date) >= CAST(back.StartDate AS date) AND CAST(GETDATE() AS date) <= CAST(back.EndDate AS date)
+             AND capacity.capacity < back.Total`
+        );
+        return res.json(report[0]);
     }
 }

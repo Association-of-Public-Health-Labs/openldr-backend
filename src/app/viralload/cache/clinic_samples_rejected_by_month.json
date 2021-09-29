@@ -3,7 +3,7 @@
     "year": 2020,
     "month": 9,
     "month_name": "September",
-    "rejected": 1425
+    "rejected": 192
   },
   {
     "year": 2020,
@@ -45,7 +45,7 @@
     "year": 2021,
     "month": 4,
     "month_name": "April",
-    "rejected": 2505
+    "rejected": 2506
   },
   {
     "year": 2021,
@@ -57,24 +57,24 @@
     "year": 2021,
     "month": 6,
     "month_name": "June",
-    "rejected": 3181
+    "rejected": 3287
   },
   {
     "year": 2021,
     "month": 7,
     "month_name": "July",
-    "rejected": 2153
+    "rejected": 2191
   },
   {
     "year": 2021,
     "month": 8,
     "month_name": "August",
-    "rejected": 1730
+    "rejected": 2001
   },
   {
     "year": 2021,
     "month": 9,
     "month_name": "September",
-    "rejected": 73
+    "rejected": 1201
   }
 ]

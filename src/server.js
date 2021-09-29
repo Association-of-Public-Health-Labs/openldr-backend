@@ -9,7 +9,6 @@ const DictRoutes = require("./app/dictionary/routes");
 const AuthRoutes = require("./app/auth/routes");
 const Covid19Routes = require("./app/covid19/routes");
 
-
 const app = express();
 app.use(cors());
 
@@ -17,7 +16,7 @@ app.use(cors());
 app.use(bodyParser.json());
 app.use(express.urlencoded({ extented: true }));
 
-app.use("/api-doc/vl/", swaggerUi.serve, swaggerUi.setup(require("./docs/swagger-vl.json")));
+app.use("/api-docs/vl/", swaggerUi.serve, swaggerUi.setup(require("./docs/swagger-vl.json")));
 
 app.use(ViralLoadRoutes);
 app.use(EIDRoutes);

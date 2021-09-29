@@ -1750,6 +1750,27 @@
         },
         "tags": ["Relatorio Mensal"]
       }
+    },
+
+
+    "/vl/weeklyreports/monitore_backlogs": {
+      "get": {
+        "summary": "Relatorio do monitoramento do Backlog das amostras por Laboratorio",
+        "description": "Relatorio do monitoramento do Backlog das amostras por Laboratorio",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array"
+                }
+              }
+            }
+          }
+        },
+        "tags": ["Relatorio Semanal"]
+      }
     }
   },
   "components": {

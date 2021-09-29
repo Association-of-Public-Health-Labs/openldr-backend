@@ -1,4 +1,5 @@
-const InstrumentCapacity = require("../models/InstrumentCapacity")
+const InstrumentCapacity = require("../models/InstrumentCapacity");
+const { reportData } = require("../../../config/sequelize");
 const {col, fn} = require("sequelize")
 module.exports = {
     async getTotalIntrumentCapacity(req, res){

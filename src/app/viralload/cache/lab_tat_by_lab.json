@@ -10,7 +10,7 @@
     "lab": "Carmelo",
     "collection_reception": 11,
     "reception_registration": 0,
-    "registration_analysis": 9,
+    "registration_analysis": 8,
     "analysis_validation": 0
   },
   {
@@ -25,27 +25,20 @@
     "collection_reception": 3,
     "reception_registration": 1,
     "registration_analysis": 8,
-    "analysis_validation": 1
+    "analysis_validation": 0
   },
   {
     "lab": "Dream Maputo",
     "collection_reception": 2,
     "reception_registration": 0,
-    "registration_analysis": 9,
-    "analysis_validation": 0
-  },
-  {
-    "lab": "HG Machava",
-    "collection_reception": 16,
-    "reception_registration": 0,
-    "registration_analysis": 5,
+    "registration_analysis": 8,
     "analysis_validation": 0
   },
   {
     "lab": "Hosp. Militar",
     "collection_reception": 3,
     "reception_registration": 0,
-    "registration_analysis": 3,
+    "registration_analysis": 4,
     "analysis_validation": 0
   },
   {
@@ -57,16 +50,16 @@
   },
   {
     "lab": "Jose Macamo",
-    "collection_reception": 4,
-    "reception_registration": 1,
+    "collection_reception": 2,
+    "reception_registration": 2,
     "registration_analysis": 5,
     "analysis_validation": 1
   },
   {
     "lab": "Machava",
-    "collection_reception": 13,
+    "collection_reception": 11,
     "reception_registration": 1,
-    "registration_analysis": 8,
+    "registration_analysis": 7,
     "analysis_validation": 0
   },
   {
@@ -87,7 +80,7 @@
     "lab": "Ponta Gea",
     "collection_reception": 16,
     "reception_registration": 1,
-    "registration_analysis": 9,
+    "registration_analysis": 7,
     "analysis_validation": 0
   },
   {
@@ -108,7 +101,7 @@
     "lab": "UEM",
     "collection_reception": 5,
     "reception_registration": 0,
-    "registration_analysis": 12,
+    "registration_analysis": 13,
     "analysis_validation": 0
   },
   {
@@ -116,6 +109,6 @@
     "collection_reception": 9,
     "reception_registration": 1,
     "registration_analysis": 14,
-    "analysis_validation": 2
+    "analysis_validation": 1
   }
 ]
