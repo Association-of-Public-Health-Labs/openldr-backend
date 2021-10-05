@@ -129,7 +129,7 @@ module.exports = {
             `((TELHOME IS NOT NULL AND TELHOME <> '') OR (TELWORK IS NOT NULL AND TELWORK <> '') OR (MOBILE IS NOT NULL AND MOBILE <> ''))`
           ),
           literal(`SMS_STATUS IS NULL`),
-          literal(`(Covid19Result LIKE '%Negativo%' OR Covid19Result LIKE '%Positivo%' OR Covid19Result LIKE '%Repita%' OR Covid19Result LIKE '%Inconclusivo%')`),
+          literal(`(Covid19Result IS NOT NULL AND Covid19Result <> '')`),
           // literal(`(RequestingProvinceName = 'Nampula' OR RequestingProvinceName = 'Tete')`),
         ],
       },
