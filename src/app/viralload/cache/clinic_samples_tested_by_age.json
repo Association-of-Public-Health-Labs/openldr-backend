@@ -1,19 +1,11 @@
 [
   {
     "year": 2020,
-    "month": 9,
-    "month_name": "September",
-    "total": 4811,
-    "suppressed": 4136,
-    "non_suppressed": 610
-  },
-  {
-    "year": 2020,
     "month": 10,
     "month_name": "October",
-    "total": 59706,
-    "suppressed": 51934,
-    "non_suppressed": 6793
+    "total": 39294,
+    "suppressed": 34161,
+    "non_suppressed": 4443
   },
   {
     "year": 2020,
@@ -43,7 +35,7 @@
     "year": 2021,
     "month": 2,
     "month_name": "February",
-    "total": 56819,
+    "total": 56822,
     "suppressed": 48627,
     "non_suppressed": 6455
   },
@@ -51,56 +43,64 @@
     "year": 2021,
     "month": 3,
     "month_name": "March",
-    "total": 88853,
-    "suppressed": 77336,
+    "total": 88850,
+    "suppressed": 77333,
     "non_suppressed": 9610
   },
   {
     "year": 2021,
     "month": 4,
     "month_name": "April",
-    "total": 71279,
-    "suppressed": 61422,
+    "total": 71277,
+    "suppressed": 61419,
     "non_suppressed": 8114
   },
   {
     "year": 2021,
     "month": 5,
     "month_name": "May",
-    "total": 75106,
-    "suppressed": 64562,
-    "non_suppressed": 8348
+    "total": 75103,
+    "suppressed": 64560,
+    "non_suppressed": 8347
   },
   {
     "year": 2021,
     "month": 6,
     "month_name": "June",
-    "total": 87556,
-    "suppressed": 75244,
-    "non_suppressed": 9946
+    "total": 87553,
+    "suppressed": 75243,
+    "non_suppressed": 9945
   },
   {
     "year": 2021,
     "month": 7,
     "month_name": "July",
-    "total": 77346,
-    "suppressed": 66931,
+    "total": 77336,
+    "suppressed": 66921,
     "non_suppressed": 8552
   },
   {
     "year": 2021,
     "month": 8,
     "month_name": "August",
-    "total": 89324,
-    "suppressed": 78045,
-    "non_suppressed": 9434
+    "total": 90530,
+    "suppressed": 79179,
+    "non_suppressed": 9506
   },
   {
     "year": 2021,
     "month": 9,
     "month_name": "September",
-    "total": 69678,
-    "suppressed": 61308,
-    "non_suppressed": 7243
+    "total": 81299,
+    "suppressed": 71936,
+    "non_suppressed": 8113
+  },
+  {
+    "year": 2021,
+    "month": 10,
+    "month_name": "October",
+    "total": 18559,
+    "suppressed": 16541,
+    "non_suppressed": 1611
   }
 ]

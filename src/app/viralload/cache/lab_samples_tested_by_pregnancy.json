@@ -1,19 +1,11 @@
 [
   {
     "year": 2020,
-    "month": 9,
-    "month_name": "September",
-    "total": 227,
-    "suppressed": 167,
-    "non_suppressed": 57
-  },
-  {
-    "year": 2020,
     "month": 10,
     "month_name": "October",
-    "total": 2973,
-    "suppressed": 2395,
-    "non_suppressed": 517
+    "total": 1948,
+    "suppressed": 1552,
+    "non_suppressed": 350
   },
   {
     "year": 2020,
@@ -59,8 +51,8 @@
     "year": 2021,
     "month": 4,
     "month_name": "April",
-    "total": 4472,
-    "suppressed": 3722,
+    "total": 4470,
+    "suppressed": 3720,
     "non_suppressed": 642
   },
   {
@@ -91,16 +83,24 @@
     "year": 2021,
     "month": 8,
     "month_name": "August",
-    "total": 5880,
-    "suppressed": 4911,
-    "non_suppressed": 837
+    "total": 5918,
+    "suppressed": 4944,
+    "non_suppressed": 842
   },
   {
     "year": 2021,
     "month": 9,
     "month_name": "September",
-    "total": 4415,
-    "suppressed": 3690,
-    "non_suppressed": 639
+    "total": 4975,
+    "suppressed": 4173,
+    "non_suppressed": 703
+  },
+  {
+    "year": 2021,
+    "month": 10,
+    "month_name": "October",
+    "total": 1092,
+    "suppressed": 934,
+    "non_suppressed": 123
   }
 ]
