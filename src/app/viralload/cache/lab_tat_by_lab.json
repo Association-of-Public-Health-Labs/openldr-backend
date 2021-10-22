@@ -3,7 +3,7 @@
     "lab": "Cabo Delgado",
     "collection_reception": 8,
     "reception_registration": 0,
-    "registration_analysis": 5,
+    "registration_analysis": 6,
     "analysis_validation": 0
   },
   {
@@ -31,19 +31,19 @@
     "lab": "Dream Maputo",
     "collection_reception": 2,
     "reception_registration": 0,
-    "registration_analysis": 8,
+    "registration_analysis": 7,
     "analysis_validation": 0
   },
   {
     "lab": "Hosp. Militar",
     "collection_reception": 3,
     "reception_registration": 0,
-    "registration_analysis": 4,
+    "registration_analysis": 3,
     "analysis_validation": 0
   },
   {
     "lab": "INS",
-    "collection_reception": 8,
+    "collection_reception": 9,
     "reception_registration": 0,
     "registration_analysis": 5,
     "analysis_validation": 1
@@ -71,7 +71,7 @@
   },
   {
     "lab": "Nampula",
-    "collection_reception": 10,
+    "collection_reception": 9,
     "reception_registration": 1,
     "registration_analysis": 6,
     "analysis_validation": 0
@@ -80,7 +80,7 @@
     "lab": "Ponta Gea",
     "collection_reception": 16,
     "reception_registration": 1,
-    "registration_analysis": 7,
+    "registration_analysis": 6,
     "analysis_validation": 0
   },
   {
