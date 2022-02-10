@@ -10,9 +10,9 @@
   {
     "facility": "Gaza",
     "type": "province",
-    "collection_reception": 10,
+    "collection_reception": 9,
     "reception_registration": 0,
-    "registration_analysis": 8,
+    "registration_analysis": 7,
     "analysis_validation": 0
   },
   {
@@ -28,7 +28,7 @@
     "type": "province",
     "collection_reception": 11,
     "reception_registration": 4,
-    "registration_analysis": 11,
+    "registration_analysis": 12,
     "analysis_validation": 0
   },
   {
@@ -52,7 +52,7 @@
     "type": "province",
     "collection_reception": 8,
     "reception_registration": 1,
-    "registration_analysis": 5,
+    "registration_analysis": 4,
     "analysis_validation": 0
   },
   {
@@ -66,7 +66,7 @@
   {
     "facility": "Sofala",
     "type": "province",
-    "collection_reception": 10,
+    "collection_reception": 9,
     "reception_registration": 1,
     "registration_analysis": 5,
     "analysis_validation": 0
@@ -82,8 +82,8 @@
   {
     "facility": "Zambezia",
     "type": "province",
-    "collection_reception": 9,
-    "reception_registration": 3,
+    "collection_reception": 8,
+    "reception_registration": 4,
     "registration_analysis": 12,
     "analysis_validation": 0
   }

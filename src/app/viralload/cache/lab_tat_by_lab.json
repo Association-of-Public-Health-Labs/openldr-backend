@@ -10,28 +10,28 @@
     "lab": "Carmelo",
     "collection_reception": 10,
     "reception_registration": 0,
-    "registration_analysis": 8,
+    "registration_analysis": 7,
     "analysis_validation": 0
   },
   {
     "lab": "Chimoio",
-    "collection_reception": 11,
-    "reception_registration": 4,
-    "registration_analysis": 10,
+    "collection_reception": 10,
+    "reception_registration": 5,
+    "registration_analysis": 11,
     "analysis_validation": 0
   },
   {
     "lab": "DREAM Beira",
     "collection_reception": 2,
     "reception_registration": 1,
-    "registration_analysis": 5,
+    "registration_analysis": 4,
     "analysis_validation": 0
   },
   {
     "lab": "Dream Maputo",
     "collection_reception": 3,
     "reception_registration": 0,
-    "registration_analysis": 8,
+    "registration_analysis": 9,
     "analysis_validation": 0
   },
   {
@@ -43,14 +43,14 @@
   },
   {
     "lab": "INS",
-    "collection_reception": 9,
+    "collection_reception": 10,
     "reception_registration": 0,
     "registration_analysis": 8,
     "analysis_validation": 1
   },
   {
     "lab": "Jose Macamo",
-    "collection_reception": 2,
+    "collection_reception": 1,
     "reception_registration": 3,
     "registration_analysis": 5,
     "analysis_validation": 1
@@ -59,7 +59,7 @@
     "lab": "Machava",
     "collection_reception": 9,
     "reception_registration": 1,
-    "registration_analysis": 7,
+    "registration_analysis": 6,
     "analysis_validation": 0
   },
   {
@@ -71,21 +71,21 @@
   },
   {
     "lab": "Nampula",
-    "collection_reception": 9,
+    "collection_reception": 8,
     "reception_registration": 1,
     "registration_analysis": 5,
     "analysis_validation": 0
   },
   {
     "lab": "Ponta Gea",
-    "collection_reception": 15,
+    "collection_reception": 13,
     "reception_registration": 1,
-    "registration_analysis": 7,
+    "registration_analysis": 6,
     "analysis_validation": 0
   },
   {
     "lab": "Quelimane",
-    "collection_reception": 9,
+    "collection_reception": 8,
     "reception_registration": 3,
     "registration_analysis": 10,
     "analysis_validation": 0
@@ -99,9 +99,9 @@
   },
   {
     "lab": "UEM",
-    "collection_reception": 6,
+    "collection_reception": 7,
     "reception_registration": 1,
-    "registration_analysis": 18,
+    "registration_analysis": 20,
     "analysis_validation": 0
   },
   {

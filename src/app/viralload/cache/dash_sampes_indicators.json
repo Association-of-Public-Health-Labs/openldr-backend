@@ -1,132 +1,132 @@
 [
   {
     "year": 2021,
-    "month": 1,
-    "month_name": "January",
-    "registered": 60364,
-    "tested": 60215,
-    "suppressed": 50715,
-    "rejected": 1876,
-    "non_validated": 21
-  },
-  {
-    "year": 2021,
     "month": 2,
     "month_name": "February",
-    "registered": 75164,
-    "tested": 74823,
-    "suppressed": 63599,
-    "rejected": 1955,
-    "non_validated": 3
+    "registered": 53539,
+    "tested": 53235,
+    "suppressed": 45237,
+    "rejected": 1389,
+    "non_validated": 1
   },
   {
     "year": 2021,
     "month": 3,
     "month_name": "March",
-    "registered": 110733,
-    "tested": 110316,
-    "suppressed": 94665,
-    "rejected": 2505,
+    "registered": 110728,
+    "tested": 110247,
+    "suppressed": 94602,
+    "rejected": 2499,
     "non_validated": 22
   },
   {
     "year": 2021,
     "month": 4,
     "month_name": "April",
-    "registered": 96416,
+    "registered": 96408,
     "tested": 96154,
-    "suppressed": 82102,
-    "rejected": 2506,
-    "non_validated": 355
+    "suppressed": 82099,
+    "rejected": 2500,
+    "non_validated": 354
   },
   {
     "year": 2021,
     "month": 5,
     "month_name": "May",
-    "registered": 102022,
+    "registered": 102014,
     "tested": 101873,
-    "suppressed": 86446,
-    "rejected": 2993,
-    "non_validated": 282
+    "suppressed": 86443,
+    "rejected": 2983,
+    "non_validated": 280
   },
   {
     "year": 2021,
     "month": 6,
     "month_name": "June",
-    "registered": 109234,
+    "registered": 109232,
     "tested": 108909,
-    "suppressed": 91887,
-    "rejected": 3286,
+    "suppressed": 91885,
+    "rejected": 3257,
     "non_validated": 5
   },
   {
     "year": 2021,
     "month": 7,
     "month_name": "July",
-    "registered": 111850,
-    "tested": 111324,
-    "suppressed": 96168,
-    "rejected": 2262,
+    "registered": 111849,
+    "tested": 111332,
+    "suppressed": 96160,
+    "rejected": 2267,
     "non_validated": 24
   },
   {
     "year": 2021,
     "month": 8,
     "month_name": "August",
-    "registered": 121717,
-    "tested": 120880,
-    "suppressed": 104861,
-    "rejected": 2401,
+    "registered": 121708,
+    "tested": 120946,
+    "suppressed": 104857,
+    "rejected": 2456,
     "non_validated": 25
   },
   {
     "year": 2021,
     "month": 9,
     "month_name": "September",
-    "registered": 111551,
-    "tested": 110016,
-    "suppressed": 95800,
-    "rejected": 2791,
-    "non_validated": 109
+    "registered": 111546,
+    "tested": 110072,
+    "suppressed": 95801,
+    "rejected": 2835,
+    "non_validated": 108
   },
   {
     "year": 2021,
     "month": 10,
     "month_name": "October",
-    "registered": 105512,
-    "tested": 104608,
-    "suppressed": 91725,
-    "rejected": 1889,
+    "registered": 105486,
+    "tested": 104823,
+    "suppressed": 91759,
+    "rejected": 2055,
     "non_validated": 10
   },
   {
     "year": 2021,
     "month": 11,
     "month_name": "November",
-    "registered": 109640,
-    "tested": 107962,
-    "suppressed": 93346,
-    "rejected": 2399,
-    "non_validated": 23
+    "registered": 109556,
+    "tested": 108996,
+    "suppressed": 94031,
+    "rejected": 2701,
+    "non_validated": 6
   },
   {
     "year": 2021,
     "month": 12,
     "month_name": "December",
-    "registered": 96360,
-    "tested": 81474,
-    "suppressed": 69981,
-    "rejected": 1707,
-    "non_validated": 412
+    "registered": 99587,
+    "tested": 98914,
+    "suppressed": 85436,
+    "rejected": 2123,
+    "non_validated": 266
   },
   {
     "year": 2022,
     "month": 1,
     "month_name": "January",
-    "registered": 17937,
-    "tested": 10693,
-    "suppressed": 9305,
-    "rejected": 212,
-    "non_validated": 365
+    "registered": 97074,
+    "tested": 91825,
+    "suppressed": 80608,
+    "rejected": 2063,
+    "non_validated": 359
+  },
+  {
+    "year": 2022,
+    "month": 2,
+    "month_name": "February",
+    "registered": 27405,
+    "tested": 15642,
+    "suppressed": 13573,
+    "rejected": 490,
+    "non_validated": 1414
   }
 ]
