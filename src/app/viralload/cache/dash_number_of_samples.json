@@ -1,13 +1,8 @@
 [
   {
     "year": 2021,
-    "month": 2,
-    "total": 54049
-  },
-  {
-    "year": 2021,
     "month": 3,
-    "total": 117260
+    "total": 111230
   },
   {
     "year": 2021,
@@ -52,16 +47,21 @@
   {
     "year": 2021,
     "month": 12,
-    "total": 98230
+    "total": 98229
   },
   {
     "year": 2022,
     "month": 1,
-    "total": 102647
+    "total": 104943
   },
   {
     "year": 2022,
     "month": 2,
-    "total": 28712
+    "total": 80954
+  },
+  {
+    "year": 2022,
+    "month": 3,
+    "total": 2148
   }
 ]
