@@ -29,7 +29,7 @@
   },
   {
     "lab": "Dream Maputo",
-    "collection_reception": 2,
+    "collection_reception": 1,
     "reception_registration": 0,
     "registration_analysis": 9,
     "analysis_validation": 0
@@ -38,7 +38,7 @@
     "lab": "Hosp. Militar",
     "collection_reception": 3,
     "reception_registration": 0,
-    "registration_analysis": 4,
+    "registration_analysis": 5,
     "analysis_validation": 0
   },
   {
@@ -57,7 +57,7 @@
   },
   {
     "lab": "Machava",
-    "collection_reception": 10,
+    "collection_reception": 9,
     "reception_registration": 0,
     "registration_analysis": 6,
     "analysis_validation": 0
@@ -78,7 +78,7 @@
   },
   {
     "lab": "Ponta Gea",
-    "collection_reception": 12,
+    "collection_reception": 11,
     "reception_registration": 1,
     "registration_analysis": 6,
     "analysis_validation": 0
@@ -86,7 +86,7 @@
   {
     "lab": "Quelimane",
     "collection_reception": 8,
-    "reception_registration": 4,
+    "reception_registration": 3,
     "registration_analysis": 10,
     "analysis_validation": 0
   },
@@ -106,9 +106,9 @@
   },
   {
     "lab": "Xai-Xai",
-    "collection_reception": 9,
+    "collection_reception": 8,
     "reception_registration": 1,
-    "registration_analysis": 10,
+    "registration_analysis": 9,
     "analysis_validation": 1
   }
 ]

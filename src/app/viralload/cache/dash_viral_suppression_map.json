@@ -1,90 +1,90 @@
 [
   {
     "province": "Cabo Delgado",
-    "total": 57765,
-    "suppressed": 47675,
-    "routine": 55508,
-    "treatment_failure": 1699,
-    "reason_not_specified": 508
+    "total": 56047,
+    "suppressed": 46242,
+    "routine": 53908,
+    "treatment_failure": 1607,
+    "reason_not_specified": 487
   },
   {
     "province": "Gaza",
-    "total": 149422,
-    "suppressed": 135102,
-    "routine": 146847,
-    "treatment_failure": 1827,
-    "reason_not_specified": 648
+    "total": 143143,
+    "suppressed": 129420,
+    "routine": 140693,
+    "treatment_failure": 1723,
+    "reason_not_specified": 628
   },
   {
     "province": "Inhambane",
-    "total": 75631,
-    "suppressed": 66123,
-    "routine": 73793,
-    "treatment_failure": 1477,
-    "reason_not_specified": 263
+    "total": 72650,
+    "suppressed": 63415,
+    "routine": 70910,
+    "treatment_failure": 1390,
+    "reason_not_specified": 253
   },
   {
     "province": "Manica",
-    "total": 77185,
-    "suppressed": 68732,
-    "routine": 73936,
-    "treatment_failure": 1710,
-    "reason_not_specified": 1377
+    "total": 73623,
+    "suppressed": 65636,
+    "routine": 70541,
+    "treatment_failure": 1582,
+    "reason_not_specified": 1341
   },
   {
     "province": "Maputo Cidade",
-    "total": 158657,
-    "suppressed": 148183,
-    "routine": 153722,
-    "treatment_failure": 3138,
-    "reason_not_specified": 1702
+    "total": 153702,
+    "suppressed": 143666,
+    "routine": 148923,
+    "treatment_failure": 2912,
+    "reason_not_specified": 1769
   },
   {
     "province": "Maputo Provincia",
-    "total": 146556,
-    "suppressed": 135145,
-    "routine": 142269,
-    "treatment_failure": 3471,
-    "reason_not_specified": 666
+    "total": 152249,
+    "suppressed": 140578,
+    "routine": 147927,
+    "treatment_failure": 3445,
+    "reason_not_specified": 725
   },
   {
     "province": "Nampula",
-    "total": 143454,
-    "suppressed": 123971,
-    "routine": 136943,
-    "treatment_failure": 5034,
-    "reason_not_specified": 1037
+    "total": 142823,
+    "suppressed": 123651,
+    "routine": 136692,
+    "treatment_failure": 4819,
+    "reason_not_specified": 866
   },
   {
     "province": "Niassa",
-    "total": 24285,
-    "suppressed": 20631,
-    "routine": 23423,
-    "treatment_failure": 666,
-    "reason_not_specified": 181
+    "total": 23944,
+    "suppressed": 20383,
+    "routine": 23103,
+    "treatment_failure": 654,
+    "reason_not_specified": 172
   },
   {
     "province": "Sofala",
-    "total": 94616,
-    "suppressed": 79903,
-    "routine": 91694,
-    "treatment_failure": 2480,
-    "reason_not_specified": 317
+    "total": 93918,
+    "suppressed": 79236,
+    "routine": 91014,
+    "treatment_failure": 2462,
+    "reason_not_specified": 315
   },
   {
     "province": "Tete",
-    "total": 69654,
-    "suppressed": 61724,
-    "routine": 67828,
-    "treatment_failure": 1326,
-    "reason_not_specified": 410
+    "total": 66387,
+    "suppressed": 58783,
+    "routine": 64617,
+    "treatment_failure": 1276,
+    "reason_not_specified": 403
   },
   {
     "province": "Zambezia",
-    "total": 226569,
-    "suppressed": 193335,
-    "routine": 215422,
-    "treatment_failure": 7042,
-    "reason_not_specified": 3688
+    "total": 241612,
+    "suppressed": 205679,
+    "routine": 230052,
+    "treatment_failure": 7516,
+    "reason_not_specified": 3634
   }
 ]

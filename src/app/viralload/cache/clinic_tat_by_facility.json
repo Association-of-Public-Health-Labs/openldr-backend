@@ -20,7 +20,7 @@
     "type": "province",
     "collection_reception": 9,
     "reception_registration": 1,
-    "registration_analysis": 13,
+    "registration_analysis": 12,
     "analysis_validation": 1
   },
   {
@@ -42,7 +42,7 @@
   {
     "facility": "Maputo Provincia",
     "type": "province",
-    "collection_reception": 10,
+    "collection_reception": 9,
     "reception_registration": 0,
     "registration_analysis": 4,
     "analysis_validation": 0
@@ -50,7 +50,7 @@
   {
     "facility": "Nampula",
     "type": "province",
-    "collection_reception": 8,
+    "collection_reception": 7,
     "reception_registration": 1,
     "registration_analysis": 4,
     "analysis_validation": 0
@@ -82,7 +82,7 @@
   {
     "facility": "Zambezia",
     "type": "province",
-    "collection_reception": 9,
+    "collection_reception": 8,
     "reception_registration": 4,
     "registration_analysis": 12,
     "analysis_validation": 0
