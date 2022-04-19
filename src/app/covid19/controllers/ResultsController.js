@@ -134,7 +134,7 @@ module.exports = {
         ],
       },
     });
-
+    
     return res.json(results);
   },
 

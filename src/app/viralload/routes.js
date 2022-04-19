@@ -75,7 +75,6 @@ routes.get("/lab_weekly_report", LaboratoryController.samples_weekly_resume_by_l
 routes.get("/lab_weekly_report_national", LaboratoryController.samples_weekly_resume)
 
 // Dashboard routes ...
-
 routes.get("/dash_number_of_samples", DashboardController.getNumberOfSamples);
 routes.get("/dash_viral_suppression", DashboardController.getViralSuppression);
 routes.get("/dash_tat", DashboardController.getTurnAroundTime);
