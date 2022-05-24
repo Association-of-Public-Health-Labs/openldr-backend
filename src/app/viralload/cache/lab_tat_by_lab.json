@@ -8,23 +8,23 @@
   },
   {
     "lab": "Carmelo",
-    "collection_reception": 10,
+    "collection_reception": 9,
     "reception_registration": 0,
-    "registration_analysis": 6,
+    "registration_analysis": 5,
     "analysis_validation": 0
   },
   {
     "lab": "Chimoio",
     "collection_reception": 10,
     "reception_registration": 5,
-    "registration_analysis": 10,
+    "registration_analysis": 9,
     "analysis_validation": 0
   },
   {
     "lab": "DREAM Beira",
     "collection_reception": 2,
     "reception_registration": 1,
-    "registration_analysis": 4,
+    "registration_analysis": 5,
     "analysis_validation": 0
   },
   {
@@ -44,7 +44,7 @@
   {
     "lab": "INS",
     "collection_reception": 10,
-    "reception_registration": 0,
+    "reception_registration": 1,
     "registration_analysis": 8,
     "analysis_validation": 1
   },
@@ -73,19 +73,19 @@
     "lab": "Nampula",
     "collection_reception": 8,
     "reception_registration": 1,
-    "registration_analysis": 5,
+    "registration_analysis": 4,
     "analysis_validation": 0
   },
   {
     "lab": "Ponta Gea",
-    "collection_reception": 11,
+    "collection_reception": 10,
     "reception_registration": 1,
     "registration_analysis": 6,
     "analysis_validation": 0
   },
   {
     "lab": "Quelimane",
-    "collection_reception": 8,
+    "collection_reception": 7,
     "reception_registration": 3,
     "registration_analysis": 9,
     "analysis_validation": 0
@@ -93,7 +93,7 @@
   {
     "lab": "Tete",
     "collection_reception": 10,
-    "reception_registration": 1,
+    "reception_registration": 2,
     "registration_analysis": 4,
     "analysis_validation": 0
   },
@@ -101,14 +101,14 @@
     "lab": "UEM",
     "collection_reception": 7,
     "reception_registration": 1,
-    "registration_analysis": 21,
+    "registration_analysis": 22,
     "analysis_validation": 0
   },
   {
     "lab": "Xai-Xai",
     "collection_reception": 8,
     "reception_registration": 1,
-    "registration_analysis": 10,
+    "registration_analysis": 9,
     "analysis_validation": 1
   }
 ]
