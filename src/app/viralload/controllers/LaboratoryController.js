@@ -26,10 +26,10 @@ const age = [15, 49];
 module.exports = {
   async getSamplesByTestReason(req, res) {
     const id = "lab_samples_by_test_reason";
-    const cache = await utils.checkCache(req.query, id);
-    if (cache) {
-      return res.json(cache);
-    }
+    // const cache = await utils.checkCache(req.query, id);
+    // if (cache) {
+    //   return res.json(cache);
+    // }
 
     const data = await samples.accumulative(
       [
@@ -39,6 +39,9 @@ module.exports = {
               [Op.in]: req.query.codes,
             },
           }),
+          TestingFacilityCode: {
+            [Op.like]: "P%"
+          },
           AnalysisDatetime: {
             [Op.between]: req.query.dates || dates,
           },
@@ -57,10 +60,10 @@ module.exports = {
 
   async getSamplesTestedByMonth(req, res) {
     const id = "lab_samples_tested_by_month";
-    const cache = await utils.checkCache(req.query, id);
-    if (cache) {
-      return res.json(cache);
-    }
+    // const cache = await utils.checkCache(req.query, id);
+    // if (cache) {
+    //   return res.json(cache);
+    // }
 
     const data = await VlData.findAll({
       attributes: [
@@ -81,6 +84,9 @@ module.exports = {
               [Op.in]: req.query.codes,
             },
           }),
+          TestingFacilityCode: {
+            [Op.like]: "P%"
+          },
           AnalysisDatetime: {
             [Op.between]: req.query.dates || dates,
           },
@@ -101,10 +107,10 @@ module.exports = {
 
   async getSamplesTestedByLab(req, res) {
     const id = "lab_samples_tested_by_lab";
-    const cache = await utils.checkCache(req.query, id);
-    if (cache) {
-      return res.json(cache);
-    }
+    // const cache = await utils.checkCache(req.query, id);
+    // if (cache) {
+    //   return res.json(cache);
+    // }
 
     const data = await VlData.findAll({
       attributes: [
@@ -120,6 +126,9 @@ module.exports = {
               [Op.in]: req.query.codes,
             },
           }),
+          TestingFacilityCode: {
+            [Op.like]: "P%"
+          },
           AnalysisDatetime: {
             [Op.between]: req.query.dates || dates,
           },
@@ -136,10 +145,10 @@ module.exports = {
 
   async getTurnaroundTimeByMonth(req, res) {
     const id = "lab_tat_by_month";
-    const cache = await utils.checkCache(req.query, id);
-    if (cache) {
-      return res.json(cache);
-    }
+    // const cache = await utils.checkCache(req.query, id);
+    // if (cache) {
+    //   return res.json(cache);
+    // }
 
     const data = await VlData.findAll({
       attributes: [
@@ -161,6 +170,9 @@ module.exports = {
               [Op.in]: req.query.codes,
             },
           }),
+          TestingFacilityCode: {
+            [Op.like]: "P%"
+          },
           [Op.and]: {
             AnalysisDatetime: {
               [Op.between]: req.query.dates || dates,
@@ -214,10 +226,10 @@ module.exports = {
 
   async getTurnaroundTimeByLab(req, res) {
     const id = "lab_tat_by_lab";
-    const cache = await utils.checkCache(req.query, id);
-    if (cache) {
-      return res.json(cache);
-    }
+    // const cache = await utils.checkCache(req.query, id);
+    // if (cache) {
+    //   return res.json(cache);
+    // }
 
     const data = await VlData.findAll({
       attributes: [
@@ -234,6 +246,9 @@ module.exports = {
               [Op.in]: req.query.codes,
             },
           }),
+          TestingFacilityCode: {
+            [Op.like]: "P%"
+          },
           [Op.and]: {
             AnalysisDatetime: {
               [Op.between]: req.query.dates || dates,
@@ -277,10 +292,10 @@ module.exports = {
 
   async getSamplesTestedByGender(req, res) {
     const id = "lab_samples_tested_by_gender_monthly";
-    const cache = await utils.checkCache(req.query, id);
-    if (cache) {
-      return res.json(cache);
-    }
+    // const cache = await utils.checkCache(req.query, id);
+    // if (cache) {
+    //   return res.json(cache);
+    // }
 
     const data = await VlData.findAll({
       attributes: [
@@ -303,6 +318,9 @@ module.exports = {
               [Op.in]: req.query.codes,
             },
           }),
+          TestingFacilityCode: {
+            [Op.like]: "P%"
+          },
           AnalysisDatetime: {
             [Op.between]: dates,
           },
@@ -323,10 +341,10 @@ module.exports = {
 
   async getSamplesTestedByGenderAndLab(req, res) {
     const id = "lab_samples_tested_by_gender_and_lab";
-    const cache = await utils.checkCache(req.query, id);
-    if (cache) {
-      return res.json(cache);
-    }
+    // const cache = await utils.checkCache(req.query, id);
+    // if (cache) {
+    //   return res.json(cache);
+    // }
 
     const data = await VlData.findAll({
       attributes: [
@@ -344,6 +362,9 @@ module.exports = {
               [Op.in]: req.query.codes,
             },
           }),
+          TestingFacilityCode: {
+            [Op.like]: "P%"
+          },
           AnalysisDatetime: {
             [Op.between]: req.query.dates || dates,
           },
@@ -360,10 +381,10 @@ module.exports = {
 
   async getSamplesTestedByAge(req, res) {
     const id = "lab_samples_tested_by_age";
-    const cache = await utils.checkCache(req.query, id);
-    if (cache) {
-      return res.json(cache);
-    }
+    // const cache = await utils.checkCache(req.query, id);
+    // if (cache) {
+    //   return res.json(cache);
+    // }
 
     const data = await VlData.findAll({
       attributes: [
@@ -384,6 +405,9 @@ module.exports = {
               [Op.in]: req.query.codes,
             },
           }),
+          TestingFacilityCode: {
+            [Op.like]: "P%"
+          },
           AnalysisDatetime: {
             [Op.between]: req.query.dates || dates,
           },
@@ -407,10 +431,10 @@ module.exports = {
 
   async getSamplesTestedByPregnancy(req, res) {
     const id = "lab_samples_tested_by_pregnancy";
-    const cache = await utils.checkCache(req.query, id);
-    if (cache) {
-      return res.json(cache);
-    }
+    // const cache = await utils.checkCache(req.query, id);
+    // if (cache) {
+    //   return res.json(cache);
+    // }
 
     const data = await VlData.findAll({
       attributes: [
@@ -431,6 +455,9 @@ module.exports = {
               [Op.in]: req.query.codes,
             },
           }),
+          TestingFacilityCode: {
+            [Op.like]: "P%"
+          },
           AnalysisDatetime: {
             [Op.between]: req.query.dates || dates,
           },
@@ -454,10 +481,10 @@ module.exports = {
 
   async getSamplesTestedForBreastfeeding(req, res) {
     const id = "lab_samples_tested_breastfeeding";
-    const cache = await utils.checkCache(req.query, id);
-    if (cache) {
-      return res.json(cache);
-    }
+    // const cache = await utils.checkCache(req.query, id);
+    // if (cache) {
+    //   return res.json(cache);
+    // }
 
     const data = await VlData.findAll({
       attributes: [
@@ -478,6 +505,9 @@ module.exports = {
               [Op.in]: req.query.codes,
             },
           }),
+          TestingFacilityCode: {
+            [Op.like]: "P%"
+          },
           AnalysisDatetime: {
             [Op.between]: req.query.dates || dates,
           },
@@ -502,10 +532,10 @@ module.exports = {
 
   async getSamplesRejectedByMonth(req, res) {
     const id = "lab_samples_rejected_by_month";
-    const cache = await utils.checkCache(req.query, id);
-    if (cache) {
-      return res.json(cache);
-    }
+    // const cache = await utils.checkCache(req.query, id);
+    // if (cache) {
+    //   return res.json(cache);
+    // }
 
     const _dates = req.query.dates || dates;
     const codes = req.query.codes || []
@@ -539,10 +569,10 @@ module.exports = {
 
   async getRejectedSamples(req, res) {
     const id = "lab_samples_rejected_by_lab";
-    const cache = await utils.checkCache(req.query, id);
-    if (cache) {
-      return res.json(cache);
-    }
+    // const cache = await utils.checkCache(req.query, id);
+    // if (cache) {
+    //   return res.json(cache);
+    // }
     const _dates = req.query.dates || dates
 
     const codes =req.query.codes || []
@@ -564,10 +594,10 @@ module.exports = {
 
   async getBacklogs(req, res){
     const id = "lab_samples_backlogs_by_lab";
-    const cache = await utils.checkCache(req.query, id);
-    if (cache) {
-      return res.json(cache);
-    }
+    // const cache = await utils.checkCache(req.query, id);
+    // if (cache) {
+    //   return res.json(cache);
+    // }
     const startDate = moment().subtract(16,"week").format("YYYY-MM-DD");
     const endDate = moment().format("YYYY-MM-DD");
     const _dates = req.query.dates || [startDate, endDate];
@@ -613,10 +643,10 @@ module.exports = {
 
   async samples_weekly_resume_by_lab(req, res){
     const id = "lab_samples_weekly_resume";
-    const cache = await utils.checkCache(req.query, id);
-    if (cache) {
-      return res.json(cache);
-    }
+    // const cache = await utils.checkCache(req.query, id);
+    // if (cache) {
+    //   return res.json(cache);
+    // }
     var curr = new Date;
     var firstday = new Date(curr.setDate(curr.getDate() - curr.getDay()));
     var lastday = new Date(curr.setDate(curr.getDate() - curr.getDay()+6));
@@ -662,10 +692,10 @@ module.exports = {
 
   async samples_weekly_resume(req, res){
     const id = "lab_samples_weekly_resume_national";
-    const cache = await utils.checkCache(req.query, id);
-    if (cache) {
-      return res.json(cache);
-    }
+    // const cache = await utils.checkCache(req.query, id);
+    // if (cache) {
+    //   return res.json(cache);
+    // }
 
     var firstday = moment().subtract(12, "weeks").format("YYYY-MM-DD");
     var lastday = moment().format("YYYY-MM-DD");
