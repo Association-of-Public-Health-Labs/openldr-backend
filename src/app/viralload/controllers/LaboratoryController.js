@@ -39,9 +39,11 @@ module.exports = {
               [Op.in]: req.query.codes,
             },
           }),
-          TestingFacilityCode: {
-            [Op.like]: "P%"
-          },
+          ...(!req.query.codes && {
+            TestingFacilityCode: {
+              [Op.like]: "P%"
+            },
+          }),
           AnalysisDatetime: {
             [Op.between]: req.query.dates || dates,
           },
@@ -126,9 +128,11 @@ module.exports = {
               [Op.in]: req.query.codes,
             },
           }),
-          TestingFacilityCode: {
-            [Op.like]: "P%"
-          },
+          ...(!req.query.codes && {
+            TestingFacilityCode: {
+              [Op.like]: "P%"
+            },
+          }),
           AnalysisDatetime: {
             [Op.between]: req.query.dates || dates,
           },
@@ -170,9 +174,11 @@ module.exports = {
               [Op.in]: req.query.codes,
             },
           }),
-          TestingFacilityCode: {
-            [Op.like]: "P%"
-          },
+          ...(!req.query.codes && {
+            TestingFacilityCode: {
+              [Op.like]: "P%"
+            },
+          }),
           [Op.and]: {
             AnalysisDatetime: {
               [Op.between]: req.query.dates || dates,
@@ -246,9 +252,11 @@ module.exports = {
               [Op.in]: req.query.codes,
             },
           }),
-          TestingFacilityCode: {
-            [Op.like]: "P%"
-          },
+          ...(!req.query.codes && {
+            TestingFacilityCode: {
+              [Op.like]: "P%"
+            },
+          }),
           [Op.and]: {
             AnalysisDatetime: {
               [Op.between]: req.query.dates || dates,
@@ -318,9 +326,11 @@ module.exports = {
               [Op.in]: req.query.codes,
             },
           }),
-          TestingFacilityCode: {
-            [Op.like]: "P%"
-          },
+          ...(!req.query.codes && {
+            TestingFacilityCode: {
+              [Op.like]: "P%"
+            },
+          }),
           AnalysisDatetime: {
             [Op.between]: dates,
           },
@@ -362,9 +372,11 @@ module.exports = {
               [Op.in]: req.query.codes,
             },
           }),
-          TestingFacilityCode: {
-            [Op.like]: "P%"
-          },
+          ...(!req.query.codes && {
+            TestingFacilityCode: {
+              [Op.like]: "P%"
+            },
+          }),
           AnalysisDatetime: {
             [Op.between]: req.query.dates || dates,
           },
@@ -405,9 +417,11 @@ module.exports = {
               [Op.in]: req.query.codes,
             },
           }),
-          TestingFacilityCode: {
-            [Op.like]: "P%"
-          },
+          ...(!req.query.codes && {
+            TestingFacilityCode: {
+              [Op.like]: "P%"
+            },
+          }),
           AnalysisDatetime: {
             [Op.between]: req.query.dates || dates,
           },
@@ -455,9 +469,11 @@ module.exports = {
               [Op.in]: req.query.codes,
             },
           }),
-          TestingFacilityCode: {
-            [Op.like]: "P%"
-          },
+          ...(!req.query.codes && {
+            TestingFacilityCode: {
+              [Op.like]: "P%"
+            },
+          }),
           AnalysisDatetime: {
             [Op.between]: req.query.dates || dates,
           },
@@ -505,9 +521,11 @@ module.exports = {
               [Op.in]: req.query.codes,
             },
           }),
-          TestingFacilityCode: {
-            [Op.like]: "P%"
-          },
+          ...(!req.query.codes && {
+            TestingFacilityCode: {
+              [Op.like]: "P%"
+            },
+          }),
           AnalysisDatetime: {
             [Op.between]: req.query.dates || dates,
           },
@@ -700,8 +718,6 @@ module.exports = {
     var firstday = moment().subtract(12, "weeks").format("YYYY-MM-DD");
     var lastday = moment().format("YYYY-MM-DD");
     var dates = req.query.dates || [firstday, lastday];
-
-    console.log(firstday, lastday)
 
     const data = await VlWeeklyReport.findAll({
       attributes: [
