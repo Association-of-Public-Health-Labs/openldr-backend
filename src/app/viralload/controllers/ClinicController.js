@@ -42,9 +42,11 @@ module.exports = ClinicController = {
               : {
                   RequestingFacilityName: { [Op.in]: req.query.codes },
                 })),
-          RequestingProvinceName: {
-            [Op.not]: "null"
-          },
+          ...(!req.query.codes && {
+            RequestingProvinceName: {
+              [Op.not]: "null"
+            }
+          }),
           AnalysisDatetime: {
             [Op.between]: req.query.dates || dates,
           },
@@ -140,9 +142,11 @@ module.exports = ClinicController = {
               : {
                   RequestingFacilityName: { [Op.in]: req.query.codes },
                 })),
-          RequestingProvinceName: {
-            [Op.not]: "null"
-          },
+          ...(!req.query.codes && {
+            RequestingProvinceName: {
+              [Op.not]: "null"
+            }
+          }),
           AnalysisDatetime: {
             [Op.between]: req.query.dates || dates,
           },
@@ -186,9 +190,11 @@ module.exports = ClinicController = {
                   RequestingFacilityName: { [Op.in]: req.query.codes },
                 }))
           ,
-          RequestingProvinceName: {
-            [Op.not]: "null"
-          },
+          ...(!req.query.codes && {
+            RequestingProvinceName: {
+              [Op.not]: "null"
+            }
+          }),
           [Op.and]: {
             AnalysisDatetime: {
               [Op.between]: req.query.dates || dates,
@@ -272,9 +278,11 @@ module.exports = ClinicController = {
                   RequestingFacilityName: { [Op.in]: req.query.codes },
                 })),
           [Op.and]: {
-            RequestingProvinceName: {
-              [Op.not]: "null"
-            },
+            ...(!req.query.codes && {
+              RequestingProvinceName: {
+                [Op.not]: "null"
+              }
+            }),
             AnalysisDatetime: {
               [Op.between]: req.query.dates || dates,
             },
@@ -399,9 +407,11 @@ module.exports = ClinicController = {
               : {
                   RequestingFacilityName: { [Op.in]: req.query.codes },
                 })),
-          RequestingProvinceName: {
-            [Op.not]: "null"
-          },
+          ...(!req.query.codes && {
+            RequestingProvinceName: {
+              [Op.not]: "null"
+            }
+          }),
           AnalysisDatetime: {
             [Op.between]: req.query.dates || dates,
           },
@@ -443,9 +453,11 @@ module.exports = ClinicController = {
               : {
                   RequestingFacilityName: { [Op.in]: req.query.codes },
                 })),
-          RequestingProvinceName: {
-            [Op.not]: "null"
-          },
+          ...(!req.query.codes && {
+            RequestingProvinceName: {
+              [Op.not]: "null"
+            }
+          }),
           AnalysisDatetime: {
             [Op.between]: req.query.dates || dates,
           },
@@ -499,9 +511,11 @@ module.exports = ClinicController = {
               : {
                   RequestingFacilityName: { [Op.in]: req.query.codes },
                 })),
-          RequestingProvinceName: {
-            [Op.not]: "null"
-          },
+          ...(!req.query.codes && {
+            RequestingProvinceName: {
+              [Op.not]: "null"
+            }
+          }),
           AnalysisDatetime: {
             [Op.between]: req.query.dates || dates,
           },
@@ -546,9 +560,11 @@ module.exports = ClinicController = {
               : {
                   RequestingFacilityName: { [Op.in]: req.query.codes },
                 })),
-          RequestingProvinceName: {
-            [Op.not]: "null"
-          },
+          ...(!req.query.codes && {
+            RequestingProvinceName: {
+              [Op.not]: "null"
+            }
+          }),
           AnalysisDatetime: {
             [Op.between]: req.query.dates || dates,
           },
@@ -607,9 +623,11 @@ module.exports = ClinicController = {
               RequestingProvinceName: { [Op.not]: null },
             }   
           ),
-          RequestingProvinceName: {
-            [Op.not]: "null"
-          },
+          ...(!req.query.codes && {
+            RequestingProvinceName: {
+              [Op.not]: "null"
+            }
+          }),
           AnalysisDatetime: {
             [Op.between]: req.query.dates || dates,
           },
@@ -654,9 +672,11 @@ module.exports = ClinicController = {
               : {
                   RequestingFacilityName: { [Op.in]: req.query.codes },
                 })),
-          RequestingProvinceName: {
-            [Op.not]: "null"
-          },
+          ...(!req.query.codes && {
+            RequestingProvinceName: {
+              [Op.not]: "null"
+            }
+          }),
           AnalysisDatetime: {
             [Op.between]: req.query.dates || dates,
           },
@@ -716,9 +736,11 @@ module.exports = ClinicController = {
               RequestingProvinceName: { [Op.not]: null },
             }   
           ),
-          RequestingProvinceName: {
-            [Op.not]: "null"
-          },
+          ...(!req.query.codes && {
+            RequestingProvinceName: {
+              [Op.not]: "null"
+            }
+          }),
           AnalysisDatetime: {
             [Op.between]: req.query.dates || dates,
           },
@@ -765,9 +787,11 @@ module.exports = ClinicController = {
               : {
                   RequestingFacilityName: { [Op.in]: req.query.codes },
                 })),
-          RequestingProvinceName: {
-            [Op.not]: "null"
-          },
+          ...(!req.query.codes && {
+            RequestingProvinceName: {
+              [Op.not]: "null"
+            }
+          }),
           RegisteredDatetime: {
             [Op.between]: req.query.dates || dates,
           },
@@ -809,9 +833,11 @@ module.exports = ClinicController = {
             : {
                 RequestingFacilityName: { [Op.in]: req.query.codes },
         })),
-        RequestingProvinceName: {
-          [Op.not]: "null"
-        },
+        ...(!req.query.codes && {
+          RequestingProvinceName: {
+            [Op.not]: "null"
+          }
+        }),
         HIVVL_LIMSRejectionCode: {
           [Op.notLike]: ''
         },
@@ -867,9 +893,11 @@ module.exports = ClinicController = {
               : {
                   RequestingFacilityName: { [Op.in]: req.query.codes },
                 })),
-          RequestingProvinceName: {
-            [Op.not]: "null"
-          },
+          ...(!req.query.codes && {
+            RequestingProvinceName: {
+              [Op.not]: "null"
+            }
+          }),
           RegisteredDatetime: {
             [Op.between]: req.query.dates || dates,
           },

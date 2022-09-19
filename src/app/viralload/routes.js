@@ -66,13 +66,13 @@ routes.get(
   LaboratoryController.getSamplesTestedForBreastfeeding
 );
 
-routes.get("/lab_samples_rejected", LaboratoryController.getRejectedSamples)
-routes.get("/lab_samples_rejected_by_month", LaboratoryController.getSamplesRejectedByMonth)
+routes.get("/lab_samples_rejected", LaboratoryController.getRejectedSamples);
+routes.get("/lab_samples_rejected_by_month", LaboratoryController.getSamplesRejectedByMonth);
 
-routes.get("/lab_backlogs", LaboratoryController.getBacklogs)
+routes.get("/lab_backlogs", LaboratoryController.getBacklogs);
 
-routes.get("/lab_weekly_report", LaboratoryController.samples_weekly_resume_by_lab)
-routes.get("/lab_weekly_report_national", LaboratoryController.samples_weekly_resume)
+routes.get("/lab_weekly_report", LaboratoryController.samples_weekly_resume_by_lab);
+routes.get("/lab_weekly_report_national", LaboratoryController.samples_weekly_resume);
 
 // Dashboard routes ...
 routes.get("/dash_number_of_samples", DashboardController.getNumberOfSamples);
