@@ -16,7 +16,7 @@ module.exports = {
         [literal(`COUNT(CASE WHEN Remarks LIKE '%CONTROL%' AND CAST(AnalysisDateTime AS date) >= '${start_date}' AND CAST(AnalysisDateTime AS date) <= '${end_date}' THEN 1 ELSE NULL END)`), "Control"],
         [literal(`COUNT(CASE WHEN Remarks LIKE '%retesta%' AND CAST(AnalysisDateTime AS date) >= '${start_date}' AND CAST(AnalysisDateTime AS date) <= '${end_date}' THEN 1 ELSE NULL END)`), "Retest"],
         [literal(`null`), "TotalReported"],
-        [literal(`COUNT(CASE WHEN COVID19Result IN ('SARS COVID-19 Positivo','SARS-CoV-2 Positivo') AND CAST(AuthorisedDateTime AS date) >= '${start_date}' AND CAST(AuthorisedDateTime AS date) <= '${end_date}' AND SUBSTRING(RequestID,7,3) = TestingFacilityCode THEN 1 ELSE NULL END)`), "Positives"],
+        [literal(`COUNT(CASE WHEN COVID19Result IN ('SARS COVID-19 Positivo','SARS COVID-19 Positive','SARS-CoV-2 Positivo','SARS-CoV-2 Positive') AND CAST(AuthorisedDateTime AS date) >= '${start_date}' AND CAST(AuthorisedDateTime AS date) <= '${end_date}' AND SUBSTRING(RequestID,7,3) = TestingFacilityCode THEN 1 ELSE NULL END)`), "Positives"],
         [literal(`AVG(CASE WHEN CAST(AuthorisedDatetime AS date) >= '${start_date}' AND CAST(AuthorisedDatetime AS date) <= '${end_date}' THEN DATEDIFF(HOUR,SpecimenDatetime, AuthorisedDateTime) ELSE  NULL END)`), "TAT"],
         [literal(`COUNT(CASE WHEN TestingFacilityCode = 'PMB' AND SUBSTRING(RequestID,7,3) = TestingFacilityCode AND CAST(AuthorisedDatetime AS date) >= '${start_date}' AND CAST(AuthorisedDatetime AS date) <= '${end_date}' THEN 1 ELSE NULL END)`), "INS"],
         [literal(`COUNT(CASE WHEN TestingFacilityCode = 'PDC' AND SUBSTRING(RequestID,7,3) = TestingFacilityCode AND CAST(AuthorisedDatetime AS date) >= '${start_date}' AND CAST(AuthorisedDatetime AS date) <= '${end_date}' THEN 1 ELSE NULL END)`), "DREAM"],
@@ -28,7 +28,16 @@ module.exports = {
         [literal(`COUNT(CASE WHEN TestingFacilityCode = 'PIM' AND SUBSTRING(RequestID,7,3) = TestingFacilityCode AND CAST(AuthorisedDatetime AS date) >= '${start_date}' AND CAST(AuthorisedDatetime AS date) <= '${end_date}' THEN 1 ELSE NULL END)`), "CISM"],
         [literal(`COUNT(CASE WHEN TestingFacilityCode = 'PCM' AND SUBSTRING(RequestID,7,3) = TestingFacilityCode AND CAST(AuthorisedDatetime AS date) >= '${start_date}' AND CAST(AuthorisedDatetime AS date) <= '${end_date}' THEN 1 ELSE NULL END)`), "Chimoio"],
         [literal(`COUNT(CASE WHEN TestingFacilityCode = 'PXA' AND SUBSTRING(RequestID,7,3) = TestingFacilityCode AND CAST(AuthorisedDatetime AS date) >= '${start_date}' AND CAST(AuthorisedDatetime AS date) <= '${end_date}' THEN 1 ELSE NULL END)`), "Xai-Xai"],
+        [literal(`COUNT(CASE WHEN TestingFacilityCode = 'PCP' AND SUBSTRING(RequestID,7,3) = TestingFacilityCode AND CAST(AuthorisedDatetime AS date) >= '${start_date}' AND CAST(AuthorisedDatetime AS date) <= '${end_date}' THEN 1 ELSE NULL END)`), "CISPOC"],
+        [literal(`COUNT(CASE WHEN TestingFacilityCode = 'PMA' AND SUBSTRING(RequestID,7,3) = TestingFacilityCode AND CAST(AuthorisedDatetime AS date) >= '${start_date}' AND CAST(AuthorisedDatetime AS date) <= '${end_date}' THEN 1 ELSE NULL END)`), "Mavalane"],
+        [literal(`COUNT(CASE WHEN TestingFacilityCode = 'PCS' AND SUBSTRING(RequestID,7,3) = TestingFacilityCode AND CAST(AuthorisedDatetime AS date) >= '${start_date}' AND CAST(AuthorisedDatetime AS date) <= '${end_date}' THEN 1 ELSE NULL END)`), "Ponta Gea"],
+        [literal(`COUNT(CASE WHEN TestingFacilityCode = 'PIH' AND SUBSTRING(RequestID,7,3) = TestingFacilityCode AND CAST(AuthorisedDatetime AS date) >= '${start_date}' AND CAST(AuthorisedDatetime AS date) <= '${end_date}' THEN 1 ELSE NULL END)`), "Inhambane"],
       ],
+      where: {
+        RequestingProvinceName: {
+          [Op.not]: null
+        }
+      },
       group: [
         literal("ISNULL(ISNULL(RequestingProvinceName, RequestingProvinceName), LOCATION)"),
       ],
