@@ -229,4 +229,54 @@ module.exports = {
     return res.json({ docs, pages, total, page: parseInt(req.params.page) });
   },
 
+
+  async get_all_patients_by_query(req, res) {
+    const { query } = req.params;
+    const patients = await ViralLoad.findAll({
+      attributes: [
+        "RequestID",
+        "FIRSTNAME",
+        "SURNAME",
+        [literal(`
+          CASE WHEN LEN(HealthcareNo) > 0 AND HealthcareNo IS NOT NULL THEN HealthcareNo
+              WHEN LEN(REFNO) > 0 AND REFNO IS NOT NULL THEN REFNO
+              WHEN LEN(NATIONALID) > 0 AND NATIONALID IS NOT NULL THEN NATIONALID
+              WHEN LEN(UNIQUEID) > 0 AND UNIQUEID IS NOT NULL THEN UNIQUEID
+              ELSE HealthcareNo
+          END
+        `), "NID"],
+        "AgeInYears",
+        "Hl7SexCode",
+        [literal(`
+          CASE WHEN LEN(TELHOME) > 0 AND TELHOME IS NOT NULL THEN TELHOME
+               WHEN LEN(TELWORK) > 0 AND TELWORK IS NOT NULL THEN TELWORK
+               ELSE MOBILE
+          END
+        `), "MOBILE"],
+        "RequestingProvinceName",
+        "RequestingDistrictName",
+        "RequestingFacilityName",
+        [fn("CAST", literal(`SpecimenDatetime AS date`)), "SpecimenDatetime"],
+        // [fn("CAST", literal(`ReceivedDatetime AS date`)), "ReceivedDatetime"],
+        [fn("CAST", literal(`RegisteredDatetime AS date`)),"RegisteredDatetime"],
+        [fn("CAST", literal(`AnalysisDatetime AS date`)), "AnalysisDatetime"],
+        [fn("CAST", literal(`AuthorisedDatetime AS date`)),"AuthorisedDatetime"],
+        "HIVVL_ViralLoadResult",
+        "HIVVL_ViralLoadCAPCTM",
+        "FinalViralLoadResult",
+        [literal(`CASE WHEN ViralLoadResultCategory = 'Suppressed' THEN 'CV Suprimida' WHEN ViralLoadResultCategory = 'Not Suppressed' THEN 'CV Não Suprimida' ELSE ViralLoadResultCategory END`), "ViralLoadResultCategory"],
+        [literal(`
+          CASE WHEN ReasonForTest = 'Routine' THEN 'Rotina' 
+            WHEN ReasonForTest IN ('Suspected treatment failure','Suspeita de falha terapêutica') THEN 'Suspeita de falha terapêutica'
+            WHEN ReasonForTest IN ('Repeat after breastfeeding','Repetição após AMA') THEN 'Repetição após Aleitamento'
+            WHEN ReasonForTest IN ('Não preenchido','Reason Not Specified') THEN 'Motivo Não preenchido'
+            ELSE ReasonForTest
+          END
+        `), "ReasonForTest"]
+      ],
+      where: literal(query),
+    });
+    return res.json(patients);
+  },
+
 };

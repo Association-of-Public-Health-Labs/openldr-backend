@@ -170,6 +170,12 @@ routes.get(
   ResultsController.get_patients_by_query
 )
 
+routes.get(
+  "/viralload/all_patients/query/:query",
+  checkAuth,
+  ResultsController.get_all_patients_by_query
+)
+
 // Weekly Reports
 routes.get("/weeklyreports/instrument", WeeklyReportController.getTotalIntrumentCapacity);
 routes.get("/weeklyreports/instrument_samples", WeeklyReportController.getSamplesByInstrument);

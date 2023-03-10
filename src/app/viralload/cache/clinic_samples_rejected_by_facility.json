@@ -2,56 +2,56 @@
   {
     "facility": "Cabo Delgado",
     "type": "province",
-    "total": 1273
+    "total": 648
   },
   {
     "facility": "Gaza",
     "type": "province",
-    "total": 2904
+    "total": 2715
   },
   {
     "facility": "Inhambane",
     "type": "province",
-    "total": 1087
+    "total": 987
   },
   {
     "facility": "Manica",
     "type": "province",
-    "total": 2495
+    "total": 1338
   },
   {
     "facility": "Maputo Cidade",
     "type": "province",
-    "total": 686
+    "total": 809
   },
   {
     "facility": "Maputo Provincia",
     "type": "province",
-    "total": 1491
+    "total": 2127
   },
   {
     "facility": "Nampula",
     "type": "province",
-    "total": 4453
+    "total": 4639
   },
   {
     "facility": "Niassa",
     "type": "province",
-    "total": 318
+    "total": 594
   },
   {
     "facility": "Sofala",
     "type": "province",
-    "total": 1766
+    "total": 2181
   },
   {
     "facility": "Tete",
     "type": "province",
-    "total": 995
+    "total": 829
   },
   {
     "facility": "Zambezia",
     "type": "province",
-    "total": 10023
+    "total": 10284
   }
 ]
