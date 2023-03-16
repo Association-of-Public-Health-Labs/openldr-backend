@@ -234,7 +234,7 @@ module.exports = {
     const { query } = req.params;
     const patients = await ViralLoad.findAll({
       attributes: [
-        "RequestID",
+        // "RequestID",
         "FIRSTNAME",
         "SURNAME",
         [literal(`
@@ -248,9 +248,10 @@ module.exports = {
         "AgeInYears",
         "Hl7SexCode",
         [literal(`
-          CASE WHEN LEN(TELHOME) > 0 AND TELHOME IS NOT NULL THEN TELHOME
-               WHEN LEN(TELWORK) > 0 AND TELWORK IS NOT NULL THEN TELWORK
-               ELSE MOBILE
+          CASE 
+              WHEN LEN(TELHOME) > 0 AND TELHOME IS NOT NULL THEN TELHOME
+              WHEN LEN(TELWORK) > 0 AND TELWORK IS NOT NULL THEN TELWORK
+              ELSE MOBILE
           END
         `), "MOBILE"],
         "RequestingProvinceName",
@@ -261,12 +262,22 @@ module.exports = {
         [fn("CAST", literal(`RegisteredDatetime AS date`)),"RegisteredDatetime"],
         [fn("CAST", literal(`AnalysisDatetime AS date`)), "AnalysisDatetime"],
         [fn("CAST", literal(`AuthorisedDatetime AS date`)),"AuthorisedDatetime"],
-        "HIVVL_ViralLoadResult",
-        "HIVVL_ViralLoadCAPCTM",
-        "FinalViralLoadResult",
+        // "HIVVL_ViralLoadResult",
+        // "HIVVL_ViralLoadCAPCTM",
+        [
+          literal(`
+            CASE 
+              WHEN LEN(FinalViralLoadResult) > 0 THEN FinalViralLoadResult 
+              WHEN LEN(HIVVL_ViralLoadResult) > 0 THEN HIVVL_ViralLoadResult
+              WHEN LEN(HIVVL_ViralLoadCAPCTM) > 0 THEN HIVVL_ViralLoadCAPCTM
+            END`
+          ), 
+          "FinalViralLoadResult"
+        ],
         [literal(`CASE WHEN ViralLoadResultCategory = 'Suppressed' THEN 'CV Suprimida' WHEN ViralLoadResultCategory = 'Not Suppressed' THEN 'CV Não Suprimida' ELSE ViralLoadResultCategory END`), "ViralLoadResultCategory"],
         [literal(`
-          CASE WHEN ReasonForTest = 'Routine' THEN 'Rotina' 
+          CASE 
+            WHEN ReasonForTest = 'Routine' THEN 'Rotina' 
             WHEN ReasonForTest IN ('Suspected treatment failure','Suspeita de falha terapêutica') THEN 'Suspeita de falha terapêutica'
             WHEN ReasonForTest IN ('Repeat after breastfeeding','Repetição após AMA') THEN 'Repetição após Aleitamento'
             WHEN ReasonForTest IN ('Não preenchido','Reason Not Specified') THEN 'Motivo Não preenchido'
