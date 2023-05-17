@@ -8,23 +8,16 @@
   },
   {
     "lab": "Carmelo",
-    "collection_reception": 9,
+    "collection_reception": 10,
     "reception_registration": 0,
-    "registration_analysis": 3,
+    "registration_analysis": 4,
     "analysis_validation": 0
   },
   {
     "lab": "Chimoio",
     "collection_reception": 12,
     "reception_registration": 1,
-    "registration_analysis": 8,
-    "analysis_validation": 0
-  },
-  {
-    "lab": "Clinica da UEM",
-    "collection_reception": 6,
-    "reception_registration": 4,
-    "registration_analysis": 12,
+    "registration_analysis": 7,
     "analysis_validation": 0
   },
   {
@@ -36,30 +29,9 @@
   },
   {
     "lab": "Dream Maputo",
-    "collection_reception": 4,
+    "collection_reception": 5,
     "reception_registration": 0,
     "registration_analysis": 5,
-    "analysis_validation": 0
-  },
-  {
-    "lab": "HG Machava",
-    "collection_reception": 7,
-    "reception_registration": 0,
-    "registration_analysis": 3,
-    "analysis_validation": 0
-  },
-  {
-    "lab": "HG Mavalane",
-    "collection_reception": 2,
-    "reception_registration": 0,
-    "registration_analysis": 3,
-    "analysis_validation": 0
-  },
-  {
-    "lab": "HM Maputo",
-    "collection_reception": 0,
-    "reception_registration": 0,
-    "registration_analysis": 1,
     "analysis_validation": 0
   },
   {
@@ -70,13 +42,6 @@
     "analysis_validation": 0
   },
   {
-    "lab": "HP Tete",
-    "collection_reception": 12,
-    "reception_registration": 2,
-    "registration_analysis": 9,
-    "analysis_validation": 0
-  },
-  {
     "lab": "INS",
     "collection_reception": 8,
     "reception_registration": 2,
@@ -84,22 +49,15 @@
     "analysis_validation": 1
   },
   {
-    "lab": "Jose Macamo",
-    "collection_reception": 0,
-    "reception_registration": 3,
-    "registration_analysis": 25,
-    "analysis_validation": 0
-  },
-  {
     "lab": "Machava",
-    "collection_reception": 8,
+    "collection_reception": 7,
     "reception_registration": 0,
     "registration_analysis": 3,
     "analysis_validation": 0
   },
   {
     "lab": "Mavalane",
-    "collection_reception": 1,
+    "collection_reception": 2,
     "reception_registration": 0,
     "registration_analysis": 2,
     "analysis_validation": 0
@@ -115,28 +73,28 @@
     "lab": "Ponta Gea",
     "collection_reception": 8,
     "reception_registration": 2,
-    "registration_analysis": 7,
+    "registration_analysis": 8,
     "analysis_validation": 0
   },
   {
     "lab": "Quelimane",
-    "collection_reception": 7,
+    "collection_reception": 8,
     "reception_registration": 4,
-    "registration_analysis": 10,
+    "registration_analysis": 11,
     "analysis_validation": 0
   },
   {
     "lab": "Tete",
-    "collection_reception": 9,
+    "collection_reception": 10,
     "reception_registration": 3,
     "registration_analysis": 5,
     "analysis_validation": 0
   },
   {
     "lab": "UEM",
-    "collection_reception": 9,
+    "collection_reception": 10,
     "reception_registration": 3,
-    "registration_analysis": 16,
+    "registration_analysis": 17,
     "analysis_validation": 0
   },
   {

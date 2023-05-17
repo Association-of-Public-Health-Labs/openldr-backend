@@ -1,18 +1,9 @@
 [
   {
     "year": 2022,
-    "month": 4,
-    "month_name": "April",
-    "collection_reception": 7,
-    "reception_registration": 1,
-    "registration_analysis": 5,
-    "analysis_validation": 0
-  },
-  {
-    "year": 2022,
     "month": 5,
     "month_name": "May",
-    "collection_reception": 6,
+    "collection_reception": 7,
     "reception_registration": 1,
     "registration_analysis": 5,
     "analysis_validation": 0
@@ -105,6 +96,24 @@
     "collection_reception": 10,
     "reception_registration": 1,
     "registration_analysis": 10,
+    "analysis_validation": 0
+  },
+  {
+    "year": 2023,
+    "month": 4,
+    "month_name": "April",
+    "collection_reception": 8,
+    "reception_registration": 1,
+    "registration_analysis": 3,
+    "analysis_validation": 0
+  },
+  {
+    "year": 2023,
+    "month": 5,
+    "month_name": "May",
+    "collection_reception": 6,
+    "reception_registration": 1,
+    "registration_analysis": 4,
     "analysis_validation": 0
   }
 ]
