@@ -2,7 +2,7 @@
   {
     "facility": "Cabo Delgado",
     "type": "province",
-    "collection_reception": 7,
+    "collection_reception": 8,
     "reception_registration": 0,
     "registration_analysis": 3,
     "analysis_validation": 0
@@ -12,7 +12,7 @@
     "type": "province",
     "collection_reception": 8,
     "reception_registration": 0,
-    "registration_analysis": 3,
+    "registration_analysis": 4,
     "analysis_validation": 0
   },
   {
@@ -20,13 +20,13 @@
     "type": "province",
     "collection_reception": 8,
     "reception_registration": 0,
-    "registration_analysis": 3,
+    "registration_analysis": 4,
     "analysis_validation": 0
   },
   {
     "facility": "Manica",
     "type": "province",
-    "collection_reception": 12,
+    "collection_reception": 14,
     "reception_registration": 1,
     "registration_analysis": 7,
     "analysis_validation": 0
@@ -44,7 +44,7 @@
     "type": "province",
     "collection_reception": 7,
     "reception_registration": 0,
-    "registration_analysis": 3,
+    "registration_analysis": 4,
     "analysis_validation": 0
   },
   {
@@ -67,7 +67,7 @@
     "facility": "Sofala",
     "type": "province",
     "collection_reception": 7,
-    "reception_registration": 1,
+    "reception_registration": 2,
     "registration_analysis": 11,
     "analysis_validation": 0
   },
@@ -83,7 +83,7 @@
     "facility": "Zambezia",
     "type": "province",
     "collection_reception": 8,
-    "reception_registration": 4,
+    "reception_registration": 5,
     "registration_analysis": 13,
     "analysis_validation": 0
   }
