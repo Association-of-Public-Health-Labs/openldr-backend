@@ -1,90 +1,132 @@
 [
   {
-    "province": "Cabo Delgado",
-    "total": 62477,
-    "suppressed": 54163,
-    "routine": 53227,
-    "treatment_failure": 1354,
-    "reason_not_specified": 7860
+    "year": 2022,
+    "month": 10,
+    "month_name": "October",
+    "registered": 60690,
+    "tested": 60666,
+    "suppressed": 52346,
+    "rejected": 1733,
+    "non_validated": 3
   },
   {
-    "province": "Gaza",
-    "total": 148718,
-    "suppressed": 136341,
-    "routine": 136694,
-    "treatment_failure": 1642,
-    "reason_not_specified": 9971
+    "year": 2022,
+    "month": 11,
+    "month_name": "November",
+    "registered": 94606,
+    "tested": 94477,
+    "suppressed": 80707,
+    "rejected": 2429,
+    "non_validated": 4
   },
   {
-    "province": "Inhambane",
-    "total": 77035,
-    "suppressed": 65633,
-    "routine": 73043,
-    "treatment_failure": 3268,
-    "reason_not_specified": 607
+    "year": 2022,
+    "month": 12,
+    "month_name": "December",
+    "registered": 94216,
+    "tested": 94069,
+    "suppressed": 80413,
+    "rejected": 3755,
+    "non_validated": 0
   },
   {
-    "province": "Manica",
-    "total": 104626,
-    "suppressed": 93269,
-    "routine": 102655,
-    "treatment_failure": 854,
-    "reason_not_specified": 1047
+    "year": 2023,
+    "month": 1,
+    "month_name": "January",
+    "registered": 106444,
+    "tested": 106025,
+    "suppressed": 90351,
+    "rejected": 3179,
+    "non_validated": 3
   },
   {
-    "province": "Maputo Cidade",
-    "total": 152780,
-    "suppressed": 142789,
-    "routine": 146887,
-    "treatment_failure": 2347,
-    "reason_not_specified": 3397
+    "year": 2023,
+    "month": 2,
+    "month_name": "February",
+    "registered": 93057,
+    "tested": 92607,
+    "suppressed": 77823,
+    "rejected": 2689,
+    "non_validated": 19
   },
   {
-    "province": "Maputo Provincia",
-    "total": 146892,
-    "suppressed": 136028,
-    "routine": 143055,
-    "treatment_failure": 2226,
-    "reason_not_specified": 1477
+    "year": 2023,
+    "month": 3,
+    "month_name": "March",
+    "registered": 109479,
+    "tested": 107062,
+    "suppressed": 91716,
+    "rejected": 2925,
+    "non_validated": 34
   },
   {
-    "province": "Nampula",
-    "total": 89274,
-    "suppressed": 80244,
-    "routine": 86312,
-    "treatment_failure": 1629,
-    "reason_not_specified": 723
+    "year": 2023,
+    "month": 4,
+    "month_name": "April",
+    "registered": 116781,
+    "tested": 113109,
+    "suppressed": 97476,
+    "rejected": 3145,
+    "non_validated": 16
   },
   {
-    "province": "Niassa",
-    "total": 17683,
-    "suppressed": 15342,
-    "routine": 17098,
-    "treatment_failure": 263,
-    "reason_not_specified": 288
+    "year": 2023,
+    "month": 5,
+    "month_name": "May",
+    "registered": 139417,
+    "tested": 126685,
+    "suppressed": 110094,
+    "rejected": 3839,
+    "non_validated": 774
   },
   {
-    "province": "Sofala",
-    "total": 120219,
-    "suppressed": 102676,
-    "routine": 99658,
-    "treatment_failure": 1300,
-    "reason_not_specified": 19071
+    "year": 2023,
+    "month": 6,
+    "month_name": "June",
+    "registered": 152967,
+    "tested": 147081,
+    "suppressed": 128202,
+    "rejected": 4717,
+    "non_validated": 56
   },
   {
-    "province": "Tete",
-    "total": 80951,
-    "suppressed": 71912,
-    "routine": 70838,
-    "treatment_failure": 997,
-    "reason_not_specified": 9027
+    "year": 2023,
+    "month": 7,
+    "month_name": "July",
+    "registered": 152016,
+    "tested": 146357,
+    "suppressed": 127145,
+    "rejected": 4977,
+    "non_validated": 22
   },
   {
-    "province": "Zambezia",
-    "total": 304336,
-    "suppressed": 263409,
-    "routine": 279478,
-    "treatment_failure": 6568,
-    "reason_not_specified": 17590
+    "year": 2023,
+    "month": 8,
+    "month_name": "August",
+    "registered": 166904,
+    "tested": 140416,
+    "suppressed": 123370,
+    "rejected": 4545,
+    "non_validated": 1093
+  },
+  {
+    "year": 2023,
+    "month": 9,
+    "month_name": "September",
+    "registered": 134294,
+    "tested": 81426,
+    "suppressed": 71271,
+    "rejected": 3593,
+    "non_validated": 2511
+  },
+  {
+    "year": 2023,
+    "month": 10,
+    "month_name": "October",
+    "registered": 7158,
+    "tested": 366,
+    "suppressed": 320,
+    "rejected": 22,
+    "non_validated": 123
   }
 ]

@@ -2,78 +2,89 @@
   {
     "facility": "Cabo Delgado",
     "type": "province",
-    "total": 64595,
-    "suppressed": 54163,
-    "non_suppressed": 8314
+    "collection_reception": 10,
+    "reception_registration": 0,
+    "registration_analysis": 7,
+    "analysis_validation": 0
   },
   {
     "facility": "Gaza",
     "type": "province",
-    "total": 153774,
-    "suppressed": 136341,
-    "non_suppressed": 12377
+    "collection_reception": 8,
+    "reception_registration": 1,
+    "registration_analysis": 6,
+    "analysis_validation": 0
   },
   {
     "facility": "Inhambane",
     "type": "province",
-    "total": 78364,
-    "suppressed": 65633,
-    "non_suppressed": 11402
+    "collection_reception": 9,
+    "reception_registration": 1,
+    "registration_analysis": 6,
+    "analysis_validation": 0
   },
   {
     "facility": "Manica",
     "type": "province",
-    "total": 107571,
-    "suppressed": 93269,
-    "non_suppressed": 11357
+    "collection_reception": 14,
+    "reception_registration": 1,
+    "registration_analysis": 8,
+    "analysis_validation": 0
   },
   {
     "facility": "Maputo Cidade",
     "type": "province",
-    "total": 156309,
-    "suppressed": 142789,
-    "non_suppressed": 9991
+    "collection_reception": 2,
+    "reception_registration": 0,
+    "registration_analysis": 3,
+    "analysis_validation": 0
   },
   {
     "facility": "Maputo Provincia",
     "type": "province",
-    "total": 148550,
-    "suppressed": 136028,
-    "non_suppressed": 10864
+    "collection_reception": 7,
+    "reception_registration": 0,
+    "registration_analysis": 3,
+    "analysis_validation": 0
   },
   {
     "facility": "Nampula",
     "type": "province",
-    "total": 93815,
-    "suppressed": 80244,
-    "non_suppressed": 9030
+    "collection_reception": 8,
+    "reception_registration": 1,
+    "registration_analysis": 3,
+    "analysis_validation": 0
   },
   {
     "facility": "Niassa",
     "type": "province",
-    "total": 18444,
-    "suppressed": 15342,
-    "non_suppressed": 2341
+    "collection_reception": 17,
+    "reception_registration": 1,
+    "registration_analysis": 6,
+    "analysis_validation": 0
   },
   {
     "facility": "Sofala",
     "type": "province",
-    "total": 123717,
-    "suppressed": 102676,
-    "non_suppressed": 17543
+    "collection_reception": 15,
+    "reception_registration": 2,
+    "registration_analysis": 21,
+    "analysis_validation": 0
   },
   {
     "facility": "Tete",
     "type": "province",
-    "total": 82033,
-    "suppressed": 71912,
-    "non_suppressed": 9039
+    "collection_reception": 14,
+    "reception_registration": 2,
+    "registration_analysis": 11,
+    "analysis_validation": 0
   },
   {
     "facility": "Zambezia",
     "type": "province",
-    "total": 324052,
-    "suppressed": 263409,
-    "non_suppressed": 40927
+    "collection_reception": 10,
+    "reception_registration": 6,
+    "registration_analysis": 16,
+    "analysis_validation": 0
   }
 ]
