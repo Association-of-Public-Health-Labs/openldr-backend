@@ -2,25 +2,25 @@
   {
     "facility": "Cabo Delgado",
     "type": "province",
-    "collection_reception": 8,
+    "collection_reception": 10,
     "reception_registration": 0,
-    "registration_analysis": 3,
+    "registration_analysis": 7,
     "analysis_validation": 0
   },
   {
     "facility": "Gaza",
     "type": "province",
     "collection_reception": 8,
-    "reception_registration": 0,
-    "registration_analysis": 4,
+    "reception_registration": 1,
+    "registration_analysis": 6,
     "analysis_validation": 0
   },
   {
     "facility": "Inhambane",
     "type": "province",
-    "collection_reception": 8,
-    "reception_registration": 0,
-    "registration_analysis": 4,
+    "collection_reception": 9,
+    "reception_registration": 1,
+    "registration_analysis": 6,
     "analysis_validation": 0
   },
   {
@@ -28,7 +28,7 @@
     "type": "province",
     "collection_reception": 14,
     "reception_registration": 1,
-    "registration_analysis": 7,
+    "registration_analysis": 8,
     "analysis_validation": 0
   },
   {
@@ -36,7 +36,7 @@
     "type": "province",
     "collection_reception": 2,
     "reception_registration": 0,
-    "registration_analysis": 2,
+    "registration_analysis": 3,
     "analysis_validation": 0
   },
   {
@@ -44,47 +44,47 @@
     "type": "province",
     "collection_reception": 7,
     "reception_registration": 0,
-    "registration_analysis": 4,
+    "registration_analysis": 3,
     "analysis_validation": 0
   },
   {
     "facility": "Nampula",
     "type": "province",
-    "collection_reception": 7,
-    "reception_registration": 1,
-    "registration_analysis": 2,
-    "analysis_validation": 0
-  },
-  {
-    "facility": "Niassa",
-    "type": "province",
-    "collection_reception": 13,
+    "collection_reception": 8,
     "reception_registration": 1,
     "registration_analysis": 3,
     "analysis_validation": 0
   },
   {
+    "facility": "Niassa",
+    "type": "province",
+    "collection_reception": 17,
+    "reception_registration": 1,
+    "registration_analysis": 6,
+    "analysis_validation": 0
+  },
+  {
     "facility": "Sofala",
     "type": "province",
-    "collection_reception": 7,
+    "collection_reception": 15,
     "reception_registration": 2,
-    "registration_analysis": 11,
+    "registration_analysis": 21,
     "analysis_validation": 0
   },
   {
     "facility": "Tete",
     "type": "province",
-    "collection_reception": 10,
-    "reception_registration": 3,
-    "registration_analysis": 6,
+    "collection_reception": 14,
+    "reception_registration": 2,
+    "registration_analysis": 11,
     "analysis_validation": 0
   },
   {
     "facility": "Zambezia",
     "type": "province",
-    "collection_reception": 8,
-    "reception_registration": 5,
-    "registration_analysis": 13,
+    "collection_reception": 10,
+    "reception_registration": 6,
+    "registration_analysis": 16,
     "analysis_validation": 0
   }
 ]
