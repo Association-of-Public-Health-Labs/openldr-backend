@@ -1,119 +1,90 @@
 [
   {
-    "year": 2022,
-    "month": 10,
-    "month_name": "October",
-    "collection_reception": 7,
-    "reception_registration": 2,
-    "registration_analysis": 8,
-    "analysis_validation": 0
-  },
-  {
-    "year": 2022,
-    "month": 11,
-    "month_name": "November",
-    "collection_reception": 7,
-    "reception_registration": 2,
-    "registration_analysis": 10,
-    "analysis_validation": 0
-  },
-  {
-    "year": 2022,
-    "month": 12,
-    "month_name": "December",
-    "collection_reception": 7,
-    "reception_registration": 2,
-    "registration_analysis": 6,
-    "analysis_validation": 0
-  },
-  {
-    "year": 2023,
-    "month": 1,
-    "month_name": "January",
-    "collection_reception": 9,
-    "reception_registration": 2,
-    "registration_analysis": 10,
-    "analysis_validation": 0
-  },
-  {
-    "year": 2023,
-    "month": 2,
-    "month_name": "February",
-    "collection_reception": 9,
-    "reception_registration": 3,
-    "registration_analysis": 11,
-    "analysis_validation": 0
-  },
-  {
-    "year": 2023,
-    "month": 3,
-    "month_name": "March",
-    "collection_reception": 10,
-    "reception_registration": 2,
-    "registration_analysis": 9,
-    "analysis_validation": 0
-  },
-  {
-    "year": 2023,
-    "month": 4,
-    "month_name": "April",
-    "collection_reception": 9,
-    "reception_registration": 2,
-    "registration_analysis": 5,
-    "analysis_validation": 0
-  },
-  {
-    "year": 2023,
-    "month": 5,
-    "month_name": "May",
-    "collection_reception": 8,
-    "reception_registration": 2,
-    "registration_analysis": 8,
-    "analysis_validation": 0
-  },
-  {
-    "year": 2023,
-    "month": 6,
-    "month_name": "June",
+    "facility": "Cabo Delgado",
+    "type": "province",
     "collection_reception": 11,
-    "reception_registration": 3,
+    "reception_registration": 0,
+    "registration_analysis": 7,
+    "analysis_validation": 0
+  },
+  {
+    "facility": "Gaza",
+    "type": "province",
+    "collection_reception": 8,
+    "reception_registration": 1,
+    "registration_analysis": 8,
+    "analysis_validation": 0
+  },
+  {
+    "facility": "Inhambane",
+    "type": "province",
+    "collection_reception": 10,
+    "reception_registration": 1,
+    "registration_analysis": 10,
+    "analysis_validation": 0
+  },
+  {
+    "facility": "Manica",
+    "type": "province",
+    "collection_reception": 13,
+    "reception_registration": 1,
+    "registration_analysis": 8,
+    "analysis_validation": 0
+  },
+  {
+    "facility": "Maputo Cidade",
+    "type": "province",
+    "collection_reception": 2,
+    "reception_registration": 0,
+    "registration_analysis": 3,
+    "analysis_validation": 0
+  },
+  {
+    "facility": "Maputo Provincia",
+    "type": "province",
+    "collection_reception": 8,
+    "reception_registration": 0,
+    "registration_analysis": 3,
+    "analysis_validation": 0
+  },
+  {
+    "facility": "Nampula",
+    "type": "province",
+    "collection_reception": 8,
+    "reception_registration": 1,
+    "registration_analysis": 3,
+    "analysis_validation": 0
+  },
+  {
+    "facility": "Niassa",
+    "type": "province",
+    "collection_reception": 17,
+    "reception_registration": 1,
     "registration_analysis": 6,
     "analysis_validation": 0
   },
   {
-    "year": 2023,
-    "month": 7,
-    "month_name": "July",
+    "facility": "Sofala",
+    "type": "province",
+    "collection_reception": 20,
+    "reception_registration": 2,
+    "registration_analysis": 27,
+    "analysis_validation": 0
+  },
+  {
+    "facility": "Tete",
+    "type": "province",
+    "collection_reception": 20,
+    "reception_registration": 2,
+    "registration_analysis": 23,
+    "analysis_validation": 0
+  },
+  {
+    "facility": "Zambezia",
+    "type": "province",
     "collection_reception": 10,
-    "reception_registration": 3,
-    "registration_analysis": 9,
-    "analysis_validation": 0
-  },
-  {
-    "year": 2023,
-    "month": 8,
-    "month_name": "August",
-    "collection_reception": 14,
-    "reception_registration": 1,
-    "registration_analysis": 14,
-    "analysis_validation": 0
-  },
-  {
-    "year": 2023,
-    "month": 9,
-    "month_name": "September",
-    "collection_reception": 10,
-    "reception_registration": 1,
-    "registration_analysis": 13,
-    "analysis_validation": 0
-  },
-  {
-    "year": 2023,
-    "month": 10,
-    "month_name": "October",
-    "collection_reception": 7,
-    "reception_registration": 1,
-    "registration_analysis": 21,
+    "reception_registration": 6,
+    "registration_analysis": 17,
     "analysis_validation": 0
   }
 ]
