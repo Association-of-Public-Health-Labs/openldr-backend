@@ -1,16 +1,6 @@
 [
   {
     "year": 2022,
-    "month": 11,
-    "month_name": "November",
-    "total": 51278,
-    "male_suppressed": 13269,
-    "female_suppressed": 30521,
-    "male_not_suppressed": 1980,
-    "female_not_suppressed": 4013
-  },
-  {
-    "year": 2022,
     "month": 12,
     "month_name": "December",
     "total": 83637,
@@ -128,5 +118,15 @@
     "female_suppressed": 37209,
     "male_not_suppressed": 1975,
     "female_not_suppressed": 4239
+  },
+  {
+    "year": 2023,
+    "month": 12,
+    "month_name": "December",
+    "total": 34805,
+    "male_suppressed": 8906,
+    "female_suppressed": 21359,
+    "male_not_suppressed": 1037,
+    "female_not_suppressed": 2215
   }
 ]

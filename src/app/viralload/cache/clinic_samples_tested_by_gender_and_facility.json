@@ -2,100 +2,100 @@
   {
     "facility": "Cabo Delgado",
     "type": "province",
-    "total": 74274,
-    "male_suppressed": 18589,
-    "female_suppressed": 44197,
-    "male_not_suppressed": 3223,
-    "female_not_suppressed": 6089
+    "total": 72052,
+    "male_suppressed": 17962,
+    "female_suppressed": 42853,
+    "male_not_suppressed": 3003,
+    "female_not_suppressed": 5725
   },
   {
     "facility": "Gaza",
     "type": "province",
-    "total": 162851,
-    "male_suppressed": 39518,
-    "female_suppressed": 104525,
-    "male_not_suppressed": 4094,
-    "female_not_suppressed": 8945
+    "total": 156229,
+    "male_suppressed": 38102,
+    "female_suppressed": 100288,
+    "male_not_suppressed": 3991,
+    "female_not_suppressed": 8687
   },
   {
     "facility": "Inhambane",
     "type": "province",
-    "total": 86831,
-    "male_suppressed": 15950,
-    "female_suppressed": 56575,
-    "male_not_suppressed": 3475,
-    "female_not_suppressed": 9206
+    "total": 85091,
+    "male_suppressed": 15479,
+    "female_suppressed": 55623,
+    "male_not_suppressed": 3402,
+    "female_not_suppressed": 9041
   },
   {
     "facility": "Manica",
     "type": "province",
-    "total": 114296,
-    "male_suppressed": 30919,
-    "female_suppressed": 68336,
-    "male_not_suppressed": 3735,
-    "female_not_suppressed": 7538
+    "total": 109312,
+    "male_suppressed": 30023,
+    "female_suppressed": 66014,
+    "male_not_suppressed": 3279,
+    "female_not_suppressed": 6573
   },
   {
     "facility": "Maputo Cidade",
     "type": "province",
-    "total": 172699,
-    "male_suppressed": 49250,
-    "female_suppressed": 108646,
-    "male_not_suppressed": 3567,
-    "female_not_suppressed": 7375
+    "total": 164622,
+    "male_suppressed": 47334,
+    "female_suppressed": 104967,
+    "male_not_suppressed": 3451,
+    "female_not_suppressed": 7114
   },
   {
     "facility": "Maputo Provincia",
     "type": "province",
-    "total": 167005,
-    "male_suppressed": 45287,
-    "female_suppressed": 107427,
-    "male_not_suppressed": 3712,
-    "female_not_suppressed": 8472
+    "total": 156937,
+    "male_suppressed": 42531,
+    "female_suppressed": 101115,
+    "male_not_suppressed": 3463,
+    "female_not_suppressed": 8072
   },
   {
     "facility": "Nampula",
     "type": "province",
-    "total": 114506,
-    "male_suppressed": 31685,
-    "female_suppressed": 65300,
-    "male_not_suppressed": 3445,
-    "female_not_suppressed": 7544
+    "total": 130335,
+    "male_suppressed": 35668,
+    "female_suppressed": 74392,
+    "male_not_suppressed": 3892,
+    "female_not_suppressed": 8548
   },
   {
     "facility": "Niassa",
     "type": "province",
-    "total": 22233,
-    "male_suppressed": 5678,
-    "female_suppressed": 12858,
-    "male_not_suppressed": 893,
-    "female_not_suppressed": 1826
+    "total": 26089,
+    "male_suppressed": 6683,
+    "female_suppressed": 15228,
+    "male_not_suppressed": 996,
+    "female_not_suppressed": 2033
   },
   {
     "facility": "Sofala",
     "type": "province",
-    "total": 146666,
-    "male_suppressed": 36937,
-    "female_suppressed": 83218,
-    "male_not_suppressed": 7228,
-    "female_not_suppressed": 14449
+    "total": 150033,
+    "male_suppressed": 37654,
+    "female_suppressed": 85442,
+    "male_not_suppressed": 7250,
+    "female_not_suppressed": 14542
   },
   {
     "facility": "Tete",
     "type": "province",
-    "total": 99312,
-    "male_suppressed": 30014,
-    "female_suppressed": 56817,
-    "male_not_suppressed": 4074,
-    "female_not_suppressed": 7065
+    "total": 100906,
+    "male_suppressed": 30675,
+    "female_suppressed": 57975,
+    "male_not_suppressed": 4018,
+    "female_not_suppressed": 6989
   },
   {
     "facility": "Zambezia",
     "type": "province",
-    "total": 356027,
-    "male_suppressed": 92011,
-    "female_suppressed": 198905,
-    "male_not_suppressed": 13834,
-    "female_not_suppressed": 28197
+    "total": 336110,
+    "male_suppressed": 86723,
+    "female_suppressed": 189372,
+    "male_not_suppressed": 12167,
+    "female_not_suppressed": 25186
   }
 ]
