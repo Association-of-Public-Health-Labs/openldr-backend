@@ -3,8 +3,8 @@
     "year": 2023,
     "month": 1,
     "month_name": "January",
-    "total": 52301,
-    "suppressed": 46804
+    "total": 9658,
+    "suppressed": 8573
   },
   {
     "year": 2023,
@@ -87,7 +87,7 @@
     "year": 2024,
     "month": 1,
     "month_name": "January",
-    "total": 59965,
-    "suppressed": 54311
+    "total": 123253,
+    "suppressed": 110770
   }
 ]

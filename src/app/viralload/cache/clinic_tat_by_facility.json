@@ -42,7 +42,7 @@
   {
     "facility": "Maputo Provincia",
     "type": "province",
-    "collection_reception": 8,
+    "collection_reception": 9,
     "reception_registration": 0,
     "registration_analysis": 3,
     "analysis_validation": 0
@@ -66,7 +66,7 @@
   {
     "facility": "Sofala",
     "type": "province",
-    "collection_reception": 19,
+    "collection_reception": 20,
     "reception_registration": 2,
     "registration_analysis": 28,
     "analysis_validation": 0
@@ -76,7 +76,7 @@
     "type": "province",
     "collection_reception": 20,
     "reception_registration": 2,
-    "registration_analysis": 27,
+    "registration_analysis": 26,
     "analysis_validation": 0
   },
   {

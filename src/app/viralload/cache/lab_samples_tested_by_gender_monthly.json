@@ -3,11 +3,11 @@
     "year": 2023,
     "month": 1,
     "month_name": "January",
-    "total": 54269,
-    "male_suppressed": 14330,
-    "female_suppressed": 32089,
-    "male_not_suppressed": 1757,
-    "female_not_suppressed": 3680
+    "total": 9900,
+    "male_suppressed": 2563,
+    "female_suppressed": 5898,
+    "male_not_suppressed": 327,
+    "female_not_suppressed": 742
   },
   {
     "year": 2023,
@@ -23,11 +23,11 @@
     "year": 2023,
     "month": 3,
     "month_name": "March",
-    "total": 115294,
-    "male_suppressed": 29626,
-    "female_suppressed": 68581,
-    "male_not_suppressed": 4466,
-    "female_not_suppressed": 9038
+    "total": 115210,
+    "male_suppressed": 29639,
+    "female_suppressed": 68591,
+    "male_not_suppressed": 4471,
+    "female_not_suppressed": 9045
   },
   {
     "year": 2023,
@@ -83,7 +83,7 @@
     "year": 2023,
     "month": 9,
     "month_name": "September",
-    "total": 122100,
+    "total": 122099,
     "male_suppressed": 32865,
     "female_suppressed": 73657,
     "male_not_suppressed": 3306,
@@ -93,7 +93,7 @@
     "year": 2023,
     "month": 10,
     "month_name": "October",
-    "total": 174891,
+    "total": 174890,
     "male_suppressed": 44878,
     "female_suppressed": 106516,
     "male_not_suppressed": 5656,
@@ -103,7 +103,7 @@
     "year": 2023,
     "month": 11,
     "month_name": "November",
-    "total": 160187,
+    "total": 160189,
     "male_suppressed": 40624,
     "female_suppressed": 98120,
     "male_not_suppressed": 5054,
@@ -113,7 +113,7 @@
     "year": 2023,
     "month": 12,
     "month_name": "December",
-    "total": 133380,
+    "total": 133539,
     "male_suppressed": 33883,
     "female_suppressed": 82515,
     "male_not_suppressed": 3546,
@@ -123,10 +123,10 @@
     "year": 2024,
     "month": 1,
     "month_name": "January",
-    "total": 61465,
-    "male_suppressed": 16073,
-    "female_suppressed": 38108,
-    "male_not_suppressed": 1740,
-    "female_not_suppressed": 3899
+    "total": 126854,
+    "male_suppressed": 33208,
+    "female_suppressed": 77186,
+    "male_not_suppressed": 3898,
+    "female_not_suppressed": 8540
   }
 ]

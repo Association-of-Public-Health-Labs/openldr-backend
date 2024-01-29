@@ -4,8 +4,8 @@
     "month": 1,
     "month_name": "January",
     "collection_reception": 8,
-    "reception_registration": 2,
-    "registration_analysis": 10,
+    "reception_registration": 3,
+    "registration_analysis": 12,
     "analysis_validation": 0
   },
   {
@@ -111,7 +111,7 @@
     "year": 2024,
     "month": 1,
     "month_name": "January",
-    "collection_reception": 10,
+    "collection_reception": 11,
     "reception_registration": 3,
     "registration_analysis": 12,
     "analysis_validation": 0
