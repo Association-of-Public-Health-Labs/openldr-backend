@@ -8,7 +8,9 @@ const reports = new Sequelize(
     host: process.env.REPORT_HOST,
     dialect: "mssql",
     dialectOptions: {
-      options: { requestTimeout: 30000000 },
+      options: {
+        requestTimeout: 30000000
+      },
     },
   }
 );
@@ -21,7 +23,10 @@ const vldata = new Sequelize(
     host: process.env.VL_HOST,
     dialect: "mssql",
     dialectOptions: {
-      options: { requestTimeout: 30000000 },
+      options: {
+        requestTimeout: 30000000,
+        instanceName: 'SQLEXPRESS',
+      },
     },
   }
 );
@@ -34,7 +39,10 @@ const eid = new Sequelize(
     host: process.env.EID_HOST,
     dialect: "mssql",
     dialectOptions: {
-      options: { requestTimeout: 30000000 },
+      options: {
+        requestTimeout: 30000000,
+        instanceName: 'SQLEXPRESS',
+      },
     },
   }
 );
@@ -48,7 +56,9 @@ const reportData = new Sequelize(
     host: process.env.REPORT_DATA_HOST,
     dialect: "mssql",
     dialectOptions: {
-      options: { requestTimeout: 30000000 },
+      options: {
+        requestTimeout: 30000000
+      },
     },
   }
 );
@@ -61,7 +71,10 @@ const covid19 = new Sequelize(
     host: process.env.COVID_HOST,
     dialect: "mssql",
     dialectOptions: {
-      options: { requestTimeout: 30000000 },
+      options: {
+        requestTimeout: 30000000,
+        instanceName: 'SQLEXPRESS',
+      },
     },
   }
 );
@@ -74,7 +87,10 @@ const facilities = new Sequelize(
     host: process.env.DICT_HOST,
     dialect: "mssql",
     dialectOptions: {
-      options: { requestTimeout: 30000000 },
+      options: {
+        requestTimeout: 30000000,
+        instanceName: 'SQLEXPRESS',
+      },
     },
   }
 );
