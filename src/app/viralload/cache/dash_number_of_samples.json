@@ -1,16 +1,6 @@
 [
   {
     "year": 2023,
-    "month": 1,
-    "total": 10009
-  },
-  {
-    "year": 2023,
-    "month": 2,
-    "total": 105123
-  },
-  {
-    "year": 2023,
     "month": 3,
     "total": 115837
   },
@@ -63,5 +53,25 @@
     "year": 2024,
     "month": 1,
     "total": 126996
+  },
+  {
+    "year": 2023,
+    "month": 12,
+    "total": 133579
+  },
+  {
+    "year": 2024,
+    "month": 1,
+    "total": 126987
+  },
+  {
+    "year": 2024,
+    "month": 2,
+    "total": 79902
+  },
+  {
+    "year": 2024,
+    "month": 3,
+    "total": 68586
   }
 ]

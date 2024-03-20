@@ -10,23 +10,23 @@
   {
     "facility": "Gaza",
     "type": "province",
-    "collection_reception": 8,
+    "collection_reception": 9,
     "reception_registration": 2,
-    "registration_analysis": 12,
+    "registration_analysis": 13,
     "analysis_validation": 1
   },
   {
     "facility": "Inhambane",
     "type": "province",
     "collection_reception": 11,
-    "reception_registration": 2,
-    "registration_analysis": 14,
+    "reception_registration": 3,
+    "registration_analysis": 17,
     "analysis_validation": 0
   },
   {
     "facility": "Manica",
     "type": "province",
-    "collection_reception": 13,
+    "collection_reception": 15,
     "reception_registration": 1,
     "registration_analysis": 9,
     "analysis_validation": 0
@@ -42,7 +42,7 @@
   {
     "facility": "Maputo Provincia",
     "type": "province",
-    "collection_reception": 9,
+    "collection_reception": 10,
     "reception_registration": 0,
     "registration_analysis": 3,
     "analysis_validation": 0
@@ -68,7 +68,7 @@
     "type": "province",
     "collection_reception": 20,
     "reception_registration": 2,
-    "registration_analysis": 28,
+    "registration_analysis": 26,
     "analysis_validation": 0
   },
   {
@@ -84,7 +84,7 @@
     "type": "province",
     "collection_reception": 10,
     "reception_registration": 6,
-    "registration_analysis": 18,
+    "registration_analysis": 17,
     "analysis_validation": 0
   }
 ]
