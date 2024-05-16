@@ -64,7 +64,9 @@
             }
           }
         },
-        "tags": ["Laboratorio"]
+        "tags": [
+          "Laboratorio"
+        ]
       }
     },
     "/lab_samples_tested_by_month": {
@@ -975,7 +977,7 @@
         ]
       }
     },
-    "/clinic_tat_by_age": {
+    "/clinic_samples_tested_by_age": {
       "get": {
         "summary": "Número de Amostras testadas por idade (por mes)",
         "description": "Número de Amostras testadas por idade (por mes)",

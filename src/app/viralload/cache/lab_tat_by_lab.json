@@ -36,8 +36,8 @@
   },
   {
     "lab": "Hosp. Militar",
-    "collection_reception": 7,
-    "reception_registration": 0,
+    "collection_reception": 3,
+    "reception_registration": 25,
     "registration_analysis": 0,
     "analysis_validation": 0
   },

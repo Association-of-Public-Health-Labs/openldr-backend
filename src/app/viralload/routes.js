@@ -115,7 +115,7 @@ routes.get(
   ClinicController.getTurnaroundTimeByFacility
 );
 
-routes.get("/clinic_tat_by_age", ClinicController.getSamplesTestedByAge);
+routes.get("/clinic_samples_tested_by_age", ClinicController.getSamplesTestedByAge);
 
 routes.get(
   "/clinic_samples_tested_by_age_and_facility",

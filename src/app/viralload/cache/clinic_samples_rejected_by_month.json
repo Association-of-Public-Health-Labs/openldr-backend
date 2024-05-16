@@ -45,12 +45,37 @@
     "year": 2023,
     "month": 12,
     "month_name": "December",
+<<<<<<< HEAD
     "rejected": 4302
+=======
+    "rejected": 3890
+>>>>>>> 1ca4a5b3f4006510852f69084c5f609d35ede995
   },
   {
     "year": 2024,
     "month": 1,
     "month_name": "January",
+<<<<<<< HEAD
+=======
+    "rejected": 2394
+  },
+  {
+    "year": 2024,
+    "month": 2,
+    "month_name": "February",
+    "rejected": 2409
+  },
+  {
+    "year": 2024,
+    "month": 3,
+    "month_name": "March",
+    "rejected": 1316
+  },
+  {
+    "year": 2024,
+    "month": 1,
+    "month_name": "January",
+>>>>>>> 1ca4a5b3f4006510852f69084c5f609d35ede995
     "rejected": 4223
   },
   {

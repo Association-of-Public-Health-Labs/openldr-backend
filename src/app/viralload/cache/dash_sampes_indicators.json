@@ -64,20 +64,20 @@
     "month": 11,
     "month_name": "November",
     "registered": 147522,
-    "tested": 146450,
-    "suppressed": 128131,
-    "rejected": 5199,
-    "non_validated": 34
+    "tested": 145997,
+    "suppressed": 127780,
+    "rejected": 5145,
+    "non_validated": 407
   },
   {
     "year": 2023,
     "month": 12,
     "month_name": "December",
-    "registered": 123477,
-    "tested": 120819,
-    "suppressed": 105501,
-    "rejected": 4302,
-    "non_validated": 389
+    "registered": 123475,
+    "tested": 111573,
+    "suppressed": 97504,
+    "rejected": 3890,
+    "non_validated": 2103
   },
   {
     "year": 2024,

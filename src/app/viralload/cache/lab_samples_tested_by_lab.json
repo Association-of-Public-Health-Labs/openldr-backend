@@ -1,86 +1,86 @@
 [
   {
     "lab": "Cabo Delgado",
-    "total": 52636,
+    "total": 52639,
     "suppressed": 44699,
     "non_suppressed": 6198
   },
   {
     "lab": "Carmelo",
-    "total": 56888,
-    "suppressed": 48673,
-    "non_suppressed": 7693
+    "total": 57400,
+    "suppressed": 49138,
+    "non_suppressed": 7733
   },
   {
     "lab": "Chimoio",
-    "total": 132402,
-    "suppressed": 117905,
-    "non_suppressed": 10588
+    "total": 133074,
+    "suppressed": 118520,
+    "non_suppressed": 10641
   },
   {
     "lab": "Dream Beira",
-    "total": 66487,
-    "suppressed": 59057,
-    "non_suppressed": 6289
+    "total": 66746,
+    "suppressed": 59294,
+    "non_suppressed": 6306
   },
   {
     "lab": "Dream Maputo",
-    "total": 22136,
-    "suppressed": 20689,
-    "non_suppressed": 1311
+    "total": 22230,
+    "suppressed": 20776,
+    "non_suppressed": 1317
   },
   {
     "lab": "Hosp. Militar",
-    "total": 73,
-    "suppressed": 7,
-    "non_suppressed": 0
+    "total": 81,
+    "suppressed": 13,
+    "non_suppressed": 2
   },
   {
     "lab": "INS",
-    "total": 43744,
-    "suppressed": 38208,
-    "non_suppressed": 4795
+    "total": 43648,
+    "suppressed": 38146,
+    "non_suppressed": 4761
   },
   {
     "lab": "Machava",
-    "total": 171854,
-    "suppressed": 158082,
-    "non_suppressed": 12444
+    "total": 172410,
+    "suppressed": 158574,
+    "non_suppressed": 12508
   },
   {
     "lab": "Mavalane",
-    "total": 167239,
-    "suppressed": 153491,
-    "non_suppressed": 11752
+    "total": 167765,
+    "suppressed": 153907,
+    "non_suppressed": 11802
   },
   {
     "lab": "Nampula",
-    "total": 255154,
-    "suppressed": 218363,
-    "non_suppressed": 24257
+    "total": 255218,
+    "suppressed": 218420,
+    "non_suppressed": 24264
   },
   {
     "lab": "Ponta Gea",
-    "total": 75948,
+    "total": 75950,
     "suppressed": 63217,
     "non_suppressed": 9855
   },
   {
     "lab": "Quelimane",
-    "total": 341782,
-    "suppressed": 290255,
-    "non_suppressed": 30947
+    "total": 342149,
+    "suppressed": 290500,
+    "non_suppressed": 30977
   },
   {
     "lab": "Tete",
-    "total": 97016,
-    "suppressed": 86667,
+    "total": 97017,
+    "suppressed": 86668,
     "non_suppressed": 9002
   },
   {
     "lab": "Xai-Xai",
-    "total": 216695,
-    "suppressed": 188790,
-    "non_suppressed": 21587
+    "total": 216745,
+    "suppressed": 188799,
+    "non_suppressed": 21590
   }
 ]

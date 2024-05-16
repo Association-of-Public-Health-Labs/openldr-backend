@@ -103,11 +103,11 @@
     "year": 2024,
     "month": 3,
     "month_name": "March",
-    "total": 117164,
-    "male_suppressed": 31409,
+    "total": 117160,
+    "male_suppressed": 31407,
     "female_suppressed": 71990,
     "male_not_suppressed": 2977,
-    "female_not_suppressed": 6394
+    "female_not_suppressed": 6392
   },
   {
     "year": 2024,
