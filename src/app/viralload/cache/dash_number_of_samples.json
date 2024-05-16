@@ -1,16 +1,6 @@
 [
   {
     "year": 2023,
-    "month": 3,
-    "total": 115837
-  },
-  {
-    "year": 2023,
-    "month": 4,
-    "total": 103799
-  },
-  {
-    "year": 2023,
     "month": 5,
     "total": 124279
   },
@@ -62,16 +52,26 @@
   {
     "year": 2024,
     "month": 1,
-    "total": 126987
+    "total": 157403
   },
   {
     "year": 2024,
     "month": 2,
-    "total": 79902
+    "total": 127260
   },
   {
     "year": 2024,
     "month": 3,
-    "total": 68586
+    "total": 117164
+  },
+  {
+    "year": 2024,
+    "month": 4,
+    "total": 153143
+  },
+  {
+    "year": 2024,
+    "month": 5,
+    "total": 54208
   }
 ]

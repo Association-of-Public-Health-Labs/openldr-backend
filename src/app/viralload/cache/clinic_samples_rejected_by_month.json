@@ -1,18 +1,6 @@
 [
   {
     "year": 2023,
-    "month": 3,
-    "month_name": "March",
-    "rejected": 1340
-  },
-  {
-    "year": 2023,
-    "month": 4,
-    "month_name": "April",
-    "rejected": 3179
-  },
-  {
-    "year": 2023,
     "month": 5,
     "month_name": "May",
     "rejected": 3891
@@ -76,5 +64,35 @@
     "month": 3,
     "month_name": "March",
     "rejected": 1316
+  },
+  {
+    "year": 2024,
+    "month": 1,
+    "month_name": "January",
+    "rejected": 4223
+  },
+  {
+    "year": 2024,
+    "month": 2,
+    "month_name": "February",
+    "rejected": 3456
+  },
+  {
+    "year": 2024,
+    "month": 3,
+    "month_name": "March",
+    "rejected": 3876
+  },
+  {
+    "year": 2024,
+    "month": 4,
+    "month_name": "April",
+    "rejected": 3298
+  },
+  {
+    "year": 2024,
+    "month": 5,
+    "month_name": "May",
+    "rejected": 792
   }
 ]
