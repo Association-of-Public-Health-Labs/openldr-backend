@@ -1,47 +1,11 @@
 [
   {
     "year": 2023,
-    "month": 1,
-    "month_name": "January",
-    "collection_reception": 8,
-    "reception_registration": 3,
-    "registration_analysis": 12,
-    "analysis_validation": 0
-  },
-  {
-    "year": 2023,
-    "month": 2,
-    "month_name": "February",
-    "collection_reception": 9,
-    "reception_registration": 3,
-    "registration_analysis": 11,
-    "analysis_validation": 0
-  },
-  {
-    "year": 2023,
-    "month": 3,
-    "month_name": "March",
-    "collection_reception": 10,
-    "reception_registration": 2,
-    "registration_analysis": 9,
-    "analysis_validation": 0
-  },
-  {
-    "year": 2023,
-    "month": 4,
-    "month_name": "April",
-    "collection_reception": 9,
-    "reception_registration": 2,
-    "registration_analysis": 5,
-    "analysis_validation": 0
-  },
-  {
-    "year": 2023,
     "month": 5,
     "month_name": "May",
     "collection_reception": 8,
-    "reception_registration": 2,
-    "registration_analysis": 8,
+    "reception_registration": 3,
+    "registration_analysis": 9,
     "analysis_validation": 0
   },
   {
@@ -113,7 +77,43 @@
     "month_name": "January",
     "collection_reception": 11,
     "reception_registration": 3,
-    "registration_analysis": 12,
+    "registration_analysis": 11,
+    "analysis_validation": 0
+  },
+  {
+    "year": 2024,
+    "month": 2,
+    "month_name": "February",
+    "collection_reception": 12,
+    "reception_registration": 2,
+    "registration_analysis": 9,
+    "analysis_validation": 0
+  },
+  {
+    "year": 2024,
+    "month": 3,
+    "month_name": "March",
+    "collection_reception": 11,
+    "reception_registration": 2,
+    "registration_analysis": 9,
+    "analysis_validation": 0
+  },
+  {
+    "year": 2024,
+    "month": 4,
+    "month_name": "April",
+    "collection_reception": 10,
+    "reception_registration": 2,
+    "registration_analysis": 13,
+    "analysis_validation": 0
+  },
+  {
+    "year": 2024,
+    "month": 5,
+    "month_name": "May",
+    "collection_reception": 8,
+    "reception_registration": 2,
+    "registration_analysis": 13,
     "analysis_validation": 0
   }
 ]

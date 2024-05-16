@@ -2,39 +2,39 @@
   {
     "facility": "Cabo Delgado",
     "type": "province",
-    "collection_reception": 13,
+    "collection_reception": 14,
     "reception_registration": 0,
-    "registration_analysis": 9,
+    "registration_analysis": 11,
     "analysis_validation": 0
   },
   {
     "facility": "Gaza",
     "type": "province",
-    "collection_reception": 8,
-    "reception_registration": 2,
-    "registration_analysis": 12,
+    "collection_reception": 9,
+    "reception_registration": 4,
+    "registration_analysis": 19,
     "analysis_validation": 1
   },
   {
     "facility": "Inhambane",
     "type": "province",
     "collection_reception": 11,
-    "reception_registration": 2,
-    "registration_analysis": 14,
-    "analysis_validation": 0
+    "reception_registration": 4,
+    "registration_analysis": 27,
+    "analysis_validation": 1
   },
   {
     "facility": "Manica",
     "type": "province",
     "collection_reception": 13,
     "reception_registration": 1,
-    "registration_analysis": 9,
+    "registration_analysis": 8,
     "analysis_validation": 0
   },
   {
     "facility": "Maputo Cidade",
     "type": "province",
-    "collection_reception": 2,
+    "collection_reception": 3,
     "reception_registration": 0,
     "registration_analysis": 3,
     "analysis_validation": 0
@@ -42,7 +42,7 @@
   {
     "facility": "Maputo Provincia",
     "type": "province",
-    "collection_reception": 9,
+    "collection_reception": 11,
     "reception_registration": 0,
     "registration_analysis": 3,
     "analysis_validation": 0
@@ -50,7 +50,7 @@
   {
     "facility": "Nampula",
     "type": "province",
-    "collection_reception": 9,
+    "collection_reception": 10,
     "reception_registration": 1,
     "registration_analysis": 3,
     "analysis_validation": 0
@@ -60,7 +60,7 @@
     "type": "province",
     "collection_reception": 16,
     "reception_registration": 1,
-    "registration_analysis": 5,
+    "registration_analysis": 6,
     "analysis_validation": 0
   },
   {
@@ -68,7 +68,7 @@
     "type": "province",
     "collection_reception": 20,
     "reception_registration": 2,
-    "registration_analysis": 28,
+    "registration_analysis": 24,
     "analysis_validation": 0
   },
   {
@@ -76,15 +76,15 @@
     "type": "province",
     "collection_reception": 20,
     "reception_registration": 2,
-    "registration_analysis": 26,
+    "registration_analysis": 25,
     "analysis_validation": 0
   },
   {
     "facility": "Zambezia",
     "type": "province",
     "collection_reception": 10,
-    "reception_registration": 6,
-    "registration_analysis": 18,
+    "reception_registration": 5,
+    "registration_analysis": 16,
     "analysis_validation": 0
   }
 ]

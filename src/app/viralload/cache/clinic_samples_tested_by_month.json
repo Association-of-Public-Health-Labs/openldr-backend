@@ -1,43 +1,11 @@
 [
   {
     "year": 2023,
-    "month": 1,
-    "month_name": "January",
-    "total": 10009,
-    "suppressed": 8573,
-    "non_suppressed": 1085
-  },
-  {
-    "year": 2023,
-    "month": 2,
-    "month_name": "February",
-    "total": 105123,
-    "suppressed": 87226,
-    "non_suppressed": 14419
-  },
-  {
-    "year": 2023,
-    "month": 3,
-    "month_name": "March",
-    "total": 115837,
-    "suppressed": 98838,
-    "non_suppressed": 13614
-  },
-  {
-    "year": 2023,
-    "month": 4,
-    "month_name": "April",
-    "total": 103799,
-    "suppressed": 88248,
-    "non_suppressed": 11899
-  },
-  {
-    "year": 2023,
     "month": 5,
     "month_name": "May",
-    "total": 124279,
-    "suppressed": 108157,
-    "non_suppressed": 12476
+    "total": 75153,
+    "suppressed": 65341,
+    "non_suppressed": 7800
   },
   {
     "year": 2023,
@@ -59,7 +27,7 @@
     "year": 2023,
     "month": 8,
     "month_name": "August",
-    "total": 150862,
+    "total": 150863,
     "suppressed": 131495,
     "non_suppressed": 13825
   },
@@ -91,7 +59,7 @@
     "year": 2023,
     "month": 12,
     "month_name": "December",
-    "total": 133581,
+    "total": 133564,
     "suppressed": 116786,
     "non_suppressed": 11504
   },
@@ -99,8 +67,40 @@
     "year": 2024,
     "month": 1,
     "month_name": "January",
-    "total": 126996,
-    "suppressed": 110770,
-    "non_suppressed": 12483
+    "total": 157403,
+    "suppressed": 138409,
+    "non_suppressed": 14759
+  },
+  {
+    "year": 2024,
+    "month": 2,
+    "month_name": "February",
+    "total": 127260,
+    "suppressed": 112102,
+    "non_suppressed": 11435
+  },
+  {
+    "year": 2024,
+    "month": 3,
+    "month_name": "March",
+    "total": 117164,
+    "suppressed": 103604,
+    "non_suppressed": 9388
+  },
+  {
+    "year": 2024,
+    "month": 4,
+    "month_name": "April",
+    "total": 153143,
+    "suppressed": 135524,
+    "non_suppressed": 13118
+  },
+  {
+    "year": 2024,
+    "month": 5,
+    "month_name": "May",
+    "total": 54208,
+    "suppressed": 48144,
+    "non_suppressed": 4673
   }
 ]

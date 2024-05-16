@@ -1,28 +1,8 @@
 [
   {
     "year": 2023,
-    "month": 1,
-    "total": 10009
-  },
-  {
-    "year": 2023,
-    "month": 2,
-    "total": 105123
-  },
-  {
-    "year": 2023,
-    "month": 3,
-    "total": 115837
-  },
-  {
-    "year": 2023,
-    "month": 4,
-    "total": 103799
-  },
-  {
-    "year": 2023,
     "month": 5,
-    "total": 124279
+    "total": 75153
   },
   {
     "year": 2023,
@@ -37,7 +17,7 @@
   {
     "year": 2023,
     "month": 8,
-    "total": 150862
+    "total": 150863
   },
   {
     "year": 2023,
@@ -57,11 +37,31 @@
   {
     "year": 2023,
     "month": 12,
-    "total": 133581
+    "total": 133564
   },
   {
     "year": 2024,
     "month": 1,
-    "total": 126996
+    "total": 157403
+  },
+  {
+    "year": 2024,
+    "month": 2,
+    "total": 127260
+  },
+  {
+    "year": 2024,
+    "month": 3,
+    "total": 117164
+  },
+  {
+    "year": 2024,
+    "month": 4,
+    "total": 153143
+  },
+  {
+    "year": 2024,
+    "month": 5,
+    "total": 54208
   }
 ]
