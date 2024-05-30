@@ -4,7 +4,7 @@
     "month": 5,
     "month_name": "May",
     "collection_reception": 8,
-    "reception_registration": 2,
+    "reception_registration": 4,
     "registration_analysis": 8,
     "analysis_validation": 0
   },
@@ -113,7 +113,7 @@
     "month_name": "May",
     "collection_reception": 8,
     "reception_registration": 2,
-    "registration_analysis": 13,
+    "registration_analysis": 10,
     "analysis_validation": 0
   }
 ]
