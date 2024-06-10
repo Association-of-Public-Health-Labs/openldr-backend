@@ -10,7 +10,7 @@ const SamplesNonValidated = require("../models/SamplesNonValidated");
 const VlWeeklyReport = require("../models/VLWeeklyReport");
 const { Op, fn, literal, col } = sequelize;
 const moment = require("moment");
-const {vldata} = require("../../../config/sequelize")
+const { vldata } = require("../../../config/sequelize")
 
 const dates = [
   moment().subtract(1, "years").format("YYYY-MM-DD"),
@@ -62,6 +62,7 @@ module.exports = {
 
   async getSamplesTestedByMonth(req, res) {
     const id = "lab_samples_tested_by_month";
+    console.log(req.query);
     const cache = await utils.checkCache(req.query, id);
     if (cache) {
       return res.json(cache);
@@ -86,9 +87,9 @@ module.exports = {
               [Op.in]: req.query.codes,
             },
           }),
-          TestingFacilityCode: {
-            [Op.like]: "P%"
-          },
+          // TestingFacilityCode: {
+          //   [Op.like]: "P%"
+          // },
           AnalysisDatetime: {
             [Op.between]: req.query.dates || dates,
           },
@@ -104,6 +105,7 @@ module.exports = {
         [fn("month", col("AnalysisDatetime")), "ASC"],
       ],
     });
+    // console.log(res.json(data));
     return res.json(data);
   },
 
@@ -593,7 +595,7 @@ module.exports = {
     }
     const _dates = req.query.dates || dates
 
-    const codes =req.query.codes || []
+    const codes = req.query.codes || []
 
     const rejections = await vldata.query(`
     SELECT lab.LabName, COUNT(1) rejected FROM ViralLoadData.dbo.VlData AS vl
@@ -610,17 +612,17 @@ module.exports = {
     return res.json(rejections[0])
   },
 
-  async getBacklogs(req, res){
+  async getBacklogs(req, res) {
     const id = "lab_samples_backlogs_by_lab";
     const cache = await utils.checkCache(req.query, id);
     if (cache) {
       return res.json(cache);
     }
-    const startDate = moment().subtract(16,"week").format("YYYY-MM-DD");
+    const startDate = moment().subtract(16, "week").format("YYYY-MM-DD");
     const endDate = moment().format("YYYY-MM-DD");
     const _dates = req.query.dates || [startDate, endDate];
 
-    const codes =req.query.codes || [];
+    const codes = req.query.codes || [];
 
     const data = await VlWeeklyReport.findAll({
       attributes: [
@@ -629,22 +631,22 @@ module.exports = {
         [col('Week'), "week"],
         [col('start_date'), "start"],
         [col('end_date'), "end"],
-        [fn("sum",col("backlogs")), "backlogs"],
-        [fn("sum",col("tests")), "tests"],
-        [fn("sum",col("registered")), "registrations"],
-        [fn("sum",col("rejected")), "rejections"],
-        [fn("sum",col("capacity")), "capacity"],
-        [fn("avg",col("tat")), "tat"],
+        [fn("sum", col("backlogs")), "backlogs"],
+        [fn("sum", col("tests")), "tests"],
+        [fn("sum", col("registered")), "registrations"],
+        [fn("sum", col("rejected")), "rejections"],
+        [fn("sum", col("capacity")), "capacity"],
+        [fn("avg", col("tat")), "tat"],
       ],
       where: [
         literal(`CAST(start_date as date) >= '${_dates[0]}' AND CAST(start_date as date) <= '${_dates[1]}'`),
         {
-        ...(req.query.codes && {
-          LabCode: {
-            [Op.in]: req.query.codes,
-          },
-        }),
-      }],
+          ...(req.query.codes && {
+            LabCode: {
+              [Op.in]: req.query.codes,
+            },
+          }),
+        }],
       group: [
         literal('DATENAME(MONTH, start_date)'),
         col('Week'),
@@ -659,7 +661,7 @@ module.exports = {
     res.json(data)
   },
 
-  async samples_weekly_resume_by_lab(req, res){
+  async samples_weekly_resume_by_lab(req, res) {
     const id = "lab_samples_weekly_resume";
     const cache = await utils.checkCache(req.query, id);
     if (cache) {
@@ -667,7 +669,7 @@ module.exports = {
     }
     var curr = new Date;
     var firstday = new Date(curr.setDate(curr.getDate() - curr.getDay()));
-    var lastday = new Date(curr.setDate(curr.getDate() - curr.getDay()+6));
+    var lastday = new Date(curr.setDate(curr.getDate() - curr.getDay() + 6));
     var dates = req.query.dates || [firstday, lastday];
 
     const data = await VlWeeklyReport.findAll({
@@ -677,22 +679,22 @@ module.exports = {
         [col('week'), "week"],
         [col('start_date'), "start"],
         [col('end_date'), "end"],
-        [fn("sum",col("backlogs")), "backlogs"],
-        [fn("sum",col("tests")), "tests"],
-        [fn("sum",col("registered")), "registrations"],
-        [fn("sum",col("rejected")), "rejections"],
-        [fn("sum",col("capacity")), "capacity"],
-        [fn("avg",col("tat")), "tat"],
+        [fn("sum", col("backlogs")), "backlogs"],
+        [fn("sum", col("tests")), "tests"],
+        [fn("sum", col("registered")), "registrations"],
+        [fn("sum", col("rejected")), "rejections"],
+        [fn("sum", col("capacity")), "capacity"],
+        [fn("avg", col("tat")), "tat"],
       ],
       where: [
         literal(`CAST(start_date as date) >= '${moment(dates[0]).format("YYYY-MM-DD")}' AND CAST(start_date as date) <= '${moment(dates[1]).format("YYYY-MM-DD")}'`),
         {
-        ...(req.query.codes && {
-          labcode: {
-            [Op.in]: req.query.codes,
-          },
-        }),
-      }],
+          ...(req.query.codes && {
+            labcode: {
+              [Op.in]: req.query.codes,
+            },
+          }),
+        }],
       group: [
         col("labcode"),
         col("labname"),
@@ -704,11 +706,11 @@ module.exports = {
         [col("start_date"), "ASC"]
       ]
     });
-    
+
     return res.json(data)
   },
 
-  async samples_weekly_resume(req, res){
+  async samples_weekly_resume(req, res) {
     const id = "lab_samples_weekly_resume_national";
     const cache = await utils.checkCache(req.query, id);
     if (cache) {
@@ -724,22 +726,22 @@ module.exports = {
         [col('week'), "week"],
         [col('start_date'), "start"],
         [col('end_date'), "end"],
-        [fn("sum",col("backlogs")), "backlogs"],
-        [fn("sum",col("tests")), "tests"],
-        [fn("sum",col("registered")), "registrations"],
-        [fn("sum",col("rejected")), "rejections"],
-        [fn("sum",col("capacity")), "capacity"],
-        [fn("avg",col("tat")), "tat"],
+        [fn("sum", col("backlogs")), "backlogs"],
+        [fn("sum", col("tests")), "tests"],
+        [fn("sum", col("registered")), "registrations"],
+        [fn("sum", col("rejected")), "rejections"],
+        [fn("sum", col("capacity")), "capacity"],
+        [fn("avg", col("tat")), "tat"],
       ],
       where: [
         literal(`CAST(start_date as date) >= '${moment(dates[0]).format("YYYY-MM-DD")}' AND CAST(start_date as date) <= '${moment(dates[1]).format("YYYY-MM-DD")}'`),
         {
-        ...(req.query.codes && {
-          labcode: {
-            [Op.in]: req.query.codes,
-          },
-        }),
-      }],
+          ...(req.query.codes && {
+            labcode: {
+              [Op.in]: req.query.codes,
+            },
+          }),
+        }],
       group: [
         col('week'),
         col('start_date'),
@@ -749,7 +751,7 @@ module.exports = {
         [col("start_date"), "ASC"]
       ]
     });
-    
+
     return res.json(data)
   }
 
