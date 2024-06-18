@@ -22,10 +22,11 @@ const age = [15, 49];
 module.exports = ClinicController = {
   async getSamplesByTestReason(req, res) {
     const id = "clinic_samples_by_test_reason";
-    const cache = await utils.checkCache(req.query, id);
-    if (cache) {
-      return res.json(cache);
-    }
+    // console.log(req.query);
+    // const cache = await utils.checkCache(req.query, id);
+    // if (cache) {
+    //   return res.json(cache);
+    // }
 
     const data = await samples.accumulative(
       [
@@ -33,13 +34,13 @@ module.exports = ClinicController = {
           ...(req.query.codes &&
             ((req.query.type || type) === "province"
               ? {
-                  RequestingProvinceName: { [Op.in]: req.query.codes },
-                }
+                RequestingProvinceName: { [Op.in]: req.query.codes },
+              }
               : (req.query.type || type) === "district"
-              ? {
+                ? {
                   RequestingDistrictName: { [Op.in]: req.query.codes },
                 }
-              : {
+                : {
                   RequestingFacilityName: { [Op.in]: req.query.codes },
                 })),
           ...(!req.query.codes && {
@@ -65,10 +66,10 @@ module.exports = ClinicController = {
 
   async getSamplesTestedByMonth(req, res) {
     const id = "clinic_samples_tested_by_month";
-    const cache = await utils.checkCache(req.query, id);
-    if (cache) {
-      return res.json(cache);
-    }
+    // const cache = await utils.checkCache(req.query, id);
+    // if (cache) {
+    //   return res.json(cache);
+    // }
 
     const data = await VlData.findAll({
       attributes: [
@@ -84,13 +85,13 @@ module.exports = ClinicController = {
           ...(req.query.codes &&
             ((req.query.type || type) === "province"
               ? {
-                  RequestingProvinceName: { [Op.in]: req.query.codes },
-                }
+                RequestingProvinceName: { [Op.in]: req.query.codes },
+              }
               : (req.query.type || type) === "district"
-              ? {
+                ? {
                   RequestingDistrictName: { [Op.in]: req.query.codes },
                 }
-              : {
+                : {
                   RequestingFacilityName: { [Op.in]: req.query.codes },
                 })),
           AnalysisDatetime: {
@@ -111,10 +112,10 @@ module.exports = ClinicController = {
   async getSamplesTestedByFacility(req, res) {
     const id = "clinic_samples_tested_by_facility";
     const disaggregation = req.query.disaggregation === "true";
-    const cache = await utils.checkCache(req.query, id);
-    if (cache) {
-      return res.json(cache);
-    }
+    // const cache = await utils.checkCache(req.query, id);
+    // if (cache) {
+    //   return res.json(cache);
+    // }
 
     const columnsDetails = await utils.getAttributes(
       req.query.type || type,
@@ -133,13 +134,13 @@ module.exports = ClinicController = {
           ...(req.query.codes &&
             ((req.query.type || type) === "province"
               ? {
-                  RequestingProvinceName: { [Op.in]: req.query.codes },
-                }
+                RequestingProvinceName: { [Op.in]: req.query.codes },
+              }
               : (req.query.type || type) === "district"
-              ? {
+                ? {
                   RequestingDistrictName: { [Op.in]: req.query.codes },
                 }
-              : {
+                : {
                   RequestingFacilityName: { [Op.in]: req.query.codes },
                 })),
           ...(!req.query.codes && {
@@ -160,10 +161,10 @@ module.exports = ClinicController = {
 
   async getTurnaroundTimeByMonth(req, res) {
     const id = "clinic_tat_by_month";
-    const cache = await utils.checkCache(req.query, id);
-    if (cache) {
-      return res.json(cache);
-    }
+    // const cache = await utils.checkCache(req.query, id);
+    // if (cache) {
+    //   return res.json(cache);
+    // }
 
     const data = await VlData.findAll({
       attributes: [
@@ -180,13 +181,13 @@ module.exports = ClinicController = {
           ...(req.query.codes &&
             ((req.query.type || type) === "province"
               ? {
-                  RequestingProvinceName: { [Op.in]: req.query.codes },
-                }
+                RequestingProvinceName: { [Op.in]: req.query.codes },
+              }
               : (req.query.type || type) === "district"
-              ? {
+                ? {
                   RequestingDistrictName: { [Op.in]: req.query.codes },
                 }
-              : {
+                : {
                   RequestingFacilityName: { [Op.in]: req.query.codes },
                 }))
           ,
@@ -244,10 +245,10 @@ module.exports = ClinicController = {
     const id = "clinic_tat_by_facility";
     const disaggregation = req.query.disaggregation === "true";
 
-    const cache = await utils.checkCache(req.query, id);
-    if (cache) {
-      return res.json(cache);
-    }
+    // const cache = await utils.checkCache(req.query, id);
+    // if (cache) {
+    //   return res.json(cache);
+    // }
 
     const columnsDetails = await utils.getAttributes(
       req.query.type || type,
@@ -268,13 +269,13 @@ module.exports = ClinicController = {
           ...(req.query.codes &&
             ((req.query.type || type) === "province"
               ? {
-                  RequestingProvinceName: { [Op.in]: req.query.codes },
-                }
+                RequestingProvinceName: { [Op.in]: req.query.codes },
+              }
               : (req.query.type || type) === "district"
-              ? {
+                ? {
                   RequestingDistrictName: { [Op.in]: req.query.codes },
                 }
-              : {
+                : {
                   RequestingFacilityName: { [Op.in]: req.query.codes },
                 })),
           [Op.and]: {
@@ -325,10 +326,10 @@ module.exports = ClinicController = {
 
   async getSamplesTestedByGender(req, res) {
     const id = "clinic_samples_tested_by_gender_monthly";
-    const cache = await utils.checkCache(req.query, id);
-    if (cache) {
-      return res.json(cache);
-    }
+    // const cache = await utils.checkCache(req.query, id);
+    // if (cache) {
+    //   return res.json(cache);
+    // }
 
     const data = await VlData.findAll({
       attributes: [
@@ -346,13 +347,13 @@ module.exports = ClinicController = {
           ...(req.query.codes &&
             ((req.query.type || type) === "province"
               ? {
-                  RequestingProvinceName: { [Op.in]: req.query.codes },
-                }
+                RequestingProvinceName: { [Op.in]: req.query.codes },
+              }
               : (req.query.type || type) === "district"
-              ? {
+                ? {
                   RequestingDistrictName: { [Op.in]: req.query.codes },
                 }
-              : {
+                : {
                   RequestingFacilityName: { [Op.in]: req.query.codes },
                 })),
           AnalysisDatetime: {
@@ -373,10 +374,10 @@ module.exports = ClinicController = {
   async getSamplesTestedByGenderAndFacility(req, res) {
     const id = "clinic_samples_tested_by_gender_and_facility";
     const disaggregation = req.query.disaggregation === "true";
-    const cache = await utils.checkCache(req.query, id);
-    if (cache) {
-      return res.json(cache);
-    }
+    // const cache = await utils.checkCache(req.query, id);
+    // if (cache) {
+    //   return res.json(cache);
+    // }
 
     const columnsDetails = await utils.getAttributes(
       req.query.type || type,
@@ -398,13 +399,13 @@ module.exports = ClinicController = {
           ...(req.query.codes &&
             ((req.query.type || type) === "province"
               ? {
-                  RequestingProvinceName: { [Op.in]: req.query.codes },
-                }
+                RequestingProvinceName: { [Op.in]: req.query.codes },
+              }
               : (req.query.type || type) === "district"
-              ? {
+                ? {
                   RequestingDistrictName: { [Op.in]: req.query.codes },
                 }
-              : {
+                : {
                   RequestingFacilityName: { [Op.in]: req.query.codes },
                 })),
           ...(!req.query.codes && {
@@ -425,10 +426,10 @@ module.exports = ClinicController = {
 
   async getSamplesTestedByAge(req, res) {
     const id = "clinic_samples_tested_by_age";
-    const cache = await utils.checkCache(req.query, id);
-    if (cache) {
-      return res.json(cache);
-    }
+    // const cache = await utils.checkCache(req.query, id);
+    // if (cache) {
+    //   return res.json(cache);
+    // }
 
     const data = await VlData.findAll({
       attributes: [
@@ -444,13 +445,13 @@ module.exports = ClinicController = {
           ...(req.query.codes &&
             ((req.query.type || type) === "province"
               ? {
-                  RequestingProvinceName: { [Op.in]: req.query.codes },
-                }
+                RequestingProvinceName: { [Op.in]: req.query.codes },
+              }
               : (req.query.type || type) === "district"
-              ? {
+                ? {
                   RequestingDistrictName: { [Op.in]: req.query.codes },
                 }
-              : {
+                : {
                   RequestingFacilityName: { [Op.in]: req.query.codes },
                 })),
           ...(!req.query.codes && {
@@ -479,10 +480,10 @@ module.exports = ClinicController = {
   async getSamplesTestedByAgeAndFacility(req, res) {
     const id = "clinic_samples_tested_by_age_and_facility";
     const disaggregation = req.query.disaggregation === "true";
-    const cache = await utils.checkCache(req.query, id);
-    if (cache) {
-      return res.json(cache);
-    }
+    // const cache = await utils.checkCache(req.query, id);
+    // if (cache) {
+    //   return res.json(cache);
+    // }
 
     const columnsDetails = await utils.getAttributes(
       req.query.type || type,
@@ -502,13 +503,13 @@ module.exports = ClinicController = {
           ...(req.query.codes &&
             ((req.query.type || type) === "province"
               ? {
-                  RequestingProvinceName: { [Op.in]: req.query.codes },
-                }
+                RequestingProvinceName: { [Op.in]: req.query.codes },
+              }
               : (req.query.type || type) === "district"
-              ? {
+                ? {
                   RequestingDistrictName: { [Op.in]: req.query.codes },
                 }
-              : {
+                : {
                   RequestingFacilityName: { [Op.in]: req.query.codes },
                 })),
           ...(!req.query.codes && {
@@ -532,10 +533,10 @@ module.exports = ClinicController = {
 
   async getSamplesTestedByPregnancy(req, res) {
     const id = "clinic_samples_tested_by_pregnancy";
-    const cache = await utils.checkCache(req.query, id);
-    if (cache) {
-      return res.json(cache);
-    }
+    // const cache = await utils.checkCache(req.query, id);
+    // if (cache) {
+    //   return res.json(cache);
+    // }
 
     const data = await VlData.findAll({
       attributes: [
@@ -551,13 +552,13 @@ module.exports = ClinicController = {
           ...(req.query.codes &&
             ((req.query.type || type) === "province"
               ? {
-                  RequestingProvinceName: { [Op.in]: req.query.codes },
-                }
+                RequestingProvinceName: { [Op.in]: req.query.codes },
+              }
               : (req.query.type || type) === "district"
-              ? {
+                ? {
                   RequestingDistrictName: { [Op.in]: req.query.codes },
                 }
-              : {
+                : {
                   RequestingFacilityName: { [Op.in]: req.query.codes },
                 })),
           ...(!req.query.codes && {
@@ -586,11 +587,11 @@ module.exports = ClinicController = {
   async getSamplesTestedByPregnancyAndFacility(req, res) {
     const id = "clinic_samples_tested_by_pregnancy_and_facility";
     const disaggregation = req.query.disaggregation === "true";
-    const cache = await utils.checkCache(req.query, id);
-    
-    if (cache) {
-      return res.json(cache);
-    }
+    // const cache = await utils.checkCache(req.query, id);
+
+    // if (cache) {
+    //   return res.json(cache);
+    // }
 
     const columnsDetails = await utils.getAttributes(
       req.query.type || type,
@@ -610,18 +611,18 @@ module.exports = ClinicController = {
           ...(req.query.codes ?
             ((req.query.type || type) === "province"
               ? {
-                  RequestingProvinceName: { [Op.in]: req.query.codes },
-                }
+                RequestingProvinceName: { [Op.in]: req.query.codes },
+              }
               : (req.query.type || type) === "district"
-              ? {
+                ? {
                   RequestingDistrictName: { [Op.in]: req.query.codes },
                 }
-              : {
+                : {
                   RequestingFacilityName: { [Op.in]: req.query.codes },
                 })
             : {
               RequestingProvinceName: { [Op.not]: null },
-            }   
+            }
           ),
           ...(!req.query.codes && {
             RequestingProvinceName: {
@@ -644,10 +645,10 @@ module.exports = ClinicController = {
 
   async getSamplesTestedForBreastfeeding(req, res) {
     const id = "clinic_samples_tested_breastfeeding";
-    const cache = await utils.checkCache(req.query, id);
-    if (cache) {
-      return res.json(cache);
-    }
+    // const cache = await utils.checkCache(req.query, id);
+    // if (cache) {
+    //   return res.json(cache);
+    // }
 
     const data = await VlData.findAll({
       attributes: [
@@ -663,13 +664,13 @@ module.exports = ClinicController = {
           ...(req.query.codes &&
             ((req.query.type || type) === "province"
               ? {
-                  RequestingProvinceName: { [Op.in]: req.query.codes },
-                }
+                RequestingProvinceName: { [Op.in]: req.query.codes },
+              }
               : (req.query.type || type) === "district"
-              ? {
+                ? {
                   RequestingDistrictName: { [Op.in]: req.query.codes },
                 }
-              : {
+                : {
                   RequestingFacilityName: { [Op.in]: req.query.codes },
                 })),
           ...(!req.query.codes && {
@@ -699,10 +700,10 @@ module.exports = ClinicController = {
     console.log("disaggregation", req.query.disaggregation)
     const id = "clinic_samples_tested_breastfeeding_and_facility";
     const disaggregation = req.query.disaggregation === "true";
-    const cache = await utils.checkCache(req.query, id);
-    if (cache) {
-      return res.json(cache);
-    }
+    // const cache = await utils.checkCache(req.query, id);
+    // if (cache) {
+    //   return res.json(cache);
+    // }
 
     const columnsDetails = await utils.getAttributes(
       req.query.type || type,
@@ -723,18 +724,18 @@ module.exports = ClinicController = {
           ...(req.query.codes ?
             ((req.query.type || type) === "province"
               ? {
-                  RequestingProvinceName: { [Op.in]: req.query.codes },
-                }
+                RequestingProvinceName: { [Op.in]: req.query.codes },
+              }
               : (req.query.type || type) === "district"
-              ? {
+                ? {
                   RequestingDistrictName: { [Op.in]: req.query.codes },
                 }
-              : {
+                : {
                   RequestingFacilityName: { [Op.in]: req.query.codes },
                 })
             : {
               RequestingProvinceName: { [Op.not]: null },
-            }   
+            }
           ),
           ...(!req.query.codes && {
             RequestingProvinceName: {
@@ -758,10 +759,10 @@ module.exports = ClinicController = {
   async getRegisteredSamplesByFacility(req, res) {
     const id = "clinic_registered_samples_by_facility";
     const disaggregation = req.query.disaggregation === "true";
-    const cache = await utils.checkCache(req.query, id);
-    if (cache) {
-      return res.json(cache);
-    }
+    // const cache = await utils.checkCache(req.query, id);
+    // if (cache) {
+    //   return res.json(cache);
+    // }
 
     const columnsDetails = await utils.getAttributes(
       req.query.type || type,
@@ -780,13 +781,13 @@ module.exports = ClinicController = {
           ...(req.query.codes &&
             ((req.query.type || type) === "province"
               ? {
-                  RequestingProvinceName: { [Op.in]: req.query.codes },
-                }
+                RequestingProvinceName: { [Op.in]: req.query.codes },
+              }
               : (req.query.type || type) === "district"
-              ? {
+                ? {
                   RequestingDistrictName: { [Op.in]: req.query.codes },
                 }
-              : {
+                : {
                   RequestingFacilityName: { [Op.in]: req.query.codes },
                 })),
           ...(!req.query.codes && {
@@ -806,11 +807,13 @@ module.exports = ClinicController = {
   },
 
   async getSamplesRejectedByMonth(req, res) {
+
     const id = "clinic_samples_rejected_by_month";
-    const cache = await utils.checkCache(req.query, id);
-    if (cache) {
-      return res.json(cache);
-    }
+
+    // const cache = await utils.checkCache(req.query, id);
+    // if (cache) {
+    //   return res.json(cache);
+    // }
 
     const data = await VlData.findAll({
       attributes: [
@@ -826,15 +829,15 @@ module.exports = ClinicController = {
         ...(req.query.codes &&
           ((req.query.type || type) === "province"
             ? {
-                RequestingProvinceName: { [Op.in]: req.query.codes },
-              }
+              RequestingProvinceName: { [Op.in]: req.query.codes },
+            }
             : (req.query.type || type) === "district"
-            ? {
+              ? {
                 RequestingDistrictName: { [Op.in]: req.query.codes },
               }
-            : {
+              : {
                 RequestingFacilityName: { [Op.in]: req.query.codes },
-        })),
+              })),
         ...(!req.query.codes && {
           RequestingProvinceName: {
             [Op.not]: "null"
@@ -866,11 +869,11 @@ module.exports = ClinicController = {
   async getSamplesRejectedByFacility(req, res) {
     const id = "clinic_samples_rejected_by_facility";
     const disaggregation = req.query.disaggregation === "true";
-    const cache = await utils.checkCache(req.query, id);
-    if (cache) {
-      return res.json(cache);
-    }
-    console.log(req.query.type || type, req.query.codes);
+    // const cache = await utils.checkCache(req.query, id);
+    // if (cache) {
+    //   return res.json(cache);
+    // }
+    // console.log(req.query.type || type, req.query.codes);
     const columnsDetails = await utils.getAttributes(
       req.query.type || type,
       disaggregation
@@ -886,13 +889,13 @@ module.exports = ClinicController = {
           ...(req.query.codes &&
             ((req.query.type || type) === "province"
               ? {
-                  RequestingProvinceName: { [Op.in]: req.query.codes },
-                }
+                RequestingProvinceName: { [Op.in]: req.query.codes },
+              }
               : (req.query.type || type) === "district"
-              ? {
+                ? {
                   RequestingDistrictName: { [Op.in]: req.query.codes },
                 }
-              : {
+                : {
                   RequestingFacilityName: { [Op.in]: req.query.codes },
                 })),
           ...(!req.query.codes && {
