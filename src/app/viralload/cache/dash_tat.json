@@ -1,119 +1,119 @@
 [
   {
-    "year": 2023,
-    "month": 5,
-    "month_name": "May",
-    "collection_reception": 8,
-    "reception_registration": 3,
-    "registration_analysis": 9,
-    "analysis_validation": 0
+      "year": 2023,
+      "month": 9,
+      "month_name": "September",
+      "collection_reception": 11,
+      "reception_registration": 1,
+      "registration_analysis": 16,
+      "analysis_validation": 0
   },
   {
-    "year": 2023,
-    "month": 6,
-    "month_name": "June",
-    "collection_reception": 11,
-    "reception_registration": 3,
-    "registration_analysis": 7,
-    "analysis_validation": 0
+      "year": 2023,
+      "month": 10,
+      "month_name": "October",
+      "collection_reception": 18,
+      "reception_registration": 2,
+      "registration_analysis": 26,
+      "analysis_validation": 0
   },
   {
-    "year": 2023,
-    "month": 7,
-    "month_name": "July",
-    "collection_reception": 10,
-    "reception_registration": 3,
-    "registration_analysis": 9,
-    "analysis_validation": 0
+      "year": 2023,
+      "month": 11,
+      "month_name": "November",
+      "collection_reception": 9,
+      "reception_registration": 2,
+      "registration_analysis": 16,
+      "analysis_validation": 0
   },
   {
-    "year": 2023,
-    "month": 8,
-    "month_name": "August",
-    "collection_reception": 14,
-    "reception_registration": 1,
-    "registration_analysis": 14,
-    "analysis_validation": 0
+      "year": 2023,
+      "month": 12,
+      "month_name": "December",
+      "collection_reception": 10,
+      "reception_registration": 2,
+      "registration_analysis": 15,
+      "analysis_validation": 0
   },
   {
-    "year": 2023,
-    "month": 9,
-    "month_name": "September",
-    "collection_reception": 10,
-    "reception_registration": 1,
-    "registration_analysis": 14,
-    "analysis_validation": 0
+      "year": 2024,
+      "month": 1,
+      "month_name": "January",
+      "collection_reception": 11,
+      "reception_registration": 3,
+      "registration_analysis": 11,
+      "analysis_validation": 0
   },
   {
-    "year": 2023,
-    "month": 10,
-    "month_name": "October",
-    "collection_reception": 18,
-    "reception_registration": 2,
-    "registration_analysis": 26,
-    "analysis_validation": 0
+      "year": 2024,
+      "month": 2,
+      "month_name": "February",
+      "collection_reception": 12,
+      "reception_registration": 2,
+      "registration_analysis": 9,
+      "analysis_validation": 0
   },
   {
-    "year": 2023,
-    "month": 11,
-    "month_name": "November",
-    "collection_reception": 9,
-    "reception_registration": 2,
-    "registration_analysis": 16,
-    "analysis_validation": 0
+      "year": 2024,
+      "month": 3,
+      "month_name": "March",
+      "collection_reception": 11,
+      "reception_registration": 2,
+      "registration_analysis": 9,
+      "analysis_validation": 0
   },
   {
-    "year": 2023,
-    "month": 12,
-    "month_name": "December",
-    "collection_reception": 10,
-    "reception_registration": 2,
-    "registration_analysis": 15,
-    "analysis_validation": 0
+      "year": 2024,
+      "month": 4,
+      "month_name": "April",
+      "collection_reception": 10,
+      "reception_registration": 2,
+      "registration_analysis": 13,
+      "analysis_validation": 0
   },
   {
-    "year": 2024,
-    "month": 1,
-    "month_name": "January",
-    "collection_reception": 11,
-    "reception_registration": 3,
-    "registration_analysis": 11,
-    "analysis_validation": 0
+      "year": 2024,
+      "month": 5,
+      "month_name": "May",
+      "collection_reception": 9,
+      "reception_registration": 2,
+      "registration_analysis": 11,
+      "analysis_validation": 0
   },
   {
-    "year": 2024,
-    "month": 2,
-    "month_name": "February",
-    "collection_reception": 12,
-    "reception_registration": 2,
-    "registration_analysis": 9,
-    "analysis_validation": 0
+      "year": 2024,
+      "month": 6,
+      "month_name": "June",
+      "collection_reception": 8,
+      "reception_registration": 3,
+      "registration_analysis": 9,
+      "analysis_validation": 0
   },
   {
-    "year": 2024,
-    "month": 3,
-    "month_name": "March",
-    "collection_reception": 11,
-    "reception_registration": 2,
-    "registration_analysis": 9,
-    "analysis_validation": 0
+      "year": 2024,
+      "month": 7,
+      "month_name": "July",
+      "collection_reception": 8,
+      "reception_registration": 2,
+      "registration_analysis": 6,
+      "analysis_validation": 0
   },
   {
-    "year": 2024,
-    "month": 4,
-    "month_name": "April",
-    "collection_reception": 10,
-    "reception_registration": 2,
-    "registration_analysis": 13,
-    "analysis_validation": 0
+      "year": 2024,
+      "month": 8,
+      "month_name": "August",
+      "collection_reception": 10,
+      "reception_registration": 2,
+      "registration_analysis": 5,
+      "analysis_validation": 0
   },
   {
-    "year": 2024,
-    "month": 5,
-    "month_name": "May",
-    "collection_reception": 8,
-    "reception_registration": 2,
-    "registration_analysis": 13,
-    "analysis_validation": 0
+      "year": 2024,
+      "month": 9,
+      "month_name": "September",
+      "collection_reception": 9,
+      "reception_registration": 1,
+      "registration_analysis": 4,
+      "analysis_validation": 0
   }
 ]

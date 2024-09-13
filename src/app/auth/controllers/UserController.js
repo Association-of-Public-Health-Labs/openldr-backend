@@ -39,6 +39,7 @@ module.exports = UserController = {
   },
 
   async update(req, res) {
+    console.log(req.body)
     const user = await User.update(req.body, {
       where: { id: req.body.id },
     });

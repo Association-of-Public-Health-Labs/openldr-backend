@@ -1,79 +1,79 @@
 [
   {
-    "facility": "Cabo Delgado",
-    "type": "province",
-    "total": 3941,
-    "suppressed": 3212,
-    "non_suppressed": 632
+      "facility": "Cabo Delgado",
+      "type": "province",
+      "total": 5105,
+      "suppressed": 4071,
+      "non_suppressed": 890
   },
   {
-    "facility": "Gaza",
-    "type": "province",
-    "total": 3360,
-    "suppressed": 2915,
-    "non_suppressed": 309
+      "facility": "Gaza",
+      "type": "province",
+      "total": 3675,
+      "suppressed": 3250,
+      "non_suppressed": 315
   },
   {
-    "facility": "Inhambane",
-    "type": "province",
-    "total": 2857,
-    "suppressed": 2286,
-    "non_suppressed": 504
+      "facility": "Inhambane",
+      "type": "province",
+      "total": 3557,
+      "suppressed": 2980,
+      "non_suppressed": 513
   },
   {
-    "facility": "Manica",
-    "type": "province",
-    "total": 6040,
-    "suppressed": 5169,
-    "non_suppressed": 667
+      "facility": "Manica",
+      "type": "province",
+      "total": 6528,
+      "suppressed": 5651,
+      "non_suppressed": 662
   },
   {
-    "facility": "Maputo Cidade",
-    "type": "province",
-    "total": 4212,
-    "suppressed": 3737,
-    "non_suppressed": 445
+      "facility": "Maputo Cidade",
+      "type": "province",
+      "total": 3944,
+      "suppressed": 3509,
+      "non_suppressed": 406
   },
   {
-    "facility": "Maputo Provincia",
-    "type": "province",
-    "total": 5621,
-    "suppressed": 4888,
-    "non_suppressed": 658
+      "facility": "Maputo Provincia",
+      "type": "province",
+      "total": 5678,
+      "suppressed": 4975,
+      "non_suppressed": 635
   },
   {
-    "facility": "Nampula",
-    "type": "province",
-    "total": 9385,
-    "suppressed": 7421,
-    "non_suppressed": 1480
+      "facility": "Nampula",
+      "type": "province",
+      "total": 9898,
+      "suppressed": 7922,
+      "non_suppressed": 1544
   },
   {
-    "facility": "Niassa",
-    "type": "province",
-    "total": 1881,
-    "suppressed": 1480,
-    "non_suppressed": 331
+      "facility": "Niassa",
+      "type": "province",
+      "total": 1979,
+      "suppressed": 1543,
+      "non_suppressed": 377
   },
   {
-    "facility": "Sofala",
-    "type": "province",
-    "total": 5349,
-    "suppressed": 4328,
-    "non_suppressed": 864
+      "facility": "Sofala",
+      "type": "province",
+      "total": 5854,
+      "suppressed": 4843,
+      "non_suppressed": 872
   },
   {
-    "facility": "Tete",
-    "type": "province",
-    "total": 3213,
-    "suppressed": 2758,
-    "non_suppressed": 402
+      "facility": "Tete",
+      "type": "province",
+      "total": 3519,
+      "suppressed": 3002,
+      "non_suppressed": 415
   },
   {
-    "facility": "Zambezia",
-    "type": "province",
-    "total": 18117,
-    "suppressed": 14592,
-    "non_suppressed": 2533
+      "facility": "Zambezia",
+      "type": "province",
+      "total": 18321,
+      "suppressed": 15049,
+      "non_suppressed": 2462
   }
 ]
