@@ -17,6 +17,7 @@ const dates = [
   moment().format("YYYY-MM-DD"),
 ];
 
+// This is the default age range
 const age = [15, 49];
 
 module.exports = {
