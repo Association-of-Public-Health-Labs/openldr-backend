@@ -1,79 +1,57 @@
 [
-  {
+    {
       "facility": "Cabo Delgado",
       "type": "province",
-      "total": 9092,
-      "suppressed": 7893,
-      "non_suppressed": 967
-  },
-  {
+      "total": 81039
+    },
+    {
       "facility": "Gaza",
       "type": "province",
-      "total": 5990,
-      "suppressed": 5327,
-      "non_suppressed": 489
-  },
-  {
+      "total": 176361
+    },
+    {
       "facility": "Inhambane",
       "type": "province",
-      "total": 6135,
-      "suppressed": 5320,
-      "non_suppressed": 731
-  },
-  {
+      "total": 99714
+    },
+    {
       "facility": "Manica",
       "type": "province",
-      "total": 11969,
-      "suppressed": 10907,
-      "non_suppressed": 734
-  },
-  {
+      "total": 125369
+    },
+    {
       "facility": "Maputo Cidade",
       "type": "province",
-      "total": 5634,
-      "suppressed": 5168,
-      "non_suppressed": 423
-  },
-  {
+      "total": 177081
+    },
+    {
       "facility": "Maputo Provincia",
       "type": "province",
-      "total": 10909,
-      "suppressed": 9923,
-      "non_suppressed": 863
-  },
-  {
+      "total": 180079
+    },
+    {
       "facility": "Nampula",
       "type": "province",
-      "total": 21595,
-      "suppressed": 18447,
-      "non_suppressed": 2207
-  },
-  {
+      "total": 204917
+    },
+    {
       "facility": "Niassa",
       "type": "province",
-      "total": 4091,
-      "suppressed": 3613,
-      "non_suppressed": 360
-  },
-  {
+      "total": 40043
+    },
+    {
       "facility": "Sofala",
       "type": "province",
-      "total": 8799,
-      "suppressed": 7596,
-      "non_suppressed": 993
-  },
-  {
+      "total": 148601
+    },
+    {
       "facility": "Tete",
       "type": "province",
-      "total": 6719,
-      "suppressed": 6062,
-      "non_suppressed": 516
-  },
-  {
+      "total": 106774
+    },
+    {
       "facility": "Zambezia",
       "type": "province",
-      "total": 39608,
-      "suppressed": 34344,
-      "non_suppressed": 3463
-  }
-]
+      "total": 365235
+    }
+  ]

@@ -1,79 +1,79 @@
 [
-  {
+    {
       "facility": "Cabo Delgado",
       "type": "province",
-      "total": 65181,
-      "suppressed": 56382,
-      "non_suppressed": 7134
-  },
-  {
+      "total": 65996,
+      "suppressed": 56866,
+      "non_suppressed": 7444
+    },
+    {
       "facility": "Gaza",
       "type": "province",
-      "total": 116117,
-      "suppressed": 104338,
-      "non_suppressed": 8764
-  },
-  {
+      "total": 128705,
+      "suppressed": 116098,
+      "non_suppressed": 9708
+    },
+    {
       "facility": "Inhambane",
       "type": "province",
-      "total": 60857,
-      "suppressed": 51710,
-      "non_suppressed": 8115
-  },
-  {
+      "total": 69328,
+      "suppressed": 59114,
+      "non_suppressed": 9089
+    },
+    {
       "facility": "Manica",
       "type": "province",
-      "total": 101662,
-      "suppressed": 91818,
-      "non_suppressed": 6976
-  },
-  {
+      "total": 103047,
+      "suppressed": 92960,
+      "non_suppressed": 7004
+    },
+    {
       "facility": "Maputo Cidade",
       "type": "province",
-      "total": 114219,
-      "suppressed": 104897,
-      "non_suppressed": 8291
-  },
-  {
+      "total": 124259,
+      "suppressed": 114162,
+      "non_suppressed": 9088
+    },
+    {
       "facility": "Maputo Provincia",
       "type": "province",
-      "total": 132329,
-      "suppressed": 121929,
-      "non_suppressed": 9098
-  },
-  {
+      "total": 131030,
+      "suppressed": 120873,
+      "non_suppressed": 8835
+    },
+    {
       "facility": "Nampula",
       "type": "province",
-      "total": 163458,
-      "suppressed": 142102,
-      "non_suppressed": 14247
-  },
-  {
+      "total": 163084,
+      "suppressed": 141779,
+      "non_suppressed": 14276
+    },
+    {
       "facility": "Niassa",
       "type": "province",
-      "total": 31963,
-      "suppressed": 27674,
-      "non_suppressed": 3155
-  },
-  {
+      "total": 32752,
+      "suppressed": 28436,
+      "non_suppressed": 3215
+    },
+    {
       "facility": "Sofala",
       "type": "province",
-      "total": 132349,
-      "suppressed": 114298,
-      "non_suppressed": 14829
-  },
-  {
+      "total": 119394,
+      "suppressed": 104158,
+      "non_suppressed": 12333
+    },
+    {
       "facility": "Tete",
       "type": "province",
-      "total": 102877,
-      "suppressed": 91610,
-      "non_suppressed": 9186
-  },
-  {
+      "total": 94494,
+      "suppressed": 84426,
+      "non_suppressed": 7902
+    },
+    {
       "facility": "Zambezia",
       "type": "province",
-      "total": 325326,
-      "suppressed": 281590,
-      "non_suppressed": 27406
-  }
-]
+      "total": 321150,
+      "suppressed": 278706,
+      "non_suppressed": 26607
+    }
+  ]

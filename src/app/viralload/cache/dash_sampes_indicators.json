@@ -1,132 +1,132 @@
 [
-  {
-      "year": 2023,
-      "month": 9,
-      "month_name": "September",
-      "registered": 88531,
-      "tested": 87619,
-      "suppressed": 76182,
-      "rejected": 3420,
-      "non_validated": 50
-  },
-  {
+    {
       "year": 2023,
       "month": 10,
       "month_name": "October",
-      "registered": 166117,
-      "tested": 165089,
-      "suppressed": 142550,
-      "rejected": 6236,
-      "non_validated": 10
-  },
-  {
+      "registered": 16638,
+      "tested": 16540,
+      "suppressed": 14531,
+      "rejected": 550,
+      "non_validated": 0
+    },
+    {
       "year": 2023,
       "month": 11,
       "month_name": "November",
       "registered": 147649,
-      "tested": 146811,
+      "tested": 146815,
       "suppressed": 128397,
-      "rejected": 5264,
+      "rejected": 5268,
       "non_validated": 43
-  },
-  {
+    },
+    {
       "year": 2023,
       "month": 12,
       "month_name": "December",
       "registered": 123589,
-      "tested": 121079,
+      "tested": 121106,
       "suppressed": 105732,
-      "rejected": 4315,
-      "non_validated": 389
-  },
-  {
+      "rejected": 4342,
+      "non_validated": 388
+    },
+    {
       "year": 2024,
       "month": 1,
       "month_name": "January",
       "registered": 152988,
-      "tested": 148064,
-      "suppressed": 130348,
-      "rejected": 4404,
+      "tested": 148250,
+      "suppressed": 130349,
+      "rejected": 4589,
       "non_validated": 82
-  },
-  {
+    },
+    {
       "year": 2024,
       "month": 2,
       "month_name": "February",
-      "registered": 130588,
-      "tested": 129891,
+      "registered": 130589,
+      "tested": 130020,
       "suppressed": 115179,
-      "rejected": 3559,
+      "rejected": 3688,
       "non_validated": 35
-  },
-  {
+    },
+    {
       "year": 2024,
       "month": 3,
       "month_name": "March",
       "registered": 135603,
-      "tested": 135041,
+      "tested": 135258,
       "suppressed": 119548,
-      "rejected": 3968,
+      "rejected": 4185,
       "non_validated": 140
-  },
-  {
+    },
+    {
       "year": 2024,
       "month": 4,
       "month_name": "April",
-      "registered": 135173,
-      "tested": 134672,
+      "registered": 135174,
+      "tested": 134818,
       "suppressed": 119883,
-      "rejected": 3584,
+      "rejected": 3726,
       "non_validated": 65
-  },
-  {
+    },
+    {
       "year": 2024,
       "month": 5,
       "month_name": "May",
-      "registered": 146959,
-      "tested": 145572,
-      "suppressed": 128275,
-      "rejected": 3842,
-      "non_validated": 478
-  },
-  {
+      "registered": 147118,
+      "tested": 146098,
+      "suppressed": 128276,
+      "rejected": 4325,
+      "non_validated": 468
+    },
+    {
       "year": 2024,
       "month": 6,
       "month_name": "June",
       "registered": 128517,
-      "tested": 127468,
-      "suppressed": 112601,
-      "rejected": 4081,
-      "non_validated": 428
-  },
-  {
+      "tested": 128159,
+      "suppressed": 112993,
+      "rejected": 4304,
+      "non_validated": 427
+    },
+    {
       "year": 2024,
       "month": 7,
       "month_name": "July",
-      "registered": 162310,
-      "tested": 156434,
-      "suppressed": 139887,
-      "rejected": 3758,
-      "non_validated": 181
-  },
-  {
+      "registered": 164684,
+      "tested": 164333,
+      "suppressed": 146481,
+      "rejected": 4355,
+      "non_validated": 39
+    },
+    {
       "year": 2024,
       "month": 8,
       "month_name": "August",
-      "registered": 128085,
-      "tested": 123772,
-      "suppressed": 111512,
-      "rejected": 2496,
-      "non_validated": 403
-  },
-  {
+      "registered": 155861,
+      "tested": 154787,
+      "suppressed": 138904,
+      "rejected": 3444,
+      "non_validated": 51
+    },
+    {
       "year": 2024,
       "month": 9,
       "month_name": "September",
-      "registered": 33834,
-      "tested": 20404,
-      "suppressed": 18473,
-      "rejected": 323,
-      "non_validated": 1939
-  }
-]
+      "registered": 142102,
+      "tested": 139019,
+      "suppressed": 124894,
+      "rejected": 2835,
+      "non_validated": 80
+    },
+    {
+      "year": 2024,
+      "month": 10,
+      "month_name": "October",
+      "registered": 124705,
+      "tested": 96252,
+      "suppressed": 87260,
+      "rejected": 1763,
+      "non_validated": 770
+    }
+  ]

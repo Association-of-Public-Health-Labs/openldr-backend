@@ -1,8 +1,8 @@
 [
   {
-      "total": 1719528,
-      "routine": 1615686,
-      "treatment_failure": 22025,
-      "reason_not_specified": 77461
+    "total": 1734319,
+    "routine": 1655037,
+    "treatment_failure": 21920,
+    "reason_not_specified": 52879
   }
 ]
