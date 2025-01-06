@@ -15,10 +15,10 @@ const dates = [
 module.exports = {
   async getNumberOfSamples(req, res) {
     const id = "dash_number_of_samples";
-    const cache = await utils.checkCache(req.query, id);
-    if (cache) {
-      return res.json(cache);
-    }
+    // const cache = await utils.checkCache(req.query, id);
+    // if (cache) {
+    //   return res.json(cache);
+    // }
     const data = await VlData.findAll({
       attributes: [
         [global.year, "year"],

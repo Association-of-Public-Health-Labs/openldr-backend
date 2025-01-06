@@ -23,10 +23,10 @@ const age = [15, 49];
 module.exports = {
   async getSamplesByTestReason(req, res) {
     const id = "lab_samples_by_test_reason";
-    const cache = await utils.checkCache(req.query, id);
-    if (cache) {
-      return res.json(cache);
-    }
+    // const cache = await utils.checkCache(req.query, id);
+    // if (cache) {
+    //   return res.json(cache);
+    // }
 
     const data = await samples.accumulative(
       [

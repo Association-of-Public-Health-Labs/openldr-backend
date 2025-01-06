@@ -23,10 +23,10 @@ module.exports = ClinicController = {
   async getSamplesByTestReason(req, res) {
     const id = "clinic_samples_by_test_reason";
     // console.log(req.query);
-    const cache = await utils.checkCache(req.query, id);
-    if (cache) {
-      return res.json(cache);
-    }
+    // const cache = await utils.checkCache(req.query, id);
+    // if (cache) {
+    //   return res.json(cache);
+    // }
 
     const data = await samples.accumulative(
       [
